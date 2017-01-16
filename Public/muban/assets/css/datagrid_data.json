@@ -1,0 +1,15 @@
+{"total":13,"rows":[
+	{"name":"ABO血型鉴定","guige":"/","danwei":"人次","danjia":5.00,"pym":"ABPXXJD"},
+	{"name":"按摩费","guige":"/","danwei":"人次","danjia":0.00,"pym":"AMF"},
+	{"name":"癌胚抗原测定","guige":"/","danwei":"人次","danjia":20.00,"pym":"APKYCD"},
+	{"name":"B超费","guige":"/","danwei":"每部位","danjia":0.00,"pym":"BCF"},
+	{"name":"便常规","guige":"/","danwei":"人次","danjia":5.00,"pym":"BCG"},
+	{"name":"冰袋","guige":"/","danwei":"天","danjia":2.00,"pym":"BD"},
+	{"name":"髌骨骨切开复位内固定术","guige":"/","danwei":"例","danjia":0.00,"pym":"BGGAKFWNGDS"},
+	{"name":"鼻骨骨折整复术","guige":"/","danwei":"例","danjia":0.00,"pym":"BGGRZFS"},
+	{"name":"拔罐疗法","guige":"/","danwei":"次","danjia":0.00,"pym":"BGLF"},
+	{"name":"鼻骨正侧位(CR)","guige":"/","danwei":"张","danjia":80.00,"pym":"BGZCW"},
+	{"name":"病理费","guige":"/","danwei":"个","danjia":0.00,"pym":"BLF"},
+	{"name":"波姆光费","guige":"/","danwei":"次","danjia":0.00,"pym":"BMGF"},
+	{"name":"备皮","guige":"/","danwei":"次","danjia":15.00,"pym":"BP"}
+]}

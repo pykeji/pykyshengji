@@ -1,0 +1,420 @@
+/*收费综合查询*/
+.sfzh_top{
+	width:95%;
+	margin-left:4%;
+	height:30px;
+	margin-top:-1%;
+}
+.sfzh_top img{
+	vertical-align:middle;
+}
+.h{
+	font-size:23px;
+	line-height:20px;
+	margin-left:3%;
+	margin-top:-2%;
+	color:#DDAA00;
+	font-weight:bold;
+}
+.cxtj{
+	width:100%;
+	height:100px;
+	font-size:14px;
+	color:#000;
+	margin-top:1%;
+}
+.cxtj input{
+	width:150px;
+	height:25px;
+	color:#000;
+}
+.cxtj input[type='checkbox']{
+	width:16px;
+	height:16px;
+	margin-top:1px;
+}
+.cxtj select{
+	width:100px;
+	height:25px;
+}
+.cxtj span{
+	font-weight:bold;
+	line-height:16px;
+}
+.cxtj table{
+	width:92%;
+	margin-left:4%;
+	margin-top:1%;
+}
+.sfzh_center{
+	width:98%;
+	height:320px;
+	border:1px solid #eee;
+	margin-left:1%;
+	margin-top:-1%;
+	overflow:scroll;
+	background:#FFF;
+	font-size:15px;
+	color:#000;
+}
+.sfzh_center table{
+	margin-top:1%;
+}
+.sfzh_center caption{
+	font-weight:bold;
+}
+.sfzh_center th{
+	font-weight:bold;
+}
+.sfzh_bottom{ 
+	width:100%; 
+	height:50px;
+	margin-top:2%; 
+}
+.sfzh_bottom span{
+	text-align:center;
+}
+.sfzh_bottom span p{ 
+	color:#000;
+	font-size:16px;
+	height:10px;
+	width:70px;
+	font-weight:bold;
+}
+.sfzh_bottom_c{
+	text-align:right; 
+	margin-right:5%;
+}
+/*费用汇总*/
+.fyhz_top{
+	width:95%;
+	margin-left:4%;
+	height:30px;
+	margin-top:-1%;
+}
+.fyhz_top img{
+	vertical-align:middle;
+}
+.h{
+	font-size:23px;
+	line-height:20px;
+	margin-left:3%;
+	margin-top:-2%;
+	color:#DDAA00;
+	font-weight:bold;
+}
+.fyhz_cxtj{
+	width:100%;
+	height:100px;
+	font-size:14px;
+	color:#000;
+	margin-top:1%;
+}
+.fyhz_cxtj input{
+	width:150px;
+	height:25px;
+	color:#000;
+}
+.fyhz_cxtj input[type='radio']{
+	width:16px;
+	height:16px;
+	margin-top:1px;
+}
+.fyhz_cxtj span{
+	font-weight:bold;
+	margin-left:4%;
+	line-height:20px;
+}
+.fyhz_cxtj label{
+	font-weight:100;
+}
+.fyhz_center{
+	width:98%;
+	height:360px;
+	border:1px solid #eee;
+	margin-left:1%;
+	margin-top:-4%;
+	overflow:scroll;
+	background:#FFF;
+	font-size:15px;
+	color:#000;
+}
+.fyhz_center table{
+	margin-top:1%;
+}
+.fyhz_center caption{
+	font-weight:bold;
+}
+.fyhz_center th{
+	font-weight:bold;
+}
+.fyhz_bottom{ 
+	width:100%; 
+	height:50px;
+	margin-top:2%; 
+}
+.fyhz_bottom span{
+	text-align:center;
+}
+.fyhz_bottom span p{ 
+	color:#000;
+	font-size:16px;
+	height:10px;
+	width:70px;
+	font-weight:bold;
+}
+.fyhz_bottom_c{
+	text-align:right; 
+	margin-right:5%;
+}
+/*药品使用统计*/
+.ypsy_top{
+	width:95%;
+	margin-left:4%;
+	height:30px;
+	margin-top:-1%;
+}
+.ypsy_top img{
+	vertical-align:middle;
+}
+.h{
+	font-size:23px;
+	line-height:20px;
+	margin-left:3%;
+	margin-top:-2%;
+	color:#DDAA00;
+	font-weight:bold;
+}
+.ypsy_cxtj{
+	width:100%;
+	height:100px;
+	font-size:14px;
+	color:#000;
+	margin-top:1%;
+}
+.ypsy_cxtj input{
+	width:150px;
+	height:25px;
+	color:#000;
+}
+.ypsy_cxtj input[type='radio']{
+	width:16px;
+	height:16px;
+	margin-top:1px;
+}
+.ypsy_cxtj span{
+	font-weight:bold;
+	margin-left:4%;
+	line-height:20px;
+}
+.ypsy_center{
+	width:98%;
+	height:360px;
+	border:1px solid #eee;
+	margin-left:1%;
+	margin-top:-4%;
+	overflow:scroll;
+	background:#FFF;
+	font-size:15px;
+	color:#000;
+}
+.ypsy_center table{
+	margin-top:1%;
+}
+.ypsy_center caption{
+	font-weight:bold;
+}
+.ypsy_center th{
+	font-weight:bold;
+}
+.ypsy_bottom{ 
+	width:100%; 
+	height:50px;
+	margin-top:2%; 
+}
+.ypsy_bottom span{
+	text-align:center;
+}
+.ypsy_bottom span p{ 
+	color:#000;
+	font-size:16px;
+	height:10px;
+	width:70px;
+	font-weight:bold;
+}
+.ypsy_bottom_c{
+	text-align:right; 
+	margin-right:5%;
+}
+/*中药诊治查询统计*/
+.zyzz_top{
+	width:95%;
+	margin-left:4%;
+	height:30px;
+	margin-top:-1%;
+}
+.zyzz_top img{
+	vertical-align:middle;
+}
+.h{
+	font-size:23px;
+	line-height:20px;
+	margin-left:3%;
+	margin-top:-2%;
+	color:#DDAA00;
+	font-weight:bold;
+}
+.zyzz_cxtj{
+	width:100%;
+	height:100px;
+	font-size:14px;
+	color:#000;
+	margin-top:1%;
+}
+.zyzz_cxtj input{
+	width:150px;
+	height:25px;
+	color:#000;
+}
+.zyzz_cxtj input[type='checkbox']{
+	width:16px;
+	height:16px;
+	margin-top:1px;
+}
+.zyzz_cxtj span{
+	font-weight:bold;
+	margin-left:4%;
+	line-height:20px;
+}
+.zyzz_cxtj label{
+	font-weight:100;
+}
+.zyzz_center{
+	width:98%;
+	height:340px;
+	border:1px solid #eee;
+	margin-left:1%;
+	margin-top:-2%;
+	overflow:scroll;
+	background:#FFF;
+	font-size:15px;
+	color:#000;
+}
+.zyzz_center table{
+	margin-top:1%;
+}
+.zyzz_center caption{
+	font-weight:bold;
+}
+.zyzz_center th{
+	font-weight:bold;
+}
+.zyzz_bottom{ 
+	width:100%; 
+	height:50px;
+	margin-top:2%; 
+}
+.zyzz_bottom span{
+	text-align:center;
+}
+.zyzz_bottom span p{ 
+	color:#000;
+	font-size:16px;
+	height:10px;
+	width:70px;
+	font-weight:bold;
+}
+.zyzz_bottom_c{
+	text-align:right; 
+	margin-right:5%;
+}
+.sm{
+	color:red;
+	font-weight:bold;
+}
+/*西药诊治查询统计*/
+.xyzz_top{
+	width:95%;
+	margin-left:4%;
+	height:30px;
+	margin-top:-1%;
+}
+.xyzz_top img{
+	vertical-align:middle;
+}
+.h{
+	font-size:23px;
+	line-height:20px;
+	margin-left:3%;
+	margin-top:-2%;
+	color:#DDAA00;
+	font-weight:bold;
+}
+.xyzz_cxtj{
+	width:100%;
+	height:100px;
+	font-size:14px;
+	color:#000;
+	margin-top:1%;
+}
+.xyzz_cxtj input{
+	width:150px;
+	height:25px;
+	color:#000;
+}
+.xyzz_cxtj input[type='checkbox']{
+	width:16px;
+	height:16px;
+	margin-top:1px;
+}
+.xyzz_cxtj span{
+	font-weight:bold;
+	margin-left:4%;
+	line-height:20px;
+}
+.xyzz_cxtj label{
+	font-weight:100;
+}
+.xyzz_center{
+	width:98%;
+	height:340px;
+	border:1px solid #eee;
+	margin-left:1%;
+	margin-top:-2%;
+	overflow:scroll;
+	background:#FFF;
+	font-size:15px;
+	color:#000;
+}
+.xyzz_center table{
+	margin-top:1%;
+}
+.xyzz_center caption{
+	font-weight:bold;
+}
+.xyzz_center th{
+	font-weight:bold;
+}
+.xyzz_bottom{ 
+	width:100%; 
+	height:50px;
+	margin-top:2%; 
+}
+.xyzz_bottom span{
+	text-align:center;
+}
+.xyzz_bottom span p{ 
+	color:#000;
+	font-size:16px;
+	height:10px;
+	width:70px;
+	font-weight:bold;
+}
+.xyzz_bottom_c{
+	text-align:right; 
+	margin-right:5%;
+}
+.sm{
+	color:red;
+	font-weight:bold;
+}
