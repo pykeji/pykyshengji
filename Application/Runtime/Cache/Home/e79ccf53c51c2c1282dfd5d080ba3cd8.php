@@ -9,7 +9,7 @@
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
     <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
     <div class="title">患者登记</div>
     <div class="content center">
