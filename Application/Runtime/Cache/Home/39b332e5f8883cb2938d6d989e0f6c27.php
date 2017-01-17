@@ -125,6 +125,7 @@
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Kaifang/jingDian');?>" title="取经典方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>取经典方</span></a></li>
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Kaifang/jingYan');?>" title="取经验方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>取经验方</span></a></li>
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Kaifang/bianZheng');?>" title="辩证开方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>辩证开方</span></a></li>
+                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href=" <?php echo U('Kaifang/zyhome','system');?>" title="辩证开方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>自定义开方</span></a></li>
                         </ul>
                     </li>
                     <li class="li"><a class="tooltip-tip ajax-load" target="menu" href="<?php echo U('Kaifang/west');?>" title="西药开方"><i class="icon-window"></i><span>西（中成）药开方</span></a></li>
@@ -164,7 +165,7 @@
 </div>
 <div class="wrap-fluid" style="height:93%">
     <div class="container-fluid paper-wrap bevel tlbr" style="height:100%">
-        <div style="width:100%;height:110%; margin-top:-20px;">
+        <div style="width:100%;height:110%;margin-top:-20px;">
             <iframe src="<?php echo U('Index/jiezhen','');?>" id="menu" name="menu" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
         </div>
     </div>

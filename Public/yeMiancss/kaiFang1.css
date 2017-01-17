@@ -1,7 +1,11 @@
+html{width:100%;height:100%;}
+body{width:100%; height: 98%;}
 body input[type=text]{border:1px #DFD7D7 solid!important;color:#000!important}
-.shangcesousuo{margin-top:-15px}
+.shangcesousuo{margin-top: 5px;}
 .bingmingsousuo{float:left;margin-left:60px;width:22%}
-.zhengxingsousuo{float:left;margin-left:250px;width:22%}
+.zhengxingsousuo{float:left;margin-left:150px;width:22%}
+.anniuchufanghebing{float:left; text-align:center; margin-left: 150px; margin-top: 3px;}
+.anniuchuxuandingcifang{float: left;  margin-left: 20px;}
 .qingchusoufudong{clear:both}
 .kaishangzuo{float:left;overflow:auto;margin-top:10px;margin-left:60px;width:22%;height:35%;border:1px #DFD7D7 solid;border-radius:5px}
 .trdebingming{width:300px;background-color:#FE9;text-align:center}
@@ -12,7 +16,5 @@ body input[type=text]{border:1px #DFD7D7 solid!important;color:#000!important}
 .zhongjianhanziimg{margin-left:60px;width:30px}
 .zhongjianhanzichu{font-size:20px}
 .zhongjianhanzizhu{margin-left:10px;color:maroon}
-.ka1xXiaceChufang{float:left;overflow:auto;margin-left:60px;padding-left:20px;width:70%;height:55%;border:1px solid;border-radius:5px}
+.ka1xXiaceChufang{overflow:auto;margin-left:60px;padding-left:20px;width:70%;height:55%;border:1px solid;border-radius:5px}
 .ka1xXiacehanzi{margin-top:5px;width:600px;height:30px;text-align:center;font-size:20px}
-.chuFangHeBingkuang{float:left;margin-top:130px;width:23%;text-align:center}
-.qingchuhebingfudong{clear:both}
