@@ -2,19 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>中医辅助开方</title>
+    <title>中医健康管理系统</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/style.css">
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/loader-style.css">
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/style.css">
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/loader-style.css">
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
     <style type="text/css">
     </style>
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="/zySystem/Public/muban/assets/ico/minus.png">
+    <link rel="shortcut icon" href="/zysystem/Public/muban/assets/ico/minus.png">
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <nav role="navigation" class="navbar navbar-static-top">
@@ -41,13 +41,13 @@
                 </ul>
                 <ul id="nt-title">
                     <div style="margin-top:-3px;margin-left:10%">
-                        <iframe width="300" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="/zySystem/Public/tqyxy.html">
+                        <iframe width="300" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="/zysystem/Public/tqyxy.html">
                         </iframe>
                     </div>
                 </ul>
             </div>
             <ul style="margin-right:0" class="nav navbar-nav navbar-right">
-                <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="/zySystem/Public/muban/assets/img/canga.jpg"> Hi, 帅气的xxoo <b class="caret"></b></a>
+                <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="/zysystem/Public/muban/assets/img/canga.jpg"> Hi, 帅气的xxoo <b class="caret"></b></a>
                     <ul style="margin-top:14px" role="menu" class="dropdown-setting dropdown-menu">
                         <li><a href="#"><span class="entypo-user"></span>&#160;&#160;个人信息</a></li>
                         <li><a href="#"><span class="entypo-vcard"></span>&#160;&#160;详细信息</a></li>
@@ -84,14 +84,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="hidden-xs"><a class="toggle-left" href="#"><span style="font-size:20px" class="entypo-list-add">&nbsp;<span style="font-size:13px">知识库</span></span></a></li>
+                <li class="hidden-xs"><a class="toggle-left" href="#"><span style="font-size:20px" class="entypo-list-add">&nbsp;<span style="font-size:13px">病人信息</span></span></a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div id="skin-select">
     <div style="margin-top:-20px">
-        <a href="http://www.pengyukeji.com"><img src="/zySystem/Public/muban/assets/img/pengyu1.png" alt="logo" style="width:150px;margin-left:30px"></a>
+        <a href="http://www.pengyukeji.com"><img src="/zysystem/Public/muban/assets/img/pengyu1.png" alt="logo" style="width:150px;margin-left:30px"></a>
     </div>
     <a id="toggle"><span class="entypo-menu"></span></a>
     <div class="skin-part">
@@ -107,7 +107,7 @@
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Index/chaxun','');?>" title="查询">&nbsp;&nbsp;<i class="icon-search"></i><span>查询</span></a></li>
                         </ul>
                     </li>
-                    <li><a class="tooltip-tip ajax-load" href="#" title="健康档案"><i class="entypo-newspaper"></i><span>健康档案</span></a>
+                    <li><a class="tooltip-tip ajax-load" href="#" title="健康档案"><i class="glyphicon glyphicon-list-alt"></i><span>健康档案</span></a>
                         <ul>
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Index/jiankang','');?>" title="健康档案">&nbsp;&nbsp;<i class="entypo-doc-text"></i><span>健康档案</span></a></li>
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Index/tizhi','');?>" title="体质辨识">&nbsp;&nbsp;<i class="entypo-doc-text"></i><span>体质辨识</span></a></li>
@@ -131,16 +131,31 @@
                 </ul>
                 <ul class="topnav menu-left-nest">
                     <li><a href="#" style="border-left:0 solid!important" class="title-menu-left"><span>其他功能</span><i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i></a></li>
-                    <li class="li"><a class="tooltip-tip ajax-load" target="menu" href="<?php echo U('Huajia/index');?>" title="划价收费"><i class="glyphicon glyphicon-credit-card"></i><span>划价收费</span></a></li>
+                    <li class="li"><a class="tooltip-tip ajax-load" href="<?php echo U('Huajia/huajia');?>" title="划价收费" target="menu"><i class="glyphicon glyphicon-credit-card"></i><span>划价收费</span></a></li>
                     <li><a class="tooltip-tip ajax-load" href="#" title="统计查询"><i class="glyphicon glyphicon-search"></i><span>统计查询</span></a>
+                    <ul>
+                        <li class="li"><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/sfzonghe');?>" title="收费综合查询" target="menu">&nbsp; &nbsp; <i class="icon-search"></i><span>收费综合查询</span></a></li>
+                        <li class="li"><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/fyhuizong');?>" title="费用汇总" target="menu">&nbsp; &nbsp; <i class="icon-search"></i><span>费用汇总</span></a></li>
+                        <li class="li"><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/yptongji');?>" title="药品使用统计" target="menu">&nbsp; &nbsp; <i class="icon-search"></i><span>药品使用统计</span></a></li>
+                        <li class="li"><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/blchaxun');?>" title="病例查询" target="menu">&nbsp; &nbsp; <i class="icon-search"></i><span>病例查询</span></a></li>
+                        <li class="li"><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/zyzzchaxun');?>" title="中医诊治查询统计" target="menu">&nbsp; &nbsp; <i class="icon-search"></i><span>中医诊治查询统计</span></a></li>
+                        <li class="li"><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/xyzzchaxun');?>" title="西医诊治查询统计" target="menu">&nbsp; &nbsp; <i class="icon-search"></i><span>西医诊治查询统计</span></a></li>
+                    </ul>
+                    </li>
+                </ul>
+                <ul class="topnav menu-left-nest">
+                    <li><a href="#" style="border-left:0 solid!important" class="title-menu-left"><span>知识库</span><i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i></a></li>
+                    <li><a class="tooltip-tip ajax-load" href="#" title="中医四大名著"><i class="glyphicon glyphicon-book"></i><span>中医四大名著</span></a>
                         <ul>
-                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Chaxun/sfzonghe');?>" title="收费综合查询">&nbsp; &nbsp; <i class="icon-search"></i><span>收费综合查询</span></a></li>
-                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Chaxun/fyhuizong');?>" title="费用汇总">&nbsp; &nbsp; <i class="icon-search"></i><span>费用汇总</span></a></li>
-                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Chaxun/yptongji');?>" title="药品使用统计">&nbsp; &nbsp; <i class="icon-search"></i><span>药品使用统计</span></a></li>
-                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Chaxun/blchaxun');?>" title="病例查询">&nbsp; &nbsp; <i class="icon-search"></i><span>病例查询</span></a></li>
-                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Chaxun/zyzzchaxun');?>" title="中医诊治查询统计">&nbsp; &nbsp; <i class="icon-search"></i><span>中医诊治查询统计</span></a></li>
-                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Chaxun/xyzzchaxun');?>" title="西医诊治查询统计">&nbsp; &nbsp; <i class="icon-search"></i><span>西医诊治查询统计</span></a></li>
+                            <li><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/sfzonghe');?>" title="伤寒论" target="menu">&nbsp; &nbsp; <i class="glyphicon glyphicon-book"></i><span>伤寒论</span></a></li>
+                            <li><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/fyhuizong');?>" title="黄帝内经" target="menu">&nbsp; &nbsp; <i class="glyphicon glyphicon-book"></i><span>黄帝内经</span></a></li>
+                            <li><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/yptongji');?>" title="金匮要略" target="menu">&nbsp; &nbsp; <i class="glyphicon glyphicon-book"></i><span>金匮要略</span></a></li>
+                            <li><a class="tooltip-tip2 ajax-load" href="<?php echo U('Chaxun/blchaxun');?>" title="温病条辨" target="menu">&nbsp; &nbsp; <i class="glyphicon glyphicon-book"></i><span>温病条辨</span></a></li>
                         </ul>
+                    </li>
+                    <li><a class="tooltip-tip ajax-load" href="#" title="我的文档" target="menu"><i class="glyphicon glyphicon-folder-open"></i><span>我的文档</span></a></li>
+                    <li><a class="tooltip-tip ajax-load" href="#" title="临床诊断" target="menu"><i class="glyphicon glyphicon-file"></i><span>临床诊断</span></a></li>
+                    <li><a class="tooltip-tip ajax-load" href="#" title="中医药学会诊断指南" target="menu"><i class="glyphicon glyphicon-file"></i><span>中医药学会诊断指南</span></a></li>
                     </li>
                 </ul>
             </div>
@@ -149,7 +164,7 @@
 </div>
 <div class="wrap-fluid" style="height:85%">
     <div class="container-fluid paper-wrap bevel tlbr" style="height:100%">
-        <div style="width:100%;height:100%;">
+        <div style="width:100%;height:110%; margin-top:-20px;">
             <iframe src="<?php echo U('Index/jiezhen','');?>" id="menu" name="menu" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
         </div>
     </div>
@@ -158,35 +173,24 @@
     <div class="right-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <span class="label label-warning label-chat">中医四大名著</span>
-                <ul class="chat">
-                    <li><a href="<?php echo U();?>"><span></span><b>伤寒论</b></a></li>
-                    <li><a href="#"><span></span><b>黄帝内经</b></a></li>
-                    <li><a href="#"><span></span><b>金匮要略</b></a></li>
-                    <li><a href="#"><span></span><b>温病条辨</b></a></li>
-                </ul>
-            </div>
-            <div>
-                <br>
-                <br>
-            </div>
-            <div class="col-lg-12">
-                <span class="label label-warning label-chat">其他</span>
-                <ul class="chat">
-                    <li><a href="#"><span></span><b>我的文档</b></a></li>
-                    <li><a href="#"><span></span><b>临床诊断</b></a></li>
-                    <li><a href="#"><span></span><b>中医药学会诊断指南</b></a></li>
+                <span class="label label-warning label-chat">基本信息</span>
+                <ul class="chat" style="">
+                    <li style="color:#fff;margin-bottom:2%;">病&nbsp;历&nbsp;&nbsp;号：<input type="text" name="blNumber" value="1701160001" style="width:90px;color:#000;"></li>
+                    <li style="color:#fff;margin-bottom:2%;">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="Name" value="小七" style="width:90px;color:#000;"></li>
+                    <li style="color:#fff;margin-bottom:2%;">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="text" name="Sex" value="男" style="width:90px;color:#000;"></li>
+                    <li style="color:#fff;margin-bottom:2%;">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：<input type="text" name="Nianling" value="23" style="width:90px;color:#000;"></li>
+                    <li style="color:#fff;margin-bottom:2%;">出生日期：<input type="text" name="Date" value="1989-01-25" style="width:90px;color:#000;"></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/app.js"></script>
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/load.js"></script>
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/main.js"></script>
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/app.js"></script>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/load.js"></script>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/main.js"></script>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
 <center>
     <p>
     </p>
@@ -194,7 +198,7 @@
         <a href="http://www.pengyukeji.com/" target="_blank">河北鹏宇电子科技有限公司</a>
     </p>
 </center>
-<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zysystem/Public/js/shijian.js"></script>
 
 </body>
 </html>

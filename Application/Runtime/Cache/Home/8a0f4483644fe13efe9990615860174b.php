@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>患者预约</title>
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/yuyue.css">
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-    <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zysystem/Public/css/yuyue.css">
+    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zysystem/Public/js/jeDate/jedate.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
@@ -17,7 +17,7 @@
             <div class="title2 center">
                 <div class="titLeft">
                     <div>
-                        <img src="__PUBLIC__/img/reg.png" alt="图片加载失败！">
+                        <img src="/zysystem/Public/img/reg.png" alt="图片加载失败！">
                     </div>
                     <div class="modfont">
                         患者基本信息
@@ -25,7 +25,7 @@
                 </div>
                 <div class="titRight">
                     <div>
-                        <img src="__PUBLIC__/img/037.png" alt="图片加载失败！">
+                        <img src="/zysystem/Public/img/037.png" alt="图片加载失败！">
                     </div>
                     <div class="modfont">
                         当天已预约情况
@@ -115,4 +115,4 @@
 </script>
 </body>
 </html>
-<script src="__PUBLIC__/js/shijian.js"></script>
+<script src="/zysystem/Public/js/shijian.js"></script>
