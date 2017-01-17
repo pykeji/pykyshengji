@@ -4,19 +4,19 @@
   $(function() {
       $("#button-bg").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg5.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg5.jpg')no-repeat center center fixed"
           });
       });
       $("#button-bg2").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg2.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg2.jpg')no-repeat center center fixed"
           });
       });
 
 
       $("#button-bg3").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg.jpg')no-repeat center center fixed"
           });
 
 
@@ -24,7 +24,7 @@
 
       $("#button-bg5").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/giftly.png')repeat"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/giftly.png')repeat"
           });
 
       });
@@ -38,40 +38,40 @@
 
       $("#button-bg7").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg3.png')repeat"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg3.png')repeat"
           });
 
       });
       $("#button-bg8").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg8.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg8.jpg')no-repeat center center fixed"
           });
       });
       $("#button-bg9").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg9.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg9.jpg')no-repeat center center fixed"
           });
       });
 
       $("#button-bg10").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg10.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg10.jpg')no-repeat center center fixed"
           });
       });
       $("#button-bg11").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg11.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg11.jpg')no-repeat center center fixed"
           });
       });
       $("#button-bg12").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg12.jpg')no-repeat center center fixed"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg12.jpg')no-repeat center center fixed"
           });
       });
 
       $("#button-bg13").click(function() {
           $("body").css({
-              "background": "url('http://localhost/TP3.2.3pykj/Public/muban/assets/img/bg13.jpg')repeat"
+              "background": "url('http://localhost/zySystem/Public/muban/assets/img/bg13.jpg')repeat"
           });
 
       });

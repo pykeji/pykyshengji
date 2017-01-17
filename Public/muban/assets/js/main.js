@@ -1,15 +1,15 @@
 //Sliding Effect Control
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/skin-select/jquery.cookie.js");
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/skin-select/skin-select.js");
+head.js("http://localhost/zySystem/Public/muban/assets/js/skin-select/jquery.cookie.js");
+head.js("http://localhost/zySystem/Public/muban/assets/js/skin-select/skin-select.js");
 
 //Showing Date
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/clock/date.js");
+head.js("http://localhost/zySystem/Public/muban/assets/js/clock/date.js");
 
 //Bootstrap
 //head.js("assets/js/bootstrap.js");
 
 //NEWS STICKER
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/newsticker/jquery.newsTicker.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/newsticker/jquery.newsTicker.js", function() {
 
     var nt_title = $('#nt-title').newsTicker({
         row_height: 18,
@@ -26,20 +26,20 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/newsticker/jquery.n
 
 ////Acordion and Sliding menu
 
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/custom/scriptbreaker-multiple-accordion-1.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/custom/scriptbreaker-multiple-accordion-1.js", function() {
 
     $(".topnav").accordionze({
         accordionze: true,
         speed: 500,
-        closedSign: '<img src="http://localhost/TP3.2.3pykj/Public/muban/assets/img/plus.png">',
-        openedSign: '<img src="http://localhost/TP3.2.3pykj/Public/muban/assets/img/minus.png">'
+        closedSign: '<img src="http://localhost/zySystem/Public/muban/assets/img/plus.png">',
+        openedSign: '<img src="http://localhost/zySystem/Public/muban/assets/img/minus.png">'
     });
 
 });
 
 ////Right Sliding menu
 
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/slidebars/slidebars.min.js", "http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/slidebars/slidebars.min.js", "http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js", function() {
 
     $(document).ready(function() {
         var mySlidebars = new $.slidebars();
@@ -53,7 +53,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/slidebars/slidebars
 //-------------------------------------------------------------
 
 //SEARCH MENU
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/search/jquery.quicksearch.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/search/jquery.quicksearch.js", function() {
 
     $('input.id_search').quicksearch('#menu-showhide li, .menu-left-nest li');
    
@@ -65,7 +65,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/search/jquery.quick
 
 
 //EASY PIE CHART
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/gage/jquery.easypiechart.min.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/gage/jquery.easypiechart.min.js", function() {
 
     $(function() {
 
@@ -117,7 +117,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/gage/jquery.easypie
 
 //TOOL TIP
 
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/tip/jquery.tooltipster.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/tip/jquery.tooltipster.js", function() {
 
     $('.tooltip-tip-x').tooltipster({
         position: 'right'
@@ -173,7 +173,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/tip/jquery.tooltips
 //NICE SCROLL
 
 
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/nano/jquery.nanoscroller.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/nano/jquery.nanoscroller.js", function() {
 
     $(".nano").nanoScroller({
         //stop: true 
@@ -196,7 +196,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/nano/jquery.nanoscr
 //------------------------------------------------------------- 
 //PAGE LOADER
 
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/pace/pace.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/pace/pace.js", function() {
 
     paceOptions = {
         ajax: false, // disabled
@@ -212,7 +212,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/pace/pace.js", func
 //------------------------------------------------------------- 
 
 //SPARKLINE CHART
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/chart/jquery.sparkline.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/chart/jquery.sparkline.js", function() {
 
     $(function() {
         $('.inlinebar').sparkline('html', {
@@ -277,7 +277,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/chart/jquery.sparkl
 //------------------------------------------------------------- 
 
 //DIGITAL CLOCK
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/clock/jquery.clock.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/clock/jquery.clock.js", function() {
 
     //clock
     $('#digital-clock').clock({
@@ -291,7 +291,7 @@ head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/clock/jquery.clock.
 
 //------------------------------------------------------------- 
 
-head.js("http://localhost/TP3.2.3pykj/Public/muban/assets/js/gage/raphael.2.1.0.min.js", "http://localhost/TP3.2.3pykj/Public/muban/assets/js/gage/justgage.js", function() {
+head.js("http://localhost/zySystem/Public/muban/assets/js/gage/raphael.2.1.0.min.js", "http://localhost/zySystem/Public/muban/assets/js/gage/justgage.js", function() {
 
 
 
