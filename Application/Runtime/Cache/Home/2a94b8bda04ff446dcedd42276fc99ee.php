@@ -19,7 +19,7 @@
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="/zySystem/Public/muban/assets/ico/minus.png">
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <!-- Preloader -->
 <div id="preloader">
     <div id="status">

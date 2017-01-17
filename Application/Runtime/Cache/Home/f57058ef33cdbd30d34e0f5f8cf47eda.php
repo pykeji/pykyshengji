@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>患者登记</title>
+    <title>接诊区_中医健康管理系统</title>
     <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/zySystem/Public/css/jiezhen.css">
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
     <div class="title center">接诊区</div>
     <div class="yuyue">

@@ -1,4 +1,21 @@
 /*划价收费*/
+.button{ 
+	width:90%; 
+	height:50px;
+	margin-left:5%;
+	margin-top:2%; 
+}
+.button span{
+	text-align:center;
+}
+.button span p{ 
+	color:#000;
+	font-size:16px;
+	height:10px;
+	width:70px;
+	font-weight:bold;
+}
+.button{text-align:right; }
 .top{ 
 	width:90%;
 	height:55px;
@@ -6,13 +23,13 @@
 	margin-left:5%;
 	color:#000;
 	font-size:16px;
-	padding:1.4% 1%;
+	padding:1.5% 1%;
 	letter-spacing:2px;
 	background-image:url('../img/ID.png');
 	background-repeat:no-repeat;
 	background-size:100%;
 }
-.top span{margin-left:6.5%;}
+.top span{margin-left:6%;}
 .center{
 	width:90%;
 	height:380px;
@@ -22,7 +39,7 @@
 	color:#000;
 }
 .center_t{ 
-	width:100%; 
+	width:100%;
 	height:120px; 
 }
 .tab1{ 
@@ -106,20 +123,3 @@
 	height:260px;
 	margin-top:1%;
 }
-.bottom{ 
-	width:90%; 
-	height:50px;
-	margin-left:5%;
-	margin-top:2%; 
-}
-.bottom span{
-	text-align:center;
-}
-.bottom span p{ 
-	color:#000;
-	font-size:16px;
-	height:10px;
-	width:70px;
-	font-weight:bold;
-}
-.bottom_c{text-align:right; }

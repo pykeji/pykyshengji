@@ -10,7 +10,7 @@
     <link href="/zySystem/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="/zySystem/Public/bootstrap/js/bootstrap.js"></script>
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<!-- 内容 -->
 	<div style="width: 100%; height: 100%;">
     	<!-- 搜索 -->
