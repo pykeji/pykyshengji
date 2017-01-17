@@ -23,7 +23,7 @@ class KaifangController extends Controller {
     public function west(){
         $this->display();
     }
-    public function zykf(){
+    public function zyhome(){
         $this->display();
     }
 }

@@ -125,6 +125,7 @@
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Kaifang/jingDian');?>" title="取经典方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>取经典方</span></a></li>
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Kaifang/jingYan');?>" title="取经验方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>取经验方</span></a></li>
                             <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href="<?php echo U('Kaifang/bianZheng');?>" title="辩证开方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>辩证开方</span></a></li>
+                            <li class="li"><a class="tooltip-tip2 ajax-load" target="menu" href=" <?php echo U('Kaifang/zyhome','system');?>" title="辩证开方">&nbsp; &nbsp;<i class="entypo-doc-text"></i><span>自定义开方</span></a></li>
                         </ul>
                     </li>
                     <li class="li"><a class="tooltip-tip ajax-load" target="menu" href="<?php echo U('Kaifang/west');?>" title="西药开方"><i class="icon-window"></i><span>西（中成）药开方</span></a></li>
