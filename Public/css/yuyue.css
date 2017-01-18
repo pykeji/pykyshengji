@@ -35,8 +35,8 @@ img{border:0px;}
 .inf table{width:95%;}
 .inf .mbt{height:100%;}
 .inf table tr{height:35px;line-height:24px;}
-.inf table tr td input[type='text']{width:80%;}
-.inf table tr td .lontext{width:92%!important;}
+.inf table tr td input[type='text']{width:85%;}
+.inf table tr td .lontext{width:94%!important;}
 .inf .rtable{width:100%;overflow-y:scroll;}
 .inf .rtable tr td{border:1px solid #cccccc;cursor:pointer;}
 .inf .rtable tr:first-child td{background-color:#d7d715;color:#000000;text-align:center;}

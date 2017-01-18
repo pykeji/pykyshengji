@@ -40,8 +40,10 @@ img{border:0px;}
 .yytab table tr td{border-top:1px solid #CCCCCC;font-size:16px;}
 .yytab table tr:last-child{border-bottom:1px solid #CCCCCC;}
 .yytab table .sty1 td{color:#000000;}
-.yytab table .sty2 td{background-color:rgba(0,120,215,0.8);color:#ffffff;}
+.yytab table .sty1:hover{background-color:rgba(134,190,248,0.5);}
+.yytab table .sty2 td{background-color:rgba(0,96,197,0.5);color:#ffffff;}
 .yytab table tr td span{color:#0338d9;text-decoration: underline;cursor: pointer;font-size:16px;}
+.yytab table .sty2 td span{color:#FFFFFF;}
 /*统计栏*/
 .yytj{height:30px;width:100%;background-color:#ffee99;margin-bottom:0px;line-height:30px;}
 .yytj>span{color:#000000;margin-left:10px;}
