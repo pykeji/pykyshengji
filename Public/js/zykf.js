@@ -289,8 +289,8 @@ $(function(){
         borderWidth: 0, 
         x:40,
         x2:10, 
-        y: 85,  
-        y2: 75  
+        y: 95,  
+        y2: 85  
     },  
     xAxis: [  
         {  
