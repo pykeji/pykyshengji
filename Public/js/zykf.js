@@ -47,7 +47,7 @@ $(function(){
 			// 	$(this).val(aab);
 			// });
 			$('input:checkbox[name="xuanzeyp"]:checked').each(function(){
-				var ttt = $(this).parent().find('.zykf_ypke').val()*1*bl;
+				var ttt = $(this).parent().find('.ypylke').val()*1*bl;
 				$(this).parent().find('.ypylke').val(ttt);
 			});
 		}
