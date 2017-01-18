@@ -18,13 +18,14 @@ $("#myTiContent tr td").click(function(){
     $(this).attr('class','sty1');
     $("#myTiContent tr td").not(this).attr('class','');
 })
-//选中题目题号变色
+//选中选项变色
 $(".ti-content label input").click(function(){
     var xxn="xx"+$(".sty1").children().html();
     var xx=document.getElementsByName(xxn);
     for(var i=0;i<xx.length;i++){
         if(xx[i].checked){
             $("#"+xxn).css("background-color","#d6faf6");
+            $("#xyt").click();
         }
     }
 })

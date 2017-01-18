@@ -165,7 +165,7 @@
 </div>
 <div class="wrap-fluid" style="height:93%">
     <div class="container-fluid paper-wrap bevel tlbr" style="height:100%">
-        <div style="width:100%;height:110%;margin-top:-20px;">
+        <div style="width:100%;height:107%;margin-top:-20px;">
             <iframe src="<?php echo U('Index/jiezhen','');?>" id="menu" name="menu" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
         </div>
     </div>

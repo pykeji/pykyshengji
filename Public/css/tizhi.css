@@ -14,7 +14,7 @@ img{border:0px;}
 /*选项卡内容部分*/
 #myTabContent{height:100%;width:100%;}
 .tab-pane{height:100%;width:100%;}
-#home{height:90%;width:100%;border:1px solid #CCCCCC;border-top:0px;border-radius:0px 5px 5px 5px;}
+#home{height:80%;width:100%;border:1px solid #CCCCCC;border-top:0px;border-radius:0px 5px 5px 5px;}
 /*题目部分*/
 .ti{height:60%;}
 .ti .ti-title{height:15%;font-size:20px;padding:10px 0px;background-color:#edf0df;}
@@ -64,4 +64,4 @@ img{border:0px;}
 /*按钮*/
 #myTabContent{position: relative;}
 .anniu{position:absolute;right:10px;top:-38px;}
-.anniu button{margin-bottom:10px;padding:8px 15px!important;}
+.anniu button{margin-bottom:10px;padding:6px 15px!important;}

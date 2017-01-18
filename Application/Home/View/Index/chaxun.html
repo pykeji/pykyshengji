@@ -9,7 +9,7 @@
     <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
     <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
     <div class="bg">
     <div class="title center" id="title">
         查询窗口
@@ -60,7 +60,7 @@
                 <td width="8%">预约日期</td>
                 <td width="7%">操作</td>
             </tr>
-            <tr class="cxtr1">
+            <tr class="cxtr1" name="cxtableSty">
                 <td>000011</td>
                 <td>阿布</td>
                 <td>男</td>
@@ -78,7 +78,7 @@
                     <span>预约</span>
                 </td>
             </tr>
-            <tr class="cxtr1">
+            <tr class="cxtr1" name="cxtableSty">
                 <td>000011</td>
                 <td>阿布</td>
                 <td>男</td>
@@ -171,3 +171,4 @@
 </body>
 </html>
 <script src="__PUBLIC__/js/shijian.js"></script>
+<script src="__PUBLIC__/js/tr.js"></script>
