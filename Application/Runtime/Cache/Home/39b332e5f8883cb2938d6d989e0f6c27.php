@@ -199,6 +199,7 @@
         <a href="http://www.pengyukeji.com/" target="_blank">河北鹏宇电子科技有限公司</a>
     </p>
 </center>
+<!-- <script type="text/javascript" src="/zySystem/Public/js/jquery-3.1.1.min.js"></script> -->
 <script src="/zySystem/Public/js/shijian.js"></script>
 
 </body>

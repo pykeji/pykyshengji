@@ -11,7 +11,7 @@
 		}
 	</style>
 	</head>
-	<body>
+	<body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<!-- 最外围大div -->
 	<div id="big">
 		<div id="title">

@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="/zySystem/Public/js/echarts.simple.min.js"></script>
 	<script type="text/javascript" src="/zySystem/Public/js/zykf.js"></script>
 	</head>
-	<body>
+	<body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div id="waibig">
 	<!-- 最上方药品处理等	 -->
 	
