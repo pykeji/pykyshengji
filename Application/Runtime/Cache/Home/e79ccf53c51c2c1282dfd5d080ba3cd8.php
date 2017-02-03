@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>患者登记</title>
-    <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/zysystem/Public/css/dengji.css">
-    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
-    <script src="/zysystem/Public/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/dengji.css">
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
@@ -16,7 +16,7 @@
         <div style="background-color:#d7d715;border-radius:10px 10px 0px 0px">
             <div class="title2 center">
                 <div>
-                    <img src="/zysystem/Public/img/reg.png" alt="图片加载失败！">
+                    <img src="/zySystem/Public/img/reg.png" alt="图片加载失败！">
                 </div>
                 <div class="djfont">
                     患者基本信息
@@ -78,10 +78,10 @@
         </form>
         <div class="but">
             <div class="butt">
-                <button type="button" class="btn btn-warning first">保存</button>
+                <a href=""><button type="button" class="btn btn-warning first">保存</button></a>
             </div>
             <div class="butt">
-                <button type="button" class="btn btn-warning last">就诊</button>
+                <a href=""><button type="button" class="btn btn-warning last">就诊</button></a>
             </div>
         </div>
     </div>
@@ -91,4 +91,4 @@
 </script>
 </body>
 </html>
-<script src="/zysystem/Public/js/shijian.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>
