@@ -6,11 +6,11 @@ ul{list-style:none;list-style-position:inside;}
 img{border:0px;}
 .W{width:1366px;}
 .center{margin:0px auto;}
-.bg{height:100%;width:100%;margin-top:-20px;}
+.bg{height:100%;width:100%;}
 
 .xxk{margin-left:40px;height:100%;width:93%;position:relative;}
-#myTabContent{height:100%;width:100%;background-color:#d9d9d9;clear: both;border:1px solid #cccccc;overflow:auto;
-    padding-top:60px;}
+#myTabContent{height:93%;width:100%;background-color:#d9d9d9;clear: both;border:1px solid #cccccc;overflow:auto;
+    padding-top:60px;padding-bottom:60px;}
 /*表格内部内容*/
 .tab-content .healthGui{height:100%;width:70%;margin:0px auto;}
 /*白色背景*/
@@ -24,4 +24,4 @@ img{border:0px;}
 .tab-content .healthGui form img{width:100%;}
 /*按钮*/
 .button{position:absolute;right:38px;top:5px;}
-.button button{padding:8px 15px!important;}
+.button button{padding:6px 15px!important;}

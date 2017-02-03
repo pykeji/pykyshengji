@@ -38,7 +38,8 @@ label{font-weight: 400!important;}
 .cxtable tr:first-child{background-color:#f0f0f0;color:#333333;}
 .cxtable tr:first-child td{font-size:18px;}
 .cxtable table .cxtr1{color:#000000;}
-.cxtable table .cxtr2{background-color:rgba(0,120,215,0.8);color:#ffffff;}
+.cxtable table .cxtr1:hover{background-color:rgba(134,190,248,0.5);}
+.cxtable table .cxtr2{background-color:rgba(0,96,197,0.5);color:#ffffff;}
 .cxtable table tr td span{color:#0338d9;text-decoration: underline;cursor: pointer;font-size:16px;}
 /*统计栏*/
 /*.fenye{height:30px;width:98%;background-color:#027ec4;margin-bottom:0px;line-height:30px;}*/
