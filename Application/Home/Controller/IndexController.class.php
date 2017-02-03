@@ -9,9 +9,9 @@ class IndexController extends Controller {
         $this->display();
     }
     public function dengji(){
-    	$Data     = M('station_p');// 实例化Data数据模型
-        $result = $Data->select();
-        $this->assign('result',$result);
+    	// $Data     = M('station_p');// 实例化Data数据模型
+        // $result = $Data->select();
+        // $this->assign('result',$result);
         $this->display();
     
 
