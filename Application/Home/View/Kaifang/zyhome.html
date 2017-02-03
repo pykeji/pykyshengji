@@ -4,17 +4,13 @@
 	<link rel="stylesheet" href="__PUBLIC__/css/zykf.css">
 	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.css">
 	<script type="text/javascript" src="__PUBLIC__/jq/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/echarts.simple.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/zykf.js"></script>
-	<script src="__PUBLIC__/js/echarts.simple.min.js"></script>
 	</head>
-	<body>
+	<body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div id="waibig">
 	<!-- 最上方药品处理等	 -->
-	<div id="dfww">
-		<div id="lscf">药品处理</div>
-		<div id="ylcf">预览处方</div>
-		<div id="xtys">系统预审</div>
-	</div>
+	
 	<!-- 历史处方，当天处方 -->
 	<div id="zccfls">
 		当<br/>天<br/>处<br/>方
@@ -53,7 +49,12 @@
 		<div id="dtcfxq">当天处方</div>
 		<!-- 病人信息div -->
 		<div id="brxx">
-			病人ID:1612130001&nbsp;&nbsp;&nbsp;姓名:张三&nbsp;&nbsp;&nbsp;性别:男&nbsp;&nbsp;&nbsp;年龄:21&nbsp;&nbsp;&nbsp;出生日期:1996-12-14
+			<a href="#" class="lli">药解</a>
+			<a href="#" class="lli">上移</a>
+			<a href="#" class="lli">下移</a>
+			<a href="#" class="lli">新增处方</a>
+			<a href="#" class="lli">随症加减</a>
+			<a href="#" class="lli" style="color:red">保存</a>
 		</div>
 		<!-- 用户操作调整div -->
 		<div id="yhcz">
@@ -78,15 +79,19 @@
 				<input type="text" name="bl1" value="50" class="text" id="ttzz">kg
 			</span>
 		</div>
+		<div id="tzjydiv">
 			<button class="btn btn-info" id="tzan">
 				调整
 			</button>
 			<button class="btn btn-success" id="jyan">
 				加药
 			</button>
+		</div>
+			<div id="everyone">
 			<label id="qxspan">
 				<input type="checkbox" name="quan" id="qxche">全选
 			</label>
+			</div>
 		</div>
 		<!-- 处方明细div -->
 		<div id="cfmx">
@@ -203,14 +208,20 @@
 		
 		<!-- 温热平寒占比 -->
 		<div id="wrphzb">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>温</b>:25%&nbsp;&nbsp;&nbsp;<b>热</b>:25%&nbsp;&nbsp;&nbsp;<b>平</b>:25%&nbsp;&nbsp;&nbsp;<b>寒</b>:25%
-		</div>
-		<div id="jjffyyl">
-		<select name="" id="" class="a1"><option>用法</option></select>
-		<select name="" id="" class="a1"><option>用量</option></select>
-		<select name="" id="" class="a1"><option>1次/日</option></select>
-		<button class="btn btn-danger" id="tcana">退出</button>
-		<button class="btn btn-warning" id="xdcfana">选定此方</button>
+			<div id="wrphbzt">
+				
+			</div>
+			<div id="sgsle">
+				<select name="" class="select">
+					<option value="1">煎法</option>
+				</select><br>
+				<select name="" class="select">
+					<option value="1">用法</option>
+				</select><br>
+				<select name="" class="select">
+					<option value="1">用量</option>
+				</select>
+			</div>
 		</div>
 	</div>
 	<!-- 右边大div -->
