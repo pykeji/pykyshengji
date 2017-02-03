@@ -8,6 +8,9 @@ class IndexController extends Controller {
     public function home(){
         $this->display();
     }
+    public function jiezhen(){
+        $this->display();
+    }
     public function dengji(){
     	// $Data     = M('station_p');// 实例化Data数据模型
         // $result = $Data->select();
@@ -16,5 +19,20 @@ class IndexController extends Controller {
     
 
         // $this->display();
+    }
+    public function yuyue(){
+        $this->display();
+    }
+    public function chaxun(){
+        $this->display();
+    }
+    public function jiankang(){
+        $this->display();
+    }
+    public function tizhi(){
+        $this->display();
+    }
+    public function tiaoyang(){
+        $this->display();
     }
 }
