@@ -23,7 +23,7 @@ class Sqlsrv extends Driver{
         PDO::ATTR_CASE              =>  PDO::CASE_LOWER,
         PDO::ATTR_ERRMODE           =>  PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_STRINGIFY_FETCHES =>  false,
-        PDO::SQLSRV_ATTR_ENCODING   =>  PDO::SQLSRV_ENCODING_UTF8,
+        // PDO::SQLSRV_ATTR_ENCODING   =>  PDO::SQLSRV_ENCODING_UTF8,
     );
 
     /**

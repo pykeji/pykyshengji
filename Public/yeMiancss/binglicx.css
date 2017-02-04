@@ -1,3 +1,5 @@
+html{width:100%;height:100%;}
+body{width:100%; height: 98%;}
 /*查询条件*/
 body{
 	font-family:  Arial, "宋体";
@@ -11,7 +13,7 @@ body input[type="text"]{
 	float: left;
 	width: 30%;
 	height: 105%;
-	margin-top: -15px;
+	margin-top: 6px;
 
 }
 	.chaxtjhanzi{
@@ -45,7 +47,7 @@ body input[type="text"]{
 .youkuaixinx{
 	/*border: 1px pink solid;*/
 	float: left;
-	margin-top: -15px;
+	margin-top: 6px;
 	width: 65%;
 	height: 105%;
 }

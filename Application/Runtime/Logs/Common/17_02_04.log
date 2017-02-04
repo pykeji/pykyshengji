@@ -1,0 +1,42 @@
+[ 2017-02-04T15:10:59+08:00 ] ::1 /zySystem/Login/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+ERR: 无法加载模块:Login
+
+[ 2017-02-04T15:11:35+08:00 ] ::1 /zySystem/Login/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+ERR: 无法加载模块:Login
+
+[ 2017-02-04T15:11:41+08:00 ] ::1 /zySystem/Login/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+ERR: 无法加载模块:Login
+
+[ 2017-02-04T16:00:58+08:00 ] ::1 /zySystem/index.php/zySystem/index.php/Home/Index/index.html/a/%E6%82%A8%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%B7%B2%E7%BB%8F%E5%88%B0%E6%9C%9F.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+ERR: 无法加载模块:ZySystem
+
+[ 2017-02-04T16:07:26+08:00 ] ::1 /zySystem/index.php/index/index/aa/123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+ERR: 无法加载模块:Index
+
+[ 2017-02-04T16:09:31+08:00 ] ::1 /zySystem/index.php/index/index/a/a.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+ERR: 无法加载模块:Index
+
+[ 2017-02-04T17:36:31+08:00 ] ::1 /zySystem/Public/muban/assets/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+ERR: 无法加载模块:Public
+
