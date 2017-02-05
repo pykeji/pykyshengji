@@ -19,13 +19,24 @@ class LoginController extends Controller {
           $code = $result['code'];
           //机构编码存入session
            session('wh_code',$code);
+           $id = $result['id'];
          //用户名存入session
             session('wh_userName',$name);
+            session('wh_userId',$id);
            // var_dump($_SESSION);
            $this->display('index/home');
         }else{
            $this->redirect('index/index',array('aa'=>1));
         }
+    }
+    public function userInfo(){
+        $id = $_SESSION['wh_userId'];
+        $Model = M('power-name');
+        $User = M('user-info-dict');
+        $pow = $User->where("id={$id}")->getField('power');
+        $name = $Model->where("id={$pow}")->getField('name');
+        $this->assign('zhiwei',$name);
+        $this->display('index/userHome');
     }
     
 }
