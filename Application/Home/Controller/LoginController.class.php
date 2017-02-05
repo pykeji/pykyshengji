@@ -6,11 +6,12 @@ class LoginController extends Controller {
         $user = M('user-info-dict');
         //组合查询条件
         $where = array();
+        // dump($_POST);
         $name = $_POST['name'];
         $pwd = $_POST['password'];
         // dump($pwd);
-        $where['name'] = $name;
-        $where['password'] = $pwd;
+        $where['userName'] = $name;
+        $where['passWord'] = $pwd;
         $result = $user->where($where)->find();
         // dump($result);
         //验证用户名密码对比
