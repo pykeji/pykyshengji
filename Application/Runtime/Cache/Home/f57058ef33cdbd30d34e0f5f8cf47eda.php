@@ -48,37 +48,34 @@
                     <!--<th width="12%">E-Mail</th>-->
                     <th width="12%">操作</th>
                 </tr>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!-- <volist name="vo['1']" id="sub"> -->
                 <tr class="sty1" name="tableSty">
-                    <td>2016-11-28 11:03:03</td>
-                    <td>阿布</td>
-                    <td>男</td>
-                    <td>36岁</td>
-                    <!--<td>1980-01-01</td>-->
-                    <!--<td>130185111111111111</td>-->
-                    <td>18333333333</td>
-                    <!--<td>河北省石家庄市睿和中心河北鹏宇电子科技有限公司</td>-->
-                    <!--<td>86519-85125379</td>-->
-                    <!--<td>xmr93213@qq.com</td>-->
                     <td>
-                        <span data-toggle="modal" data-target="#myModal">详细信息</span>
-                        <span>就诊</span>
+                        <?php echo ($vo["p_date"]); ?>
+                    </td>
+                    <td>
+                        <?php echo ($vo["br_name"]); ?>
+                    </td>
+                    <td>
+                        <?php echo ($vo["xb"]); ?>
+                    </td>
+                    <td>
+                        <?php echo ($vo["nl"]); ?>
+                    </td>
+                    <td>
+                        <?php echo ($vo["tel"]); ?>
+                        <input type="hidden" class="ajaxcanshu" value="<?php echo ($vo["br_id"]); ?>">
+                    </td>
+                        
+                    <td>
+                        <span data-toggle="modal" data-target="#myModal" name=""  class="ajaxxinxishuju" >详细信息</span>
+                        <a href='<?php echo U("Index/jiankang",array("id"=>$vo[br_id]));?>' ><span>就诊</span></a>
                         <span data-toggle="modal" data-target="#myModal2">修改</span>
                         <span>收费</span>
                     </td>
                 </tr>
-                <tr class="sty1" name="tableSty">
-                    <td>2016-11-28 11:03:03</td>
-                    <td>阿布</td>
-                    <td>男</td>
-                    <td>36岁</td>
-                    <td>18333333333</td>
-                    <td>
-                        <span data-toggle="modal" data-target="#myModal">详细信息</span>
-                        <span>就诊</span>
-                        <span data-toggle="modal" data-target="#myModal2">修改</span>
-                        <span>收费</span>
-                    </td>
-                </tr>
+                    <!--<?php endforeach; endif; else: echo "" ;endif; ?> -->
+                <volist> 
             </table>
         </div>
         <div class="yytj">
@@ -101,13 +98,13 @@
                 <table border="0" class="mbt">
                     <tr>
                         <td>病历号：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input type="text" id="ajaxmtbrid" readonly="readonly"></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>姓名：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmtbrname" type="text" readonly="readonly"></td>
                         <td>性别：</td>
                         <td>
                             <label><input type="radio" name="sex" checked="checked" disabled="disabled"><span>男</span></label>
@@ -116,33 +113,33 @@
                     </tr>
                     <tr>
                         <td>年龄：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmtnl" type="text" readonly="readonly"></td>
                         <td>出生年月：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmtcsdate" type="text" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>身份证号：</td>
-                        <td colspan="3"><input type="text" class="lontext" readonly="readonly"></td>
+                        <td colspan="3"><input id="ajaxmtpass" type="text" class="lontext" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>单位：</td>
-                        <td colspan="3"><input type="text" class="lontext" readonly="readonly"></td>
+                        <td colspan="3"><input id="ajaxmtdw" type="text" class="lontext" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>电话：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmttel" type="text" readonly="readonly"></td>
                         <td>E-Mail：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmtemail" type="text" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>挂号费：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmtghf" type="text" readonly="readonly"></td>
                         <td>传真：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmtfax" type="text" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>预约日期：</td>
-                        <td><input type="text" readonly="readonly"></td>
+                        <td><input id="ajaxmtpdate" type="text" readonly="readonly"></td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -223,5 +220,49 @@
 </div>
 </body>
 </html>
+<script type="text/javascript">
+    $(".ajaxxinxishuju").click(function(){
+        $id = $(this).parent().parent().find(".ajaxcanshu").val();
+        // alert($id);
+        $.ajax({
+            type:'get',
+            url:'<?php echo U("Index/jiezhenxiangqajax");?>',
+            data:{"id":$id},
+            dataType:'json',
+            success:function(dd)
+            {
+                // console.log(dd);
+                // 获取对应的病人基本信息
+                $br_id = dd[0]['br_id'];
+                $br_name = dd[0]['br_name'];
+                $nl = dd[0]['nl'];
+                $cs_date = dd[0]['cs_date'];
+                $pass = dd[0]['pass'];
+                $dw = dd[0]['dw'];
+                $tel = dd[0]['tel'];
+                $email = dd[0]['e_mail'];
+                $ghf = dd[0]['ghf'];
+                $fax = dd[0]['fax'];
+                $p_date = dd[0]['p_date'];
+                // 通过js将信息添加到页面
+                $("#ajaxmtbrid").val($br_id);
+                $("#ajaxmtbrname").val($br_name);
+                $("#ajaxmtnl").val($nl);
+                $("#ajaxmtcsdate").val($cs_date);
+                $("#ajaxmtpass").val($pass);
+                $("#ajaxmtdw").val($dw);
+                $("#ajaxmttel").val($tel);
+                $("#ajaxmtemail").val($email);
+                $("#ajaxmtghf").val($ghf);
+                $("#ajaxmtfax").val($fax);
+                $("#ajaxmtpdate").val($p_date);
+            },
+            error:function()
+            {
+                alert(Ajax请求失败);
+            }
+        });
+    });
+</script>
 <script src="/zySystem/Public/js/shijian.js"></script>
 <script src="/zySystem/Public/js/tr.js"></script>

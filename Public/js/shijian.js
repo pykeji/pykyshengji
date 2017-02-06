@@ -35,6 +35,7 @@ function date2(){
     var strDate = date.getDate();
     var hours = date.getHours();
     var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
     if (month >= 1 && month <= 9) {
         month = "0" + month;
     }
@@ -47,7 +48,7 @@ function date2(){
     if (minutes >= 0 && minutes <= 9) {
         minutes = "0" + minutes;
     }
-    var date2=year+"-"+month+"-"+strDate+" "+hours+":"+minutes;
+    var date2=year+"-"+month+"-"+strDate+" "+hours+":"+minutes+":"+seconds;
     $(".yyrq").val(date2);
 }
 // 动态时间
