@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>健康档案</title>
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/zySystem/Public/css/jkda.css">
-    <link rel="stylesheet" href="/zySystem/Public/css/jiankang.css">
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
-    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zysystem1/Public/css/jkda.css">
+    <link rel="stylesheet" href="/zysystem1/Public/css/jiankang.css">
+    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zysystem1/Public/js/jeDate/jedate.js"></script>
 </head>
 <body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
     <div class="bg">
@@ -583,4 +583,4 @@
     </script>
 </body>
 </html>
-<script src="/zySystem/Public/js/bingshi.js"></script>
+<script src="/zysystem1/Public/js/bingshi.js"></script>

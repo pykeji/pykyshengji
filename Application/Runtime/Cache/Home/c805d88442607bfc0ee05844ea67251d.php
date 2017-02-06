@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>收费综合查询_中医健康管理系统</title>
-	<link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="/zySystem/Public/muban/assets/css/easyui.css">
-	<link rel="stylesheet" href="/zySystem/Public/muban/assets/css/chaxun.css">
-	<script type="text/javascript" src="/zySystem/Public/muban/assets/jedate/jedate.js"></script>
-	<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/easyui.css">
+	<link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/chaxun.css">
+	<script type="text/javascript" src="/zysystem1/Public/muban/assets/jedate/jedate.js"></script>
+	<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.easyui.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+	<div class="tool">
+		<input type="button" name="query" value="查询">
+		<input type="button" name="print" value="打印">
+		<input type="button" name="exit" value="退出">
+		<p id="demo"></p>
+	</div>
 	<div class="sfzh_top">
-		<img src="/zySystem/Public/muban/assets/img/chaxun.png" width="30" height="30">
+		<img src="/zysystem1/Public/muban/assets/img/chaxun.png" width="30" height="30">
 		<div class="h">查询条件:</div>
 	</div>
 	<div class="cxtj">
@@ -118,15 +124,6 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
-	<div class="sfzh_bottom">
-		<div class="sfzh_bottom_c">
-			<span class="btn btn-success"><p>查询</p></span>
-			<span class="btn btn-warning"><p>打印</p></span>
-			<span class="btn btn-success"><p>刷新</p></span>
-			<span class="btn btn-danger"><p>退出</p></span>
-			<p class=""></p>
-		</div>
 	</div>
 	<script type="text/javascript">
     	jeDate.skin('gray');
