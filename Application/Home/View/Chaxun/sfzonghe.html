@@ -12,6 +12,12 @@
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+	<div class="tool">
+		<input type="button" name="query" value="查询">
+		<input type="button" name="print" value="打印">
+		<input type="button" name="exit" value="退出">
+		<p id="demo"></p>
+	</div>
 	<div class="sfzh_top">
 		<img src="__PUBLIC__/muban/assets/img/chaxun.png" width="30" height="30">
 		<div class="h">查询条件:</div>
@@ -118,15 +124,6 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
-	<div class="sfzh_bottom">
-		<div class="sfzh_bottom_c">
-			<span class="btn btn-success"><p>查询</p></span>
-			<span class="btn btn-warning"><p>打印</p></span>
-			<span class="btn btn-success"><p>刷新</p></span>
-			<span class="btn btn-danger"><p>退出</p></span>
-			<p class=""></p>
-		</div>
 	</div>
 	<script type="text/javascript">
     	jeDate.skin('gray');
