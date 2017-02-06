@@ -9287,3 +9287,279 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
+[ 2017-02-06T16:56:50+08:00 ] ::1 /zySystem/index.php/Home/Index/home?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000885s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001552s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.367854s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.368007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000814s ]
+
+[ 2017-02-06T16:57:26+08:00 ] ::1 /zySystem/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009407s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000939s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001174s ]
+
+[ 2017-02-06T16:58:04+08:00 ] ::1 /zySystem/index.php/Home/Login/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001563s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓÐÕýÈ·´ð¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓÐ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+
+
+[ 2017-02-06T16:58:05+08:00 ] ::1 /zySystem/index.php/Home/Login/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+ERR: SQLSTATE[HY000] [2002] ÄãµÄÖ÷»úÖÐµÄÈí¼þÖÐÖ¹ÁËÒ»¸öÒÑ½¨Á¢µÄÁ¬½Ó¡£
+
+
+[ 2017-02-06T16:58:21+08:00 ] ::1 /zySystem/index.php/Home/Login/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000883s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001533s ]
+SQL: SHOW COLUMNS FROM `user-info-dict` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `user-info-dict` WHERE `userName` = 'ysy' AND `passWord` = '123' LIMIT 1   [ RunTime:0.0026s ]
+
+[ 2017-02-06T16:58:21+08:00 ] ::1 /zySystem/index.php/Home/index/index/aa/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000472s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013999s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014184s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000982s ]
+
+[ 2017-02-06T16:58:31+08:00 ] ::1 /zySystem/index.php/Home/Login/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001104s ]
+SQL: SHOW COLUMNS FROM `user-info-dict` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `user-info-dict` WHERE `userName` = 'yxy' AND `passWord` = '123' LIMIT 1   [ RunTime:0.0028s ]
+
+[ 2017-02-06T16:58:31+08:00 ] ::1 /zySystem/index.php/Home/index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000954s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024571s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024784s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000899s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001158s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001314s ]
+
+[ 2017-02-06T16:58:31+08:00 ] ::1 /zySystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001613s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flagjz=1 )  [ RunTime:0.0166s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000610s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.185531s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.185842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001337s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001871s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002140s ]
+
+[ 2017-02-06T16:58:31+08:00 ] ::1 /zySystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000128s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002134s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002439s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flagjz=1 )  [ RunTime:0.0047s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001362s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001433s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001770s ]
+
+[ 2017-02-06T16:58:35+08:00 ] ::1 /zySystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001035s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0308s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flagjz=1 )  [ RunTime:0.0049s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000221s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000499s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php ç¬¬ 72 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024811s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024965s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001681s ]
+
+[ 2017-02-06T16:58:36+08:00 ] ::1 /zySystem/index.php/Home/Index/dengji.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0080s ]
+SQL: SELECT `BR_ID` FROM `station_p`  [ RunTime:0.0027s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' G:\wamp\www\zySystem\Application\Home\Controller\IndexController.class.php ç¬¬ 71 è¡Œ.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000406s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000797s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000929s ]
+
+[ 2017-02-06T16:58:36+08:00 ] ::1 /zySystem/index.php/Home/Index/yuyue.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001368s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000276s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010050s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000793s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2017-02-06T16:58:37+08:00 ] ::1 /zySystem/index.php/Home/Index/yuyue.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000766s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010232s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000831s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
