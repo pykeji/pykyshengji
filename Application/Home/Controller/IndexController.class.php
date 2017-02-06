@@ -3,7 +3,15 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-        $this->display();
+        $a = I('get.aa');
+        // var_dump($a);
+        if($a == 1){
+           $this->assign('msg','<b style="color:red">用户名或密码错误</b>');
+           $this->display();
+        }else{
+            $this->display();
+        }
+        
     }
     public function home(){
         $this->display();
