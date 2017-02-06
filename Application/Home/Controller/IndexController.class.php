@@ -27,12 +27,27 @@ class IndexController extends Controller {
         $this->assign('data',$data);// 模板变量赋值
         $this->display();
     }
-    // ajax接诊详情参数
+    // 接诊区详情 ajax接诊详情参数
     public function jiezhenxiangqajax(){
         $id = I('get.id');
         $user = M('station_p');
         $data = $user->where("br_id={$id}")->select();
        $this->ajaxReturn($data,'json');
+    }
+    // 接诊区修改 ajax参数
+    public function jiezhenxiugaiajax(){
+        $id = I('get.id');
+        $user = M('station_p');// 实例化Data数据模型
+        $data = $user->where("br_id={$id}")->select();
+       $this->ajaxReturn($data,'json');
+    }
+    //执行修改 接诊区
+    public function dojiezhenajaxxiugai(){
+        $id = I('post.br_id');//修改条件
+        $user = I('post.');//修改信息
+        $data = M('station_p');// 实例化Data数据模型
+        $data->where("br_id={$id}")->save($user);//执行修改
+        $this->redirect("Index/jiezhen");//重定向
     }
     //患者登记
     public function dengji(){
