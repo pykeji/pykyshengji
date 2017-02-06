@@ -16,6 +16,9 @@ class IndexController extends Controller {
         }
         
     }
+     public function forget(){
+        $this->display();
+    }
     public function home(){
         $this->display();
     }

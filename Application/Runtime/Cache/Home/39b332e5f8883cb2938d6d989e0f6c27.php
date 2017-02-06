@@ -1,4 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); if(isset($_SESSION['wh_userName'])){ ?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -51,7 +52,7 @@
                     <ul style="margin-top:14px" role="menu" class="dropdown-setting dropdown-menu">
                         <li><a href="<?php echo U('Login/userInfo');?>" target="menu"><span class="entypo-user"></span>&#160;&#160;个人信息</a></li>
                         <li><a href="#"><span class="entypo-vcard"></span>&#160;&#160;详细信息</a></li>
-                        <li><a href="<?php echo U('Index/index');?>"><span class="glyphicon glyphicon-record"></span>&#160;&#160;退出</a></li>
+                        <li><a href="<?php echo U('Login/logOut');?>"><span class="glyphicon glyphicon-record"></span>&#160;&#160;退出</a></li>
                     </ul>
                 </li>
                 <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="glyphicon glyphicon-heart-empty"></span>&#160;自定义</a>
@@ -210,3 +211,6 @@
         $(".li").not(this).css("background-color","");
     })
 </script>
+<?php }else{ ?>
+    <h1><a href="<?php echo U('index/index');?>">滚去登录去</a></h1>
+<?php } ?>

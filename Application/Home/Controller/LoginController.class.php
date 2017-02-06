@@ -16,28 +16,16 @@ class LoginController extends Controller {
         // dump($result);
         //验证用户名密码对比
         if($result && $result['password'] == $pwd){
-          //判断是否登录
-          $on = $result['online'];
-          $id = $result['id'];
-          if($on == 0){
-            $data['online'] = 1;
-            $user->where("id={$id}")->save($data);
-            $code = $result['code'];
+          $code = $result['code'];
           //机构编码存入session
            session('wh_code',$code);
-            $id = $result['id'];
-          //用户名存入session
+           $id = $result['id'];
+         //用户名存入session
             session('wh_userName',$name);
             session('wh_userId',$id);
            // var_dump($_SESSION);
-           $this->display('index/home');
-       }else{
-            //已登录
-            $this->redirect('index/index',array('aa'=>2));
-       }
-            
+           $this->redirect('index/home');
         }else{
-            //用户名或密码错误
            $this->redirect('index/index',array('aa'=>1));
         }
     }
@@ -53,13 +41,8 @@ class LoginController extends Controller {
     }
     //退出登录
     public function logOut(){
-         //更改登录状态online
-        $data['online'] = 0;
-        $id = $_SESSION['wh_userId'];
-        $user = M('user-info-dict');
-        $user->where("id={$id}")->save($data);
-        // 清除session
         session_unset();
+        // 清除session
         $this->redirect('index/index');
     }
     
