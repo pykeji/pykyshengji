@@ -29,6 +29,7 @@ class LoginController extends Controller {
            $this->redirect('index/index',array('aa'=>1));
         }
     }
+    // 用户详细信息查询
     public function userInfo(){
         $id = $_SESSION['wh_userId'];
         $Model = M('power-name');
@@ -37,6 +38,12 @@ class LoginController extends Controller {
         $name = $Model->where("id={$pow}")->getField('name');
         $this->assign('zhiwei',$name);
         $this->display('index/userHome');
+    }
+    //退出登录
+    public function logOut(){
+        session_unset();
+        // 清除session
+        $this->redirect('index/index');
     }
     
 }
