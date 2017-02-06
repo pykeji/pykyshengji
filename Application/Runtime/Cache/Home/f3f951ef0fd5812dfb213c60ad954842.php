@@ -17,60 +17,60 @@
         <div class="baseContent">
             <div class="baseTitle">病人基本信息：<button type="button" class="guanbi">&times;</button></div>
             <div class="baseTable">
-                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><table>
+                <table>
                     <tr>
                         <td><label for="blNumber">病历号：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["br_id"]); ?>" id="blNumber" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["br_id"]); ?>" id="blNumber" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="name1">姓名：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["br_name"]); ?>" id="name1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["br_name"]); ?>" id="name1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="sex1">性别：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["xb"]); ?>" id="sex1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["xb"]); ?>" id="sex1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="age1">年龄：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["nl"]); ?>" id="age1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["nl"]); ?>" id="age1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="birth">出生日期：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["cs_date"]); ?>" id="birth" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["cs_date"]); ?>" id="birth" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="userID1">身份证号：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["pass"]); ?>" id="userID1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["pass"]); ?>" id="userID1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="dw">单位：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["dw"]); ?>" id="dw" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["dw"]); ?>" id="dw" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="phone1">电话：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["tel"]); ?>" id="phone1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["tel"]); ?>" id="phone1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="cz">传真：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["fax"]); ?>" id="cz" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["fax"]); ?>" id="cz" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="mail">E-Mail：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["e_mail"]); ?>" id="mail" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["e_mail"]); ?>" id="mail" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="yydate">预约日期：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["jz_date"]); ?>" id="yydate" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["jz_date"]); ?>" id="yydate" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="ghcost">挂号费：</label></td>
-                        <td><input type="text" value="<?php echo ($vo["ghf"]); ?>" id="ghcost" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["ghf"]); ?>" id="ghcost" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="jzcost">就诊费：</label></td>
                         <td><input type="text" value="不知道" id="jzcost" readonly></td>
                     </tr>
-                </table><?php endforeach; endif; else: echo "" ;endif; ?>
+                </table>
             </div>
         </div>
         <!--历史完成就诊记录-->
@@ -99,41 +99,41 @@
             <div class="right-center">
                 <div class="health-file center">
                     <form action="#" method="post">
-                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$voo): $mod = ($i % 2 );++$i;?><table border="1" cellspacing="1" class="jkda-table">
+                        <table border="1" cellspacing="1" class="jkda-table">
                             <div class="title">中医健康档案</div>
                             <div class="title2">
                                 <div>
                                     <span>就诊日期：</span>
-                                    <span id="jzrq"><?php echo ($voo["jz_date"]); ?></span>
+                                    <span id="jzrq"><?php echo ($data["0"]["jz_date"]); ?></span>
                                 </div>
                                 <div>
                                     <span>病历号：</span>
-                                    <span id="blnum"><?php echo ($voo["br_id"]); ?></span>
+                                    <span id="blnum"><?php echo ($data["0"]["br_id"]); ?></span>
                                 </div>
                             </div>
                             <tr>
                                 <th width="8%"><label for="name">姓名</label></th>
                                 <td colspan="2" width="10%">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" value="<?php echo ($voo["br_name"]); ?>" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
+                                            <input type="text" onkeydown="this.onkeyup();" value="<?php echo ($data["0"]["br_name"]); ?>" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
                                         </span>
                                 </td>
                                 <th width="6%"><label for="sex">性别</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" value="<?php echo ($voo["xb"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
+                                            <input type="text" value="<?php echo ($data["0"]["xb"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="age">年龄</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" value="<?php echo ($voo["nl"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
+                                            <input type="text" value="<?php echo ($data["0"]["nl"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="birthday">出生日期</label></th>
                                 <td width="11%">
                                         <span>
-                                            <input type="text" value="<?php echo ($voo["cs_date"]); ?>" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
+                                            <input type="text" value="<?php echo ($data["0"]["cs_date"]); ?>" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
                                         </span>
                                 </td>
                             </tr>
@@ -141,13 +141,13 @@
                                 <th><label for="userID">身份证号</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" value="<?php echo ($voo["pass"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="userID">
+                                            <input type="text" value="<?php echo ($data["0"]["pass"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="userID">
                                         </span>
                                 </td>
                                 <th colspan="2"><label for="phone">联系方式</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" value="<?php echo ($voo["tel"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
+                                            <input type="text" value="<?php echo ($data["0"]["tel"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
                                         </span>
                                 </td>
                             </tr>
@@ -156,7 +156,7 @@
                                 <td colspan="8">
                                         <span>
                                             <!-- <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>20?this.value.length:20);" size="20" id="work"> -->
-                                            <textarea name=""  id="duo" cols="70" rows="3"><?php echo ($voo["dw"]); ?></textarea>
+                                            <textarea name=""  id="duo" cols="70" rows="3"><?php echo ($data["0"]["dw"]); ?></textarea>
                                         </span>
                                 </td>
                             </tr>
@@ -563,7 +563,7 @@
                                         </span>
                                 </td>
                             </tr>
-                        </table><?php endforeach; endif; else: echo "" ;endif; ?>
+                        </table>
                     </form>
                 </div>
             </div>
