@@ -65,7 +65,7 @@ class IndexController extends Controller {
     }
     //健康档案
     public function jiankang(){
-        //接受从患者登记处传值
+        //接受从患者登记处传值（post方式）
         if (IS_POST){
             $station = M('station_p');//链接数据库
             $data = I('post.');//获取数据
@@ -73,15 +73,19 @@ class IndexController extends Controller {
             $user = M('station_p'); //二次链接数据库
             $id = I('post.br_id');
             $data = $user->where("br_id={$id}")->select();
+            $this->assign('data',$data);// 模板变量赋值
             // dump($data);die;
-        //接受接诊区传值    
+        //接受接诊区传值(get方式)    
         }else if(IS_GET){
-            $user = M('station_p');
-            $id = I('get.id');//获取条件
-            $data = $user->where("br_id={$id}")->select();
-            // dump($data);die;
+            // 判断get.id是否存在
+            if (isset($_GET['id'])) {
+                $id = I('get.id');//获取条件
+                $user = M('station_p');
+                $data = $user->where("br_id={$id}")->select();
+                $this->assign('data',$data);// 模板变量赋值
+            }
         }
-        $this->assign('data',$data);// 模板变量赋值      
+        // $this->assign('data',$data);// 模板变量赋值      
         $this->display();
     }
     public function tizhi(){

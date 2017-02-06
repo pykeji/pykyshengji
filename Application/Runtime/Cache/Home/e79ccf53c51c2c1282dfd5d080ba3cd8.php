@@ -1,13 +1,13 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>患者登记</title>
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/dengji.css">
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-    <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/dengji.css">
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
@@ -16,7 +16,7 @@
         <div style="background-color:#d7d715;border-radius:10px 10px 0px 0px">
             <div class="title2 center">
                 <div>
-                    <img src="__PUBLIC__/img/reg.png" alt="图片加载失败！">
+                    <img src="/zySystem/Public/img/reg.png" alt="图片加载失败！">
                 </div>
                 <div class="djfont">
                     患者基本信息
@@ -27,12 +27,12 @@
                 </div>
             </div>
         </div>
-        <form action="{:U('Index/jiankang')}" method="post">
+        <form action="<?php echo U('Index/jiankang');?>" method="post">
             <div class="inf center">
                 <table border="0" class="mbt center">
                     <tr>
                         <td width="15%">病历号：</td>
-                        <td width="35%"><input type="text" value="{$Think.session.id}" name="br_id" readonly="readonly" id="blNum"></td>
+                        <td width="35%"><input type="text" value="<?php echo (session('id')); ?>" name="br_id" readonly="readonly" id="blNum"></td>
                         <td width="15%"></td>
                         <td width="35%"></td>
                     </tr>
@@ -98,10 +98,10 @@
 </html>
 <script type="text/javascript">
     $("#jsPreservation").click(function(){
-        $("form").attr("action", "{:U('Index/hzbc')}" ).submit();
+        $("form").attr("action", "<?php echo U('Index/hzbc');?>" ).submit();
 
     });
     // var jsPreservation=document.getElementById('jsPreservation');
 
 </script>
-<script src="__PUBLIC__/js/shijian.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>

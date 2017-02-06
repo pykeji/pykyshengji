@@ -99,41 +99,41 @@
             <div class="right-center">
                 <div class="health-file center">
                     <form action="#" method="post">
-                        <table border="1" cellspacing="1" class="jkda-table">
+                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$voo): $mod = ($i % 2 );++$i;?><table border="1" cellspacing="1" class="jkda-table">
                             <div class="title">中医健康档案</div>
                             <div class="title2">
                                 <div>
                                     <span>就诊日期：</span>
-                                    <span id="jzrq"></span>
+                                    <span id="jzrq"><?php echo ($voo["jz_date"]); ?></span>
                                 </div>
                                 <div>
                                     <span>病历号：</span>
-                                    <span id="blnum"><?php echo ($data["BR_ID"]); ?></span>
+                                    <span id="blnum"><?php echo ($voo["br_id"]); ?></span>
                                 </div>
                             </div>
                             <tr>
                                 <th width="8%"><label for="name">姓名</label></th>
                                 <td colspan="2" width="10%">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" value="<?php echo ($data["BR_NAME"]); ?>" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
+                                            <input type="text" onkeydown="this.onkeyup();" value="<?php echo ($voo["br_name"]); ?>" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
                                         </span>
                                 </td>
                                 <th width="6%"><label for="sex">性别</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" value="<?php echo ($data["XB"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
+                                            <input type="text" value="<?php echo ($voo["xb"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="age">年龄</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" value="<?php echo ($data["NL"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
+                                            <input type="text" value="<?php echo ($voo["nl"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="birthday">出生日期</label></th>
                                 <td width="11%">
                                         <span>
-                                            <input type="text" value="<?php echo ($data["CS_DATE"]); ?>" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
+                                            <input type="text" value="<?php echo ($voo["cs_date"]); ?>" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
                                         </span>
                                 </td>
                             </tr>
@@ -141,13 +141,13 @@
                                 <th><label for="userID">身份证号</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" value="<?php echo ($data["PASS"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="userID">
+                                            <input type="text" value="<?php echo ($voo["pass"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="userID">
                                         </span>
                                 </td>
                                 <th colspan="2"><label for="phone">联系方式</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" value="<?php echo ($data["TEL"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
+                                            <input type="text" value="<?php echo ($voo["tel"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
                                         </span>
                                 </td>
                             </tr>
@@ -156,7 +156,7 @@
                                 <td colspan="8">
                                         <span>
                                             <!-- <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>20?this.value.length:20);" size="20" id="work"> -->
-                                            <textarea name=""  id="duo" cols="70" rows="3"><?php echo ($data["DW"]); ?></textarea>
+                                            <textarea name=""  id="duo" cols="70" rows="3"><?php echo ($voo["dw"]); ?></textarea>
                                         </span>
                                 </td>
                             </tr>
@@ -563,7 +563,7 @@
                                         </span>
                                 </td>
                             </tr>
-                        </table>
+                        </table><?php endforeach; endif; else: echo "" ;endif; ?>
                     </form>
                 </div>
             </div>
