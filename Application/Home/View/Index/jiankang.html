@@ -17,60 +17,62 @@
         <div class="baseContent">
             <div class="baseTitle">病人基本信息：<button type="button" class="guanbi">&times;</button></div>
             <div class="baseTable">
+                <volist name="data" id="vo">
                 <table>
                     <tr>
                         <td><label for="blNumber">病历号：</label></td>
-                        <td><input type="text" id="blNumber" readonly></td>
+                        <td><input type="text" value="{$vo.br_id}" id="blNumber" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="name1">姓名：</label></td>
-                        <td><input type="text" id="name1" readonly></td>
+                        <td><input type="text" value="{$vo.br_name}" id="name1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="sex1">性别：</label></td>
-                        <td><input type="text" id="sex1" readonly></td>
+                        <td><input type="text" value="{$vo.xb}" id="sex1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="age1">年龄：</label></td>
-                        <td><input type="text" id="age1" readonly></td>
+                        <td><input type="text" value="{$vo.nl}" id="age1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="birth">出生日期：</label></td>
-                        <td><input type="text" id="birth" readonly></td>
+                        <td><input type="text" value="{$vo.cs_date}" id="birth" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="userID1">身份证号：</label></td>
-                        <td><input type="text" id="userID1" readonly></td>
+                        <td><input type="text" value="{$vo.pass}" id="userID1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="dw">单位：</label></td>
-                        <td><input type="text" id="dw" readonly></td>
+                        <td><input type="text" value="{$vo.dw}" id="dw" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="phone1">电话：</label></td>
-                        <td><input type="text" id="phone1" readonly></td>
+                        <td><input type="text" value="{$vo.tel}" id="phone1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="cz">传真：</label></td>
-                        <td><input type="text" id="cz" readonly></td>
+                        <td><input type="text" value="{$vo.fax}" id="cz" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="mail">E-Mail：</label></td>
-                        <td><input type="text" id="mail" readonly></td>
+                        <td><input type="text" value="{$vo.e_mail}" id="mail" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="yydate">预约日期：</label></td>
-                        <td><input type="text" id="yydate" readonly></td>
+                        <td><input type="text" value="{$vo.jz_date}" id="yydate" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="ghcost">挂号费：</label></td>
-                        <td><input type="text" id="ghcost" readonly></td>
+                        <td><input type="text" value="{$vo.ghf}" id="ghcost" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="jzcost">就诊费：</label></td>
-                        <td><input type="text" id="jzcost" readonly></td>
+                        <td><input type="text" value="不知道" id="jzcost" readonly></td>
                     </tr>
                 </table>
+                </volist>
             </div>
         </div>
         <!--历史完成就诊记录-->
@@ -108,32 +110,32 @@
                                 </div>
                                 <div>
                                     <span>病历号：</span>
-                                    <span id="blnum">000011</span>
+                                    <span id="blnum">{$data.BR_ID}</span>
                                 </div>
                             </div>
                             <tr>
                                 <th width="8%"><label for="name">姓名</label></th>
                                 <td colspan="2" width="10%">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" value="小白" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
+                                            <input type="text" onkeydown="this.onkeyup();" value="{$data.BR_NAME}" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
                                         </span>
                                 </td>
                                 <th width="6%"><label for="sex">性别</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
+                                            <input type="text" value="{$data.XB}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="age">年龄</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
+                                            <input type="text" value="{$data.NL}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="birthday">出生日期</label></th>
                                 <td width="11%">
                                         <span>
-                                            <input type="text" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
+                                            <input type="text" value="{$data.CS_DATE}" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
                                         </span>
                                 </td>
                             </tr>
@@ -141,13 +143,13 @@
                                 <th><label for="userID">身份证号</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="userID">
+                                            <input type="text" value="{$data.PASS}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="userID">
                                         </span>
                                 </td>
                                 <th colspan="2"><label for="phone">联系方式</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
+                                            <input type="text" value="{$data.TEL}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
                                         </span>
                                 </td>
                             </tr>
@@ -156,7 +158,7 @@
                                 <td colspan="8">
                                         <span>
                                             <!-- <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>20?this.value.length:20);" size="20" id="work"> -->
-                                            <textarea name="" id="duo" cols="70" rows="3"></textarea>
+                                            <textarea name=""  id="duo" cols="70" rows="3">{$data.DW}</textarea>
                                         </span>
                                 </td>
                             </tr>
