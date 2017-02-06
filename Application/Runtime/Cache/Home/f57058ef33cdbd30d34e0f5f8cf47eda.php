@@ -107,8 +107,8 @@
                         <td><input id="ajaxmtbrname" type="text" readonly="readonly"></td>
                         <td>性别：</td>
                         <td>
-                            <label><input type="radio" name="sex" checked="checked" disabled="disabled"><span>男</span></label>
-                            <label><input type="radio" name="sex" disabled="disabled"><span>女</span></label>
+                            <label><input type="radio" name="xb" id="ajaxmtxbnan"  disabled="disabled"><span>男</span></label>
+                            <label><input type="radio" name="xb" id="ajaxmtxbnv" disabled="disabled"><span>女</span></label>
                         </td>
                     </tr>
                     <tr>
@@ -174,8 +174,8 @@
                         <td><input type="text" name="br_name" id="ajaxmtXiugaibrname"></td>
                         <td>性别：</td>
                         <td>
-                            <label><input type="radio" name="sex1"><span>男</span></label>
-                            <label><input type="radio" name="sex1"><span>女</span></label>
+                            <label><input type="radio" name="xb" value="男" id="ajaxmtxiugaixbnan"><span>男</span></label>
+                            <label><input type="radio" name="xb" value="女" id="ajaxmtxiugaixbnv"><span>女</span></label>
                         </td>
                     </tr>
                     <tr>
@@ -243,6 +243,7 @@
                 $pass = dd[0]['pass'];
                 $dw = dd[0]['dw'];
                 $tel = dd[0]['tel'];
+                $xb = dd[0]['xb'];
                 $email = dd[0]['e_mail'];
                 $ghf = dd[0]['ghf'];
                 $fax = dd[0]['fax'];
@@ -255,6 +256,15 @@
                 $("#ajaxmtpass").val($pass);
                 $("#ajaxmtdw").val($dw);
                 $("#ajaxmttel").val($tel);
+                // 判断性别
+                if($xb=="男"){
+                    // alert("n");
+                    $("#ajaxmtxbnan").attr("checked","checked");
+                }else if($xb=="女"){
+                    // alert("v");
+                    $("#ajaxmtxbnv").attr("checked","checked");
+                }
+                // alert($xb);
                 $("#ajaxmtemail").val($email);
                 $("#ajaxmtghf").val($ghf);
                 $("#ajaxmtfax").val($fax);
@@ -286,6 +296,7 @@
                 $pass = dd[0]['pass'];
                 $dw = dd[0]['dw'];
                 $tel = dd[0]['tel'];
+                $xb = dd[0]['xb'];
                 $email = dd[0]['e_mail'];
                 $ghf = dd[0]['ghf'];
                 $fax = dd[0]['fax'];
@@ -298,6 +309,14 @@
                 $("#ajaxmtXiugaipass").val($pass);
                 $("#ajaxmtXiugaidw").val($dw);
                 $("#ajaxmtXiugaitel").val($tel);
+                // 判断性别
+                if($xb=="男"){
+                    // alert("n");
+                    $("#ajaxmtxiugaixbnan").attr("checked","checked");
+                }else if($xb=="女"){
+                    // alert("v");
+                    $("#ajaxmtxiugaixbnv").attr("checked","checked");
+                }
                 $("#ajaxmtXiugaiemail").val($email);
                 $("#ajaxmtXiugaighf").val($ghf);
                 $("#ajaxmtXiugaifax").val($fax);
