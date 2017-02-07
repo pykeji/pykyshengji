@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e5b6eff-10a4-46de-b64b-3e9747fffc8d" name="默认的" comment="xue">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/17_02_07.log" afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/17_02_07.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Logs/Home/17_02_07.log" afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Home/17_02_07.log" />
-    </list>
+    <list default="true" id="0e5b6eff-10a4-46de-b64b-3e9747fffc8d" name="默认的" comment="xue" />
     <ignored path="zySystem.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
