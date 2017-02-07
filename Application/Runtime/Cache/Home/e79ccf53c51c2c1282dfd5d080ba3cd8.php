@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>患者登记</title>
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/zySystem/Public/css/dengji.css">
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
-    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zysystem1/Public/css/dengji.css">
+    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zysystem1/Public/js/jeDate/jedate.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
@@ -16,7 +16,7 @@
         <div style="background-color:#d7d715;border-radius:10px 10px 0px 0px">
             <div class="title2 center">
                 <div>
-                    <img src="/zySystem/Public/img/reg.png" alt="图片加载失败！">
+                    <img src="/zysystem1/Public/img/reg.png" alt="图片加载失败！">
                 </div>
                 <div class="djfont">
                     患者基本信息
@@ -104,4 +104,4 @@
     // var jsPreservation=document.getElementById('jsPreservation');
 
 </script>
-<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zysystem1/Public/js/shijian.js"></script>

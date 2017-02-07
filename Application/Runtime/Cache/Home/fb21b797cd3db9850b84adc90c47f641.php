@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>患者查询</title>
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/zySystem/Public/css/chaxun.css">
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
-    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zysystem1/Public/css/chaxun.css">
+    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zysystem1/Public/js/jeDate/jedate.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
     <div class="bg">
@@ -16,7 +16,7 @@
     </div>
     <div class="chaxun center">
         <div>
-            <img src="/zySystem/Public/img/chaxun.png" alt="图片加载失败！">
+            <img src="/zysystem1/Public/img/chaxun.png" alt="图片加载失败！">
         </div>
         <div class="cxfont">
             查询条件:
@@ -170,5 +170,5 @@
 </div>
 </body>
 </html>
-<script src="/zySystem/Public/js/shijian.js"></script>
-<script src="/zySystem/Public/js/tr.js"></script>
+<script src="/zysystem1/Public/js/shijian.js"></script>
+<script src="/zysystem1/Public/js/tr.js"></script>
