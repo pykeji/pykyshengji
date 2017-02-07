@@ -19,7 +19,8 @@ class IndexController extends Controller {
      public function forget(){
         $this->display();
     }
-    public function home(){
+    public function home($rev){
+        $this->assign('rev',$rev);
         $this->display();
     }
     //接诊区

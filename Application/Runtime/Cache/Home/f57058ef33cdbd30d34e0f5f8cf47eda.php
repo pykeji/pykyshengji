@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>接诊区_中医健康管理系统</title>
-    <link rel="stylesheet" href="/44/zySystem/Public/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/44/zySystem/Public/css/jiezhen.css">
-    <script type="text/javascript" src="/44/zySystem/Public/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/44/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/jiezhen.css">
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
     <div class="title center">接诊区</div>
     <div class="yuyue">
         <div>
-            <!--<img src="/44/zySystem/Public/img/014.png" alt="图片加载失败！">-->
+            <!--<img src="/zySystem/Public/img/014.png" alt="图片加载失败！">-->
         </div>
         <div class="yyfont">
             预约病人列表
@@ -329,5 +329,5 @@
         });
     });
 </script>
-<script src="/44/zySystem/Public/js/shijian.js"></script>
-<script src="/44/zySystem/Public/js/tr.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zySystem/Public/js/tr.js"></script>
