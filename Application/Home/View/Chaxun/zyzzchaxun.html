@@ -12,6 +12,13 @@
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+	<div class="tool">
+		<span class="sm">说明：本统计只针对已完成就诊的病人</span>
+		<input type="button" name="query" value="统计">
+		<input type="button" name="print" value="打印">
+		<input type="button" name="exit" value="退出">
+		<p id="demo"></p>
+	</div>
 	<div class="zyzz_top">
 		<img src="__PUBLIC__/muban/assets/img/chaxun.png" width="30" height="30">
 		<div class="h">查询条件:</div>
@@ -147,15 +154,6 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
-	</div>
-	<div class="zyzz_bottom">
-		<div class="zyzz_bottom_c">
-			<span class="sm">说明：本统计只针对已完成就诊的病人</span>
-			<span class="btn btn-success"><p>统计</p></span>
-			<span class="btn btn-warning"><p>打印</p></span>
-			<span class="btn btn-danger"><p>退出</p></span>
-			<p class=""></p>
 		</div>
 	</div>
 	<script type="text/javascript">
