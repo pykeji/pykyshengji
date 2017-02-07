@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/style.css">
-    <link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/loader-style.css">
-    <link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/style.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/loader-style.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
     <style type="text/css">
     </style>
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="/zysystem1/Public/muban/assets/ico/minus.png">
+    <link rel="shortcut icon" href="/zySystem/Public/muban/assets/ico/minus.png">
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <nav role="navigation" class="navbar navbar-static-top">
@@ -42,13 +42,13 @@
                 </ul>
                 <ul id="nt-title">
                     <div style="margin-top:-3px;margin-left:10%">
-                        <iframe width="300" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="/zysystem1/Public/tqyxy.html">
+                        <iframe width="300" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="/zySystem/Public/tqyxy.html">
                         </iframe>
                     </div>
                 </ul>
             </div>
             <ul style="margin-right:0" class="nav navbar-nav navbar-right">
-                <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="/zysystem1/Public/muban/assets/img/canga.jpg"> <?php echo $_SESSION['wh_userName']; ?> <b class="caret"></b></a>
+                <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="/zySystem/Public/muban/assets/img/canga.jpg"> <?php echo $_SESSION['wh_userName']; ?> <b class="caret"></b></a>
                     <ul style="margin-top:14px" role="menu" class="dropdown-setting dropdown-menu">
                         <li><a href="<?php echo U('Login/userInfo');?>" target="menu"><span class="entypo-user"></span>&#160;&#160;个人信息</a></li>
                         <li><a href="#"><span class="entypo-vcard"></span>&#160;&#160;详细信息</a></li>
@@ -92,7 +92,7 @@
 </nav>
 <div id="skin-select">
     <div style="margin-top:-20px">
-        <a href="http://www.pengyukeji.com"><img src="/zysystem1/Public/muban/assets/img/pengyu1.png" alt="logo" style="width:150px;margin-left:30px"></a>
+        <a href="http://www.pengyukeji.com"><img src="/zySystem/Public/muban/assets/img/pengyu1.png" alt="logo" style="width:150px;margin-left:30px"></a>
     </div>
     <a id="toggle"><span class="entypo-menu"></span></a>
     <div class="skin-part">
@@ -187,12 +187,12 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.js"></script>
-<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/app.js"></script>
-<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/load.js"></script>
-<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/main.js"></script>
-<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+<script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/zySystem/Public/muban/assets/js/app.js"></script>
+<script type="text/javascript" src="/zySystem/Public/muban/assets/js/load.js"></script>
+<script type="text/javascript" src="/zySystem/Public/muban/assets/js/main.js"></script>
+<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
 <center>
     <p>
     </p>
@@ -200,8 +200,8 @@
         <a href="http://www.pengyukeji.com/" target="_blank">河北鹏宇电子科技有限公司</a>
     </p>
 </center>
-<!-- <script type="text/javascript" src="/zysystem1/Public/js/jquery-3.1.1.min.js"></script> -->
-<script src="/zysystem1/Public/js/shijian.js"></script>
+<!-- <script type="text/javascript" src="/zySystem/Public/js/jquery-3.1.1.min.js"></script> -->
+<script src="/zySystem/Public/js/shijian.js"></script>
 
 </body>
 </html>
