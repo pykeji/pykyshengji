@@ -12,7 +12,6 @@ class AdminController extends Controller {
     }
 //    管理员列表
     public function admin_list(){
-        echo 1;
         $this->display();
     }
 }

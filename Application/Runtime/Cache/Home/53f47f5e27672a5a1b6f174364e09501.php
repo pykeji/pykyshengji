@@ -4,12 +4,12 @@
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>《黄帝内经》</title>
-        <link rel="shortcut icon" href="/zysystem1/Public/book/minus.png" type="images/x-icon"/>
-        <link rel="stylesheet" href="/zysystem1/Public/book/mkcommon.css">
-        <script src="/zysystem1/Public/book/jquery-1.11.3.min.js"></script>    
-        <link rel="stylesheet" href="/zysystem1/Public/book/mkcatalogue.css">
-        <link rel="stylesheet" href="/zysystem1/Public/book/mkheader.css">  
-        <script src="/zysystem1/Public/book/mkcatalogue.js"></script>
+        <link rel="shortcut icon" href="/zySystem/Public/book/minus.png" type="images/x-icon"/>
+        <link rel="stylesheet" href="/zySystem/Public/book/mkcommon.css">
+        <script src="/zySystem/Public/book/jquery-1.11.3.min.js"></script>    
+        <link rel="stylesheet" href="/zySystem/Public/book/mkcatalogue.css">
+        <link rel="stylesheet" href="/zySystem/Public/book/mkheader.css">  
+        <script src="/zySystem/Public/book/mkcatalogue.js"></script>
         <style>
             .red{color:red;}
             .blue{color:blue;}
