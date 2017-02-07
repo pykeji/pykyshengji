@@ -30,5 +30,16 @@ class OrgController extends Controller {
     public function org_level_add(){
         $this->display();
     }
-
+//    医疗机构权限列表
+    public function org_power(){
+        $this->display();
+    }
+//    权限添加
+    public function org_power_add(){
+        $this->display();
+    }
+//    权限修改
+    public function org_power_editor(){
+        $this->display();
+    }
 }

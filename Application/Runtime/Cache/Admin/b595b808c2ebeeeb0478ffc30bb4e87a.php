@@ -81,6 +81,7 @@
 					<li><a _href="<?php echo U('Admin/Org/org_list');?>" data-title="医疗机构列表" href="javascript:;">医疗机构列表</a></li>
 					<li><a _href="<?php echo U('Admin/Org/org_del');?>" data-title="删除的医疗机构" href="javascript:;">删除的医疗机构</a></li>
 					<li><a _href="<?php echo U('Admin/Org/org_level');?>" data-title="用户医疗机构等级管理" href="javascript:;">医疗机构等级管理</a></li>
+					<li><a _href="<?php echo U('Admin/Org/org_power');?>" data-title="权限管理" href="javascript:;">权限管理</a></li>
 				</ul>
 			</dd>
 		</dl>

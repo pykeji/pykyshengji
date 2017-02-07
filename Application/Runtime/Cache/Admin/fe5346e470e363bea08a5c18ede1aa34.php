@@ -254,9 +254,7 @@
 <script type="text/javascript" src="/zySystem/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="/zySystem/Public/admin/lib/layer/2.1/layer.js"></script>
 <script type="text/javascript" src="/zySystem/Public/admin/lib/icheck/jquery.icheck.min.js"></script>
-<!--<script type="text/javascript" src="/zySystem/Public/admin/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>-->
-<!--<script type="text/javascript" src="/zySystem/Public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>-->
-<!--<script type="text/javascript" src="/zySystem/Public/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>-->
+
 <script type="text/javascript" src="/zySystem/Public/admin/static/h-ui/js/H-ui.js"></script>
 <script type="text/javascript" src="/zySystem/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
 <!--/_footer /作为公共模版分离出去-->
