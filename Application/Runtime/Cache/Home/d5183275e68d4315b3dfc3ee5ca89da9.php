@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>划价收费_中医健康管理系统</title>
-	<link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/easyui.css">
-	<link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/huajia.css">
-	<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/zySystem/Public/muban/assets/css/easyui.css">
+	<link rel="stylesheet" href="/zySystem/Public/muban/assets/css/huajia.css">
+	<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div class="tool">
@@ -29,7 +29,7 @@
 			<table class="tab1">
 				<tr>
 					<td class="tab1_l">
-						<img src="/zysystem1/Public/muban/assets/img/chufang.png" width="23" height="23">
+						<img src="/zySystem/Public/muban/assets/img/chufang.png" width="23" height="23">
 						<font size="+1">收费项目</font>
 					</td>
 					<td class="tab1_r">
@@ -55,7 +55,7 @@
 							panelWidth: 710,
 							idField: 'name',
 							textField: 'name',
-							url: '/zysystem1/Public/muban/assets/css/datagrid_data.json',
+							url: '/zySystem/Public/muban/assets/css/datagrid_data.json',
 							columns: [[
 								{field:'name',title:'名称',width:215,align:'left'},
 								{field:'guige',title:'规格',width:130,align:'center'},
@@ -78,7 +78,7 @@
 			<table class="tab3">
 				<tr>
 					<td class="tab3_l">
-						<img src="/zysystem1/Public/muban/assets/img/iconpng.png" width="23" height="23">
+						<img src="/zySystem/Public/muban/assets/img/iconpng.png" width="23" height="23">
 						<font size="+1">收费列表</font>
 					</td>
 				</tr>

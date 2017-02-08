@@ -30,7 +30,7 @@
 </head>
 <body>
 <article class="page-container">
-	<form action="/" method="post" class="form form-horizontal" id="form-change-password">
+	<form action="" method="post" class="form form-horizontal" id="form-change-password">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账户：</label>
 			<div class="formControls col-xs-8 col-sm-9"> 张三 </div>
@@ -87,9 +87,9 @@ $(function(){
 		focusCleanup:true,
 		success:"valid",
 		submitHandler:function(form){
-			$(form).ajaxSubmit();
+			//$(form).ajaxSubmit();
 			var index = parent.layer.getFrameIndex(window.name);
-			parent.$('.btn-refresh').click();
+			//parent.$('.btn-refresh').click();
 			parent.layer.close(index);
 		}
 	});
