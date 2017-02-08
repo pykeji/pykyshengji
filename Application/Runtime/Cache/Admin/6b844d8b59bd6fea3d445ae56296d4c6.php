@@ -69,7 +69,7 @@
     }
     /*管理员-角色-删除*/
     function admin_role_del(obj,id){
-        layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+        layer.confirm('权限删除须谨慎，确认要删除吗？',function(index){
             //此处请求后台程序，下方是成功后的前台处理……
 
 

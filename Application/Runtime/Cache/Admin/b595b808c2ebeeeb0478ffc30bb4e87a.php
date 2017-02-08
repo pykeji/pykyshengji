@@ -81,7 +81,6 @@
 					<li><a _href="<?php echo U('Admin/Org/org_list');?>" data-title="医疗机构列表" href="javascript:;">医疗机构列表</a></li>
 					<li><a _href="<?php echo U('Admin/Org/org_del');?>" data-title="删除的医疗机构" href="javascript:;">删除的医疗机构</a></li>
 					<li><a _href="<?php echo U('Admin/Org/org_level');?>" data-title="用户医疗机构等级管理" href="javascript:;">医疗机构等级管理</a></li>
-					<li><a _href="<?php echo U('Admin/Org/org_power');?>" data-title="权限管理" href="javascript:;">权限管理</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -91,7 +90,7 @@
 				<ul>
 					<li><a _href="<?php echo U('Admin/User/user_list');?>" data-title="用户列表" href="javascript:;">用户列表</a></li>
 					<li><a _href="<?php echo U('Admin/User/user_del');?>" data-title="删除的用户" href="javascript:;">删除的用户</a></li>
-					<li><a _href="<?php echo U('Admin/User/user_level');?>" data-title="用户等级管理" href="javascript:;">用户等级管理</a></li>
+					<!--<li><a _href="<?php echo U('Admin/User/user_level');?>" data-title="用户等级管理" href="javascript:;">用户等级管理</a></li>-->
 				</ul>
 			</dd>
 		</dl>
@@ -117,7 +116,7 @@
 			<dt><i class="Hui-iconfont">&#xe62e;</i>病历维护<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="record-list.html" data-title="病例列表" href="javascript:void(0)">病例列表</a></li>
+					<li><a _href="<?php echo U('Admin/Record/record_list');?>" data-title="病例列表" href="javascript:void(0)">病例列表</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -125,7 +124,6 @@
 			<dt><i class="Hui-iconfont">&#xe620;</i> 数据字典维护<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="dictionary-org.html" data-title="机构字典" href="javascript:void(0)">机构字典</a></li>
 					<li><a _href="dictionary-category.html" data-title="剂型字典" href="javascript:void(0)">剂型字典</a></li>
 					<li><a _href="dictionary-list.html" data-title="药品/项目单位字典" href="javascript:void(0)">药品/项目单位字典</a></li>
 					<li><a _href="dictionary-category.html" data-title="医嘱字典" href="javascript:void(0)">医嘱字典</a></li>
