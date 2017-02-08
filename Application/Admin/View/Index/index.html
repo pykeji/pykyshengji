@@ -25,7 +25,7 @@
 <![endif]-->
 <title>中医</title>
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
 		<div class="container-fluid cl">

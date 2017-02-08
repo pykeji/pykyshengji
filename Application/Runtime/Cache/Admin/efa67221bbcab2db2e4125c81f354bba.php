@@ -36,7 +36,7 @@
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
 		<span class="l">
 			<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-			<a href="javascript:;" onclick="member_add('添加用户','user_add.html','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
+			<a href="javascript:;" onclick="member_add('添加用户','<?php echo U('Admin/User/user_add');?>','','450')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
 		</span> 
 		<span class="r"></div>
 	<div class="mt-20">
@@ -70,7 +70,7 @@
 					<a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用">
 						<i class="Hui-iconfont">&#xe631;</i>
 					</a>
-					<a title="编辑" href="javascript:;" onclick="member_edit('编辑','member_add.html','4','','510')" class="ml-5" style="text-decoration:none">
+					<a title="编辑" href="javascript:;" onclick="member_edit('编辑','<?php echo U('Admin/User/user_editor');?>','4','','350')" class="ml-5" style="text-decoration:none">
 						<i class="Hui-iconfont">&#xe6df;</i>
 					</a>
 					<a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','change_password.html','10001','600','270')" href="javascript:;" title="修改密码">

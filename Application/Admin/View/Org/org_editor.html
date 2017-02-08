@@ -106,24 +106,29 @@
 
         $("#form-member-add").validate({
             rules:{
-                username:{
+                orgNum:{
                     required:true,
                     minlength:2,
-                    maxlength:16
+                    maxlength:20
                 },
-                sex:{
+                orgName:{
                     required:true,
+                    minlength:2,
+                    maxlength:20
                 },
-                mobile:{
+                orgAddr:{
+                    required:true,
+                    minlength:2,
+                    maxlength:30
+                },
+                phone:{
                     required:true,
                     isMobile:true,
                 },
-                email:{
+                userNum:{
                     required:true,
-                    email:true,
-                },
-                uploadfile:{
-                    required:true,
+                    minlength:2,
+                    maxlength:10
                 },
 
             },
