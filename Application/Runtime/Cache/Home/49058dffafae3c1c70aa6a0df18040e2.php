@@ -1,1 +1,0 @@
-<?php if (!defined('THINK_PATH')) exit();?><h1 style="color:green">你是不是傻？这么简单个密码还能忘？自己看数据库去！</h1>
