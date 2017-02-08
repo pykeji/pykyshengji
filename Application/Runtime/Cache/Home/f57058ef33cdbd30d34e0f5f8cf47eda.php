@@ -5,6 +5,7 @@
     <title>接诊区_中医健康管理系统</title>
     <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/zySystem/Public/css/jiezhen.css">
+    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
 </head>
@@ -77,12 +78,18 @@
                     <!--<?php endforeach; endif; else: echo "" ;endif; ?> -->
                 <volist> 
             </table>
+            <!-- <div class="result page"><?php echo ($page); ?></div> -->
         </div>
         <div class="yytj">
-            <span>共<span id="sickNum">0</span>位病人登记</span>
+        <div class="result page">
+            <div class="pages">
+            <?php echo ($page); ?>
+            </div>
+        </div>
+            <!-- <span>共<span id="sickNum">0</span>位病人登记</span>
             <span>当前第1/N页</span>
             <span>上一页</span>
-            <span>下一页</span>
+            <span>下一页</span> -->
         </div>
     </div>
 </div>
