@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>患者预约</title>
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/yuyue.css">
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-    <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/yuyue.css">
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
@@ -17,7 +17,7 @@
             <div class="title2 center">
                 <div class="titLeft">
                     <div>
-                        <img src="__PUBLIC__/img/reg.png" alt="图片加载失败！">
+                        <img src="/zySystem/Public/img/reg.png" alt="图片加载失败！">
                     </div>
                     <div class="modfont">
                         患者基本信息
@@ -25,7 +25,7 @@
                 </div>
                 <div class="titRight">
                     <div>
-                        <img src="__PUBLIC__/img/037.png" alt="图片加载失败！">
+                        <img src="/zySystem/Public/img/037.png" alt="图片加载失败！">
                     </div>
                     <div class="modfont">
                         当天已预约情况
@@ -33,13 +33,13 @@
                 </div>
             </div>
         </div>
-        <form action="{:U('Yuyue/yuyue')}" method="post">
+        <form action="<?php echo U('Yuyue/yuyue');?>" method="post">
         <div class="inf center">
             <div class="bodyLeft">
                 <table border="0" class="mbt">
                     <tr>
                         <td width="15%">病历号：</td>
-                        <td width="35%"><input type="text" value="{$id}" name="br_id" readonly="readonly"></td>
+                        <td width="35%"><input type="text" value="<?php echo ($id); ?>" name="br_id" readonly="readonly"></td>
                         <td width="15%">姓名</td>
                         <td width="35%"><input type="text" name="br_name" id="userName2"></td>
                     </tr>
@@ -92,14 +92,12 @@
                             <td width="40%">预约人姓名</td>
                             <td width="60%">预约时间</td>
                         </tr>
-                        <volist name="data" id="vo">
-                        <tr style="text-align: center;">
+                        <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr style="text-align: center;">
                             <td width="40%">
-                            	{$vo.br_name}
+                            	<?php echo ($vo["br_name"]); ?>
                             </td>
-                            <td width="60%"> {$vo.p_date}</td>
-                        </tr>
-                        </volist>
+                            <td width="60%"> <?php echo ($vo["p_date"]); ?></td>
+                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     </table>
                 </div>
                 <div class="brbottom">
@@ -130,7 +128,7 @@
 		// var yuyueshijzhenshi = $("#datebut1").val();
 		$.ajax({
 			type:'get',
-            url:'{:U("Yuyue/ajaxrsyy")}',
+            url:'<?php echo U("Yuyue/ajaxrsyy");?>',
             data:{"date":$("#datebut1").val()},
             dataType:'json',
             success:function(dd)
@@ -152,4 +150,4 @@
 		// alert(123);
 	})
 </script>
-<script src="__PUBLIC__/js/shijian.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>

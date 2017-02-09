@@ -1,25 +1,25 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>患者查询</title>
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/chaxun.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/chaxun.css">
     <!-- 分页效果 -->
-    <link href="__PUBLIC__/css/mypage.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-    <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
+    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
     <div class="bg">
     <div class="title center" id="title">
         查询窗口
     </div>
-    <form action="{:U('Index/dochaxun')}"  method="post">
+    <form action="<?php echo U('Index/dochaxun');?>"  method="post">
     <div class="chaxun center">
         <div>
-            <img src="__PUBLIC__/img/chaxun.png" alt="图片加载失败！">
+            <img src="/zySystem/Public/img/chaxun.png" alt="图片加载失败！">
         </div>
         <div class="cxfont">
             查询条件:
@@ -64,27 +64,25 @@
                 <td width="8%">预约日期</td>
                 <td width="7%">操作</td>
             </tr>
-            <volist name="data" id="vo">   
-            <tr class="cxtr1" name="cxtableSty">
-                <td>{$vo.br_id}</td>
-                <td>{$vo.br_name}</td>
-                <td>{$vo.xb}</td>
-                <td>{$vo.p_date}</td>
-                <td>{$vo.tel}</td>
-                <td>{$vo.p_date}</td>
+            <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="cxtr1" name="cxtableSty">
+                <td><?php echo ($vo["br_id"]); ?></td>
+                <td><?php echo ($vo["br_name"]); ?></td>
+                <td><?php echo ($vo["xb"]); ?></td>
+                <td><?php echo ($vo["p_date"]); ?></td>
+                <td><?php echo ($vo["tel"]); ?></td>
+                <td><?php echo ($vo["p_date"]); ?></td>
                 <td>
                     <span data-toggle="modal" data-target="#myModal">详细信息</span>
                     <span>登记</span>
                     <span>预约</span>
                 </td>
-            </tr>
-            </volist>
+            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </table>
     </div>
     <div class="fenye center">
         <div class="result page">
             <div class="pages">
-            {$page}
+            <?php echo ($page); ?>
             </div>
         </div>
     </div>
@@ -154,5 +152,5 @@
 </div>
 </body>
 </html>
-<script src="__PUBLIC__/js/shijian.js"></script>
-<script src="__PUBLIC__/js/tr.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zySystem/Public/js/tr.js"></script>
