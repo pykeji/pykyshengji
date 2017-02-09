@@ -26,27 +26,38 @@
     <![endif]-->
     <!--/meta 作为公共模版分离出去-->
 
-    <title> 编辑等级</title>
+    <title>编辑用户</title>
 </head>
 <body>
 <article class="page-container">
-    <form action="" method="post" class="form form-horizontal" id="form-admin-role-add">
+    <form action="" method="post" class="form form-horizontal" id="form-member-add">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>等级名称：</label>
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="levelName" name="levelName">
+                <input type="text" class="input-text" value="" placeholder="" id="userName" name="userName">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3">描述：</label>
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>所属机构：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="说点什么..." onKeyUp="textarealength(this,100)"></textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+                <input type="text" class="input-text" value="" placeholder="" id="userOrg" name="userOrg">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="" id="mobile" name="mobile">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" placeholder="@" name="email" id="email">
             </div>
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                <button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
             </div>
         </div>
     </form>
@@ -65,7 +76,6 @@
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
-
     $(function(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
@@ -73,13 +83,25 @@
             increaseArea: '20%'
         });
 
-        $("#form-admin-role-add").validate({
+        $("#form-member-add").validate({
             rules:{
-                levelName:{
+                userName:{
                     required:true,
                     minlength:2,
                     maxlength:16
                 },
+                userOrg:{
+                    required:true,
+                },
+                mobile:{
+                    required:true,
+                    isMobile:true,
+                },
+                email:{
+                    required:true,
+                    email:true,
+                },
+
             },
             onkeyup:false,
             focusCleanup:true,

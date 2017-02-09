@@ -26,53 +26,46 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>添加医疗机构</title>
+<title>添加病历</title>
 </head>
 <body>
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form-member-add">
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>医疗机构编码：</label>
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>病历类型：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="orgNum" name="orgNum">
+				<select name="checkRecord" id="">
+					<option value="既往史">既往史</option>
+					<option value="既往史">家庭史</option>
+					<option value="既往史">过敏史</option>
+					<option value="忘神">忘神</option>
+					<option value="忘色">忘色</option>
+					<option value="体态">体态</option>
+					<option value="体型">体型</option>
+					<option value="睡眠质量">睡眠质量</option>
+					<option value="睡眠时间">睡眠时间</option>
+					<option value="食欲">食欲</option>
+					<option value="口味">口味</option>
+					<option value="大便便次">大便便次</option>
+					<option value="大便便质">大便便质</option>
+					<option value="小便便次">小便便次</option>
+					<option value="小便便色">小便便色</option>
+					<option value="性情">性情</option>
+					<option value="性格">性格</option>
+					<option value="舌色">舌色</option>
+					<option value="舌体">舌体</option>
+					<option value="动态">动态</option>
+					<option value="苔质">苔质</option>
+					<option value="苔色">苔色</option>
+					<option value="脉诊">脉诊</option>
+					<option value="大便便质">大便便质</option>
+				</select>
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>医疗机构名称：</label>
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>病历名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" value="" placeholder="" id="orgName" name="orgName">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>医疗机构地址：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="orgAddr" name="orgAddr">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系方式：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text"  name="phone" id="phone">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>机构等级：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<span class="select-box">
-					<select class="select" size="1" name="orgLev">
-						<option value="1" selected>三级</option>
-						<option value="2">二级</option>
-						<option value="3">社区</option>
-						<option value="4">乡镇</option>
-						<option value="5">个人诊所</option>
-					</select>
-				</span>
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户数量：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" name="userNum" id="userNum">
+				<input type="text" class="input-text" value="" placeholder="" id="recordName" name="recordName">
 			</div>
 		</div>
 		<div class="row cl">
@@ -105,30 +98,26 @@ $(function(){
 	
 	$("#form-member-add").validate({
 		rules:{
-			orgNum:{
+			username:{
 				required:true,
 				minlength:2,
-				maxlength:20
+				maxlength:16
 			},
-			orgName:{
+			sex:{
 				required:true,
-				minlength:2,
-				maxlength:20
 			},
-			orgAddr:{
-				required:true,
-				minlength:2,
-				maxlength:30
-			},
-			phone:{
+			mobile:{
 				required:true,
 				isMobile:true,
 			},
-			userNum:{
+			email:{
 				required:true,
-				minlength:2,
-				maxlength:10
+				email:true,
 			},
+			uploadfile:{
+				required:true,
+			},
+			
 		},
 		onkeyup:false,
 		focusCleanup:true,

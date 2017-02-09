@@ -29,7 +29,7 @@
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
 		<span class="l">
 			<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-			<a href="javascript:;" onclick="member_add('添加病历','record-add.html','','310')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加病例信息</a>
+			<a href="javascript:;" onclick="member_add('添加病历','{:U(\'Admin/Record/record_add\')}','','310')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加病例信息</a>
 		</span>
 	 	<span class="r"></span> 
  	</div>
@@ -39,8 +39,8 @@
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>
 				<th width="80">ID</th>
-				<th width="100">既往史名称</th>
-				<th width="100">既往史类别</th>
+				<th width="100">病历名称</th>
+				<th width="100">病历类别</th>
 				<th width="90">添加人员</th>
 				<th width="150">修改人员</th>
 				<th width="130">添加时间</th>
@@ -52,7 +52,7 @@
 			<tr class="text-c">
 				<td><input type="checkbox" value="1" name=""></td>
 				<td>1</td>
-				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('高血压','member-show.html','10001','360','400')">高血压</u></td>
+				<td>高血压</td>
 				<td>既往史</td>
 				<td>admin</td>
 				<td>admin</td>

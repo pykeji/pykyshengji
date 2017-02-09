@@ -26,22 +26,44 @@
     <![endif]-->
     <!--/meta 作为公共模版分离出去-->
 
-    <title> 编辑等级</title>
+    <title> 权限添加 </title>
 </head>
 <body>
 <article class="page-container">
     <form action="" method="post" class="form form-horizontal" id="form-admin-role-add">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>等级名称：</label>
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>权限名称：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="levelName1" name="levelName">
+                <input type="text" class="input-text" value="" placeholder="" id="orgNum" name="orgNum">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3">描述：</label>
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>权限所属类别：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="beizhu" cols="" rows="" class="textarea"  placeholder="说点什么..." onKeyUp="textarealength(this,100)"></textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+                <select name="powerType" id="">
+                    <option value="使用者管理权限">使用者管理权限</option>
+                    <option value="数据管理权限">数据管理权限</option>
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>权限属性：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <label class="">
+                    <input type="checkbox" value="" name="user-Character-0-1-0" id="user-Character-0-1-0">
+                    添加</label>
+                <label class="">
+                    <input type="checkbox" value="" name="user-Character-0-1-0" id="user-Character-0-1-1">
+                    修改</label>
+                <label class="">
+                    <input type="checkbox" value="" name="user-Character-0-1-0" id="user-Character-0-1-2">
+                    删除</label>
+                <label class="">
+                    <input type="checkbox" value="" name="user-Character-0-1-0" id="user-Character-0-1-3">
+                    查看</label>
+                <label class="">
+                    <input type="checkbox" value="" name="user-Character-0-1-0" id="user-Character-0-1-4">
+                    审核</label>
             </div>
         </div>
         <div class="row cl">
@@ -56,38 +78,46 @@
 <script type="text/javascript" src="/zySystem/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="/zySystem/Public/admin/lib/layer/2.1/layer.js"></script>
 <script type="text/javascript" src="/zySystem/Public/admin/lib/icheck/jquery.icheck.min.js"></script>
-<script type="text/javascript" src="/zySystem/Public/admin/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/zySystem/Public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="/zySystem/Public/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+
 <script type="text/javascript" src="/zySystem/Public/admin/static/h-ui/js/H-ui.js"></script>
 <script type="text/javascript" src="/zySystem/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
-
     $(function(){
-        $('.skin-minimal input').iCheck({
-            checkboxClass: 'icheckbox-blue',
-            radioClass: 'iradio-blue',
-            increaseArea: '20%'
+        $(".permission-list dt input:checkbox").click(function(){
+            $(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
+        });
+        $(".permission-list2 dd input:checkbox").click(function(){
+            var l =$(this).parent().parent().find("input:checked").length;
+            var l2=$(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
+            if($(this).prop("checked")){
+                $(this).closest("dl").find("dt input:checkbox").prop("checked",true);
+                $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",true);
+            }
+            else{
+                if(l==0){
+                    $(this).closest("dl").find("dt input:checkbox").prop("checked",false);
+                }
+                if(l2==0){
+                    $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",false);
+                }
+            }
         });
 
         $("#form-admin-role-add").validate({
             rules:{
-                levelName:{
+                roleName:{
                     required:true,
-                    minlength:2,
-                    maxlength:16
                 },
             },
             onkeyup:false,
             focusCleanup:true,
             success:"valid",
             submitHandler:function(form){
-                //$(form).ajaxSubmit();
+                $(form).ajaxSubmit();
                 var index = parent.layer.getFrameIndex(window.name);
-                //parent.$('.btn-refresh').click();
                 parent.layer.close(index);
             }
         });
