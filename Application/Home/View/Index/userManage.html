@@ -36,6 +36,7 @@
      <div class="nest" id="FootableClose">
                             <div class="title-alt" style="margin-top:0px">
 <php>
+    $day = date('ymd');
     if($_SESSION['wh_power'] == 1){
         $power = 1;
     }else{
@@ -68,7 +69,7 @@
                             </div>
 
                             <div class="body-nest" id="Footable">
-                                <table class="table-striped footable-res footable metro-blue" data-page-size="14">
+                                <table class="table-striped footable-res footable metro-blue" data-page-size="10">
                                     <thead>
                                         <tr>
                                             <th>
@@ -98,14 +99,15 @@
                                         <tr>
                                             <td><php>echo $num;</php></td>
                                             <td>{$vo.username}</td>
-                                            <td>1.jpg
+                                            <php>$pho = $vo['userphoto'];$path = '__ROOT__/Uploads/';</php>
+                                            <td><img src="<?php echo $path.'20'.$day.'/'.$pho; ?>" alt="加载失败" style="width:40px;height:40px;">
                                             </td>
                                             <td>{$vo.name}</td>
                                             <td data-value="78025368997">18231120172</td>
                                             <td data-value="1">
                                                 <a href="#">修改</a><span style="margin-left: 5px;margin-right: 5px;margin-top:300px;">|</span>
                                                 <php>if($vo['del'] < 1){</php>
-                                                <a href="#" style="color:red">删除</a>
+                                                <a href="{:U('User/del',array('id'=>$vo['id']))}" style="color:red" class="dela">删除</a>
                                                 <php>}else{</php>
                                                     <a>不可删除</a>
                                                 <php>}</php>
@@ -118,7 +120,8 @@
                                         <tr>
                                             <td><php>echo $num;</php></td>
                                             <td>{$vo.username}</td>
-                                            <td>1.jpg
+                                            <php>$pho = $vo['userphoto'];$path = '__ROOT__/Uploads/';</php>
+                                            <td><img src="<?php echo $path.'20'.$day.'/'.$pho; ?>" alt="加载失败" style="width:40px;height:40px;">
                                             </td>
                                             <td>{$vo.name}</td>
                                             <td data-value="78025368997">18231120172</td>
@@ -176,6 +179,9 @@
     <script type="text/javascript">
     $(function() {
         $('.footable-res').footable();
+        // $('.dela').click(function(){
+        //     confirm('确定删除吗？');
+        // });
     });
     </script>
     <script type="text/javascript">
