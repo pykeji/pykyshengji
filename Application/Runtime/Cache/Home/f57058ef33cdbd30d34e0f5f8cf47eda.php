@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>接诊区_中医健康管理系统</title>
-    <link rel="stylesheet" href="/zysystem1/Public/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/zysystem1/Public/css/jiezhen.css">
-    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/zysystem1/Public/muban/assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/jiezhen.css">
+    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
     <div class="title center">接诊区</div>
     <div class="yuyue">
         <div>
-            <!--<img src="/zysystem1/Public/img/014.png" alt="图片加载失败！">-->
+            <!--<img src="/zySystem/Public/img/014.png" alt="图片加载失败！">-->
         </div>
         <div class="yyfont">
             预约病人列表
@@ -77,12 +78,18 @@
                     <!--<?php endforeach; endif; else: echo "" ;endif; ?> -->
                 <volist> 
             </table>
+            <!-- <div class="result page"><?php echo ($page); ?></div> -->
         </div>
         <div class="yytj">
-            <span>共<span id="sickNum">0</span>位病人登记</span>
+        <div class="result page">
+            <div class="pages">
+            <?php echo ($page); ?>
+            </div>
+        </div>
+            <!-- <span>共<span id="sickNum">0</span>位病人登记</span>
             <span>当前第1/N页</span>
             <span>上一页</span>
-            <span>下一页</span>
+            <span>下一页</span> -->
         </div>
     </div>
 </div>
@@ -329,5 +336,5 @@
         });
     });
 </script>
-<script src="/zysystem1/Public/js/shijian.js"></script>
-<script src="/zysystem1/Public/js/tr.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zySystem/Public/js/tr.js"></script>

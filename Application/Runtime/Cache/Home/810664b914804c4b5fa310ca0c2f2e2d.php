@@ -3,12 +3,12 @@
 <head>
 	<title></title>
 	<!-- 自己写的css -->
-	<link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang5.css">
+	<link rel="stylesheet" type="text/css" href="/zysystem1/Public/yeMiancss/kaiFang5.css">
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+    <script src="/zysystem1/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="/zySystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/zysystem1/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/zysystem1/Public/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<!-- 上 -->
@@ -19,7 +19,7 @@
 			</legend>
 			<div class="kawenzi ">
 				&nbsp;
-				<img src="/zySystem/Public/img/tu1.jpg" style="margin-top: 20px;  width: 40px; "  alt="图片加载中。。。。">
+				<img src="/zysystem1/Public/img/tu1.jpg" style="margin-top: 20px;  width: 40px; "  alt="图片加载中。。。。">
 				&nbsp;
 				<div class="kuangneianniu">
 					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >A</button>
@@ -456,7 +456,7 @@
 		</script>
 		<!-- 拖拽的js -->
 		
-		<script src="/zySystem/Public/tuozhuai/Sortable.js"></script>
-		<script src="/zySystem/Public/tuozhuai/st/app.js"></script>
+		<script src="/zysystem1/Public/tuozhuai/Sortable.js"></script>
+		<script src="/zysystem1/Public/tuozhuai/st/app.js"></script>
 </body>
 </html>

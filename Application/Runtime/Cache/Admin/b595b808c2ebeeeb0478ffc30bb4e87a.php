@@ -20,15 +20,23 @@
 <link rel="stylesheet" type="text/css" href="/zysystem1/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="/zysystem1/Public/admin/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
+<<<<<<< HEAD
 <script type="text/javascript" src="/zysystem1/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+=======
+<script type="text/javascript" src="/zySystem/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+>>>>>>> 6cc8ed11d49e061929ff12d96dc41f7c2671dd30
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>中医</title>
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a> <span class="logo navbar-slogan f-l mr-10 hidden-xs">v2.4</span> <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+		<div class="container-fluid cl">
+			<a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">中医健康管理系统</a>
+			<a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a>
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.0</span>
+			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 			<nav class="nav navbar-nav">
 				<ul class="cl">
 					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
@@ -86,7 +94,7 @@
 				<ul>
 					<li><a _href="<?php echo U('Admin/User/user_list');?>" data-title="用户列表" href="javascript:;">用户列表</a></li>
 					<li><a _href="<?php echo U('Admin/User/user_del');?>" data-title="删除的用户" href="javascript:;">删除的用户</a></li>
-					<li><a _href="<?php echo U('Admin/User/user_level');?>" data-title="用户等级管理" href="javascript:;">用户等级管理</a></li>
+					<!--<li><a _href="<?php echo U('Admin/User/user_level');?>" data-title="用户等级管理" href="javascript:;">用户等级管理</a></li>-->
 				</ul>
 			</dd>
 		</dl>
@@ -112,7 +120,7 @@
 			<dt><i class="Hui-iconfont">&#xe62e;</i>病历维护<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="record-list.html" data-title="病例列表" href="javascript:void(0)">病例列表</a></li>
+					<li><a _href="<?php echo U('Admin/Record/record_list');?>" data-title="病例列表" href="javascript:void(0)">病例列表</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -120,7 +128,6 @@
 			<dt><i class="Hui-iconfont">&#xe620;</i> 数据字典维护<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="dictionary-org.html" data-title="机构字典" href="javascript:void(0)">机构字典</a></li>
 					<li><a _href="dictionary-category.html" data-title="剂型字典" href="javascript:void(0)">剂型字典</a></li>
 					<li><a _href="dictionary-list.html" data-title="药品/项目单位字典" href="javascript:void(0)">药品/项目单位字典</a></li>
 					<li><a _href="dictionary-category.html" data-title="医嘱字典" href="javascript:void(0)">医嘱字典</a></li>

@@ -28,8 +28,9 @@ img{border:0px;}
     float:left;width:64%;border:1px solid #696969;height:95%;border-radius:5px;
 }
 .inf .bodyRight{float:left;width:36%;border:1px solid #696969;height:95%;border-radius:5px;}
-.inf .bodyRight .brtop{height:92%;overflow:auto;border:1px solid #cccccc;}
-.inf .bodyRight .brbottom{height:8%;}
+.inf .bodyRight .brtop{height:90%;overflow:auto;border:1px solid #cccccc;}
+.inf .bodyRight .brbottom{height:10%; line-height: 20px;}
+.inf .bodyRight .brbottom{height:10%; margin-top: 5px;}
 .inf .bodyRight .brbottom span{color:#800000;font-weight:bold;}
 /*表格区*/
 .inf table{width:95%;}

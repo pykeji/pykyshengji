@@ -13,9 +13,9 @@
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div class="tool">
-		<input type="button" name="query" value="查询">
-		<input type="button" name="print" value="打印">
-		<input type="button" name="exit" value="退出">
+		<input type="button" name="query" value="✔ 查询">
+		<input type="button" name="print" value="℗ 打印">
+		<input type="button" name="exit" value="✘ 退出">
 		<p id="demo"></p>
 	</div>
 	<div class="sfzh_top">

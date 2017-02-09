@@ -3,27 +3,27 @@
 <head>
 	<title></title>
 	<!-- 自己写的css -->
-	<link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang6.css">
+	<link rel="stylesheet" type="text/css" href="/zysystem1/Public/yeMiancss/kaiFang6.css">
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+    <script src="/zysystem1/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="/zySystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/zysystem1/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/zysystem1/Public/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 		<!-- 头 -->
 		<div>
 			<div class="toushangzuo">
 				<h4>
-				<img src="/zySystem/Public/img/症状.jpeg" style="height: 25px;" alt="图片加载中。。。。">
+				<img src="/zysystem1/Public/img/症状.jpeg" style="height: 25px;" alt="图片加载中。。。。">
 				<b>症状</b></h4>
 			</div>
 			<div class="toushangzh">
-				<h4><img src="/zySystem/Public/img/症状.jpeg" style="height: 25px;" alt="图片加载中。。。。">
+				<h4><img src="/zysystem1/Public/img/症状.jpeg" style="height: 25px;" alt="图片加载中。。。。">
 				<b>辩证结果</b></h4>
 			</div>
 			<div class="toushangyou">
-				<h4><img src="/zySystem/Public/img/症状.jpeg" style="height: 25px;" alt="图片加载中。。。。">
+				<h4><img src="/zysystem1/Public/img/症状.jpeg" style="height: 25px;" alt="图片加载中。。。。">
 				<b>处方选择</b></h4></div>
 			<div class="qisfudong"></div>
 		</div>
@@ -247,11 +247,11 @@
 						<ul id="myTab" class="nav nav-tabs">
 						   <li class="active">
 						      <a href="#home" data-toggle="tab">
-						        <img src="/zySystem/Public/img/bg.png"  alt="别急图片马上出来">药解
+						        <img src="/zysystem1/Public/img/bg.png"  alt="别急图片马上出来">药解
 						      </a>
 						   </li>
 						   <li><a href="#ios" data-toggle="tab">
-						   		<img src="/zySystem/Public/img/fj.png" alt="别急图片马上出来">方解</a>
+						   		<img src="/zysystem1/Public/img/fj.png" alt="别急图片马上出来">方解</a>
 						   	</li>
 						   	<li>
 						   		<!-- 按钮 -->

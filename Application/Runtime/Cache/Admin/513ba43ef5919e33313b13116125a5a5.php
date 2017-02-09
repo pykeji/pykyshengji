@@ -18,7 +18,11 @@
 <link rel="stylesheet" type="text/css" href="/zysystem1/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="/zysystem1/Public/admin/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
+<<<<<<< HEAD
 <script type="text/javascript" src="/zysystem1/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+=======
+<script type="text/javascript" src="/zySystem/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+>>>>>>> 6cc8ed11d49e061929ff12d96dc41f7c2671dd30
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>删除的医疗机构</title>

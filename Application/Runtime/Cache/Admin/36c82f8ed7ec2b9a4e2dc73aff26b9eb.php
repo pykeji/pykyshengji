@@ -21,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="/zySystem/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="/zySystem/Public/admin/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/zySystem/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
@@ -60,8 +60,7 @@
 			<div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
 					<select class="select" size="1" name="orgLev">
-						<option value="" selected>请选择机构等级</option>
-						<option value="1">三级</option>
+						<option value="1" selected>三级</option>
 						<option value="2">二级</option>
 						<option value="3">社区</option>
 						<option value="4">乡镇</option>
@@ -106,26 +105,30 @@ $(function(){
 	
 	$("#form-member-add").validate({
 		rules:{
-			username:{
+			orgNum:{
 				required:true,
 				minlength:2,
-				maxlength:16
+				maxlength:20
 			},
-			sex:{
+			orgName:{
 				required:true,
+				minlength:2,
+				maxlength:20
 			},
-			mobile:{
+			orgAddr:{
+				required:true,
+				minlength:2,
+				maxlength:30
+			},
+			phone:{
 				required:true,
 				isMobile:true,
 			},
-			email:{
+			userNum:{
 				required:true,
-				email:true,
+				minlength:2,
+				maxlength:10
 			},
-			uploadfile:{
-				required:true,
-			},
-			
 		},
 		onkeyup:false,
 		focusCleanup:true,

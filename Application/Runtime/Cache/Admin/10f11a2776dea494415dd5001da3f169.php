@@ -18,7 +18,11 @@
 <link rel="stylesheet" type="text/css" href="/zysystem1/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="/zysystem1/Public/admin/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
+<<<<<<< HEAD
 <script type="text/javascript" src="/zysystem1/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+=======
+<script type="text/javascript" src="/zySystem/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+>>>>>>> 6cc8ed11d49e061929ff12d96dc41f7c2671dd30
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>医疗机构列表</title>
@@ -36,7 +40,7 @@
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
 		<span class="l">
 			<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-			<a href="javascript:;" onclick="member_add('添加医疗机构','org_add.html','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加医疗机构列表</a>
+			<a href="javascript:;" onclick="member_add('添加医疗机构','<?php echo U('Admin/Org/org_add');?>','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加医疗机构列表</a>
 		</span> 
 		<span class="r"></span></div>
 	<div class="mt-20">
@@ -70,7 +74,7 @@
 				<td class="td-status"><span class="label label-success radius">已启用</span></td>
 				<td class="td-manage">
 					<a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>
-					<a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<a title="编辑" href="javascript:;" onclick="member_edit('编辑','<?php echo U('Admin/Org/org_editor');?>','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 					<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 		</tbody>

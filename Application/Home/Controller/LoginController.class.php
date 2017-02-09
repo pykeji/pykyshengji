@@ -19,12 +19,16 @@ class LoginController extends Controller {
           $code = $result['code'];
           //机构编码存入session
            session('wh_code',$code);
+           $level = $result['power'];
            $id = $result['id'];
+           $pow = $result['power'];
+           session('wh_power',$pow);
          //用户名存入session
             session('wh_userName',$name);
             session('wh_userId',$id);
            // var_dump($_SESSION);
-           $this->redirect('index/home');
+           // echo $level;
+           $this->redirect('index/home',array('rev'=>$level));
         }else{
            $this->redirect('index/index',array('aa'=>1));
         }
@@ -44,6 +48,32 @@ class LoginController extends Controller {
         session_unset();
         // 清除session
         $this->redirect('index/index');
+    }
+    //显示用户管理页面
+    public function userManage(){
+        $name = $_SESSION['wh_userName'];
+        $code = $_SESSION['wh_code'];
+        $id = $_SESSION['wh_userId'];
+        $user = M('user-info-dict');
+        $name = M('power-name');
+        $list = $user->where("code={$code}")->select();
+        $na = $user->where("code={$code}")->Field('power')->select();
+        $nnaa = M('power-name');
+        $num = count($na);
+        // dump($num);
+        for($i=0;$i<$num;++$i){
+          $att[$i] = $na[$i]['power'];
+        }
+        for($j=0;$j<$num;++$j){
+          $newarr[$j] = $nnaa->where("id={$att[$j]}")->Field('name')->find();
+        }
+        
+        // dump($list);
+        for($z=0;$z<$num;++$z){
+          $list[$z]['name'] = $newarr[$z]['name'];
+        }
+        $this->assign('list',$list);
+        $this->display('index/userManage');
     }
     
 }

@@ -14,5 +14,13 @@ class UserController extends Controller {
     public function user_level(){
         $this->display();
     }
+//    添加用户
+    public function user_add(){
+        $this->display();
+    }
+//    编辑用户
+    public function user_editor(){
+        $this->display();
+    }
 
 }

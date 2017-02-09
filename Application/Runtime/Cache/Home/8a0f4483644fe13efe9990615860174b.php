@@ -33,57 +33,56 @@
                 </div>
             </div>
         </div>
+        <form action="<?php echo U('Yuyue/yuyue');?>" method="post">
         <div class="inf center">
             <div class="bodyLeft">
                 <table border="0" class="mbt">
                     <tr>
                         <td width="15%">病历号：</td>
-                        <td width="35%"><input type="text" readonly="readonly"></td>
-                        <td width="15%"></td>
-                        <td width="35%"></td>
-                    </tr>
-                    <tr>
-                        <td>姓名：</td>
-                        <td><input type="text" id="userName2"></td>
-                        <td>性别：</td>
-                        <td>
-                            <label><input type="radio" name="sex2" checked="checked"><span>男</span></label>
-                            <label><input type="radio" name="sex2"><span>女</span></label>
-                        </td>
+                        <td width="35%"><input type="text" value="<?php echo (session('id')); ?>" name="br_id" readonly="readonly"></td>
+                        <td width="15%">姓名</td>
+                        <td width="35%"><input type="text" name="br_name" id="userName2"></td>
                     </tr>
                     <tr>
                         <td>年龄：</td>
-                        <td><input type="text"></td>
-                        <td>出生年月：</td>
-                        <td><input type="text" placeholder="请选择日期！" id="datebut" onClick="jeDate({dateCell:'#datebut',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></td>
+                        <td><input type="text" name="nl"></td>
+                        <td>性别：</td>
+                        <td>
+                            <label><input type="radio" name="xb" value="男" checked="checked"><span>男</span></label>
+                            <label><input type="radio" name="xb" value="女"><span>女</span></label>
+                        </td>
                     </tr>
                     <tr>
                         <td>身份证号：</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="pass"></td>
                         <td>电话：</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="tel"></td>
                     </tr>
                     <tr>
                         <td>传真：</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="fax"></td>
                         <td>E-Mail：</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="e_mail"></td>
                     </tr>
                     <tr>
                         <td>挂号费：</td>
-                        <td><input type="text"></td>
-                        <td>传真：</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="ghf"></td>
+                        <td>出生年月：</td>
+                        <td><input type="text" name="cs_date" placeholder="请选择日期！" id="datebut" onClick="jeDate({dateCell:'#datebut',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>单位：</td>
-                        <td colspan="3"><textarea name="comp" id="comp" class="lontext"></textarea></td>
+                        <td colspan="3"><textarea name="dw" id="comp" class="lontext"></textarea></td>
                     </tr>
                     <tr>
                         <td>预约日期：</td>
-                        <td><input type="text" class="yyrq"></td>
+                        <td><input type="text" name="p_date"  placeholder="请选择日期！" id="datebut1" onClick="jeDate({dateCell:'#datebut1',isTime:true,format:'YYYY-MM-DD hh:mm:ss'})" readonly="readonly"></td>
                         <td colspan="2">注：本日期是一个时间段，前后15分钟</td>
                     </tr>
+                    <!-- 就诊时间 -->
+                    <input type="hidden"  name="jz_date" class="yyrq">
+                    <!-- 区分是否为就诊 -->
+                    <input type="hidden" name="reserve" value="2">
                 </table>
             </div>
             <div class="bodyRight">
@@ -93,21 +92,28 @@
                             <td width="40%">预约人姓名</td>
                             <td width="60%">预约时间</td>
                         </tr>
+                        <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr style="text-align: center;">
+                            <td width="40%">
+                            	<?php echo ($vo["br_name"]); ?>
+                            </td>
+                            <td width="60%"> <?php echo ($vo["p_date"]); ?></td>
+                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     </table>
                 </div>
                 <div class="brbottom">
-                    <span>该时间段内：</span><span>没有病人预约</span>
+                    <span>该时间段内有：
+                    	<span type="text" class="dqyuyuexianshiren"></span>
+                    </span><span>病人预约</span>
                 </div>
             </div>
         </div>
         <div class="but">
             <div class="butt">
-                <button type="button" class="btn btn-warning">退出</button>
-            </div>
-            <div class="butt">
-                <button type="button" class="btn btn-warning">预约</button>
+                <button type="button" id="chakanyuyuerenshu" class="btn btn-warning">查看</button>
+                <button type="submit" class="btn btn-warning">预约</button>
             </div>
         </div>
+        </form>
     </div>
 </div>
 <script type="text/javascript">
@@ -115,4 +121,33 @@
 </script>
 </body>
 </html>
+<script type="text/javascript">
+	// 查看预约人数
+	$("#chakanyuyuerenshu").click(function(){
+		//预约时间
+		// var yuyueshijzhenshi = $("#datebut1").val();
+		$.ajax({
+			type:'get',
+            url:'<?php echo U("Yuyue/ajaxrsyy");?>',
+            data:{"date":$("#datebut1").val()},
+            dataType:'json',
+            success:function(dd)
+            {
+            	
+                $date = dd;//当前预约人数
+				// alert($date);
+				$(".dqyuyuexianshiren").html($date);
+            	// console.log(dd);
+            },
+            error:function()
+            {
+                alert(Ajax请求失败);
+            }
+		});
+	});
+	//框内改变事件 
+	$(document).on("input",".yuyueriqiyincang",function(){
+		// alert(123);
+	})
+</script>
 <script src="/zysystem1/Public/js/shijian.js"></script>
