@@ -28,6 +28,8 @@ class LoginController extends Controller {
             session('wh_userId',$id);
            // var_dump($_SESSION);
            // echo $level;
+           $photo = $result['userphoto'];
+           session('photo',$photo);
            $this->redirect('index/home',array('rev'=>$level));
         }else{
            $this->redirect('index/index',array('aa'=>1));
