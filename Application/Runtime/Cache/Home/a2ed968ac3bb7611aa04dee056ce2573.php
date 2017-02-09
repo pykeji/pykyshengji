@@ -35,7 +35,7 @@
 <div id="big" style="width:100%; height: 100%;background-color:white;">
      <div class="nest" id="FootableClose">
                             <div class="title-alt" style="margin-top:0px">
-<?php if($_SESSION['wh_power'] == 1){ $power = 1; }else{ $power = 2; } ?>
+<?php $day = date('ymd'); if($_SESSION['wh_power'] == 1){ $power = 1; }else{ $power = 2; } ?>
                                 <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <?php if($power == 1){ echo '用户管理'; }else{ echo '用户列表'; } ?></h6>
                                 <div class="titleClose">
@@ -52,7 +52,7 @@
                             </div>
 
                             <div class="body-nest" id="Footable">
-                                <table class="table-striped footable-res footable metro-blue" data-page-size="14">
+                                <table class="table-striped footable-res footable metro-blue" data-page-size="10">
                                     <thead>
                                         <tr>
                                             <th>
@@ -81,14 +81,15 @@
                                         <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
                                             <td><?php echo $num; ?></td>
                                             <td><?php echo ($vo["username"]); ?></td>
-                                            <td>1.jpg
+                                            <?php $pho = $vo['userphoto'];$path = '/zySystem/Uploads/'; ?>
+                                            <td><img src="<?php echo $path.'20'.$day.'/'.$pho; ?>" alt="加载失败" style="width:40px;height:40px;">
                                             </td>
                                             <td><?php echo ($vo["name"]); ?></td>
                                             <td data-value="78025368997">18231120172</td>
                                             <td data-value="1">
                                                 <a href="#">修改</a><span style="margin-left: 5px;margin-right: 5px;margin-top:300px;">|</span>
                                                 <?php if($vo['del'] < 1){ ?>
-                                                <a href="#" style="color:red">删除</a>
+                                                <a href="<?php echo U('User/del',array('id'=>$vo['id']));?>" style="color:red" class="dela">删除</a>
                                                 <?php }else{ ?>
                                                     <a>不可删除</a>
                                                 <?php } ?>
@@ -99,7 +100,8 @@
                                                 <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
                                             <td><?php echo $num; ?></td>
                                             <td><?php echo ($vo["username"]); ?></td>
-                                            <td>1.jpg
+                                            <?php $pho = $vo['userphoto'];$path = '/zySystem/Uploads/'; ?>
+                                            <td><img src="<?php echo $path.'20'.$day.'/'.$pho; ?>" alt="加载失败" style="width:40px;height:40px;">
                                             </td>
                                             <td><?php echo ($vo["name"]); ?></td>
                                             <td data-value="78025368997">18231120172</td>
@@ -156,6 +158,9 @@
     <script type="text/javascript">
     $(function() {
         $('.footable-res').footable();
+        // $('.dela').click(function(){
+        //     confirm('确定删除吗？');
+        // });
     });
     </script>
     <script type="text/javascript">
