@@ -166,36 +166,83 @@ class IndexController extends Controller {
     }
     //患者查询
     public function chaxun(){
-        $times = date("Y-m-d");//获取当前时间
-        //拼凑where条件 p_date 在$times 00:00:00 和 $times 23:59:59 时间段以内
-        $map['p_date']  = array('between',"$times 00:00:00,$times 23:59:59");
-        // dump($times);die;
-        $rect = M('station_p');
-        $count = $rect->where($map)->count();// 查询满足要求的总记录数 $map表示查询条件
-        $page = getpage($count,10);//控制页面显示条数
-        $show = $page->show();// 分页显示输出
-        $this->assign('page',$show);// 赋值分页输出
-        //以上是分页 ， 以下是数据
-        $data =  $rect->where("p_date like '". $times."%'")->order('br_id')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
-        $this->assign('data',$data);// 赋值模板变量
-        $this->display();
-    }
-    //执行查询
-    public function dochaxun(){
-        //获取查询条件信息
-        $user = I('post.');
-        if ($br_name) {
-            # code...
+        if(IS_GET){
+            $times = date("Y-m-d");//获取当前时间
+            //拼凑where条件 p_date 在$times 00:00:00 和 $times 23:59:59 时间段以内
+            $map['p_date']  = array('between',"$times 00:00:00,$times 23:59:59");
+            // dump($map['p_date']);die;
+            $rect = M('station_p');
+            $count = $rect->where($map)->count();// 查询满足要求的总记录数 $map表示查询条件
+            $page = getpage($count,10);//控制页面显示条数
+            $show = $page->show();// 分页显示输出
+            $this->assign('page',$show);// 赋值分页输出
+            //以上是分页 ， 以下是数据
+            $data =  $rect->where("p_date like '". $times."%'")->order('br_id')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+            $this->assign('data',$data);// 赋值模板变量
+            $this->display();
+        }else if(IS_POST){
+            //链接数据库
+            $rect = M('station_p');
+            //第一步判断是否有病历号(病例号是主键唯一的)
+            $br_id = I('post.br_id');//获取病例号
+            if(!empty($br_id)){
+                $data = $rect->where("br_id='{$br_id}'")->select();
+                // dump($data);die;
+                $this->assign('data',$data);
+                $this->display();
+            }else{
+                //病例号不存在   获取时间拼接where条件
+                $p_datekai = I('post.p_datekai');//获取开始日期
+                $p_datezhong = I('post.p_datezhong');//获取终止日期
+                $datetime['p_date'] =array('between',"$p_datekai 00:00:00,$p_datezhong 23:59:59");
+                // dump($datetime);die;
+                // 获取其他信息 拼接where条件
+                $suoyoutj = I('post.');
+                foreach ($suoyoutj as $k => $v) {
+                    //当键值等于开始时间 不算入where条件内
+                    if($k !="p_datekai" ){
+                        //当键值等于终止时间 不算入where条件内
+                        if($k!="p_datezhong"){
+                            //判断值不为空
+                            if(!empty($v)){
+                                $a[].=$k;
+                                $b[].=$v;
+                            }
+                        }
+                    } 
+                }
+                //把值存在的数据 整合成一个数组 （建对应值的一个数组）
+                $com=array_combine($a,$b);
+                //分为两种情况 
+                //第一 姓名或性别有一个存在。 第二 姓名或性别都不存在
+                $br_name = I('post.br_name');
+                $xb = I('post.xb');
+                if($br_name || $xb){
+                    // dump($com);die;
+                    $count = $rect->where($com)->where($datetime)->count();// 查询满足要求的总记录数 $map表示查询条件
+                    $page = getpage($count,10);//控制页面显示条数
+                    $show = $page->show();// 分页显示输出
+                    $this->assign('page',$show);// 赋值分页输出
+                    //以上是分页 ， 以下是数据
+                    $data = $rect->where($com)->where($datetime)->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+
+                    $this->assign('data',$data);
+                    $this->display();
+                }else{
+                    // 第二 姓名或性别都不存在
+                    $count = $rect->where($datetime)->where($datetime)->count();// 查询满足要求的总记录数 $map表示查询条件
+                    $page = getpage($count,10);//控制页面显示条数
+                    $show = $page->show();// 分页显示输出
+                    $this->assign('page',$show);// 赋值分页输出
+                    //以上是分页 ， 以下是数据
+                    $data = $rect->where($datetime)->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+                    // dump($data);die;
+                    $this->assign('data',$data);
+                    $this->display();
+                }
+                    
+            }  
         }
-        $br_name = I('post.br_name');
-        $p_datekai = I('post.p_datekai');
-        $p_datezhong = I('post.p_datezhong');
-        $br_id = I('post.br_id');
-        $xb = I('post.xb');
-        //链接数据库
-        $rect = M('station_p');
-        $data = $rect->where("br_name='{$br_name}' or br_id={$br_id}")->select();
-        dump($data);die;
     }
     //健康档案
     public function jiankang(){

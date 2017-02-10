@@ -16,7 +16,7 @@
     <div class="title center" id="title">
         查询窗口
     </div>
-    <form action="<?php echo U('Index/dochaxun');?>"  method="post">
+    <form action="<?php echo U('Index/chaxun');?>"  method="post">
     <div class="chaxun center">
         <div>
             <img src="/zySystem/Public/img/chaxun.png" alt="图片加载失败！">
@@ -40,7 +40,7 @@
         </div>
         <div class="nb">
             <label><!-- <span><input type="checkbox"></span> --><span>性别：</span></label>
-            <label><span><input type="radio" name="xb" value="男" checked="checked"><span>男</span></span></label>
+            <label><span><input type="radio" name="xb" value="男" ><span>男</span></span></label>
             <label><span><input type="radio" name="xb" value="女"><span>女</span></span></label>
         </div>
         <div class="but">
