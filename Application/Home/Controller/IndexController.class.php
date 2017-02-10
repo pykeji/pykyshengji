@@ -71,7 +71,7 @@ class IndexController extends Controller {
     }
     //患者登记
     public function dengji(){
-    	$data     = M('station_p');// 实例化Data数据模型
+    	$data = M('station_p');// 实例化Data数据模型
         $id = $data->field('br_id')->select();
         foreach ($id as $v) {
             foreach ($v as $value) {

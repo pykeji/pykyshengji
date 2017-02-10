@@ -13,16 +13,16 @@
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div class="tool">
 		<input type="button" name="sf" value="¥ 收费">
-		<input type="button" name="tf" value="退费">
-		<input type="button" name="sc" value="删除">
+		<input type="button" name="tf" value="✍ 退费">
+		<input type="button" name="sc" value="✘ 删除">
 		<p id="demo"></p>
 	</div>
 	<div class="top">
-		<span>病历号:<b>00000022</b></span>
-		<span>姓名:<b>李小龙</b></span>
-		<span>性别:<b>男</b></span>
-		<span>年龄:<b>37</b></span>
-		<span>就诊日期:<b>2017-01-09</b></span>
+		<span>病历号:<b><?php echo ($_SESSION['id']); ?></b></span>
+		<span>姓名:<b><?php echo ($data["0"]["br_name"]); ?></b></span>
+		<span>性别:<b><?php echo ($data["0"]["xb"]); ?></b></span>
+		<span>年龄:<b><?php echo ($data["0"]["nl"]); ?></b></span>
+		<span>就诊日期:<b><?php echo ($data["0"]["jz_date"]); ?></b></span>
 	</div>
 	<div class="center">
 		<div class="center_t">
@@ -66,11 +66,11 @@
 							fitColumns: true
 						">
 					</td>
-					<td><input type="text" name="guige" value=""></td>
-					<td><input type="text" name="danwei" value=""></td>
-					<td><input type="text" name="danjia" value=".00"></td>
+					<td><input type="text" name="guige" value="" disabled></td>
+					<td><input type="text" name="danwei" value="" disabled></td>
+					<td><input type="text" name="danjia" value="" disabled></td>
 					<td><input type="text" name="number" value=".00"></td>
-					<td><input type="text" name="jine" value=".00"></td>
+					<td><input type="text" name="jine" value="" disabled></td>
 				</tr>
 			</table>
 		</div>
