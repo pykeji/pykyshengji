@@ -14,9 +14,9 @@
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div class="tool">
 		<span class="sm">说明：本统计只针对已完成就诊的病人</span>
-		<input type="button" name="query" value="统计">
-		<input type="button" name="print" value="打印">
-		<input type="button" name="exit" value="退出">
+		<input type="button" name="query" value="✔ 统计">
+		<input type="button" name="print" value="℗ 打印">
+		<input type="button" name="exit" value="✘ 退出">
 		<p id="demo"></p>
 	</div>
 	<div class="zyzz_top">
