@@ -32,7 +32,7 @@ class IndexController extends Controller {
         $show = $page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
         //以上是分页 ， 以下是数据
-        $data =  $rect->where('jz_flagjz=1')->order('br_id')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+        $data =  $rect->where('jz_flagjz=1')->order('p_date')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
         $this->assign('data',$data);// 赋值模板变量
         $this->display();
         // 法二官方写的不带样式
@@ -81,11 +81,15 @@ class IndexController extends Controller {
         $a=array_count_values($qb);//计算出现次数
         $b=$a[date('Ymd')];
         if (!empty($b)) {
-            $id = date('Ymd').$b+1;
+            $c = $b+1;
+            $id = date('Ymd').$c;
+            // dump($id);die;
         }else{
             $id = date('Ymd')."1";
         }
-        session(id,$id);//设置编号
+        // session(id,$id);//设置编号
+        $this->assign('id',$id);//设置编号
+        // $this->assign('data',$data);// 赋值数据集
         $this->display();
     }
     //患者保存
@@ -97,6 +101,27 @@ class IndexController extends Controller {
     }
     //患者预约
     public function yuyue(){
+        //左侧病历号
+        $data     = M('station_p');// 实例化Data数据模型
+        $id = $data->field('br_id')->select();
+        foreach ($id as $v) {
+            foreach ($v as $value) {
+                $qb[]=substr($value, 0,8);
+            }
+        }
+        $a=array_count_values($qb);//计算出现次数
+        $b=$a[date('Ymd')];
+        if (!empty($b)) {
+            $c = $b+1;
+            $id = date('Ymd').$c;
+            // dump($id);die;
+        }else{
+            $id = date('Ymd')."1";
+        }
+        // session(id,$id);//设置编号
+        $this->assign('id',$id);//设置编号
+        // $this->assign('data',$data);// 赋值数据集
+        // 右侧预约情况
         $user = M('station_p');
         //获取数据
         $data = $user->where('reserve=2')->field('p_date,br_name')->select();
@@ -139,8 +164,38 @@ class IndexController extends Controller {
         $this->assign('data',$shuju);
         $this->display();
     }
+    //患者查询
     public function chaxun(){
+        $times = date("Y-m-d");//获取当前时间
+        //拼凑where条件 p_date 在$times 00:00:00 和 $times 23:59:59 时间段以内
+        $map['p_date']  = array('between',"$times 00:00:00,$times 23:59:59");
+        // dump($times);die;
+        $rect = M('station_p');
+        $count = $rect->where($map)->count();// 查询满足要求的总记录数 $map表示查询条件
+        $page = getpage($count,10);//控制页面显示条数
+        $show = $page->show();// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
+        //以上是分页 ， 以下是数据
+        $data =  $rect->where("p_date like '". $times."%'")->order('br_id')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+        $this->assign('data',$data);// 赋值模板变量
         $this->display();
+    }
+    //执行查询
+    public function dochaxun(){
+        //获取查询条件信息
+        $user = I('post.');
+        if ($br_name) {
+            # code...
+        }
+        $br_name = I('post.br_name');
+        $p_datekai = I('post.p_datekai');
+        $p_datezhong = I('post.p_datezhong');
+        $br_id = I('post.br_id');
+        $xb = I('post.xb');
+        //链接数据库
+        $rect = M('station_p');
+        $data = $rect->where("br_name='{$br_name}' or br_id={$br_id}")->select();
+        dump($data);die;
     }
     //健康档案
     public function jiankang(){
@@ -153,6 +208,7 @@ class IndexController extends Controller {
             $id = I('post.br_id');
             $data = $user->where("br_id={$id}")->select();
             $this->assign('data',$data);// 模板变量赋值
+            session(id,$id);//设置编号存入session
             // dump($data);die;
         //接受接诊区传值(get方式)    
         }else if(IS_GET){
@@ -162,6 +218,8 @@ class IndexController extends Controller {
                 $user = M('station_p');
                 $data = $user->where("br_id={$id}")->select();
                 $this->assign('data',$data);// 模板变量赋值
+                session(id,$id);//设置编号存入session
+
             }
         }
         // $this->assign('data',$data);// 模板变量赋值      

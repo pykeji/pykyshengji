@@ -22,10 +22,12 @@ class LoginController extends Controller {
            $level = $result['power'];
            $id = $result['id'];
            $pow = $result['power'];
+           $path = $result['photopath'];
            session('wh_power',$pow);
          //用户名存入session
             session('wh_userName',$name);
             session('wh_userId',$id);
+            session('patha',$path);
            // var_dump($_SESSION);
            // echo $level;
            $photo = $result['userphoto'];
@@ -74,6 +76,12 @@ class LoginController extends Controller {
         for($z=0;$z<$num;++$z){
           $list[$z]['name'] = $newarr[$z]['name'];
         }
+        $powerdict = $nnaa->where('level=1')->select();
+        $um = count($powerdict);
+        for($x=0;$x<$um;++$x){
+          $powerlist[$x] = $powerdict[$x];
+        }
+        $this->assign('powerlist',$powerlist);
         $this->assign('list',$list);
         $this->display('index/userManage');
     }

@@ -15,13 +15,16 @@ class NewsController extends Controller {
                 'autoSub'    =>    true,   
                 'subName'    =>    array('date','Ymd'),
             );
+            $b = '20'.date('ymd');
             $upload = new \Think\Upload($config);// 实例化上传类
             $images = $upload->upload();
             $a = $images['Filedata']['savename'];
             $user = M('user-info-dict');
             $id = $_SESSION['wh_userId'];
             $data['userPhoto'] = $a;
+            $data['photoPath'] = $b;
             $user->where("id=$id")->save($data);
+            $_SESSION['photo'] = $a;
             //判断是否有图
             if($images){
                 $info=$images['Filedata']['savepath'].$images['Filedata']['savename'];
