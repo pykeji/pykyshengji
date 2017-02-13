@@ -1,12 +1,24 @@
-[ 2017-02-10T17:09:05+08:00 ] ::1 /zySystem/index.php/Index/tizhi/aa/1.html
+[ 2017-02-10T08:24:34+08:00 ] ::1 /zySystem/Uploads/20170210/61ce27a2a4208bcc1a0b5a9f26d924e1.jpg
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000967s ]
-ERR: 无法加载模块:Index
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:Uploads
 
-[ 2017-02-10T17:11:03+08:00 ] ::1 /zySystem/index.php/Index/tizhi/aa/1.html
+[ 2017-02-10T08:25:19+08:00 ] ::1 /zySystem/img/uploadify-cancel.png
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
-ERR: 无法加载模块:Index
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Img
+
+[ 2017-02-10T08:40:32+08:00 ] ::1 /zySystem/Public/mrjkda/Birthday-Calendar.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-02-10T08:40:32+08:00 ] ::1 /zySystem/Public/mrjkda/Birthday-Calendar.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
 
