@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>接诊区_中医健康管理系统</title>
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/jiezhen.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/jiezhen.css">
     <!-- 分页效果 -->
-    <link href="__PUBLIC__/css/mypage.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
+    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div class="bg">
     <div class="title center">接诊区</div>
     <div class="yuyue">
         <div>
-            <!--<img src="__PUBLIC__/img/014.png" alt="图片加载失败！">-->
+            <!--<img src="/zySystem/Public/img/014.png" alt="图片加载失败！">-->
         </div>
         <div class="yyfont">
             预约病人列表
@@ -50,42 +50,41 @@
                     <!--<th width="12%">E-Mail</th>-->
                     <th width="12%">操作</th>
                 </tr>
-                <volist name="data" id="vo">
-                    <!-- <volist name="vo['1']" id="sub"> -->
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!-- <volist name="vo['1']" id="sub"> -->
                 <tr class="sty1" name="tableSty">
                     <td>
-                        {$vo.p_date}
+                        <?php echo ($vo["p_date"]); ?>
                     </td>
                     <td>
-                        {$vo.br_name}
+                        <?php echo ($vo["br_name"]); ?>
                     </td>
                     <td>
-                        {$vo.xb}
+                        <?php echo ($vo["xb"]); ?>
                     </td>
                     <td>
-                        {$vo.nl}
+                        <?php echo ($vo["nl"]); ?>
                     </td>
                     <td>
-                        {$vo.tel}
-                        <input type="hidden" class="ajaxcanshu" value="{$vo.br_id}">
+                        <?php echo ($vo["tel"]); ?>
+                        <input type="hidden" class="ajaxcanshu" value="<?php echo ($vo["br_id"]); ?>">
                     </td>
                         
                     <td>
                         <span data-toggle="modal" data-target="#myModal" name=""  class="ajaxxinxishuju" >详细信息</span>
-                        <a href='{:U("Index/jiankang",array("id"=>$vo[br_id]))}' ><span>就诊</span></a>
+                        <a href='<?php echo U("Index/jiankang",array("id"=>$vo[br_id]));?>' ><span>就诊</span></a>
                         <span data-toggle="modal" data-target="#myModal2" class="ajaxxiugaishuju">修改</span>
                         <span>收费</span>
                     </td>
                 </tr>
-                    <!-- </volist> -->
+                    <!--<?php endforeach; endif; else: echo "" ;endif; ?> -->
                 <volist> 
             </table>
-            <!-- <div class="result page">{$page}</div> -->
+            <!-- <div class="result page"><?php echo ($page); ?></div> -->
         </div>
         <div class="yytj">
         <div class="result page">
             <div class="pages">
-            {$page}
+            <?php echo ($page); ?>
             </div>
         </div>
             <!-- <span>共<span id="sickNum">0</span>位病人登记</span>
@@ -169,7 +168,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel2">患者信息修改</h4>
             </div>
-            <form action="{:U('Index/dojiezhenajaxxiugai')}" method="post">
+            <form action="<?php echo U('Index/dojiezhenajaxxiugai');?>" method="post">
             <div class="modal-body">
                 <table border="0" class="mbt">
                     <tr>
@@ -238,7 +237,7 @@
         // alert($id);
         $.ajax({
             type:'get',
-            url:'{:U("Index/jiezhenxiangqajax")}',
+            url:'<?php echo U("Index/jiezhenxiangqajax");?>',
             data:{"id":$id},
             dataType:'json',
             success:function(dd)
@@ -292,7 +291,7 @@
         // alert($id);
         $.ajax({
             type:'get',
-            url:'{:U("Index/jiezhenxiugaiajax")}',
+            url:'<?php echo U("Index/jiezhenxiugaiajax");?>',
             data:{"id":$id},
             dataType:'json',
             success:function(dd)
@@ -339,5 +338,5 @@
         });
     });
 </script>
-<script src="__PUBLIC__/js/shijian.js"></script>
-<script src="__PUBLIC__/js/tr.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zySystem/Public/js/tr.js"></script>
