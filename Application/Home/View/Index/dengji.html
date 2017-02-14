@@ -21,6 +21,9 @@
                 <div class="djfont">
                     患者基本信息
                 </div>
+                <span>
+                    <b style="margin-left:40px;color: red; ">{$cwxinxi}</b>
+                </span>
                 <div class="djdate">
                     <span>日期：</span>
                     <span class="djrq"></span>
@@ -29,53 +32,71 @@
         </div>
         <form action="{:U('Index/jiankang')}" method="post">
             <div class="inf center">
+            <volist name="data" id="vo">
                 <table border="0" class="mbt center">
                     <tr>
                         <td width="15%">病历号：</td>
-                        <td width="35%"><input type="text" value="{$id}" name="br_id" readonly="readonly" id="blNum"></td>
+                        <td width="35%"><input type="text" value="{$vo.br_id}" name="br_id" readonly="readonly" id="blNum"></td>
                         <td width="15%"></td>
                         <td width="35%"></td>
                     </tr>
                     <tr>
                         <td>姓名：</td>
-                        <td><input type="text" name="br_name" id="userName1"></td>
+                        <td><input type="text" name="br_name" value="{$vo.br_name}" id="userName1"></td>
                         <td>性别：</td>
                         <td>
+                        <php>
+                            if($data[0]['xb']=="女"){
+                        </php>
+                            <label><input type="radio" name="xb" value="男" ><span>男</span></label>
+                                <label><input type="radio" name="xb" value="女" checked="checked"><span>女</span></label>
+                        <php>    
+                            }else{
+                        </php>
                             <label><input type="radio" name="xb" value="男" checked="checked"><span>男</span></label>
-                            <label><input type="radio" name="xb" value="女"><span>女</span></label>
+                                <label><input type="radio" name="xb" value="女" ><span>女</span></label>
+                        <php>    
+                            }
+                        </php>
+
                         </td>
                     </tr>
                     <tr>
                         <td>年龄：</td>
-                        <td><input type="text" name="nl" id="age1"></td>
+                        <td><input type="text" name="nl" value="{$vo.nl}" id="age1"></td>
                         <td>出生年月：</td>
-                        <td><input type="text" name="cs_date" placeholder="请选择时间！" id="datebut" onClick="jeDate({dateCell:'#datebut',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></td>
+                        <td><input type="text" name="cs_date" value="{$vo.cs_date}" placeholder="请选择时间！" id="datebut" onClick="jeDate({dateCell:'#datebut',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>身份证号：</td>
-                        <td><input type="text" name="pass" id="idNum1"></td>
+                        <td><input type="text" name="pass" value="{$vo.pass}" id="idNum1"></td>
                         <td>电话：</td>
-                        <td><input type="text" name="tel" id="phone1"></td>
+                        <td><input type="text" name="tel" value="{$vo.tel}" id="phone1"></td>
                     </tr>
                     <tr>
                         <td>传真：</td>
-                        <td><input type="text" name="fax" id="chuanzhen1"></td>
+                        <td><input type="text" name="fax" value="{$vo.fax}" id="chuanzhen1"></td>
                         <td>E-Mail：</td>
-                        <td><input type="text" name="e_mail" id="mail1"></td>
+                        <td><input type="text" name="e_mail" value="{$vo.e_mail}" id="mail1"></td>
                     </tr>
                     <tr>
                         <td>挂号费：</td>
-                        <td><input type="text" name="ghf"></td>
+                        <td><input type="text" name="ghf" value="{$vo.ghf}"></td>
                         <td width="15%">预约日期：</td>
-                        <td width="35%"><input type="text" name="p_date" class="yyrq" readonly="readonly"></td>
+                        <td width="35%"><input type="text" name="p_date" value="{$vo.p_date}" class="yyrq" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>单位：</td>
-                        <td colspan="3"><textarea name="dw" id="comp1"class="lontext"></textarea></td>
+                        <td colspan="3">
+                            <textarea name="dw" id="comp1"class="lontext">
+                                {$vo.dw}
+                            </textarea>
+                        </td>
                     </tr>
                     <!-- 就诊时间 -->
                     <input type="hidden"  name="jz_date" class="yyrq">
                 </table>
+            </volist>
             </div>
         <div class="but">
             <div class="butt">

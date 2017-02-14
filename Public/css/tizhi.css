@@ -39,7 +39,8 @@ img{border:0px;}
 #res{position:relative;}
 /*鉴定报告*/
 .report{height:562px;width:100%;background-color:#d9d9d9;overflow: auto;}
-.report .reportinf{width:75%;background-color:#ffffff;height:100%;margin-top:35px;}
+.report .reportinf{width:75%;background-color:#ffffff;margin-top:35px;
+    min-height:100%;}
 /*鉴定报告大标题*/
 .report .reportinf .rep-title{
     text-align:center;padding-top:40px;font-size:28px;font-weight: bold;padding-bottom:25px;
@@ -49,6 +50,7 @@ img{border:0px;}
 /*内容部分标题*/
 .report .reportinf .rep-title1{font-size:16px;font-weight: bold;width:90%;margin:10px auto;}
 .report .reportinf .rep-inf{width:90%;margin:0px auto;text-indent:2em;}
+.report .reportinf .rep-inf img{text-align: center;}
 /*隐藏框*/
 .tztitle{
     position:absolute;width:40px;top:0px;left:-40px;font-size:25px;text-align:center;border-bottom:1px solid #CCCCCC;
