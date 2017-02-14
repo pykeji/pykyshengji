@@ -9,6 +9,8 @@
     <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
 </head>
 <body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<div>{$aa}</div>
+<form action="{:U('Index/tizhiSub')}" method="post" id="form1">
     <div class="bg">
     <div class="xxk">
         <ul id="myTab" class="nav nav-tabs">
@@ -29,11 +31,11 @@
                             (1)您精力充沛吗？（指精神头足，乐于做事）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx1"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx1"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx1"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx1"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx1"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx1" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx1" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx1" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx1" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx1" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -53,11 +55,11 @@
                             (2)您容易疲乏吗？（指体力如何，是否稍微活动一下或做一点家务劳动就感到累）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx2"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx2"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx2"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx2"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx2"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx2" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx2" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx2" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx2" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx2" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -77,11 +79,11 @@
                             (3)您容易气短，呼吸短促，接不上气吗？
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx3"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx3"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx3"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx3"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx3"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx3" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx3" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx3" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx3" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx3" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -101,11 +103,11 @@
                             (4)您说话声音低弱无力吗?（指说话没有力气）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx4"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx4"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx4"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx4"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx4"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx4" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx4" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx4" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx4" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx4" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -125,11 +127,11 @@
                             (5)您感到闷闷不乐、情绪低沉吗?（指心情不愉快，情绪低落）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx5"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx5"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx5"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx5"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx5"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx5" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx5" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx5" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx5" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx5" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -149,11 +151,11 @@
                             (6)您容易精神紧张、焦虑不安吗?（指遇事是否心情紧张）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx6"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx6"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx6"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx6"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx6"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx6" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx6" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx6" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx6" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx6" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -173,11 +175,11 @@
                             (7)您因为生活状态改变而感到孤独、失落吗？
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx7"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx7"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx7"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx7"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx7"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx7" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx7" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx7" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx7" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx7" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -197,11 +199,11 @@
                             (8)您容易感到害怕或受到惊吓吗?
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx8"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx8"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx8"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx8"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx8"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx8" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx8" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx8" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx8" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx8" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -221,11 +223,11 @@
                             (9)您感到身体超重不轻松吗?(感觉身体沉重)[BMI指数=体重（kg）/身高^2（m）]
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx9"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx9"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx9"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx9"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx9"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx9" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx9" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx9" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx9" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx9" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -245,11 +247,11 @@
                             (10)您眼睛干涩吗?
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx10"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx10"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx10"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx10"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx10"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx10" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx10" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx10" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx10" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx10" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -269,11 +271,11 @@
                             (11)您手脚发凉吗?（不包含周围温度低或穿的少导致的手脚发冷）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx11"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx11"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx11"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx11"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx11"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx11" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx11" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx11" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx11" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx11" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -293,11 +295,11 @@
                             (12)您胃脘部、背部或腰膝部怕冷吗？（指上腹部、背部、腰部或膝关节等，有一处或多处怕冷）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx12"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx12"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx12"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx12"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx12"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx12" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx12" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx12" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx12" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx12" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -317,11 +319,11 @@
                             (13)您比一般人耐受不了寒冷吗？（指比别人容易害怕冬天或是夏天的冷空调、电扇等）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx13"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx13"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx13"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx13"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx13"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx13" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx13" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx13" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx13" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx13" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -341,11 +343,11 @@
                             (14)您容易患感冒吗?（指每年感冒的次数）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx14"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx14"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx14"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx14"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx14"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx14" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx14" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx14" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx14" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx14" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -365,11 +367,11 @@
                             (15)您没有感冒时也会鼻塞、流鼻涕吗?
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx15"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx15"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx15"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx15"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx15"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx15" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx15" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx15" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx15" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx15" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -389,11 +391,11 @@
                             (16)您有口黏口腻，或睡眠打鼾吗？
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx16"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx16"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx16"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx16"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx16"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx16" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx16" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx16" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx16" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx16" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -413,11 +415,11 @@
                             (17)您容易过敏(对药物、食物、气味、花粉或在季节交替、气候变化时)吗?
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx17"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx17"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx17"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx17"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx17"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx17" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx17" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx17" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx17" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx17" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -437,11 +439,11 @@
                             (18)您的皮肤容易起荨麻疹吗? (包括风团、风疹块、风疙瘩)
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx18"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx18"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx18"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx18"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx18"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx18" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx18" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx18" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx18" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx18" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -461,11 +463,11 @@
                             (19)您的皮肤在不知不觉中会出现青紫瘀斑、皮下出血吗?（指皮肤在没有外伤的情况下出现青一块紫一块的情况）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx19"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx19"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx19"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx19"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx19"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx19" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx19" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx19" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx19" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx19" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -485,11 +487,11 @@
                             (20)您的皮肤一抓就红，并出现抓痕吗?（指被指甲或钝物划过后皮肤的反应）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx20"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx20"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx20"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx20"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx20"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx20" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx20" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx20" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx20" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx20" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -509,11 +511,11 @@
                             (21)您皮肤或口唇干吗?
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx21"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx21"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx21"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx21"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx21"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx21" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx21" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx21" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx21" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx21" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -533,11 +535,11 @@
                             (22)您有肢体麻或固定部位疼痛的感觉吗？
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx22"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx22"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx22"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx22"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx22"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx22" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx22" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx22" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx22" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx22" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -557,11 +559,11 @@
                             (23)您面部或鼻部有油腻感或者油亮发光吗?（指脸上或鼻子）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx23"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx23"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx23"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx23"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx23"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx23" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx23" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx23" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx23" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx23" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -581,11 +583,11 @@
                             (24)您面色或目眶晦黯，或出现褐色斑块/斑点吗?
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx24"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx24"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx24"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx24"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx24"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx24" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx24" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx24" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx24" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx24" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -605,11 +607,11 @@
                             （25）您有皮肤湿疹、疮疖吗？
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx25"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx25"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx25"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx25"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx25"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx25" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx25" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx25" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx25" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx25" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -629,11 +631,11 @@
                             (26)您感到口干咽燥、总想喝水吗？
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx26"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx26"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx26"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx26"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx26"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx26" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx26" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx26" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx26" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx26" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -653,11 +655,11 @@
                             (27)您感到口苦或嘴里有异味吗?（指口苦或口臭）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx27"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx27"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx27"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx27"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx27"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx27" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx27" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx27" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx27" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx27" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -677,11 +679,11 @@
                             (28)您腹部肥大吗?（指腹部脂肪肥厚）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx28"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx28"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx28"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx28"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx28"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx28" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx28" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx28" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx28" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx28" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -701,11 +703,11 @@
                             (29)您吃(喝)凉的东西会感到不舒服或者怕吃(喝)凉的东西吗？（指不喜欢吃凉的食物，或吃了凉的食物后会不舒服）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx29"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx29"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx29"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx29"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx29"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx29" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx29" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx29" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx29" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx29" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -725,11 +727,11 @@
                             (30)您有大便黏滞不爽、解不尽的感觉吗?(大便容易粘在马桶上)
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx30"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx30"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx30"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx30"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx30"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx30" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx30" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx30" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx30" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx30" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -749,11 +751,11 @@
                             (31)您容易大便干燥吗?
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx31"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx31"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx31"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx31"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx31"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx31" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx31" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx31" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx31" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx31" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -773,11 +775,11 @@
                             (32)您舌苔厚腻或有舌苔厚厚的感觉吗?（如果自我感觉不清楚可由调查员观察后填写）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx32"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx32"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx32"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx32"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx32"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx32" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx32" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx32" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx32" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx32" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -797,11 +799,11 @@
                             (33)您舌下静脉瘀紫或增粗吗？（可由调查员辅助观察后填写）
                         </div>
                         <div class="ti-content">
-                            <label><input type="radio" name="xx33"><span>1、没有</span></label>
-                            <label><input type="radio" name="xx33"><span>2、很少</span></label>
-                            <label><input type="radio" name="xx33"><span>3、有时</span></label>
-                            <label><input type="radio" name="xx33"><span>4、经常</span></label>
-                            <label><input type="radio" name="xx33"><span>5、总是</span></label>
+                            <label><input type="radio" name="xx33" value="1"><span>1、没有</span></label>
+                            <label><input type="radio" name="xx33" value="2"><span>2、很少</span></label>
+                            <label><input type="radio" name="xx33" value="3"><span>3、有时</span></label>
+                            <label><input type="radio" name="xx33" value="4"><span>4、经常</span></label>
+                            <label><input type="radio" name="xx33" value="5"><span>5、总是</span></label>
                         </div>
                         <!--提示-->
                         <div class="prompt">
@@ -826,42 +828,42 @@
                     <table class="nav nav-tabs" id="myTiContent">
                         <tr>
                             <td class="sty1" id="xx1"><a href="#ti1" data-toggle="tab">1</a></td>
-                            <td id="xx2"><a href="#ti2" data-toggle="tab">2</a></td>
-                            <td id="xx3"><a href="#ti3" data-toggle="tab">3</a></td>
-                            <td id="xx4"><a href="#ti4" data-toggle="tab">4</a></td>
-                            <td id="xx5"><a href="#ti5" data-toggle="tab">5</a></td>
-                            <td id="xx6"><a href="#ti6" data-toggle="tab">6</a></td>
-                            <td id="xx7"><a href="#ti7" data-toggle="tab">7</a></td>
-                            <td id="xx8"><a href="#ti8" data-toggle="tab">8</a></td>
-                            <td id="xx9"><a href="#ti9" data-toggle="tab">9</a></td>
-                            <td id="xx10"><a href="#ti10" data-toggle="tab">10</a></td>
-                            <td id="xx11"><a href="#ti11" data-toggle="tab">11</a></td>
+                            <td class="sty2" id="xx2"><a href="#ti2" data-toggle="tab">2</a></td>
+                            <td class="sty2" id="xx3"><a href="#ti3" data-toggle="tab">3</a></td>
+                            <td class="sty2" id="xx4"><a href="#ti4" data-toggle="tab">4</a></td>
+                            <td class="sty2" id="xx5"><a href="#ti5" data-toggle="tab">5</a></td>
+                            <td class="sty2" id="xx6"><a href="#ti6" data-toggle="tab">6</a></td>
+                            <td class="sty2" id="xx7"><a href="#ti7" data-toggle="tab">7</a></td>
+                            <td class="sty2" id="xx8"><a href="#ti8" data-toggle="tab">8</a></td>
+                            <td class="sty2" id="xx9"><a href="#ti9" data-toggle="tab">9</a></td>
+                            <td class="sty2" id="xx10"><a href="#ti10" data-toggle="tab">10</a></td>
+                            <td class="sty2" id="xx11"><a href="#ti11" data-toggle="tab">11</a></td>
                         </tr>
                         <tr>
-                            <td id="xx12"><a href="#ti12" data-toggle="tab">12</a></td>
-                            <td id="xx13"><a href="#ti13" data-toggle="tab">13</a></td>
-                            <td id="xx14"><a href="#ti14" data-toggle="tab">14</a></td>
-                            <td id="xx15"><a href="#ti15" data-toggle="tab">15</a></td>
-                            <td id="xx16"><a href="#ti16" data-toggle="tab">16</a></td>
-                            <td id="xx17"><a href="#ti17" data-toggle="tab">17</a></td>
-                            <td id="xx18"><a href="#ti18" data-toggle="tab">18</a></td>
-                            <td id="xx19"><a href="#ti19" data-toggle="tab">19</a></td>
-                            <td id="xx20"><a href="#ti20" data-toggle="tab">20</a></td>
-                            <td id="xx21"><a href="#ti21" data-toggle="tab">21</a></td>
-                            <td id="xx22"><a href="#ti22" data-toggle="tab">22</a></td>
+                            <td class="sty2" id="xx12"><a href="#ti12" data-toggle="tab">12</a></td>
+                            <td class="sty2" id="xx13"><a href="#ti13" data-toggle="tab">13</a></td>
+                            <td class="sty2" id="xx14"><a href="#ti14" data-toggle="tab">14</a></td>
+                            <td class="sty2" id="xx15"><a href="#ti15" data-toggle="tab">15</a></td>
+                            <td class="sty2" id="xx16"><a href="#ti16" data-toggle="tab">16</a></td>
+                            <td class="sty2" id="xx17"><a href="#ti17" data-toggle="tab">17</a></td>
+                            <td class="sty2" id="xx18"><a href="#ti18" data-toggle="tab">18</a></td>
+                            <td class="sty2" id="xx19"><a href="#ti19" data-toggle="tab">19</a></td>
+                            <td class="sty2" id="xx20"><a href="#ti20" data-toggle="tab">20</a></td>
+                            <td class="sty2" id="xx21"><a href="#ti21" data-toggle="tab">21</a></td>
+                            <td class="sty2" id="xx22"><a href="#ti22" data-toggle="tab">22</a></td>
                         </tr>
                         <tr>
-                            <td id="xx23"><a href="#ti23" data-toggle="tab">23</a></td>
-                            <td id="xx24"><a href="#ti24" data-toggle="tab">24</a></td>
-                            <td id="xx25"><a href="#ti25" data-toggle="tab">25</a></td>
-                            <td id="xx26"><a href="#ti26" data-toggle="tab">26</a></td>
-                            <td id="xx27"><a href="#ti27" data-toggle="tab">27</a></td>
-                            <td id="xx28"><a href="#ti28" data-toggle="tab">28</a></td>
-                            <td id="xx29"><a href="#ti29" data-toggle="tab">29</a></td>
-                            <td id="xx30"><a href="#ti30" data-toggle="tab">30</a></td>
-                            <td id="xx31"><a href="#ti31" data-toggle="tab">31</a></td>
-                            <td id="xx32"><a href="#ti32" data-toggle="tab">32</a></td>
-                            <td id="xx33"><a href="#ti33" data-toggle="tab">33</a></td>
+                            <td class="sty2" id="xx23"><a href="#ti23" data-toggle="tab">23</a></td>
+                            <td class="sty2" id="xx24"><a href="#ti24" data-toggle="tab">24</a></td>
+                            <td class="sty2" id="xx25"><a href="#ti25" data-toggle="tab">25</a></td>
+                            <td class="sty2" id="xx26"><a href="#ti26" data-toggle="tab">26</a></td>
+                            <td class="sty2" id="xx27"><a href="#ti27" data-toggle="tab">27</a></td>
+                            <td class="sty2" id="xx28"><a href="#ti28" data-toggle="tab">28</a></td>
+                            <td class="sty2" id="xx29"><a href="#ti29" data-toggle="tab">29</a></td>
+                            <td class="sty2" id="xx30"><a href="#ti30" data-toggle="tab">30</a></td>
+                            <td class="sty2" id="xx31"><a href="#ti31" data-toggle="tab">31</a></td>
+                            <td class="sty2" id="xx32"><a href="#ti32" data-toggle="tab">32</a></td>
+                            <td class="sty2" id="xx33"><a href="#ti33" data-toggle="tab">33</a></td>
                         </tr>
                     </table>
                 </div>
@@ -871,52 +873,90 @@
                 <div class="report">
                     <div class="reportinf center">
                         <!--报告表单-->
-                        <form action="#" method="post">
+                        <form action="{:U('Index/tizhi')}" method="post">
                             <div class="rep-title">中医体制辨识鉴定报告</div>
                             <div>
                                 <table border="1" width="90%" class="center">
                                     <tr>
-                                        <td>姓名</td>
-                                        <td colspan="2">阿布</td>
-                                        <td>性别</td>
-                                        <td>男</td>
-                                        <td>年龄</td>
-                                        <td>36岁</td>
-                                        <td>日期</td>
-                                        <td colspan="3">2016-12-16</td>
+                                        <td width="5%">姓名</td>
+                                        <td colspan="2" width="10%">{$res1.name}</td>
+                                        <td width="5%">性别</td>
+                                        <td width="5%">{$res1.sex}</td>
+                                        <td width="5%">年龄</td>
+                                        <td width="5%">{$age}</td>
+                                        <td width="10%">日期</td>
+                                        <td colspan="3" width="10%">{$res1.date}</td>
                                     </tr>
                                     <tr>
                                         <td>身份证号</td>
-                                        <td colspan="6"></td>
+                                        <td colspan="6">{$res1.idcard}</td>
                                         <td>联系方式</td>
-                                        <td colspan="3"></td>
+                                        <td colspan="3">{$res1.phone}</td>
                                     </tr>
                                     <tr>
                                         <td>工作单位</td>
-                                        <td colspan="10"></td>
+                                        <td colspan="10">{$res1.danwei}</td>
                                     </tr>
+                                    <!--<tr>-->
+                                        <!--<td rowspan="2">体制类型</td>-->
+                                        <!--<td colspan="2">平和质[体制1]</td>-->
+                                        <!--<td colspan="2">气虚质[体制2]</td>-->
+                                        <!--<td colspan="2">阳虚质[体制3]</td>-->
+                                        <!--<td colspan="2">阴虚质[体制4]</td>-->
+                                        <!--<td colspan="2">痰湿质[体制5]</td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td colspan="2">湿热质[体制6]</td>-->
+                                        <!--<td colspan="2">血瘀质[体制7]</td>-->
+                                        <!--<td colspan="2">气郁质[体制8]</td>-->
+                                        <!--<td colspan="2">特禀质[体制9]</td>-->
+                                        <!--<td colspan="2"></td>-->
+                                    <!--</tr>-->
                                     <tr>
                                         <td rowspan="2">体制类型</td>
-                                        <td colspan="2">平和质[体制1]</td>
-                                        <td colspan="2">气虚质[体制2]</td>
-                                        <td colspan="2">阳虚质[体制3]</td>
-                                        <td colspan="2">阴虚质[体制4]</td>
-                                        <td colspan="2">痰湿质[体制5]</td>
+                                        <td colspan="2">{$res1.tzname8}-{$res1.tzjg8}</td>
+                                        <td colspan="2">{$res1.tzname}-{$res1.tzjg}</td>
+                                        <td colspan="2">{$res1.tzname1}-{$res1.tzjg1}</td>
+                                        <td colspan="2">{$res1.tzname2}-{$res1.tzjg2}</td>
+                                        <td colspan="2">{$res1.tzname3}-{$res1.tzjg3}</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">湿热质[体制6]</td>
-                                        <td colspan="2">血瘀质[体制7]</td>
-                                        <td colspan="2">气郁质[体制8]</td>
-                                        <td colspan="2">特禀质[体制9]</td>
+                                        <td colspan="2">{$res1.tzname4}-{$res1.tzjg4}</td>
+                                        <td colspan="2">{$res1.tzname5}-{$res1.tzjg5}</td>
+                                        <td colspan="2">{$res1.tzname6}-{$res1.tzjg6}</td>
+                                        <td colspan="2">{$res1.tzname7}-{$res1.tzjg7}</td>
                                         <td colspan="2"></td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="rep-title1">气虚质</div>
-                            <div class="rep-title1">1.情致调摄</div>
+                            <volist name="baoj" id="vo">
+                                <?php
+                                    $bj = M('tz_baojian');
+                                    $name = substr($vo,0,9);
+                                    $res2 = $bj -> where("tzname = '$name'") -> select();
+                                ?>
+                            <div class="rep-title1">{$vo}</div>
+                            <div class="rep-title1">{$res2[0][title]}</div>
                             <div class="rep-inf">
-                                <p>以保持稳定乐观心态</p>
+                                <p>{$res2[0][content]}</p>
                             </div>
+                            <div class="rep-title1">{$res2[0][title1]}</div>
+                            <div class="rep-inf">
+                                <p>{$res2[0][content1]}</p>
+                            </div>
+                            <div class="rep-title1">{$res2[0][title2]}</div>
+                            <div class="rep-inf">
+                                <p>{$res2[0][content2]}</p>
+                            </div>
+                            <div class="rep-title1">{$res2[0][title3]}</div>
+                            <div class="rep-inf">
+                                <p>{$res2[0][content3]}</p>
+                            </div>
+                            <div class="rep-title1">{$res2[0][title4]}</div>
+                            <div class="rep-inf">
+                                <p>{$res2[0][content4]}</p>
+                            </div>
+                            </volist>
                         </form>
                         <!--分类-->
                         <div class="tztitle">测试结果表</div>
@@ -928,9 +968,49 @@
                                     <td>测试结果</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
+                                    <td>{$res1.tzname8}</td>
+                                    <td>{$res1.tzfs8}</td>
+                                    <td>{$res1.tzjg8}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname}</td>
+                                    <td>{$res1.tzfs}</td>
+                                    <td>{$res1.tzjg}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname1}</td>
+                                    <td>{$res1.tzfs1}</td>
+                                    <td>{$res1.tzjg1}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname2}</td>
+                                    <td>{$res1.tzfs2}</td>
+                                    <td>{$res1.tzjg2}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname3}</td>
+                                    <td>{$res1.tzfs3}</td>
+                                    <td>{$res1.tzjg3}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname4}</td>
+                                    <td>{$res1.tzfs4}</td>
+                                    <td>{$res1.tzjg4}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname5}</td>
+                                    <td>{$res1.tzfs5}</td>
+                                    <td>{$res1.tzjg5}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname6}</td>
+                                    <td>{$res1.tzfs6}</td>
+                                    <td>{$res1.tzjg6}</td>
+                                </tr>
+                                <tr>
+                                    <td>{$res1.tzname7}</td>
+                                    <td>{$res1.tzfs7}</td>
+                                    <td>{$res1.tzjg7}</td>
                                 </tr>
                             </table>
                         </div>
@@ -938,7 +1018,7 @@
                 </div>
             </div>
             <div class="anniu">
-                <button type="button" class="btn btn-warning">提交</button>
+                <button type="button" class="btn btn-warning" id="sub">提交</button>
                 <button type="button" class="btn btn-warning">保存</button>
                 <button type="button" class="btn btn-warning">另存为</button>
                 <button type="button" class="btn btn-warning">打印</button>
@@ -946,6 +1026,17 @@
         </div>
     </div>
 </div>
+</form>
 </body>
 </html>
 <script type="text/javascript" src="__PUBLIC__/js/tizhi.js"></script>
+<script>
+    $("#sub").click(function(){
+        var stylen=document.getElementsByClassName('sty2').length;
+        if(stylen==0){
+            $("#form1").submit();
+        }else{
+            alert("请您答完题再提交哦！");
+        }
+    })
+</script>

@@ -11,8 +11,8 @@
 </head>
 <body>
 	<!---->
-
-    <img id="img" src="__PUBLIC__/img/cxbg4.jpg" width="130" height="130" border="0" />
+<php>$day = date('ymd');</php>
+    <img id="img" src="<?php echo '__ROOT__/Uploads/'.'20'.$day.'/'.$_SESSION['photo']; ?>" width="130" height="130" border="0" />
     <input id="file_upload" name="file_upload" type="file" multiple="true" value="" />
 
     
