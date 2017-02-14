@@ -5,6 +5,7 @@
     <title>接诊区_中医健康管理系统</title>
     <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/zySystem/Public/css/jiezhen.css">
+    <!-- 分页效果 -->
     <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>

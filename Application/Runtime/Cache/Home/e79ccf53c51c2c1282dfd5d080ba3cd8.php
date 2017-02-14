@@ -32,7 +32,7 @@
                 <table border="0" class="mbt center">
                     <tr>
                         <td width="15%">病历号：</td>
-                        <td width="35%"><input type="text" value="<?php echo (session('id')); ?>" name="br_id" readonly="readonly" id="blNum"></td>
+                        <td width="35%"><input type="text" value="<?php echo ($id); ?>" name="br_id" readonly="readonly" id="blNum"></td>
                         <td width="15%"></td>
                         <td width="35%"></td>
                     </tr>

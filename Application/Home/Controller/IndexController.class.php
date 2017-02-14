@@ -274,12 +274,70 @@ class IndexController extends Controller {
     }
 //    体质辨识答题界面
     public function tizhi(){
-//      病人病历号 $blh
-        $this->display();
+        $blh=session(id);
+
+        if($blh){
+            $user=M('tz_jbxx');
+            $jieguo=M('tz_jieguo');
+            $tzti=M('tz_question');
+            $ti=$tzti->select();//题目信息检索
+//          题目数组切割成为3*11
+            $ti1=array_slice($ti,0,11);
+            $ti2=array_slice($ti,11,11);
+            $ti3=array_slice($ti,22,11);
+            $this->assign(ti1,$ti1);//1到11题
+            $this->assign(ti2,$ti2);//12到22题
+            $this->assign(ti3,$ti3);//23到33题
+            $this->assign(ti,$ti);
+            @$userInf=$user->where("bianhao=".$blh)->order('id desc')->find();//患者的个人信息和答题信息
+            @$data=$jieguo->where("bianhao=".$blh)->order('id desc')->find();//患者的答题结果
+            $a=array_slice($userInf,8,33);//截取后只存在选项信息
+            if($userInf && $data){
+                $this->assign(res1,$data);//患者的答题结果
+                $this->assign(userCheckedInf,$a);//患者的个人信息和答案信息
+                //体质辨识结果生成部分
+                $tz=array();
+                if($data[tzjg] != '否'){
+                    $tz[] = $data[tzname]."-".$data[tzjg];
+                }
+                if($data[tzjg1] != '否'){
+                    $tz[] = $data[tzname1]."-".$data[tzjg1];
+                }
+                if($data[tzjg2] != '否'){
+                    $tz[] = $data[tzname2]."-".$data[tzjg2];
+                }
+                if($data[tzjg3] != '否'){
+                    $tz[] = $data[tzname3]."-".$data[tzjg3];
+                }
+                if($data[tzjg4] != '否'){
+                    $tz[] = $data[tzname4]."-".$data[tzjg4];
+                }
+                if($data[tzjg5] != '否'){
+                    $tz[] = $data[tzname5]."-".$data[tzjg5];
+                }
+                if($data[tzjg6] != '否'){
+                    $tz[] = $data[tzname6]."-".$data[tzjg6];
+                }
+                if($data[tzjg7] != '否'){
+                    $tz[] = $data[tzname7]."-".$data[tzjg7];
+                }
+                if($data[tzjg8] != '否'){
+                    $tz[] = $data[tzname8]."-".$data[tzjg8];
+                }
+                //$tz结果内容
+                $this -> assign('baoj',$tz);
+                $this->display();
+            }else{
+                $this->display();
+            }
+        }else{
+            $this->display();
+        }
+
     }
 //体质辨识选择提交按钮执行的操作
     public function tizhiSub(){
-        $blh=session('id');
+        $blh=isset($_SESSION['id'])?$_SESSION['id']:"";
         $user=M('station_p');
 //        根据病历号查出患者信息
         $userInf=$user->where("br_id=".$blh)->find();
@@ -312,7 +370,7 @@ class IndexController extends Controller {
 
         //保存结果
         $data = array();
-        $data['id'] = $blh;
+        $data['bianhao'] = $blh;
         $data['name'] = $userInf['br_name'];
         $data['sex'] =$userInf['xb'];
         $data['birth'] = $userInf['cs_date'];
@@ -323,35 +381,35 @@ class IndexController extends Controller {
         //气虚质
         if($qxz<=8){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '否';}
         if($qxz>=9 && $qxz<=10){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '倾向是';}
-        if($qxz>11){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '是';}
+        if($qxz>=11){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '是';}
         //阳虚质
         if($yangxz<=8){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '否';}
         if($yangxz>=9 && $yangxz<=10){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '倾向是';}
-        if($yangxz>11){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '是';}
+        if($yangxz>=11){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '是';}
         //阴虚质
         if($yinxz<=8){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '否';}
         if($yinxz>=9 && $yinxz<=10){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '倾向是';}
-        if($yinxz>11){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '是';}
+        if($yinxz>=11){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '是';}
         //痰湿质
         if($tsz<=8){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '否';}
         if($tsz>=9 && $tsz<=10){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '倾向是';}
-        if($tsz>11){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '是';}
+        if($tsz>=11){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '是';}
         //湿热质
         if($srz<=8){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '否';}
         if($srz>=9 && $srz<=10){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '倾向是';}
-        if($srz>11){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '是';}
+        if($srz>=11){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '是';}
         //血瘀质
         if($xyz<=8){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '否';}
         if($xyz>=9 && $xyz<=10){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '倾向是';}
-        if($xyz>11){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '是';}
+        if($xyz>=11){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '是';}
         //气郁质
         if($qyz<=8){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '否';}
         if($qyz>=9 && $qyz<=10){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '倾向是';}
-        if($qyz>11){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '是';}
+        if($qyz>=11){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '是';}
         //特禀质
         if($tbz<=8){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '否';}
         if($tbz>=9 && $tbz<=10){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '倾向是';}
-        if($tbz>11){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '是';}
+        if($tbz>=11){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '是';}
         //反向计分
         //平和质
         if($_POST['xx2'] == 1){
@@ -410,8 +468,10 @@ class IndexController extends Controller {
          * $data答题信息生成的结果
          */
         $userInfTZ=array_merge($tzUser,$_POST);
+        session(userInf,$userInfTZ);//保存患者答题信息
         //res1只有体质类型
         $this->assign('res1',$data);
+        session(res1,$data);//保存患者的答题结果
 //        年龄
         if($data['birth']!=''){
             $age=substr($blh,0,4)-substr($data['birth'],0,4);
@@ -448,13 +508,25 @@ class IndexController extends Controller {
         if($data[tzjg8] != '否'){
             $tz[] = $data[tzname8]."-".$data[tzjg8];
         }
+//      $tz结果内容
         $this -> assign('baoj',$tz);
+
         $this->display('Index/tizhi');
 //        print_r($tz);
     }
-//    体质辨识结果
-    public function tzResult(){
-
+//    体质辨识结果储存到数据库
+    public function tizhiSave(){
+        $userInf=session(userInf);
+        $res1=session(res1);
+        $jbxx=M('tz_jbxx');  //存放患者选项信息的表
+        $jieguo=M('tz_jieguo');  //存放答题结果信息表
+        $addUserInf=$jbxx->add($userInf);
+        $addJG=$jieguo->add($res1);
+        if($addUserInf && $addJG){
+            $this->success('保存成功！',U('Index/tizhi'),3);
+        }else{
+            $this->error('保存失败！',U('Index/tizhi'),3);
+        }
     }
     public function tiaoyang(){
         $this->display();

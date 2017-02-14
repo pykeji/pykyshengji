@@ -39,7 +39,7 @@
                 <table border="0" class="mbt">
                     <tr>
                         <td width="15%">病历号：</td>
-                        <td width="35%"><input type="text" value="<?php echo (session('id')); ?>" name="br_id" readonly="readonly"></td>
+                        <td width="35%"><input type="text" value="<?php echo ($id); ?>" name="br_id" readonly="readonly"></td>
                         <td width="15%">姓名</td>
                         <td width="35%"><input type="text" name="br_name" id="userName2"></td>
                     </tr>

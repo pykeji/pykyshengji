@@ -74,3 +74,31 @@ $("#syt").click(function(){
         }
     }
 })
+//判断存在结果
+$(window).load(function(){
+    if($('#judge').html()==""){
+        $("#pinghez").html("平和质[体制1]");
+        $("#qixuz").html("气虚质[体制2]");
+        $("#yangxuz").html("阳虚质[体制3]");
+        $("#yinxuz").html("阴虚质[体制4]");
+        $("#tanshiz").html("痰湿质[体制5]");
+        $("#shirez").html("湿热质[体制6]");
+        $("#xueyuz").html("血瘀质[体制7]");
+        $("#qiyuz").html("气郁质[体制8]");
+        $("#tebingz").html("特禀质[体制9]");
+    }else{
+        $("#checkRes").click();
+    }
+    var a=1;
+    var sty=document.getElementsByClassName('sty2');
+    for(var j=0;j<sty.length+1;j++){
+        var xxn="xx"+a;
+        a++;
+        var xx=document.getElementsByName(xxn);
+        for(var i=0;i<xx.length;i++){
+            if(xx[i].checked){
+                $("#"+xxn).css("background-color","#d6faf6");
+            }
+        }
+    }
+})

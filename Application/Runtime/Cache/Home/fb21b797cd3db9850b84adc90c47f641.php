@@ -5,6 +5,8 @@
     <title>患者查询</title>
     <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/zySystem/Public/css/chaxun.css">
+    <!-- 分页效果 -->
+    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
     <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
@@ -14,6 +16,7 @@
     <div class="title center" id="title">
         查询窗口
     </div>
+    <form action="<?php echo U('Index/chaxun');?>"  method="post">
     <div class="chaxun center">
         <div>
             <img src="/zySystem/Public/img/chaxun.png" alt="图片加载失败！">
@@ -23,27 +26,28 @@
         </div>
         <div class="nb">
             <label for="userName">姓名：</label>
-            <span><input type="text" id="userName"></span>
+            <span><input type="text" name="br_name" id="userName"></span>
         </div>
         <div class="nb">
             <span>挂号日期：</span>
-            <span><input type="text" class="ghrq" id="datebut1" onClick="jeDate({dateCell:'#datebut1',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></span>
+            <span><input type="text" name="p_datekai" class="ghrq" id="datebut1" onClick="jeDate({dateCell:'#datebut1',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></span>
             <span>至</span>
-            <span><input type="text" class="ghrq" id="datebut2" onClick="jeDate({dateCell:'#datebut2',isTime:true,format:'YYYY-MM-DD'})" onfocus="new Calendar().show(this)" readonly="readonly"></span>
+            <span><input type="text" name="p_datezhong" class="ghrq" id="datebut2" onClick="jeDate({dateCell:'#datebut2',isTime:true,format:'YYYY-MM-DD'})" onfocus="new Calendar().show(this)" readonly="readonly"></span>
         </div>
         <div class="nb">
             <span><label for="blh">病历号：</label></span>
-            <span><input type="text" id="blh"></span>
+            <span><input type="text" name="br_id" id="blh"></span>
         </div>
         <div class="nb">
-            <label><span><input type="checkbox"></span><span>性别：</span></label>
-            <label><span><input type="radio" name="sex" checked="checked"><span>男</span></span></label>
-            <label><span><input type="radio" name="sex"><span>女</span></span></label>
+            <label><!-- <span><input type="checkbox"></span> --><span>性别：</span></label>
+            <label><span><input type="radio" name="xb" value="男" ><span>男</span></span></label>
+            <label><span><input type="radio" name="xb" value="女"><span>女</span></span></label>
         </div>
         <div class="but">
-            <button class="btn btn-warning"><i class="glyphicon glyphicon-search"></i>查询</button>
+            <button text="submit" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i>查询</button>
         </div>
     </div>
+    </form>
     <div class="cxtable center">
         <table border="0" width="100%" class="table1">
             <tr>
@@ -60,49 +64,27 @@
                 <td width="8%">预约日期</td>
                 <td width="7%">操作</td>
             </tr>
-            <tr class="cxtr1" name="cxtableSty">
-                <td>000011</td>
-                <td>阿布</td>
-                <td>男</td>
-                <td>2016-12-07</td>
-                <!--<td>133333333333333333</td>-->
-                <!--<td>1993-01-11</td>-->
-                <!--<td>河北省石家庄市睿和中心河北鹏宇电子科技有限公司</td>-->
-                <td>18333333333</td>
-                <!--<td>0311-4545454564</td>-->
-                <!--<td>asdsa@qq.com</td>-->
-                <td>2016-12-07</td>
+            <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="cxtr1" name="cxtableSty">
+                <td><?php echo ($vo["br_id"]); ?></td>
+                <td><?php echo ($vo["br_name"]); ?></td>
+                <td><?php echo ($vo["xb"]); ?></td>
+                <td><?php echo ($vo["p_date"]); ?></td>
+                <td><?php echo ($vo["tel"]); ?></td>
+                <td><?php echo ($vo["p_date"]); ?></td>
                 <td>
                     <span data-toggle="modal" data-target="#myModal">详细信息</span>
                     <span>登记</span>
                     <span>预约</span>
                 </td>
-            </tr>
-            <tr class="cxtr1" name="cxtableSty">
-                <td>000011</td>
-                <td>阿布</td>
-                <td>男</td>
-                <td>2016-12-07</td>
-                <!--<td>133333333333333333</td>-->
-                <!--<td>1993-01-11</td>-->
-                <!--<td>河北省石家庄市睿和中心河北鹏宇电子科技有限公司</td>-->
-                <td>18333333333</td>
-                <!--<td>0311-4545454564</td>-->
-                <!--<td>asdsa@qq.com</td>-->
-                <td>2016-12-07</td>
-                <td>
-                    <span data-toggle="modal" data-target="#myModal">详细信息</span>
-                    <span>登记</span>
-                    <span>预约</span>
-                </td>
-            </tr>
+            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </table>
     </div>
     <div class="fenye center">
-        <span>共查询出<span id="sickNum">0</span>位病人</span>
-        <span>当前第1/N页</span>
-        <span>上一页</span>
-        <span>下一页</span>
+        <div class="result page">
+            <div class="pages">
+            <?php echo ($page); ?>
+            </div>
+        </div>
     </div>
 </div>
     <script type="text/javascript">
