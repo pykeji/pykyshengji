@@ -1,15 +1,15 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>费用汇总查询_中医健康管理系统</title>
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/easyui.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/chaxun.css">
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/jedate/jedate.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/easyui.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/chaxun.css">
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/jedate/jedate.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div class="tool">
@@ -20,7 +20,7 @@
 		<p id="demo"></p>
 	</div>
 	<div class="fyhz_top">
-		<img src="__PUBLIC__/muban/assets/img/chaxun.png" width="30" height="30">
+		<img src="/zysystem/Public/muban/assets/img/chaxun.png" width="30" height="30">
 		<div class="h">查询条件:</div>
 	</div>
 	<div class="fyhz_cxtj">

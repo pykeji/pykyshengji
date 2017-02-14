@@ -1,20 +1,20 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>划价收费_中医健康管理系统</title>
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/easyui.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/huajia.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/chaxun.css">
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/easyui.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/huajia.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/chaxun.css">
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
 	<script>
 		function ajaxFun(){
 			$.ajax({
 				type:"post",
-				url:"__CONTROLLER__/ajax",
+				url:"/zysystem/index.php/Home/Huajia/ajax",
 				dataType:"json",
 				data:{
 					"name":$("#name").val(),
@@ -89,18 +89,18 @@
 		<p id="demo"></p>
 	</div>
 	<div class="top">
-		<span>病历号:<b>{$_SESSION['id']}</b></span>
-		<span>姓名:<b>{$data.0.br_name}</b></span>
-		<span>性别:<b>{$data.0.xb}</b></span>
-		<span>年龄:<b>{$data.0.nl}</b></span>
-		<span>就诊日期:<b>{$data.0.jz_date}</b></span>
+		<span>病历号:<b><?php echo ($_SESSION['id']); ?></b></span>
+		<span>姓名:<b><?php echo ($data["0"]["br_name"]); ?></b></span>
+		<span>性别:<b><?php echo ($data["0"]["xb"]); ?></b></span>
+		<span>年龄:<b><?php echo ($data["0"]["nl"]); ?></b></span>
+		<span>就诊日期:<b><?php echo ($data["0"]["jz_date"]); ?></b></span>
 	</div>
 	<div class="center">
 		<div class="center_t">
 			<table class="tab1">
 				<tr>
 					<td class="tab1_l">
-						<img src="__PUBLIC__/muban/assets/img/chufang.png" width="23" height="23">
+						<img src="/zysystem/Public/muban/assets/img/chufang.png" width="23" height="23">
 						<font size="+1">收费项目</font>
 					</td>
 					<td class="tab1_r">
@@ -126,7 +126,7 @@
 							panelWidth: 710,
 							idField: 'name',
 							textField: 'name',
-							url: '__PUBLIC__/muban/assets/css/datagrid_data.json',
+							url: '/zysystem/Public/muban/assets/css/datagrid_data.json',
 							columns: [[
 								{field:'name',title:'名称',width:215,align:'left'},
 								{field:'guige',title:'规格',width:130,align:'center'},
@@ -153,7 +153,7 @@
 			<table class="tab3">
 				<tr>
 					<td class="tab3_l">
-						<img src="__PUBLIC__/muban/assets/img/iconpng.png" width="23" height="23">
+						<img src="/zysystem/Public/muban/assets/img/iconpng.png" width="23" height="23">
 						<font size="+1">收费列表</font>
 					</td>
 				</tr>
@@ -181,7 +181,7 @@
 	                	&times;
 	                </button>
 	                <h4 class="modal-title" id="myModalLabel">
-	                	<img src="__PUBLIC__/muban/assets/ico/minus.png" class="modal-img">
+	                	<img src="/zysystem/Public/muban/assets/ico/minus.png" class="modal-img">
 	                	门诊退费
 	                </h4>
 	            </div>
@@ -193,7 +193,7 @@
 							<br><br>
 						</div>
 						<div class="modal-body-left-con">
-							<h4 class="tit"><img src="__PUBLIC__/muban/assets/img/014.png" class="body-img">
+							<h4 class="tit"><img src="/zysystem/Public/muban/assets/img/014.png" class="body-img">
 							发票信息</h4>
 							<table class="table table-bordered">
 								<thead>
@@ -217,7 +217,7 @@
 					</div>
 					<div class="modal-body-right">
 						<div class="modal-body-right-con">
-							<h4 class="tit"><img src="__PUBLIC__/muban/assets/img/iconpng.png" class="body-img">
+							<h4 class="tit"><img src="/zysystem/Public/muban/assets/img/iconpng.png" class="body-img">
 							收费明细</h4>
 							<table class="table table-bordered">
 								<thead>
