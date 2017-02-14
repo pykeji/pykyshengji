@@ -18,7 +18,6 @@
     <link rel="shortcut icon" href="/zySystem/Public/muban/assets/ico/minus.png">
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
-<?php $day = date('ymd'); ?>
 <nav role="navigation" class="navbar navbar-static-top">
     <div class="container-fluid">
         <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
@@ -49,7 +48,7 @@
                 </ul>
             </div>
             <ul style="margin-right:0" class="nav navbar-nav navbar-right">
-                <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="<?php echo '/zySystem/Uploads/'.'20'.$day.'/'.$_SESSION['photo']; ?>"> <?php echo $_SESSION['wh_userName']; ?> <b class="caret"></b></a>
+                <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="<?php echo '/zySystem/Uploads/'.$_SESSION['patha'].'/'.$_SESSION['photo']; ?>"> <?php echo $_SESSION['wh_userName']; ?> <b class="caret"></b></a>
                     <ul style="margin-top:14px" role="menu" class="dropdown-setting dropdown-menu">
                         <li><a href="<?php echo U('Login/userInfo');?>" target="menu"><span class="entypo-user"></span>&#160;&#160;个人信息</a></li>
                         <li><a href="<?php echo U('Login/userManage');?>" target="menu"><span class="entypo-vcard"></span>&#160;&#160;<?php if($rev == 1){echo '用户管理';}else{echo '用户列表';} ?></a></li>
