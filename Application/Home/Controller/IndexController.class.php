@@ -239,17 +239,10 @@ class IndexController extends Controller {
              //病例号不存在   获取时间拼接where条件
             $p_datekai = I('post.p_datekai');//获取开始日期
             $p_datezhong = I('post.p_datezhong');//获取终止日期
+            //拼接最后条件
             $com['p_date'] =array('between',"$p_datekai 00:00:00,$p_datezhong 23:59:59");
             // dump($com);
-            $br_name = I('post.br_name');
-            $xb = I('post.xb');
-            //法一
-                $count = $rect->where($com)->count();// 查询满足要求的总记录数 $map表示查询条件
-                $page = getpage($count,4);//控制页面显示条数
-                $show = $page->show();// 分页显示输出
-                $this->assign('page',$show);// 赋值分页输出
-                //以上是分页 ， 以下是数据
-                $data = $rect->where($com)->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+                $data = $rect->where($com)->select();
                 $this->assign('data',$data);
                 $this->display();
         }  
@@ -271,8 +264,11 @@ class IndexController extends Controller {
             $user = M('station_p'); //二次链接数据库
             $id = I('post.br_id');
             $data = $user->where("br_id={$id}")->select();
+            $xh = $data[0]['xh'];
+            // dump($xh);die;
             $this->assign('data',$data);// 模板变量赋值
-            session(id,$id);//设置编号存入session
+            session(id,$id);//设置病历号存入session
+            session(xh,$xh);//设置序号存入session
             // dump($data);die;
         //接受接诊区传值(get方式)    
         }else if(IS_GET){
