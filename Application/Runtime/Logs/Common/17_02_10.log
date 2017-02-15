@@ -1,0 +1,30 @@
+[ 2017-02-10T08:45:42+08:00 ] ::1 /zysystem/index.php/dictionary-category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Dictionary-category
+
+[ 2017-02-10T08:45:44+08:00 ] ::1 /zysystem/index.php/dictionary-list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载模块:Dictionary-list
+
+[ 2017-02-10T08:45:47+08:00 ] ::1 /zysystem/index.php/pwjj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Pwjj
+
+[ 2017-02-10T08:45:49+08:00 ] ::1 /zysystem/index.php/medicinal-compare.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Medicinal-compare
+
+[ 2017-02-10T08:46:13+08:00 ] ::1 /zysystem/index.php/dictionary-category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Dictionary-category
+
