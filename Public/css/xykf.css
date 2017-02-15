@@ -101,17 +101,25 @@ body input{
 	margin-right:25px;
 	font-size:16px!important;
 }
+.tr2>:first-child{
+	background-color:#E57976;
+	cursor:pointer;
+	color:#FFF;
+}
 #aja{
 	position:absolute;
 	z-index:2;
 	top:0px;
 	left:0px;
-	width:400px;
-	height:350px;
+	width:270px;
+	height:280px;
 	border:1px solid #000;
 	background-color:#FFF;
 	overflow:auto;
 	display:none;
+}
+.drugli{
+	cursor:pointer; 
 }
 .ypname{
 	width:100%;

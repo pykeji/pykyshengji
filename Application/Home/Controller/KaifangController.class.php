@@ -21,6 +21,12 @@ class KaifangController extends Controller {
     	$this->display();
     }
     public function west(){
+        $use = M('useage_table');
+        $pl = M('usepl_table');
+        $pllist = $pl->select();
+        $useage = $use->select();
+        $this->assign('useage',$useage);
+        $this->assign('usepl',$pllist);
         $this->display();
     }
     public function zyhome(){

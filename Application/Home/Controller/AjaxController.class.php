@@ -12,4 +12,16 @@ class AjaxController extends Controller {
       	$userinfo = $user->where("id=$id")->select();
       	$this->ajaxReturn($userinfo);
       }
+      public function drugWest($htm){
+        $durg = M('drug_dict');
+        $where['input_code'] = array('like',"{$htm}%");
+        $list = $durg->where($where)->field('drug_name')->select();
+        $this->ajaxReturn($list);
+      }
+      public function sele(){
+        // $a = $_POST['list'];
+        $drug = M('drug_dict');
+        $list = $drug->where("drug_name='$_POST[list]'")->find();
+        $this->ajaxReturn($list);
+      }
 }

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 	<head>
-	<link rel="stylesheet" href="__PUBLIC__/css/xykf.css">
-	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.css">
-	<script type="text/javascript" src="__PUBLIC__/jq/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/xykf.js"></script>
+	<link rel="stylesheet" href="/zySystem/Public/css/xykf.css">
+	<link rel="stylesheet" href="/zySystem/Public/css/bootstrap.css">
+	<script type="text/javascript" src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/zySystem/Public/js/xykf.js"></script>
 	<style type="text/css">
 		html,body{
 			height:100%;
@@ -88,10 +88,8 @@
 						</td>
 						<td class="td1">
 							<select class="textlon">
-								<foreach name='useage' item='do'>
-                            	<php>$powerid = $do['useage_code'];</php>
-                                <option value=<php>echo '"'.$powerid.'"';</php>>{$do.useage_name}</option>
-                            </foreach>  
+								<?php if(is_array($useage)): foreach($useage as $key=>$do): $powerid = $do['useage_code']; ?>
+                                <option value=<?php echo '"'.$powerid.'"'; ?>><?php echo ($do["useage_name"]); ?></option><?php endforeach; endif; ?>  
 							</select>
 						</td>
 						<td class="td1">
@@ -99,10 +97,8 @@
 						</td>
 						<td class="td1">
 							<select class="textlon">
-                               <foreach name='usepl' item='ao'>
-                            	<php>$plid = $ao['usep_code'];</php>
-                                <option value=<php>echo '"'.$plid.'"';</php>>{$ao.usep_name}</option>
-                            </foreach>  
+                               <?php if(is_array($usepl)): foreach($usepl as $key=>$ao): $plid = $ao['usep_code']; ?>
+                                <option value=<?php echo '"'.$plid.'"'; ?>><?php echo ($ao["usep_name"]); ?></option><?php endforeach; endif; ?>  
                             </foreach>  
 							</select>
 						</td>
@@ -146,7 +142,7 @@
 				$('#aja').css('left',left+'px');
 				 $.ajax({
             type:'POST',
-            url:"{:U('Ajax/drugWest')}",
+            url:"<?php echo U('Ajax/drugWest');?>",
             data:{htm:htm},
             dataType:'json',
             success:function(dd)
@@ -179,7 +175,7 @@
 				var hht = $(this).html();
 					 $.ajax({
             type:'POST',
-            url:"{:U('Ajax/sele')}",
+            url:"<?php echo U('Ajax/sele');?>",
             data:{'list':hht},
             dataType:'json',
             success:function(aa)
