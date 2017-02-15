@@ -1,29 +1,29 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>患者查询</title>
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/chaxun.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/chaxun.css">
 
     <!-- 分页效果 -->
-    <link href="__PUBLIC__/css/mypage.css" rel="stylesheet" type="text/css"/>
+    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
 
     <!-- 别删开始 -->
 
    
     <!-- Le styles -->
 
-    <!-- <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/style.css"> -->
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/loader-style.css">
+    <!-- <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/style.css"> -->
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/loader-style.css">
 
 
-    <link href="__PUBLIC__/muban/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
-    <link href="__PUBLIC__/muban/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
-    <link href="__PUBLIC__/muban/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+    <link href="/zySystem/Public/muban/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="/zySystem/Public/muban/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="/zySystem/Public/muban/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/js/dataTable/css/datatables.responsive.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/js/dataTable/css/datatables.responsive.css">
     <!-- 别删结束 -->
 </head>
 <!-- 阻止右键 -->
@@ -33,10 +33,10 @@
     <div class="title center" id="title">
         查询窗口
     </div>
-    <form action="{:U('Index/chaxun')}"  method="post">
+    <form action="<?php echo U('Index/chaxun');?>"  method="post">
     <div class="chaxun center">
         <div>
-            <img src="__PUBLIC__/img/chaxun.png" alt="图片加载失败！">
+            <img src="/zySystem/Public/img/chaxun.png" alt="图片加载失败！">
         </div>
         <div class="cxfont">
             查询条件:
@@ -88,24 +88,22 @@
                     </tr>
                 </thead>
                     
-                        <volist name="data" id="vo">   
-                    <tr class="cxtr1" name="cxtableSty">
-                        <td>{$vo.br_id}</td>
-                        <td>{$vo.br_name}</td>
-                        <td>{$vo.xb}</td>
-                        <td>{$vo.p_date}</td>
-                        <td>{$vo.tel}</td>
-                        <td>{$vo.p_date}</td>
-                        <!-- <td>{$vo.xh}</td> -->
+                        <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="cxtr1" name="cxtableSty">
+                        <td><?php echo ($vo["br_id"]); ?></td>
+                        <td><?php echo ($vo["br_name"]); ?></td>
+                        <td><?php echo ($vo["xb"]); ?></td>
+                        <td><?php echo ($vo["p_date"]); ?></td>
+                        <td><?php echo ($vo["tel"]); ?></td>
+                        <td><?php echo ($vo["p_date"]); ?></td>
+                        <!-- <td><?php echo ($vo["xh"]); ?></td> -->
                         <!--ajax 隐藏域用于主键（病历号）的操作 -->
-                        <input type="hidden" class="ajaxChacanshu" value="{$vo.br_id}">
+                        <input type="hidden" class="ajaxChacanshu" value="<?php echo ($vo["br_id"]); ?>">
                         <td>
                             <span class="ajaxChaXiangxi" data-toggle="modal" data-target="#myModal">详细信息</span>
-                            <span><a href='{:U("Index/dengji" ,array("id"=>$vo[br_id],"xh"=>$vo[xh]))}' style="color: blue; font-size: 15px;">登记</a></span>
-                            <span><a href='{:U("Index/yuyue" ,array("id"=>$vo[br_id],"xh"=>$vo[xh]))}' style="color: blue; font-size: 15px;">预约</a></span>
+                            <span><a href='<?php echo U("Index/dengji" ,array("id"=>$vo[br_id],"xh"=>$vo[xh]));?>' style="color: blue; font-size: 15px;">登记</a></span>
+                            <span><a href='<?php echo U("Index/yuyue" ,array("id"=>$vo[br_id],"xh"=>$vo[xh]));?>' style="color: blue; font-size: 15px;">预约</a></span>
                         </td>
-                    </tr>
-                    </volist>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     <tfoot>
                         <tr>
                             <td colspan="5">
@@ -184,20 +182,20 @@
     </div><!-- /.modal -->
 </div>
 
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-    <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
     <!-- 别删开始 -->
-    <!-- <script type="text/javascript" src="__PUBLIC__/muban/assets/js/preloader.js"></script> -->
-    <!-- <script type="text/javascript" src="__PUBLIC__/muban/assets/js/app.js"></script> -->
-    <!-- <script type="text/javascript" src="__PUBLIC__/muban/assets/js/load.js"></script> -->
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/main.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/toggle_close.js"></script>
-    <script src="__PUBLIC__/muban/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
-    <script src="__PUBLIC__/muban/assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
-    <script src="__PUBLIC__/muban/assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
-    <script src="__PUBLIC__/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
-    <script src="__PUBLIC__/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+    <!-- <script type="text/javascript" src="/zySystem/Public/muban/assets/js/preloader.js"></script> -->
+    <!-- <script type="text/javascript" src="/zySystem/Public/muban/assets/js/app.js"></script> -->
+    <!-- <script type="text/javascript" src="/zySystem/Public/muban/assets/js/load.js"></script> -->
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/main.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/toggle_close.js"></script>
+    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
 
 
     <script type="text/javascript">
@@ -248,15 +246,15 @@
     <!-- 别删结束 -->
 </body>
 </html>
-<script src="__PUBLIC__/js/shijian.js"></script>
-<script src="__PUBLIC__/js/tr.js"></script>
+<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zySystem/Public/js/tr.js"></script>
 <script type="text/javascript">
     $(".ajaxChaXiangxi").click(function(){
         $id = $(this).parent().parent().find(".ajaxChacanshu").val();
         // alert($id);
         $.ajax({
             type:'get',
-            url:'{:U("Index/chaxunxiangxi")}',
+            url:'<?php echo U("Index/chaxunxiangxi");?>',
             data:{"id":$id},
             dataType:'json',
             success:function(dd){

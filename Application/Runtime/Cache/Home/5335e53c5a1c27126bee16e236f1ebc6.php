@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<!-- 自己写的css -->
 	
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="__PUBLIC__/jq/jquery-3.1.1.min.js"></script>
+    <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="__PUBLIC__/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/yeMiancss/kaiFang1.css">
-    <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/zySystem/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang1.css">
+    <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div style="height:100%; width:100%; min-width: 1050px;">
@@ -43,7 +43,7 @@
 				<label for="chuFangHeBing">处方合并</label>&nbsp;&nbsp;
 			</div>
 			<div class="anniuchuxuandingcifang" >
-				<a href="{:U('Kaifang/zyhome')}"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
+				<a href="<?php echo U('Kaifang/zyhome');?>"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
 			</div>
 			<div class="qingchusoufudong">
 			</div>
@@ -190,7 +190,7 @@
 		</div>
 		<!-- 中间汉字 -->
 		<div class="zhongjianhanzi">
-			<img src="__PUBLIC__/img/iconpng.png" class="zhongjianhanziimg" alt="图片加载中。。。。">
+			<img src="/zySystem/Public/img/iconpng.png" class="zhongjianhanziimg" alt="图片加载中。。。。">
 			<span class="zhongjianhanzichu">
 			<b>处方信息</b>
 			</span>

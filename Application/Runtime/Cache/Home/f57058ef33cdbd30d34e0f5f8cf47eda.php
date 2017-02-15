@@ -71,7 +71,7 @@
                         
                     <td>
                         <span data-toggle="modal" data-target="#myModal" name=""  class="ajaxxinxishuju" >详细信息</span>
-                        <a href='<?php echo U("Index/jiankang",array("id"=>$vo[br_id]));?>' ><span>就诊</span></a>
+                        <a href='<?php echo U("Index/jiankang",array("id"=>$vo[br_id],"xh"=>$vo[xh]));?>' ><span>就诊</span></a>
                         <span data-toggle="modal" data-target="#myModal2" class="ajaxxiugaishuju">修改</span>
                         <span>收费</span>
                     </td>
