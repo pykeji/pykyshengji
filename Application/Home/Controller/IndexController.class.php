@@ -27,12 +27,13 @@ class IndexController extends Controller {
     public function jiezhen(){
         // 法一自己写的附带样式
         $rect = M('station_p');
-        $count = $rect->where('jz_flagjz=1')->count();// 查询满足要求的总记录数 $map表示查询条件
-        $page = getpage($count,10);//控制页面显示条数
+        $count = $rect->where('jz_flag=1')->count();// 查询满足要求的总记录数 $map表示查询条件
+        $page = getpage($count,9);//控制页面显示条数
         $show = $page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
         //以上是分页 ， 以下是数据
-        $data =  $rect->where('jz_flagjz=1')->order('p_date')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+        $data =  $rect->where('jz_flag=1')->order('p_date')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+        // dump($data);die;
         $this->assign('data',$data);// 赋值模板变量
         $this->display();
         // 法二官方写的不带样式
@@ -71,60 +72,144 @@ class IndexController extends Controller {
     }
     //患者登记
     public function dengji(){
-    	$data = M('station_p');// 实例化Data数据模型
-        $id = $data->field('br_id')->select();
-        foreach ($id as $v) {
-            foreach ($v as $value) {
-                $qb[]=substr($value, 0,8);
-            }
-        }
-        $a=array_count_values($qb);//计算出现次数
-        $b=$a[date('Ymd')];
-        if (!empty($b)) {
-            $c = $b+1;
-            $id = date('Ymd').$c;
-            // dump($id);die;
+        // 判断病例号id是否存在（存在是从查询处跳转过来的）
+        $getid =  I('get.id');
+        $xh = I('get.xh');
+        if (!empty($getid)) {
+            $user = M('station_p');// 实例化Data数据模型
+            $data = $user->where("br_id={$getid} and xh={$xh}")->select();
+            $this->assign('data',$data);//设置编号
+            // dump($data);die;
         }else{
-            $id = date('Ymd')."1";
+            $user = M('station_p');// 实例化Data数据模型
+            $br_id = $user->field('br_id')->select();
+            foreach ($br_id as $v) {
+                foreach ($v as $value) {
+                    $qb[]=substr($value, 0,8);
+                }
+            }
+            $a=array_count_values($qb);//计算出现次数
+            $b=$a[date('Ymd')];
+            if (!empty($b)) {
+                //判断数值在哪个范围
+                if ($b<10) {
+                    $d =$b+1;
+                    // 规定格式前面加几个0
+                    $c = "0000".$d; 
+                    // dump($c);die;
+                }else if($b>=10 && $b<100){
+                    $d =$b+1;
+                    $c = "000".$d; 
+                }else if($b>=100 && $b<1000){
+                    $d =$b+1;
+                    $c = "00".$d; 
+                }else if($b>=1000 && $b<10000){
+                    $d =$b+1;
+                    $c = "0".$d; 
+                }
+                // $c = $b+1;
+                $br_id = date('Ymd').$c;
+                // dump($br_id);die;
+            }else{
+                $br_id = date('Ymd')."00001";
+            }
+            $data[0]['br_id']=$br_id;
+            $this->assign('data',$data);//设置编号
         }
-        // session(id,$id);//设置编号
-        $this->assign('id',$id);//设置编号
-        // $this->assign('data',$data);// 赋值数据集
+        //拼接错误信息    
+        $cwxinxi = I('get.cwxinxi');
+        $this->assign('cwxinxi',$cwxinxi);//设置编号
         $this->display();
     }
     //患者保存
     public function hzbc(){
-        $station = M('station_p');
-        $data = I('post.');//获取数据
-        $station->data($data)->add();//添加数据
-        $this->redirect('Index/jiezhen');//重定向到接诊区
+        $ghf = I('post.ghf');
+        // dump($ghf);die;
+        $cs_date = I('post.cs_date');
+        //判断挂号费
+        if(empty($ghf)){
+            //重定向到登记
+            $this->redirect('Index/dengji', array('cwxinxi' => "挂号费未填写"));
+        }else{
+            //判断出生年月int(1)
+            if(empty($cs_date)){
+                //重定向到登记
+                $this->redirect('Index/dengji', array('cwxinxi' => "出生年月未填写"));
+            }else{
+                $station = M('station_p');
+                //判断是否是复诊
+                $br_id = I('post.br_id');
+                // 查出就诊几次
+                $pdfuzhen = $station->where("br_id=$br_id")->count();
+                // 加一为当前就诊次数
+                $dangqingjiuzhengcishu = $pdfuzhen+1;
+                // dump($dangqingjiuzhengcishu);die;
+                $data = I('post.');//获取数据
+                // dump($data);die;
+                $data['xh'] = $dangqingjiuzhengcishu;
+                // dump($data);die;
+                $station->data($data)->add();//添加数据
+                $this->redirect('Index/jiezhen');//重定向到接诊区
+            }
+                
+        }
+            
     }
     //患者预约
     public function yuyue(){
         //左侧病历号
-        $data     = M('station_p');// 实例化Data数据模型
-        $id = $data->field('br_id')->select();
-        foreach ($id as $v) {
-            foreach ($v as $value) {
-                $qb[]=substr($value, 0,8);
-            }
-        }
-        $a=array_count_values($qb);//计算出现次数
-        $b=$a[date('Ymd')];
-        if (!empty($b)) {
-            $c = $b+1;
-            $id = date('Ymd').$c;
-            // dump($id);die;
+        $getid =  I('get.id');
+        $xh = I('get.xh');
+        $user = M('station_p');// 实例化Data数据模型
+        if (!empty($getid)) {
+            $datazuo = $user->where("br_id={$getid} and xh={$xh}")->select();
+            $this->assign('datazuo',$datazuo);//设置编号
+            // dump($data);die;
         }else{
-            $id = date('Ymd')."1";
+            $br_id = $user->field('br_id')->select();
+            foreach ($br_id as $v) {
+                foreach ($v as $value) {
+                    $qb[]=substr($value, 0,8);
+                }
+            }
+            $a=array_count_values($qb);//计算出现次数
+            $b=$a[date('Ymd')];
+            if (!empty($b)) {
+                //判断数值在哪个范围
+                if ($b<10) {
+                    $d =$b+1;
+                    // 规定格式前面加几个0
+                    $c = "0000".$d; 
+                    // dump($c);die;
+                }else if($b>=10 && $b<100){
+                    $d =$b+1;
+                    $c = "000".$d; 
+                }else if($b>=100 && $b<1000){
+                    $d =$b+1;
+                    $c = "00".$d; 
+                }else if($b>=1000 && $b<10000){
+                    $d =$b+1;
+                    $c = "0".$d; 
+                }
+                // $c = $b+1;
+                $br_id = date('Ymd').$c;
+                // dump($br_id);die;
+            }else{
+                $br_id = date('Ymd')."1";
+            }
+            $datazuo[0]['br_id']=$br_id;
+            
+            $this->assign('datazuo',$datazuo);//设置编号
         }
-        // session(id,$id);//设置编号
-        $this->assign('id',$id);//设置编号
+           
         // $this->assign('data',$data);// 赋值数据集
         // 右侧预约情况
-        $user = M('station_p');
-        //获取数据
-        $data = $user->where('reserve=2')->field('p_date,br_name')->select();
+        // 获取当前时间
+        $yuyuedtime = date("Y-m-d");
+        // dump($yuyuedtime);die;
+        //获取数据->where("p_date like '". $times."%'")
+        $data = $user->where("reserve=2 and p_date like '".$yuyuedtime."%' ")->field('p_date,br_name')->select();
+        // dump($data);die;
         //是一个方法 直接调用（把二维数组 以一个字段为条件 升序排列）
         if (! function_exists('list_sort_by'))
         {
@@ -166,106 +251,89 @@ class IndexController extends Controller {
     }
     //患者查询
     public function chaxun(){
-        if(IS_GET){
-            $times = date("Y-m-d");//获取当前时间
-            //拼凑where条件 p_date 在$times 00:00:00 和 $times 23:59:59 时间段以内
-            $map['p_date']  = array('between',"$times 00:00:00,$times 23:59:59");
-            // dump($map['p_date']);die;
-            $rect = M('station_p');
-            $count = $rect->where($map)->count();// 查询满足要求的总记录数 $map表示查询条件
-            $page = getpage($count,10);//控制页面显示条数
-            $show = $page->show();// 分页显示输出
-            $this->assign('page',$show);// 赋值分页输出
-            //以上是分页 ， 以下是数据
-            $data =  $rect->where("p_date like '". $times."%'")->order('br_id')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
-            $this->assign('data',$data);// 赋值模板变量
+        //链接数据库
+        $rect = M('station_p');
+        //第一步判断是否有病历号(病例号是主键唯一的)
+        $br_id = I('post.br_id');//获取病例号
+        if(!empty($br_id)){
+            $data = $rect->where("br_id='{$br_id}'")->select();
+            // dump($data);die;
+            $this->assign('data',$data);
             $this->display();
-        }else if(IS_POST){
-            //链接数据库
-            $rect = M('station_p');
-            //第一步判断是否有病历号(病例号是主键唯一的)
-            $br_id = I('post.br_id');//获取病例号
-            if(!empty($br_id)){
-                $data = $rect->where("br_id='{$br_id}'")->select();
-                // dump($data);die;
+        }else{
+           
+            // 获取其他信息 拼接where条件
+            $suoyoutj = I('post.');
+            // var_dump($suoyoutj);
+            foreach ($suoyoutj as $k => $v) {
+                //当键值等于开始时间 不算入where条件内
+                if($k !="p_datekai" ){
+                    //当键值等于终止时间 不算入where条件内
+                    if($k!="p_datezhong"){
+                        //判断值不为空
+                        if(!empty($v)){
+                            $a[]=$k;
+                            $b[]=$v;
+                        }
+                    }
+                } 
+            }
+            //把值存在的数据 整合成一个数组 （建对应值的一个数组）
+            $com=array_combine($a,$b);
+            // dump($com);
+             //病例号不存在   获取时间拼接where条件
+            $p_datekai = I('post.p_datekai');//获取开始日期
+            $p_datezhong = I('post.p_datezhong');//获取终止日期
+            //拼接最后条件
+            $com['p_date'] =array('between',"$p_datekai 00:00:00,$p_datezhong 23:59:59");
+            // dump($com);
+                $data = $rect->where($com)->select();
                 $this->assign('data',$data);
                 $this->display();
-            }else{
-                //病例号不存在   获取时间拼接where条件
-                $p_datekai = I('post.p_datekai');//获取开始日期
-                $p_datezhong = I('post.p_datezhong');//获取终止日期
-                $datetime['p_date'] =array('between',"$p_datekai 00:00:00,$p_datezhong 23:59:59");
-                // dump($datetime);die;
-                // 获取其他信息 拼接where条件
-                $suoyoutj = I('post.');
-                foreach ($suoyoutj as $k => $v) {
-                    //当键值等于开始时间 不算入where条件内
-                    if($k !="p_datekai" ){
-                        //当键值等于终止时间 不算入where条件内
-                        if($k!="p_datezhong"){
-                            //判断值不为空
-                            if(!empty($v)){
-                                $a[].=$k;
-                                $b[].=$v;
-                            }
-                        }
-                    } 
-                }
-                //把值存在的数据 整合成一个数组 （建对应值的一个数组）
-                $com=array_combine($a,$b);
-                //分为两种情况 
-                //第一 姓名或性别有一个存在。 第二 姓名或性别都不存在
-                $br_name = I('post.br_name');
-                $xb = I('post.xb');
-                if($br_name || $xb){
-                    // dump($com);die;
-                    $count = $rect->where($com)->where($datetime)->count();// 查询满足要求的总记录数 $map表示查询条件
-                    $page = getpage($count,10);//控制页面显示条数
-                    $show = $page->show();// 分页显示输出
-                    $this->assign('page',$show);// 赋值分页输出
-                    //以上是分页 ， 以下是数据
-                    $data = $rect->where($com)->where($datetime)->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
-
-                    $this->assign('data',$data);
-                    $this->display();
-                }else{
-                    // 第二 姓名或性别都不存在
-                    $count = $rect->where($datetime)->where($datetime)->count();// 查询满足要求的总记录数 $map表示查询条件
-                    $page = getpage($count,10);//控制页面显示条数
-                    $show = $page->show();// 分页显示输出
-                    $this->assign('page',$show);// 赋值分页输出
-                    //以上是分页 ， 以下是数据
-                    $data = $rect->where($datetime)->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
-                    // dump($data);die;
-                    $this->assign('data',$data);
-                    $this->display();
-                }
-                    
-            }  
-        }
+        }  
+    }
+    //查询详细信息
+    public function chaxunxiangxi(){
+        $id = I('get.id');
+        $user = M('station_p');
+        $data = $user->where("br_id={$id}")->select();
+        $this->ajaxReturn($data,'json');
     }
     //健康档案
     public function jiankang(){
         //接受从患者登记处传值（post方式）
         if (IS_POST){
             $station = M('station_p');//链接数据库
-            $data = I('post.');//获取数据
+                 //判断是否是复诊
+                $br_id = I('post.br_id');
+                // 查出就诊几次
+                $pdfuzhen = $station->where("br_id=$br_id")->count();
+                // 加一为当前就诊次数
+                $dangqingjiuzhengcishu = $pdfuzhen+1;
+                // dump($dangqingjiuzhengcishu);die;
+                $data = I('post.');//获取数据
+                // dump($data);die;
+                $data['xh'] = $dangqingjiuzhengcishu;
+                // dump($data);die;
             $station->data($data)->add();//添加数据
             $user = M('station_p'); //二次链接数据库
-            $id = I('post.br_id');
-            $data = $user->where("br_id={$id}")->select();
+            $data = $user->where("br_id={$br_id} and xh={$dangqingjiuzhengcishu}")->select();
+            // dump($xh);die;
             $this->assign('data',$data);// 模板变量赋值
-            session(id,$id);//设置编号存入session
+            session(id,$id);//设置病历号存入session
+            session(xh,$dangqingjiuzhengcishu);//设置序号存入session
             // dump($data);die;
         //接受接诊区传值(get方式)    
         }else if(IS_GET){
             // 判断get.id是否存在
             if (isset($_GET['id'])) {
                 $id = I('get.id');//获取条件
+                $xh = I('get.xh');
                 $user = M('station_p');
-                $data = $user->where("br_id={$id}")->select();
+                $data = $user->where("br_id={$id} and xh={$xh}")->select();
                 $this->assign('data',$data);// 模板变量赋值
                 session(id,$id);//设置编号存入session
+                session(xh,$xh);//设置编号存入session
 
             }
         }
@@ -274,12 +342,70 @@ class IndexController extends Controller {
     }
 //    体质辨识答题界面
     public function tizhi(){
-//      病人病历号 $blh
-        $this->display();
+        $blh=session(id);
+
+        if($blh){
+            $user=M('tz_jbxx');
+            $jieguo=M('tz_jieguo');
+            $tzti=M('tz_question');
+            $ti=$tzti->select();//题目信息检索
+//          题目数组切割成为3*11
+            $ti1=array_slice($ti,0,11);
+            $ti2=array_slice($ti,11,11);
+            $ti3=array_slice($ti,22,11);
+            $this->assign(ti1,$ti1);//1到11题
+            $this->assign(ti2,$ti2);//12到22题
+            $this->assign(ti3,$ti3);//23到33题
+            $this->assign(ti,$ti);
+            @$userInf=$user->where("bianhao=".$blh)->order('id desc')->find();//患者的个人信息和答题信息
+            @$data=$jieguo->where("bianhao=".$blh)->order('id desc')->find();//患者的答题结果
+            $a=array_slice($userInf,8,33);//截取后只存在选项信息
+            if($userInf && $data){
+                $this->assign(res1,$data);//患者的答题结果
+                $this->assign(userCheckedInf,$a);//患者的个人信息和答案信息
+                //体质辨识结果生成部分
+                $tz=array();
+                if($data[tzjg] != '否'){
+                    $tz[] = $data[tzname]."-".$data[tzjg];
+                }
+                if($data[tzjg1] != '否'){
+                    $tz[] = $data[tzname1]."-".$data[tzjg1];
+                }
+                if($data[tzjg2] != '否'){
+                    $tz[] = $data[tzname2]."-".$data[tzjg2];
+                }
+                if($data[tzjg3] != '否'){
+                    $tz[] = $data[tzname3]."-".$data[tzjg3];
+                }
+                if($data[tzjg4] != '否'){
+                    $tz[] = $data[tzname4]."-".$data[tzjg4];
+                }
+                if($data[tzjg5] != '否'){
+                    $tz[] = $data[tzname5]."-".$data[tzjg5];
+                }
+                if($data[tzjg6] != '否'){
+                    $tz[] = $data[tzname6]."-".$data[tzjg6];
+                }
+                if($data[tzjg7] != '否'){
+                    $tz[] = $data[tzname7]."-".$data[tzjg7];
+                }
+                if($data[tzjg8] != '否'){
+                    $tz[] = $data[tzname8]."-".$data[tzjg8];
+                }
+                //$tz结果内容
+                $this -> assign('baoj',$tz);
+                $this->display();
+            }else{
+                $this->display();
+            }
+        }else{
+            $this->display();
+        }
+
     }
 //体质辨识选择提交按钮执行的操作
     public function tizhiSub(){
-        $blh=session('id');
+        $blh=isset($_SESSION['id'])?$_SESSION['id']:"";
         $user=M('station_p');
 //        根据病历号查出患者信息
         $userInf=$user->where("br_id=".$blh)->find();
@@ -312,7 +438,7 @@ class IndexController extends Controller {
 
         //保存结果
         $data = array();
-        $data['id'] = $blh;
+        $data['bianhao'] = $blh;
         $data['name'] = $userInf['br_name'];
         $data['sex'] =$userInf['xb'];
         $data['birth'] = $userInf['cs_date'];
@@ -323,35 +449,35 @@ class IndexController extends Controller {
         //气虚质
         if($qxz<=8){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '否';}
         if($qxz>=9 && $qxz<=10){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '倾向是';}
-        if($qxz>11){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '是';}
+        if($qxz>=11){$data['tzname'] = '气虚质'; $data['tzfs'] = $qxz; $data['tzjg'] = '是';}
         //阳虚质
         if($yangxz<=8){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '否';}
         if($yangxz>=9 && $yangxz<=10){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '倾向是';}
-        if($yangxz>11){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '是';}
+        if($yangxz>=11){$data['tzname1'] = '阳虚质'; $data['tzfs1'] = $yangxz; $data['tzjg1'] = '是';}
         //阴虚质
         if($yinxz<=8){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '否';}
         if($yinxz>=9 && $yinxz<=10){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '倾向是';}
-        if($yinxz>11){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '是';}
+        if($yinxz>=11){$data['tzname2'] = '阴虚质'; $data['tzfs2'] = $yinxz; $data['tzjg2'] = '是';}
         //痰湿质
         if($tsz<=8){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '否';}
         if($tsz>=9 && $tsz<=10){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '倾向是';}
-        if($tsz>11){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '是';}
+        if($tsz>=11){$data['tzname3'] = '痰湿质'; $data['tzfs3'] = $tsz; $data['tzjg3'] = '是';}
         //湿热质
         if($srz<=8){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '否';}
         if($srz>=9 && $srz<=10){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '倾向是';}
-        if($srz>11){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '是';}
+        if($srz>=11){$data['tzname4'] = '湿热质'; $data['tzfs4'] = $srz; $data['tzjg4'] = '是';}
         //血瘀质
         if($xyz<=8){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '否';}
         if($xyz>=9 && $xyz<=10){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '倾向是';}
-        if($xyz>11){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '是';}
+        if($xyz>=11){$data['tzname5'] = '血瘀质'; $data['tzfs5'] = $xyz; $data['tzjg5'] = '是';}
         //气郁质
         if($qyz<=8){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '否';}
         if($qyz>=9 && $qyz<=10){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '倾向是';}
-        if($qyz>11){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '是';}
+        if($qyz>=11){$data['tzname6'] = '气郁质'; $data['tzfs6'] = $qyz; $data['tzjg6'] = '是';}
         //特禀质
         if($tbz<=8){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '否';}
         if($tbz>=9 && $tbz<=10){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '倾向是';}
-        if($tbz>11){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '是';}
+        if($tbz>=11){$data['tzname7'] = '特禀质'; $data['tzfs7'] = $tbz; $data['tzjg7'] = '是';}
         //反向计分
         //平和质
         if($_POST['xx2'] == 1){
@@ -410,8 +536,10 @@ class IndexController extends Controller {
          * $data答题信息生成的结果
          */
         $userInfTZ=array_merge($tzUser,$_POST);
+        session(userInf,$userInfTZ);//保存患者答题信息
         //res1只有体质类型
         $this->assign('res1',$data);
+        session(res1,$data);//保存患者的答题结果
 //        年龄
         if($data['birth']!=''){
             $age=substr($blh,0,4)-substr($data['birth'],0,4);
@@ -448,13 +576,25 @@ class IndexController extends Controller {
         if($data[tzjg8] != '否'){
             $tz[] = $data[tzname8]."-".$data[tzjg8];
         }
+//      $tz结果内容
         $this -> assign('baoj',$tz);
+
         $this->display('Index/tizhi');
 //        print_r($tz);
     }
-//    体质辨识结果
-    public function tzResult(){
-
+//    体质辨识结果储存到数据库
+    public function tizhiSave(){
+        $userInf=session(userInf);
+        $res1=session(res1);
+        $jbxx=M('tz_jbxx');  //存放患者选项信息的表
+        $jieguo=M('tz_jieguo');  //存放答题结果信息表
+        $addUserInf=$jbxx->add($userInf);
+        $addJG=$jieguo->add($res1);
+        if($addUserInf && $addJG){
+            $this->success('保存成功！',U('Index/tizhi'),3);
+        }else{
+            $this->error('保存失败！',U('Index/tizhi'),3);
+        }
     }
     public function tiaoyang(){
         $this->display();

@@ -138,3 +138,85 @@
 	height:260px;
 	margin-top:1%;
 }
+/*模态框*/
+#myModal{
+	width:100%;
+	height:100%;
+	font-size:16px;
+}
+.modal-dialog{
+	width:100%;
+	height:90%;
+}
+.modal-content{
+	width:90%;
+	height:100%;
+	margin-left:5%;
+	background-color:#F5F5DC;
+}
+.modal-img{
+	width:20px;
+	height:20px;
+}
+.body-img{
+	width:30px;
+	height:30px;
+}
+.modal-title{
+	font-weight:bold;
+}
+.modal-body{
+	width:100%;
+	height:73%;
+}
+.modal-body-left{
+	float:left;
+	width:50%;
+	height:100%;
+	border-right:2px solid #333;
+}
+.modal-body-left-top{
+	border-bottom:1px solid #333;
+}
+.modal-body-left-con{
+	float:left;
+	margin-top:2%;
+}
+.modal-body-left-con table{
+	width:100%;
+}
+.modal-body-right{
+	float:left;
+	width:50%;
+	height:100%;
+}
+.modal-body-right-con{
+	margin-top:-2%;
+}
+.tit{
+	color:#B8860B;
+}
+input[name="query"]{
+	width:80px;
+	height:30px;
+	border:none;
+	color:#FFF;
+	font-weight:bold;
+	background:#227700;
+}
+input[name="tf"]{
+	width:80px;
+	height:30px;
+	border:none;
+	color:#FFF;
+	font-weight:bold;
+	background:#AA7700;
+}
+input[name="exit"]{
+	width:80px;
+	height:30px;
+	border:none;
+	color:#FFF;
+	font-weight:bold;
+	background:#C63300;
+}
