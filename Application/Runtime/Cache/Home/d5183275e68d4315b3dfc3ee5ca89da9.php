@@ -52,17 +52,11 @@
 			                var number = $("#number").val();
 			                var jine = $("#jine").val();
 			                zje = (Number(zje) + Number(jine)).toFixed(2);
-			                if(id-1 == 0){
-			                	$(".tab4").append("<tr><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr><tr><td colspan='3'><font color='red'><b>合计金额：</b></font></td><td colspan='3' class='right'><font color='red'><b>"+zje+"</b></font></td></tr>");
-			                }else{
-			                	if(!flag == true){
-			                		var id = id - 1;
-			                		$(".tab4 tr:last").before("<tr><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
-			                		$(".tab4 tr td:last").text(zje);
-			                		$(".tab4 tr td:last").css("color","red");
-			                		$(".tab4 tr td:last").css("font-weight","bold");
-			                	}
-			                }
+			                $(".tab4").append("<tr><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
+			                
+			                $(".tab3 tr td:last").text('￥'+zje);
+			                $(".tab3 tr td:last").css("color","red");
+			                $(".tab3 tr td:last").css("font-weight","bold");
 			                flag = true;
 
 			                //清空上方数据
@@ -156,6 +150,8 @@
 						<img src="/zysystem/Public/muban/assets/img/iconpng.png" width="23" height="23">
 						<font size="+1">收费列表</font>
 					</td>
+					<td align="right"><font color='red'><b>合计金额：</b></font></td>
+					<td align="right"><font color='red'><b>￥0.00</b></font></td>
 				</tr>
 			</table>
 			<div class="table4">
@@ -167,6 +163,14 @@
 						<th width="15%">单价</th>
 						<th width="15%">数量</th>
 						<th width="15%">金额</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>中草药</td>
+						<td>/</td>
+						<td>1.00</td>
+						<td>5.00</td>
+						<td>5.00</td>
 					</tr>
 				</table>
 			</div>
@@ -195,21 +199,27 @@
 						<div class="modal-body-left-con">
 							<h4 class="tit"><img src="/zysystem/Public/muban/assets/img/014.png" class="body-img">
 							发票信息</h4>
-							<table class="table table-bordered">
+							<table class="tab5">
 								<thead>
 									<tr>
-										<th>票据号</th>
-										<th>姓名</th>
-										<th>收费金额</th>
-										<th>病历号</th>
+										<th width="30%">票据号</th>
+										<th width="20%">姓名</th>
+										<th width="20%">收费金额</th>
+										<th width="30%">病历号</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Tanmay</td>
-										<td>Bangalore</td>
-										<td>560001</td>
-										<td>Tanmay</td>
+										<td>201702150001</td>
+										<td>张三</td>
+										<td align="right">245.00</td>
+										<td>2017021701</td>
+									</tr>
+									<tr>
+										<td>201702150002</td>
+										<td>张三</td>
+										<td align="right">305.00</td>
+										<td>2017021702</td>
 									</tr>
 								</tbody>
 							</table>
@@ -219,25 +229,29 @@
 						<div class="modal-body-right-con">
 							<h4 class="tit"><img src="/zysystem/Public/muban/assets/img/iconpng.png" class="body-img">
 							收费明细</h4>
-							<table class="table table-bordered">
+							<table class="tab6">
 								<thead>
 									<tr>
-										<th width="10%">序号</th>
-										<th width="50%">项目名称</th>
-										<th width="10%">单位</th>
-										<th width="10%">单价</th>
-										<th width="10%">数量</th>
-										<th width="10%">金额</th>
+										<th width="12%">序号</th>
+										<th width="38%">项目名称</th>
+										<th width="12%">单位</th>
+										<th width="12%">单价</th>
+										<th width="12%">数量</th>
+										<th width="12%">金额</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Tanmay</td>
-										<td>Bangalore</td>
-										<td>560001</td>
-										<td>Tanmay</td>
-										<td>560001</td>
-										<td>Tanmay</td>
+										<td>1</td>
+										<td>B超费</td>
+										<td>次</td>
+										<td align="right">20.00</td>
+										<td align="right">1.00</td>
+										<td align="right">20.00</td>
+									</tr>
+									<tr class="hj">
+										<td colspan="3">合计：</td>
+										<td colspan="3">20.00</td>
 									</tr>
 								</tbody>
 							</table>
