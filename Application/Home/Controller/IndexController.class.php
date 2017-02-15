@@ -28,7 +28,7 @@ class IndexController extends Controller {
         // 法一自己写的附带样式
         $rect = M('station_p');
         $count = $rect->where('jz_flag=1')->count();// 查询满足要求的总记录数 $map表示查询条件
-        $page = getpage($count,10);//控制页面显示条数
+        $page = getpage($count,9);//控制页面显示条数
         $show = $page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
         //以上是分页 ， 以下是数据

@@ -11,12 +11,10 @@
 
     <!-- 别删开始 -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+   
     <!-- Le styles -->
 
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/style.css">
+    <!-- <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/style.css"> -->
     <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/loader-style.css">
 
 
@@ -71,22 +69,25 @@
     <!-- 分页开始 -->
         <div class="nest" id="FootableClose">
             <div class="body-nest" id="Footable">
-                <table class="table-striped footable-res footable metro-blue" data-page-size="6">
-                   
+                <table class="table-striped footable-res footable metro-blue" data-page-size="5">
+                <thead>
                     <tr>
-                        <td width="5%">病历号</td>
-                        <td width="5%">姓名</td>
-                        <td width="3%">性别</td>
-                        <td width="8%">挂号日期</td>
+                    
+                        <th width="5%">病历号</th>
+                        <th width="5%">姓名</th>
+                        <th width="3%">性别</th>
+                        <th width="8%">挂号日期</th>
                         <!--<td width="10%">身份证</td>-->
                         <!--<td width="8%">出生日期</td>-->
                         <!--<td width="20%">单位</td>-->
-                        <td width="8%">电话</td>
+                        <th width="8%">电话</th>
                         <!--<td width="8%">传真</td>-->
                         <!--<td width="10%">E-Mail</td>-->
-                        <td width="8%">预约日期</td>
-                        <td width="7%">操作</td>
+                        <th width="8%">预约日期</th>
+                        <th width="7%">操作</th>
                     </tr>
+                </thead>
+                    
                         <volist name="data" id="vo">   
                     <tr class="cxtr1" name="cxtableSty">
                         <td>{$vo.br_id}</td>
