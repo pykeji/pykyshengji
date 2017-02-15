@@ -4,6 +4,7 @@
 	<php>echo $_SESSION['wh_code'];</php>
 </b></h2><h2>职位是：<b>
 	<php>echo $zhiwei;</php>
+    <!-- <php>dump($_SESSION);</php> -->
 </b></h2>
 <!DOCTYPE html>
 <head>
@@ -12,7 +13,7 @@
 <body>
 	<!---->
 <php>$day = date('ymd');</php>
-    <img id="img" src="<?php echo '__ROOT__/Uploads/'.'20'.$day.'/'.$_SESSION['photo']; ?>" width="130" height="130" border="0" />
+    <img id="img" src="<?php echo '__ROOT__/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>" width="130" height="130" border="0" />
     <input id="file_upload" name="file_upload" type="file" multiple="true" value="" />
 
     

@@ -11,12 +11,10 @@
 
     <!-- 别删开始 -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+   
     <!-- Le styles -->
 
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/style.css">
+    <!-- <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/style.css"> -->
     <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/loader-style.css">
 
 
@@ -71,22 +69,25 @@
     <!-- 分页开始 -->
         <div class="nest" id="FootableClose">
             <div class="body-nest" id="Footable">
-                <table class="table-striped footable-res footable metro-blue" data-page-size="6">
-                   
+                <table class="table-striped footable-res footable metro-blue" data-page-size="5">
+                <thead>
                     <tr>
-                        <td width="5%">病历号</td>
-                        <td width="5%">姓名</td>
-                        <td width="3%">性别</td>
-                        <td width="8%">挂号日期</td>
+                    
+                        <th width="5%">病历号</th>
+                        <th width="5%">姓名</th>
+                        <th width="3%">性别</th>
+                        <th width="8%">挂号日期</th>
                         <!--<td width="10%">身份证</td>-->
                         <!--<td width="8%">出生日期</td>-->
                         <!--<td width="20%">单位</td>-->
-                        <td width="8%">电话</td>
+                        <th width="8%">电话</th>
                         <!--<td width="8%">传真</td>-->
                         <!--<td width="10%">E-Mail</td>-->
-                        <td width="8%">预约日期</td>
-                        <td width="7%">操作</td>
+                        <th width="8%">预约日期</th>
+                        <th width="7%">操作</th>
                     </tr>
+                </thead>
+                    
                         <volist name="data" id="vo">   
                     <tr class="cxtr1" name="cxtableSty">
                         <td>{$vo.br_id}</td>
@@ -95,12 +96,13 @@
                         <td>{$vo.p_date}</td>
                         <td>{$vo.tel}</td>
                         <td>{$vo.p_date}</td>
+                        <!-- <td>{$vo.xh}</td> -->
                         <!--ajax 隐藏域用于主键（病历号）的操作 -->
                         <input type="hidden" class="ajaxChacanshu" value="{$vo.br_id}">
                         <td>
                             <span class="ajaxChaXiangxi" data-toggle="modal" data-target="#myModal">详细信息</span>
-                            <span><a href='{:U("Index/dengji" ,array("id"=>$vo[br_id]))}' style="color: blue; font-size: 15px;">登记</a></span>
-                            <span><a href='{:U("Index/yuyue" ,array("id"=>$vo[br_id]))}' style="color: blue; font-size: 15px;">预约</a></span>
+                            <span><a href='{:U("Index/dengji" ,array("id"=>$vo[br_id],"xh"=>$vo[xh]))}' style="color: blue; font-size: 15px;">登记</a></span>
+                            <span><a href='{:U("Index/yuyue" ,array("id"=>$vo[br_id],"xh"=>$vo[xh]))}' style="color: blue; font-size: 15px;">预约</a></span>
                         </td>
                     </tr>
                     </volist>
@@ -186,9 +188,9 @@
     <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
     <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
     <!-- 别删开始 -->
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/preloader.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/app.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/load.js"></script>
+    <!-- <script type="text/javascript" src="__PUBLIC__/muban/assets/js/preloader.js"></script> -->
+    <!-- <script type="text/javascript" src="__PUBLIC__/muban/assets/js/app.js"></script> -->
+    <!-- <script type="text/javascript" src="__PUBLIC__/muban/assets/js/load.js"></script> -->
     <script type="text/javascript" src="__PUBLIC__/muban/assets/js/main.js"></script>
     <script type="text/javascript" src="__PUBLIC__/muban/assets/js/toggle_close.js"></script>
     <script src="__PUBLIC__/muban/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>

@@ -28,7 +28,7 @@ class IndexController extends Controller {
         // 法一自己写的附带样式
         $rect = M('station_p');
         $count = $rect->where('jz_flag=1')->count();// 查询满足要求的总记录数 $map表示查询条件
-        $page = getpage($count,10);//控制页面显示条数
+        $page = getpage($count,9);//控制页面显示条数
         $show = $page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
         //以上是分页 ， 以下是数据
@@ -74,9 +74,10 @@ class IndexController extends Controller {
     public function dengji(){
         // 判断病例号id是否存在（存在是从查询处跳转过来的）
         $getid =  I('get.id');
+        $xh = I('get.xh');
         if (!empty($getid)) {
             $user = M('station_p');// 实例化Data数据模型
-            $data = $user->where("br_id={$getid}")->select();
+            $data = $user->where("br_id={$getid} and xh={$xh}")->select();
             $this->assign('data',$data);//设置编号
             // dump($data);die;
         }else{
@@ -90,11 +91,27 @@ class IndexController extends Controller {
             $a=array_count_values($qb);//计算出现次数
             $b=$a[date('Ymd')];
             if (!empty($b)) {
-                $c = $b+1;
+                //判断数值在哪个范围
+                if ($b<10) {
+                    $d =$b+1;
+                    // 规定格式前面加几个0
+                    $c = "0000".$d; 
+                    // dump($c);die;
+                }else if($b>=10 && $b<100){
+                    $d =$b+1;
+                    $c = "000".$d; 
+                }else if($b>=100 && $b<1000){
+                    $d =$b+1;
+                    $c = "00".$d; 
+                }else if($b>=1000 && $b<10000){
+                    $d =$b+1;
+                    $c = "0".$d; 
+                }
+                // $c = $b+1;
                 $br_id = date('Ymd').$c;
-                // dump($id);die;
+                // dump($br_id);die;
             }else{
-                $br_id = date('Ymd')."1";
+                $br_id = date('Ymd')."00001";
             }
             $data[0]['br_id']=$br_id;
             $this->assign('data',$data);//设置编号
@@ -114,13 +131,23 @@ class IndexController extends Controller {
             //重定向到登记
             $this->redirect('Index/dengji', array('cwxinxi' => "挂号费未填写"));
         }else{
-            //判断出生年月
+            //判断出生年月int(1)
             if(empty($cs_date)){
                 //重定向到登记
                 $this->redirect('Index/dengji', array('cwxinxi' => "出生年月未填写"));
             }else{
                 $station = M('station_p');
+                //判断是否是复诊
+                $br_id = I('post.br_id');
+                // 查出就诊几次
+                $pdfuzhen = $station->where("br_id=$br_id")->count();
+                // 加一为当前就诊次数
+                $dangqingjiuzhengcishu = $pdfuzhen+1;
+                // dump($dangqingjiuzhengcishu);die;
                 $data = I('post.');//获取数据
+                // dump($data);die;
+                $data['xh'] = $dangqingjiuzhengcishu;
+                // dump($data);die;
                 $station->data($data)->add();//添加数据
                 $this->redirect('Index/jiezhen');//重定向到接诊区
             }
@@ -132,9 +159,10 @@ class IndexController extends Controller {
     public function yuyue(){
         //左侧病历号
         $getid =  I('get.id');
+        $xh = I('get.xh');
         $user = M('station_p');// 实例化Data数据模型
         if (!empty($getid)) {
-            $datazuo = $user->where("br_id={$getid}")->select();
+            $datazuo = $user->where("br_id={$getid} and xh={$xh}")->select();
             $this->assign('datazuo',$datazuo);//设置编号
             // dump($data);die;
         }else{
@@ -147,9 +175,25 @@ class IndexController extends Controller {
             $a=array_count_values($qb);//计算出现次数
             $b=$a[date('Ymd')];
             if (!empty($b)) {
-                $c = $b+1;
+                //判断数值在哪个范围
+                if ($b<10) {
+                    $d =$b+1;
+                    // 规定格式前面加几个0
+                    $c = "0000".$d; 
+                    // dump($c);die;
+                }else if($b>=10 && $b<100){
+                    $d =$b+1;
+                    $c = "000".$d; 
+                }else if($b>=100 && $b<1000){
+                    $d =$b+1;
+                    $c = "00".$d; 
+                }else if($b>=1000 && $b<10000){
+                    $d =$b+1;
+                    $c = "0".$d; 
+                }
+                // $c = $b+1;
                 $br_id = date('Ymd').$c;
-                // dump($id);die;
+                // dump($br_id);die;
             }else{
                 $br_id = date('Ymd')."1";
             }
@@ -165,6 +209,7 @@ class IndexController extends Controller {
         // dump($yuyuedtime);die;
         //获取数据->where("p_date like '". $times."%'")
         $data = $user->where("reserve=2 and p_date like '".$yuyuedtime."%' ")->field('p_date,br_name')->select();
+        // dump($data);die;
         //是一个方法 直接调用（把二维数组 以一个字段为条件 升序排列）
         if (! function_exists('list_sort_by'))
         {
@@ -259,26 +304,36 @@ class IndexController extends Controller {
         //接受从患者登记处传值（post方式）
         if (IS_POST){
             $station = M('station_p');//链接数据库
-            $data = I('post.');//获取数据
+                 //判断是否是复诊
+                $br_id = I('post.br_id');
+                // 查出就诊几次
+                $pdfuzhen = $station->where("br_id=$br_id")->count();
+                // 加一为当前就诊次数
+                $dangqingjiuzhengcishu = $pdfuzhen+1;
+                // dump($dangqingjiuzhengcishu);die;
+                $data = I('post.');//获取数据
+                // dump($data);die;
+                $data['xh'] = $dangqingjiuzhengcishu;
+                // dump($data);die;
             $station->data($data)->add();//添加数据
             $user = M('station_p'); //二次链接数据库
-            $id = I('post.br_id');
-            $data = $user->where("br_id={$id}")->select();
-            $xh = $data[0]['xh'];
+            $data = $user->where("br_id={$br_id} and xh={$dangqingjiuzhengcishu}")->select();
             // dump($xh);die;
             $this->assign('data',$data);// 模板变量赋值
             session(id,$id);//设置病历号存入session
-            session(xh,$xh);//设置序号存入session
+            session(xh,$dangqingjiuzhengcishu);//设置序号存入session
             // dump($data);die;
         //接受接诊区传值(get方式)    
         }else if(IS_GET){
             // 判断get.id是否存在
             if (isset($_GET['id'])) {
                 $id = I('get.id');//获取条件
+                $xh = I('get.xh');
                 $user = M('station_p');
-                $data = $user->where("br_id={$id}")->select();
+                $data = $user->where("br_id={$id} and xh={$xh}")->select();
                 $this->assign('data',$data);// 模板变量赋值
                 session(id,$id);//设置编号存入session
+                session(xh,$xh);//设置编号存入session
 
             }
         }
