@@ -209,6 +209,7 @@ class IndexController extends Controller {
         // dump($yuyuedtime);die;
         //获取数据->where("p_date like '". $times."%'")
         $data = $user->where("reserve=2 and p_date like '".$yuyuedtime."%' ")->field('p_date,br_name')->select();
+        // dump($data);die;
         //是一个方法 直接调用（把二维数组 以一个字段为条件 升序排列）
         if (! function_exists('list_sort_by'))
         {

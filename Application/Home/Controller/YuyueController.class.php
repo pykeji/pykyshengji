@@ -30,6 +30,7 @@ class YuyueController extends Controller {
 	// 患者预约
     public function yuyue(){
       $station = M('station_p');
+      // echo 1;die;
       //判断是否是复诊
       $br_id = I('post.br_id');
       // 查出就诊几次
@@ -43,4 +44,5 @@ class YuyueController extends Controller {
       // dump($data);die;
       $station->data($data)->add();//添加数据
       $this->redirect('Index/jiezhen');//重定向到接诊区
+    }
 }
