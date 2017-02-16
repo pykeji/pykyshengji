@@ -247,7 +247,6 @@
     })
 //    文件另存为
     $("#saveas").click(function(){
-        alert("文件保存成功！");
         location.href="<?php echo U('Index/saveAsTizhi');?>";
     })
 

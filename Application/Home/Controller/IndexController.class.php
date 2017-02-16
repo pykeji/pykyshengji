@@ -613,16 +613,13 @@ class IndexController extends Controller {
             $this->error('保存失败！',U('Index/tizhi'),3);
         }
     }
-    public function  saveAsTizhiAjax(){
-        $this->display();
-    }
     public function saveAsTizhi(){
         $tzbs=session(tzbsInf);
         $res1=array_slice($tzbs,0,36);
         $res2=array_slice($tzbs,36);
         $this->assign('res1',$res1);
         $this->assign('baoj',$res2);
-        $this->redirect('Index/tizhi');
+        $this->display();
     }
     public function tiaoyang(){
         $this->display();

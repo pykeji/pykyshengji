@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <title>体质辨识保存界面</title>
 </head>
+<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
 <body>
 <div style="display: none;">
     <?php
  class word{ function start(){ ob_start(); print'<html xmlns:o="urn:schemas-microsoft-com:office:office"
 			xmlns:w="urn:schemas-microsoft-com:office:word"
 			xmlns="http://www.w3.org/TR/REC-html40">'; } function save($path){ print "</html>"; $data = ob_get_contents(); ob_end_clean(); $this->wirtefile ($path,$data); } function wirtefile ($fn,$data){ $fp=fopen($fn,"wb"); fwrite($fp,$data); fclose($fp); } } $word = new word; $word->start(); ?>
+<style>
+    /*鉴定报告大标题*/
+     .rep-title{
+        text-align:center;padding-top:40px;font-size:28px;font-weight: bold;padding-bottom:25px;
+    }
+    table tr{height:30px;text-align: center;border:1px solid #000000;}
+    .rep-title1{font-size:16px;font-weight: bold;width:90%;margin:10px auto;}
+    .rep-inf{width:90%;margin:0px auto;text-indent:2em;}
+    .rep-inf img{text-align: center;}
+</style>
 <div class="rep-title">中医体制辨识鉴定报告</div>
 <div>
-    <table border="1" width="90%" class="center">
+    <table border="1" width="100%" class="center" cellpadding="0" style="border-collapse:collapse;">
         <tr>
-            <td width="5%">姓名</td>
+            <td width="8%">姓名</td>
             <td colspan="2" width="10%"><?php echo ($res1["br_name"]); ?></td>
             <td width="5%">性别</td>
             <td width="5%"><?php echo ($res1["xb"]); ?></td>
@@ -77,3 +88,9 @@
 </div>
 </body>
 </html>
+<script>
+    $(document).ready(function(){
+        alert('另存为成功！');
+        history.back();
+    })
+</script>

@@ -1,10 +1,20 @@
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
 			xmlns:w="urn:schemas-microsoft-com:office:word"
-			xmlns="http://www.w3.org/TR/REC-html40"><div class="rep-title">中医体制辨识鉴定报告</div>
+			xmlns="http://www.w3.org/TR/REC-html40"><style>
+    /*鉴定报告大标题*/
+     .rep-title{
+        text-align:center;padding-top:40px;font-size:28px;font-weight: bold;padding-bottom:25px;
+    }
+    table tr{height:30px;text-align: center;border:1px solid #000000;}
+    .rep-title1{font-size:16px;font-weight: bold;width:90%;margin:10px auto;}
+    .rep-inf{width:90%;margin:0px auto;text-indent:2em;}
+    .rep-inf img{text-align: center;}
+</style>
+<div class="rep-title">中医体制辨识鉴定报告</div>
 <div>
-    <table border="1" width="90%" class="center">
+    <table border="1" width="100%" class="center" cellpadding="0" style="border-collapse:collapse;">
         <tr>
-            <td width="5%">姓名</td>
+            <td width="8%">姓名</td>
             <td colspan="2" width="10%">123123</td>
             <td width="5%">性别</td>
             <td width="5%">男</td>
@@ -26,21 +36,21 @@
         <tr>
             <td rowspan="2">体制类型</td>
             <td colspan="2">平和质-否</td>
-            <td colspan="2">气虚质-是</td>
+            <td colspan="2">气虚质-倾向是</td>
             <td colspan="2">阳虚质-否</td>
-            <td colspan="2">阴虚质-倾向是</td>
-            <td colspan="2">痰湿质-倾向是</td>
+            <td colspan="2">阴虚质-是</td>
+            <td colspan="2">痰湿质-是</td>
         </tr>
         <tr>
-            <td colspan="2">湿热质-否</td>
+            <td colspan="2">湿热质-是</td>
             <td colspan="2">血瘀质-倾向是</td>
-            <td colspan="2">气郁质-是</td>
-            <td colspan="2">特禀质-否</td>
+            <td colspan="2">气郁质-倾向是</td>
+            <td colspan="2">特禀质-是</td>
             <td colspan="2"></td>
         </tr>
     </table>
 </div>
-    <div class="rep-title1">气虚质-是</div>
+    <div class="rep-title1">气虚质-倾向是</div>
     <div class="rep-title1">1.情志调摄</div>
     <div class="rep-inf">
         <p><p>宜保持稳定乐观的心态，不可过度劳神。</p><p>宜欣赏节奏明快的音乐，如笛子曲《喜相逢》等。</p></p>
@@ -59,8 +69,8 @@
     </div>
     <div class="rep-title1">5.穴位保健</div>
     <div class="rep-inf">
-        <p><p>(1)选穴：气海、关元。</p><p>(2)定位：气海位于下腹部，前正中线上，当脐中下1.5寸；关元位于下腹部，前正中线上，当脐下3寸(见下图)。</p><img src="/tizhibs/Public/images/tzbj/qixu.png"><p>(3)操作：用掌根着力于穴位，做轻柔缓和的环旋活动，每个穴位按揉2～3分钟，每天操作1～2次。</p><p>还可以采用艾条温和灸，增加温阳益气的作用。点燃艾条或借助温灸盒，对穴位进行温灸，每次10分钟。艾条温和灸点燃端要与皮肤保持2～3厘米的距离，不要烫伤皮肤。温和灸可每周操作1次。</p></p>
-    </div>    <div class="rep-title1">阴虚质-倾向是</div>
+        <p><p>(1)选穴：气海、关元。</p><p>(2)定位：气海位于下腹部，前正中线上，当脐中下1.5寸；关元位于下腹部，前正中线上，当脐下3寸(见下图)。</p><img src="http://localhost/zySystem/Public/img/tzbj/qixu.png"><p>(3)操作：用掌根着力于穴位，做轻柔缓和的环旋活动，每个穴位按揉2～3分钟，每天操作1～2次。</p><p>还可以采用艾条温和灸，增加温阳益气的作用。点燃艾条或借助温灸盒，对穴位进行温灸，每次10分钟。艾条温和灸点燃端要与皮肤保持2～3厘米的距离，不要烫伤皮肤。温和灸可每周操作1次。</p></p>
+    </div>    <div class="rep-title1">阴虚质-是</div>
     <div class="rep-title1">1.情志调摄</div>
     <div class="rep-inf">
         <p><p>宜加强自我修养、培养自己的耐性，尽量减少与人争执、动怒，不宜参加竞争胜负的活动，可在安静、优雅环境中练习书法、绘画等。有条件者可以选择在环境清新凉爽的海边、山林旅游休假。</p><p>宜欣赏曲调轻柔、舒缓的音乐，如舒伯特《小夜曲》等。</p></p>
@@ -79,8 +89,8 @@
     </div>
     <div class="rep-title1">5.穴位保健</div>
     <div class="rep-inf">
-        <p><p>(1)选穴：太溪、三阴交。</p><p>(2)定位：太溪位于足内侧，内踝后方，当内踝尖与跟腱之间的凹陷处；三阴交位于小腿内侧，当足内踝尖上3寸，胫骨内侧缘后方(见下图)。</p><img src="/tizhibs/Public/images/tzbj/yinxu.png"><p>(3)操作：采用指揉的方法(见平和质)，每个穴位按揉2～3分钟，每天操作1～2次。</p></p>
-    </div>    <div class="rep-title1">痰湿质-倾向是</div>
+        <p><p>(1)选穴：太溪、三阴交。</p><p>(2)定位：太溪位于足内侧，内踝后方，当内踝尖与跟腱之间的凹陷处；三阴交位于小腿内侧，当足内踝尖上3寸，胫骨内侧缘后方(见下图)。</p><img src="http://localhost/zySystem/Public/img/tzbj/yinxu.png"><p>(3)操作：采用指揉的方法(见平和质)，每个穴位按揉2～3分钟，每天操作1～2次。</p></p>
+    </div>    <div class="rep-title1">痰湿质-是</div>
     <div class="rep-title1">1.情志调摄</div>
     <div class="rep-inf">
         <p><p>宜多参加社会活动，培养广泛的兴趣爱好。</p><p>宜欣赏激进、振奋的音乐，如二胡《赛马》等。</p></p>
@@ -99,7 +109,27 @@
     </div>
     <div class="rep-title1">5.穴位保健</div>
     <div class="rep-inf">
-        <p><p>(1)选穴：丰隆、足三里。</p><p>(2)定位：足三里(位置见气虚质)。丰隆位于小腿前外侧，当外踝尖上8寸，条口外，距胫骨前缘二横指处(见下图)。</p><img src="/tizhibs/Public/images/tzbj/tanshi.png"><p>(3)操作：采用指揉法(见平和质)。</p></p>
+        <p><p>(1)选穴：丰隆、足三里。</p><p>(2)定位：足三里(位置见气虚质)。丰隆位于小腿前外侧，当外踝尖上8寸，条口外，距胫骨前缘二横指处(见下图)。</p><img src="http://localhost/zySystem/Public/img/tzbj/tanshi.png"><p>(3)操作：采用指揉法(见平和质)。</p></p>
+    </div>    <div class="rep-title1">湿热质-是</div>
+    <div class="rep-title1">1.情志调摄</div>
+    <div class="rep-inf">
+        <p><p>宜稳定情绪，尽量避免烦恼，可选择不同形式的兴趣爱好。</p><p>宜欣赏曲调悠扬的乐曲，如古筝《高山流水》等。</p></p>
+    </div>
+    <div class="rep-title1">2.饮食调养</div>
+    <div class="rep-inf">
+        <p><p>宜选用甘寒或苦寒的清利化湿食物，如绿豆(芽)、绿豆糕、绿茶、芹菜、黄瓜、苦瓜、西瓜、冬瓜、薏苡仁、赤小豆、马齿苋、藕等。少食羊肉、动物内脏等肥厚油腻之品，以及韭菜、生姜、辣椒、胡椒、花椒及火锅、烹炸、烧烤等辛温助热的食物。</p><p>参考食疗方：(1)老黄瓜赤小豆煲猪肉汤：老黄瓜、赤小豆、瘦猪肉(少量)、陈皮、生姜，具有清热利湿、理气和中的功效，适合湿热体质者食用。</p><p>(2)绿豆薏米粥：生薏苡仁、绿豆，具有清热利湿解毒的功效，适合湿热体质易长疮疖者食用。</p></p>
+    </div>
+    <div class="rep-title1">3. 起居调摄</div>
+    <div class="rep-inf">
+        <p><p>居室宜干燥、通风良好，避免居处潮热，可在室内用除湿器或空调改善湿、热的环境。选择款式宽松，透气性好的天然棉、麻、丝质服装。注意个人卫生，预防皮肤病变。</p><p>保持充足而有规律的睡眠，睡前半小时不宜思考问题、看书、看情节紧张的电视节目，避免服用兴奋饮料，不宜吸烟饮酒。保持二便通畅，防止湿热积聚。</p></p>
+    </div>
+    <div class="rep-title1">4.运动保健</div>
+    <div class="rep-inf">
+        <p><p>宜做中长跑、游泳、各种球类、武术等强度较大的锻炼。夏季应避免在烈日下长时间活动，在秋高气爽的季节，经常选择爬山登高，更有助于祛除湿热。也可做八段锦，在完成整套动作后将“双手托天理三焦”和“调理脾胃须单举”加做1～3遍，每日1遍。</p></p>
+    </div>
+    <div class="rep-title1">5.穴位保健</div>
+    <div class="rep-inf">
+        <p><p>(1)选穴：支沟、阴陵泉。</p><p>(2)定位：支沟穴位于前臂背侧，当阳池与肘尖的连线上，腕背横纹上3寸，尺骨与桡骨之间(见下左图)。阴陵泉位于小腿内侧，当胫骨内侧踝后下凹陷处(见下右图)。</p><img src="http://localhost/zySystem/Public/img/tzbj/shire.png"><p>(3)操作：采用指揉法(见平和质)。阴陵泉还可以选择刮痧，先涂刮痧油，用刮痧板与皮肤呈45°角在穴位区域从上往下刮，以皮肤潮红或出痧点为度。</p></p>
     </div>    <div class="rep-title1">血瘀质-倾向是</div>
     <div class="rep-title1">1.情志调摄</div>
     <div class="rep-inf">
@@ -119,8 +149,8 @@
     </div>
     <div class="rep-title1">5.穴位保健</div>
     <div class="rep-inf">
-        <p><p>(1)选穴：期门、血海。</p><p>(2)定位：期门位于胸部，当乳头直下，第6肋间隙，前正中线旁开4寸(见下左图)。血海：屈膝，在大腿内侧，髌底内侧端上2寸，当股四头肌内侧头的隆起处(见下右图)。</p><img src="/tizhibs/Public/images/tzbj/xueyu.png"></p>
-    </div>    <div class="rep-title1">气郁质-是</div>
+        <p><p>(1)选穴：期门、血海。</p><p>(2)定位：期门位于胸部，当乳头直下，第6肋间隙，前正中线旁开4寸(见下左图)。血海：屈膝，在大腿内侧，髌底内侧端上2寸，当股四头肌内侧头的隆起处(见下右图)。</p><img src="http://localhost/zySystem/Public/img/tzbj/xueyu.png"></p>
+    </div>    <div class="rep-title1">气郁质-倾向是</div>
     <div class="rep-title1">1.情志调摄</div>
     <div class="rep-inf">
         <p><p>宜乐观开朗，多与他人相处，不苛求自己也不苛求他人。如心境抑郁不能排解时，要积极寻找原因，及时向朋友倾诉。</p><p>宜欣赏节奏欢快、旋律优美的乐曲如《金蛇狂舞》等，还适宜看喜剧、励志剧，以及轻松愉悦的相声表演。</p></p>
@@ -139,5 +169,25 @@
     </div>
     <div class="rep-title1">5.穴位保健</div>
     <div class="rep-inf">
-        <p><p>(1)选穴：合谷、太冲穴</p><p>(2)定位：合谷位于手背，第1、2掌骨间，当第2掌骨桡侧的中点处(见下左图)。太冲位于足背侧，当第1跖骨间隙的后方凹陷处(见下右图)。</p><img src="/tizhibs/Public/images/tzbj/qiyu.png"><p>(3)操作：采用指揉的方法(见平和质)。</p></p>
+        <p><p>(1)选穴：合谷、太冲穴</p><p>(2)定位：合谷位于手背，第1、2掌骨间，当第2掌骨桡侧的中点处(见下左图)。太冲位于足背侧，当第1跖骨间隙的后方凹陷处(见下右图)。</p><img src="http://localhost/zySystem/Public/img/tzbj/qiyu.png"><p>(3)操作：采用指揉的方法(见平和质)。</p></p>
+    </div>    <div class="rep-title1">特禀质-是</div>
+    <div class="rep-title1">1.情志调摄</div>
+    <div class="rep-inf">
+        <p><p>过敏体质的人因对过敏原敏感，容易产生紧张、焦虑等情绪，因此要在尽量避免过敏原的同时，还应避免紧张情绪。</p></p>
+    </div>
+    <div class="rep-title1">2.饮食调养</div>
+    <div class="rep-inf">
+        <p><p>饮食宜均衡、粗细粮食搭配适当、荤素配伍合理，宜多食益气固表的食物，尽量少食辛辣、腥发食物，不食含致敏物质的食品，如蚕豆、白扁豆、羊肉、鹅肉、鲤鱼、虾、蟹、茄子、辣椒、浓茶、咖啡等。</p><p>参考食疗方：(1)固表粥：乌梅、黄芪、当归、粳米，具有益气养血脱敏功效，适合过敏体质易发皮肤过敏者食用。</p><p>(2)黄芪首乌藤炖猪瘦肉：黄芪、首乌藤、猪瘦肉、食盐、葱、生姜、料酒、味精各适量，具有益气养血、祛风脱敏功效，适合过敏体质者食用。</p></p>
+    </div>
+    <div class="rep-title1">3. 起居调摄</div>
+    <div class="rep-inf">
+        <p><p>起居要有规律，保持充足的睡眠时间。居室宜通风良好。生活环境中接触的物品如枕头、棉被、床垫、地毯、窗帘、衣橱易附有尘螨，可引起过敏，应经常清洗、日晒。外出也要避免处在花粉及粉刷油漆的空气中，以免刺激而诱发过敏病症。</p></p>
+    </div>
+    <div class="rep-title1">4.运动保健</div>
+    <div class="rep-inf">
+        <p><p>宜进行慢跑、散步等户外活动，也可选择下棋、瑜珈等室内活动。不宜选择大运动量的活动，避免春天或季节交替时长时间在野外锻炼。运动时注意避风寒，如出现哮喘、憋闷的现象应及时停止运动。</p></p>
+    </div>
+    <div class="rep-title1">5.穴位保健</div>
+    <div class="rep-inf">
+        <p><p>(1)选穴：神阙、曲池。</p><p>(2)定位：神阙位于腹中部，脐中央(见下左图)。曲池位于肘横纹外侧端，屈肘，当尺泽与在肘横纹外侧端与肱骨外上髁连线中点(见下右图)。</p><img src="http://localhost/zySystem/Public/img/tzbj/tebing.png"><p>(3)操作：神阙采用温和灸(见气虚质)。曲池采用指揉法(见平和质)。</p></p>
     </div></html>
