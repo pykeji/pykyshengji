@@ -81,9 +81,7 @@
                     <tr>
                         <td>单位：</td>
                         <td colspan="3">
-                            <textarea name="dw" id="comp1"class="lontext">
-                                <?php echo ($vo["dw"]); ?>
-                            </textarea>
+                            <textarea name="dw" id="comp1"class="lontext"><?php echo ($vo["dw"]); ?></textarea>
                         </td>
                     </tr>
                     <!-- 就诊时间 -->

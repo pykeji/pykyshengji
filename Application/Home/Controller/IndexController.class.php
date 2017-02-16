@@ -320,7 +320,7 @@ class IndexController extends Controller {
             $data = $user->where("br_id={$br_id} and xh={$dangqingjiuzhengcishu}")->select();
             // dump($xh);die;
             $this->assign('data',$data);// 模板变量赋值
-            session(id,$id);//设置病历号存入session
+            session(id,$br_id);//设置病历号存入session
             session(xh,$dangqingjiuzhengcishu);//设置序号存入session
             // dump($data);die;
         //接受接诊区传值(get方式)    
@@ -344,7 +344,7 @@ class IndexController extends Controller {
     public function tizhi(){
         $blh=session(id);
         $xh=session(xh);
-//        echo $blh;
+
         $tzti=M('tz_question');
         $ti=$tzti->select();//题目信息检索
 //      题目数组切割成为3*11
@@ -356,7 +356,6 @@ class IndexController extends Controller {
         $this->assign('ti3',$ti3);//23到33题序号
         $this->assign('ti',$ti);
         $tzbs=I("get.");
-
 //        判断患者是否登记
         if($blh && $xh){
             //保存患者的答题记录
@@ -364,7 +363,7 @@ class IndexController extends Controller {
             $jieguo=M('tz_jieguo');
             $userInf=$user->where('tz_jbxx.id='.$xh.' and tz_jbxx.bianhao='.$blh)->find();//患者的选项信息
             $data=$jieguo->join('station_p on tz_jieguo.id=station_p.xh and tz_jieguo.bianhao=station_p.br_id')->where('tz_jieguo.id='.$xh.' and tz_jieguo.bianhao='.$blh)->find();//患者的个人信息和答题结果
-//            print_r($userInf);
+//            print_r($data);
 //            判断患者是否保存答题信息
             if($userInf && $data){
 //                日期去掉时分秒
@@ -407,7 +406,7 @@ class IndexController extends Controller {
                 //将传过来的数据分成两个数组
                 $res1=array_slice($tzbs,0,36);
                 $res2=array_slice($tzbs,36);
-//                print_r($tzbs);
+//              print_r($tzbs);
                 $this->assign('res1',$res1);
                 $this->assign('baoj',$res2);
                 $this->display();
@@ -577,7 +576,22 @@ class IndexController extends Controller {
 
 //        print_r($data);
         $tzbs=array_merge_recursive($data,$tz);
+        session(tzbsInf,$tzbs);
         $this->redirect('Index/tizhi',$tzbs);
+    }
+//    体质辨识提交ajax
+    public function tizhiCheckedAjax(){
+        $blh=session(id);
+        $xh=session(xh);
+        if($blh&&$xh){
+//          可以继续答题
+            $a=11;
+            $this->ajaxReturn($a);
+        }else{
+//          必须登记后才能进行答题
+            $b=22;
+            $this->ajaxReturn($b);
+        }
     }
 //    体质辨识结果储存到数据库
     public function tizhiSave(){
@@ -598,6 +612,17 @@ class IndexController extends Controller {
         }else{
             $this->error('保存失败！',U('Index/tizhi'),3);
         }
+    }
+    public function  saveAsTizhiAjax(){
+        $this->display();
+    }
+    public function saveAsTizhi(){
+        $tzbs=session(tzbsInf);
+        $res1=array_slice($tzbs,0,36);
+        $res2=array_slice($tzbs,36);
+        $this->assign('res1',$res1);
+        $this->assign('baoj',$res2);
+        $this->redirect('Index/tizhi');
     }
     public function tiaoyang(){
         $this->display();
