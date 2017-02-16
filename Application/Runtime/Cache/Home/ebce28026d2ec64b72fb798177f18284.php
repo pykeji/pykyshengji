@@ -8,6 +8,25 @@
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
 </head>
+<script language=javascript>
+//    打印功能JS
+    function preview(oper)
+    {
+        if (oper < 10){
+            bdhtml=window.document.body.innerHTML;//获取当前页的html代码
+            sprnstr="<!--startprint"+oper+"-->";//设置打印开始区域
+            eprnstr="<!--endprint"+oper+"-->";//设置打印结束区域
+            prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取htm
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+            window.document.body.innerHTML=bdhtml;
+        }
+        else {
+            window.print();
+        }
+    }
+</script>
 <body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div id="judge" style="display:none;"><?php echo ($res1["tzname"]); ?></div>
 <form action="<?php echo U('Index/tizhiSub');?>" method="post" id="form1">
@@ -74,12 +93,14 @@
                 <div class="report">
                     <div class="reportinf center">
                         <!--报告表单-->
+                        <!--startprint1-->
                         <form action="<?php echo U('Index/tizhi');?>" method="post">
-                            <div class="rep-title">中医体制辨识鉴定报告</div>
+
+                            <div class="rep-title" style="text-align: center;text-align:center;padding-top:40px;font-size:28px;font-weight: bold;padding-bottom:25px;">中医体制辨识鉴定报告</div>
                             <div>
                                 <table border="1" width="90%" class="center">
                                     <tr>
-                                        <td width="5%">姓名</td>
+                                        <td width="6%">姓名</td>
                                         <td colspan="2" width="10%"><?php echo ($res1["br_name"]); ?></td>
                                         <td width="5%">性别</td>
                                         <td width="5%"><?php echo ($res1["xb"]); ?></td>
@@ -116,28 +137,28 @@
                                 </table>
                             </div>
                             <?php if(is_array($baoj)): $i = 0; $__LIST__ = $baoj;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; $bj = M('tz_baojian'); $name = substr($vo,0,9); $res2 = $bj -> where("tzname = '$name'") -> select(); ?>
-                            <div class="rep-title1"><?php echo ($vo); ?></div>
-                            <div class="rep-title1"><?php echo ($res2[0][title]); ?></div>
-                            <div class="rep-inf">
+                            <div class="rep-title1" style="font-size:16px;font-weight: bold;width:90%;margin:10px auto;"><?php echo ($vo); ?></div>
+                            <div class="rep-title1" style="font-size:16px;font-weight: bold;width:90%;margin:10px auto;"><?php echo ($res2[0][title]); ?></div>
+                            <div class="rep-inf" style="width:90%;margin:0px auto;text-indent:2em;">
                                 <p><?php echo ($res2[0][content]); ?></p>
                             </div>
-                            <div class="rep-title1"><?php echo ($res2[0][title1]); ?></div>
-                            <div class="rep-inf">
+                            <div class="rep-title1" style="font-size:16px;font-weight: bold;width:90%;margin:10px auto;"><?php echo ($res2[0][title1]); ?></div>
+                            <div class="rep-inf" style="width:90%;margin:0px auto;text-indent:2em;">
                                 <p><?php echo ($res2[0][content1]); ?></p>
                             </div>
-                            <div class="rep-title1"><?php echo ($res2[0][title2]); ?></div>
-                            <div class="rep-inf">
+                            <div class="rep-title1" style="font-size:16px;font-weight: bold;width:90%;margin:10px auto;"><?php echo ($res2[0][title2]); ?></div>
+                            <div class="rep-inf" style="width:90%;margin:0px auto;text-indent:2em;">
                                 <p><?php echo ($res2[0][content2]); ?></p>
                             </div>
-                            <div class="rep-title1"><?php echo ($res2[0][title3]); ?></div>
-                            <div class="rep-inf">
+                            <div class="rep-title1" style="font-size:16px;font-weight: bold;width:90%;margin:10px auto;"><?php echo ($res2[0][title3]); ?></div>
+                            <div class="rep-inf" style="width:90%;margin:0px auto;text-indent:2em;">
                                 <p><?php echo ($res2[0][content3]); ?></p>
                             </div>
-                            <div class="rep-title1"><?php echo ($res2[0][title4]); ?></div>
-                            <div class="rep-inf">
+                            <div class="rep-title1" style="font-size:16px;font-weight: bold;width:90%;margin:10px auto;"><?php echo ($res2[0][title4]); ?></div>
+                            <div class="rep-inf" style="width:90%;margin:0px auto;text-indent:2em;">
                                 <p><?php echo ($res2[0][content4]); ?></p>
                             </div><?php endforeach; endif; else: echo "" ;endif; ?>
-                        </form>
+                        </form><!--endprint1-->
                         <!--分类-->
                         <div class="tztitle">测试结果表</div>
                         <div class="tzstyle">
@@ -201,7 +222,7 @@
                 <button type="button" class="btn btn-warning" id="sub">提交</button>
                 <button type="button" class="btn btn-warning" id="save">保存</button>
                 <button type="button" class="btn btn-warning" id="saveas">另存为</button>
-                <button type="button" class="btn btn-warning">打印</button>
+                <button type="button" class="btn btn-warning" onclick="preview(1);">打印</button>
             </div>
         </div>
     </div>
