@@ -95,6 +95,7 @@ class AjaxController extends Controller {
           $list[$i]['cishu'] = $acishu[$i+1];
           $list[$i]['yongfa'] = $atsyf[$i+1];
           // $list[$i]['tianshu'] = $atianshu[$i+1];
+          $list[$i]['BR_ID'] = session(id);
         }
 
           for($j = 0; $j < $num; $j++){
