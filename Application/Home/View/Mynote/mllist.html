@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/note.css"/>
+	<script type="text/javascript" src="__PUBLIC__/editor/scripts/jquery.min.js"></script>
+</head>
+<script>
+window.onload=function(){
+	$("p.listp").click(function(){
+		$(this).next(".listul").slideToggle(500).siblings(".listul").slideUp(300);
+	});
+}
+</script>
+<body>
+	<br><br>
+	<p class="titlep">目录列表</p>
+	<div id="mldiv">
+		<foreach name="elet" item="ml">
+			<p class="listp">
+				<a href="__CONTROLLER__/setnote?id={$ml['id']}" target="right">
+					&emsp;{$ml.element}
+				</a>
+			</p>
+			<ul class="listul">
+				<volist name="res" id="vo">
+					<if condition="$vo['element'] eq $ml['element']">
+					<a href="__CONTROLLER__/view?id={$vo.id}" target="right">
+						<li class="listli" id="{$vo.id}">&emsp;{$vo.list}</li>
+					</a>
+					</if>
+				</volist>
+			</ul>
+		</foreach>
+	</div>
+	<a href="__CONTROLLER__/setml" target="right">
+		<p class="titlep">新建目录</p>
+	</a>
+	<a href="__CONTROLLER__/delml" target="right">
+		<p class="titlep">删除目录</p>
+	</a>
+</body>
+</html>
