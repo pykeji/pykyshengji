@@ -1,0 +1,27 @@
+html{width:100%;height:100%;}
+body{width:100%; height: 98%;  background-color:rgba(0,0,0,0)!important;}
+body input[type=text]{color:#000!important;border:1px #DFD7D7 solid!important}
+/*.toushang{margin-top:0px;height:5% border:1px red solid;}*/
+.toushangzuo{float:left;width:20%;margin-left:50px}
+.toushangzh{float:left;width:50%}
+.toushangyou{float:left;width:20%}
+.qisfudong{clear:both}
+.zhongjinade{width:100%;height:100%}
+.zhongzuo{float:left;width:23%;margin-left:5px;border-radius:5px;border:1px #DFD7D7 solid}
+.mtfenlzuo{border-radius:5px;border:1px #DFD7D7 solid;float:left;width:25%;margin-left:10px}
+.mtfenlzuogdjt{height:480px;overflow:auto}
+.mtfenlyou{border-radius:5px;border:1px #DFD7D7 solid;float:left;width:70%;height:480px;margin-left:10px}
+.quxiaofdmtfenl{clear:both}
+.zhongyou{float:left;width:75%;height:98%;margin-left:5px}
+.zhongyoushang{height:30%}
+.zysbiaoge1{float:left;width:68%;height:100%}
+.ka3YouShangDakuaiChuFang{height:100%;overflow:auto;border-radius:5px;border:1px #DFD7D7 solid}
+.zysbiaoge2{float:left;width:30%;height:100%}
+.ka3YouShangDakuaiChuFang2{height:100%;overflow:auto;border-radius:5px;border:1px #DFD7D7 solid}
+.quxiaofudzysbiaoge{clear:both}
+.zhongyouxia{border-radius:5px;border:1px #DFD7D7 solid;float:left;width:80%;height:60%}
+.ka3xiaCeChuFang{height:77%;width:100%;overflow:auto;border-radius:5px}
+.ka3xiaCeChuFangZI{border:1px #FFFBF0 solid;width:600px;height:35px;margin-top:10px;text-align:center;font-size:20px}
+.zhongyouanniu{float:left;margin-left:30px;margin-top:200px}
+.qingchuzhongyouanniu{clear:both}
+.qichuzhongfudong{clear:both}

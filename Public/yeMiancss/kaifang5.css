@@ -1,0 +1,25 @@
+html{width:100%;height:100%;}
+body{width:100%; height: 98%; background-color:rgba(0,0,0,0)!important;}
+body input[type=text]{color:#000!important;border:1px #DFD7D7 solid!important}
+.ka1dadekuang1{width:94%;margin-top:5px;margin-left:60px;float:left}
+.ka1{padding-left:90px;width:100%;height:80px;border-radius:5px;border:1px #DFD7D7 solid}
+.ka11{border:0;width:auto;color:#8E852D}
+.kawenzi{margin-left:-70px;margin-top:-40px}
+.kuangneianniu{margin-left:70px;margin-top:-30px}
+.xiaZuo{float:left;border:1px #DFD7D7 solid;margin-left:10px;height:80%;width:25%}
+.xiaZuosousuo{margin-top:5px;margin-left:5px;width:90%}
+.xiaZuoshang{text-align:center}
+.xiaZuoshang3{margin-top:5px}
+.xiaZuochufang{border:none;border-radius:5px;border:1px #DFD7D7 solid;margin-top:10px;height:83%;width:100%;overflow:auto}
+.trdebingming{background-color:#FE9;text-align:center}
+.trdebingming1{background-color:#FE9;text-align:center}
+.youchufang{border-radius:5px;border:1px #DFD7D7 solid;float:left;width:60%;height:90%;margin-left:10px}
+.xiaYou1{margin-top:10px;border:3px #EFD411 solid;border-width:0 0 2px 0;height:50px}
+.xiaYou2{text-align:center;line-height:40px;width:200px;height:50px;color:#8E852D;font-size:20px}
+.xiaYouchuFang{margin-left:0;margin-top:15px;height:70%}
+.xiaYouchuFang1{height:100%;width:99%;margin-left:2px;overflow:auto;border-radius:5px;border:1px #DFD7D7 solid}
+.chufangyaopinjianfa{width:40px;border-width:0;background-color:#FCFAEB;color:#000!important}
+.chufangyaopinmingcheng{width:80px;border-width:0;background-color:#FCFAEB;line-height:10px;color:#000!important}
+.chufangyaopinshuliang{width:70px;border-width:0;background-color:#FCFAEB;line-height:5px;color:#000!important}
+.zhongyouanniu{float:left;margin-left:30px;margin-top:300px}
+.qingchuzhongyouanniu{clear:both}
