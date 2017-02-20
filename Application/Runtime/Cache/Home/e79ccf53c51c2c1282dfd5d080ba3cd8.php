@@ -81,9 +81,7 @@
                     <tr>
                         <td>单位：</td>
                         <td colspan="3">
-                            <textarea name="dw" id="comp1"class="lontext">
-                                <?php echo ($vo["dw"]); ?>
-                            </textarea>
+                            <textarea align=align name="dw" id="comp1"class="lontext"><?php echo ($vo["dw"]); ?></textarea>
                         </td>
                     </tr>
                     <!-- 就诊时间 -->
@@ -107,8 +105,6 @@
 <script type="text/javascript">
     jeDate.skin('gray');
 </script>
-</body>
-</html>
 <script type="text/javascript">
     $("#jsPreservation").click(function(){
         $("form").attr("action", "<?php echo U('Index/hzbc');?>" ).submit();
@@ -118,3 +114,5 @@
 
 </script>
 <script src="/zySystem/Public/js/shijian.js"></script>
+</body>
+</html>

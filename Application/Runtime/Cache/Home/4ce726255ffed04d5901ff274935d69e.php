@@ -3,172 +3,183 @@
 <head>
 	<title></title>
 	<!-- 自己写的css -->
-	
+	<link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang4.css">
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="/zySystem/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang1.css">
+    <link href="/zySystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
-	<div style="height:100%; width:100%; min-width: 1050px;">
-		<!-- 搜索 -->
-		<div class="shangcesousuo">
-			<!-- 病名搜索 -->
-			<div class="bingmingsousuo">
-				<div class="input-group ">
-					<input type="text" class="form-control"placeholder="请输入病名" />
-					<span class="input-group-btn">
-					<button class="btn btn-info btn-search">
-					<b style="color: #000000;">查找疢</b>
-					</button>
-					</span>
-				</div>
-			</div>
-			<!-- 整形搜索 -->
-			<div class="zhengxingsousuo">
-				<div class="input-group ">
-					<input type="text" class="form-control"placeholder="请输入证型名" />
-					<span class="input-group-btn">
-					<button class="btn btn-info btn-search">
-					<b style="color: #000000;">查找</b>
-					</button>
-					</span>
-				</div>
-			</div>
-			<!-- 按钮 -->
-			<div class="anniuchufanghebing">
-				<input type="checkbox" id="chuFangHeBing">
-				<label for="chuFangHeBing">处方合并</label>&nbsp;&nbsp;
-			</div>
-			<div class="anniuchuxuandingcifang" >
-				<a href="<?php echo U('Kaifang/zyhome');?>"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
-			</div>
-			<div class="qingchusoufudong">
+	<!-- 使边框中有文字 -->
+<div class="ka1dadekuang1">
+	<fieldset class="ka1">
+		<legend class="ka11">
+					点击按钮查询方剂名称
+		</legend>
+		<div class="kawenzi ">
+					&nbsp;
+			<img src="/zySystem/Public/img/tu1.jpg" style="margin-top: 20px; width: 40px; " alt="图片加载中。。。。">
+					&nbsp;
+			<div class="kuangneianniu">
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">A</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">B</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">C</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">D</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">E</button>
+				<button style=" background-color:#ffffff; color:red; margin-right: 5px;">F</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">G</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">H</button>
+				<button style=" background-color:#ffffff; color:red; margin-right: 5px;">I</button>
+				<button style=" background-color:#ffffff; color:red; margin-right: 5px;">J</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">K</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">L</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">M</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">N</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">O</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">P</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">Q</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">R</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">S</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">T</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">U</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">V</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">W</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">X</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">Y</button>
+				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">Z</button>
 			</div>
 		</div>
-		<div data-spy="scroll" data-target="#navbar-example" data-offset="0" class="kaishangzuo">
+	</fieldset>
+</div>
+<!-- 下 -->
+<div style="width: 100%;height: 100%;">
+	<!-- 下左 -->
+	<div class="xiazuofudong">
+		<div class="XZShuLu">
+			<div class="input-group ">
+				<input type="text" class="form-control"placeholder="请输入经典方名称" />
+				<span class="input-group-btn">
+				<button class="btn btn-info btn-search">
+				<b style="color: #000000;">查找</b>
+				</button>
+			</div>
+		</div>
+		<!-- 列表 -->
+		<!-- 方剂列表 -->
+		<div data-spy="scroll" data-target="#navbar-example" data-offset="0" class="XZfangJiLieBiao">
 			<table class="table table-condensed">
 			<tr height="20">
 				<th class="trdebingming">
-					病名
-				</th>
-			</tr>
-			<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr onclick="dianjiyou(this)">
-				<td>
-					<?php echo ($vo["name"]); ?>
-				</td>
-			</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-			</table>
-		</div>
-		<!-- 右侧处方 -->
-		<div data-spy="scroll" data-target="#navbar-example" data-offset="0" class="ka1youcechufang">
-			<table class="table ">
-			<tr>
-				<th style=" background-color:#ffee99; text-align:center; ">
-					选择
-				</th>
-				<th style="background-color:#FFEE99; text-align:center; ">
-					证型
-				</th>
-				<th style="background-color:#FFEE99; text-align:center;">
-					治法
-				</th>
-				<th style="background-color:#FFEE99; text-align:center; ">
-					处方名称
+					经典方
 				</th>
 			</tr>
 			<tr onclick="dianjiyou(this)">
-				<td style="text-align: center;">
-					<input type="checkbox" name="aa" value="jlk">
-				</td>
-				<td>
-								实喘-表寒肺热证
-				</td>
-				<td>
-					化痰平喘
-				</td>
 				<td>
 					麻杏石甘汤
 				</td>
 			</tr>
 			<tr onclick="dianjiyou(this)">
-				<td style="text-align: center;">
-					<input type="checkbox" name="aa" value="jlk">
-				</td>
-				<td>
-								实喘-表寒肺热证
-				</td>
-				<td>
-					化痰平喘
-				</td>
 				<td>
 					麻杏石甘汤
 				</td>
 			</tr>
 			<tr onclick="dianjiyou(this)">
-				<td style="text-align: center;">
-					<input type="checkbox" name="aa" value="jlk">
-				</td>
-				<td>
-								实喘-表寒肺热证
-				</td>
-				<td>
-					化痰平喘
-				</td>
 				<td>
 					麻杏石甘汤
 				</td>
 			</tr>
 			<tr onclick="dianjiyou(this)">
-				<td style="text-align: center;">
-					<input type="checkbox" name="aa" value="jlk">
-				</td>
-				<td>
-								实喘-表寒肺热证
-				</td>
-				<td>
-					化痰平喘
-				</td>
 				<td>
 					麻杏石甘汤
 				</td>
 			</tr>
 			<tr onclick="dianjiyou(this)">
-				<td style="text-align: center;">
-					<input type="checkbox" name="aa" value="jlk">
-				</td>
 				<td>
-								实喘-表寒肺热证
+					麻杏石甘汤
 				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
 				<td>
-					化痰平喘
+					麻杏石甘汤
 				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
+				<td>
+					麻杏石甘汤
+				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
+				<td>
+					麻杏石甘汤
+				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
+				<td>
+					麻杏石甘汤
+				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
+				<td>
+					麻杏石甘汤
+				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
+				<td>
+					麻杏石甘汤
+				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
+				<td>
+					麻杏石甘汤
+				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
+				<td>
+					麻杏石甘汤
+				</td>
+			</tr>
+			<tr onclick="dianjiyou(this)">
 				<td>
 					麻杏石甘汤
 				</td>
 			</tr>
 			</table>
 		</div>
-		<div class="qingchuchufangfudong">
+		<!-- </fieldset> -->
+	</div>
+	<!-- 下右 -->
+	<div class="xiayoufudong">
+		<!-- 选项卡 -->
+		<ul id="myTab" class="nav nav-tabs">
+			<li class="active">
+			<a href="#home" data-toggle="tab">
+			<img src="/zySystem/Public/img/bg.png" alt="别急图片马上出来">药解
+			</a>
+			</li>
+			<li><a href="#ios" data-toggle="tab">
+			<img src="/zySystem/Public/img/fj.png" alt="别急图片马上出来">方解</a>
+			</li>
+			<li>
+			<!-- 按钮 -->
+			<!-- <div class="xuandinagcfang" >
+			<button class="btn btn-success" style="width: 100px; "><b style="color: #000000; ">选定此方</b></button>
+			<button class="btn btn-warning" style="width: 100px; margin-left: 20px; "><b style="color: #000000; ">退出</b></button>
 		</div>
-		<!-- 中间汉字 -->
-		<div class="zhongjianhanzi">
-			<img src="/zySystem/Public/img/iconpng.png" class="zhongjianhanziimg" alt="图片加载中。。。。">
-			<span class="zhongjianhanzichu">
-			<b>处方信息</b>
-			</span>
-			<span class="zhongjianhanzizhu ">
-			<b>注：双击药品名称。显示药解信息！</b>
-			</span>
-		</div>
-		<!-- 下侧处方 -->
-		<div class="ka1xXiaceChufang">
-			<table>
-			<div class="ka1xXiacehanzi">
+		 -->
+		</li>
+	</ul>
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade in active" id="home">
+			<!-- 内容 -->
+			<div style="color:red;">
+				注：双击药品名称，显示药解信息！
+			</div>
+			<div class="XYFnagJiMing">
 				<strong>方剂名称:<尽量快圣诞节（爱思）></strong>
 			</div>
+			<!-- 药品 -->
+			<table>
 			<div style="width: 700px;">
 				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
 					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
@@ -331,30 +342,38 @@
 			</div>
 			</table>
 		</div>
-
+		<div class="tab-pane fade" id="ios">
+			<!-- 内容 -->
+			<div style="border: 1px #FFFBF0 solid;width: 600px; height: 50px; text-align:center; font-size:20px;color:#8E852D">
+				<strong>方剂名称:<尽量快圣诞节（爱思）></strong>
+			</div>
+			<div style=" width: 600px; margin:20px; ">
+				<strong>方解：</strong>家里卡手机登录方可将阿里卡世纪东方
+			</div>
+			<div style=" width: 600px; margin:20px; ">
+				<strong>来源：</strong>
+			</div>
+			<div style=" width: 600px; margin:20px; ">
+				<strong>功效：</strong>
+			</div>
+			<div style=" width: 600px; margin:20px; ">
+				<strong>主治：</strong>
+			</div>
+			<div style=" width: 600px; margin:20px; ">
+				<strong>用法：</strong>
+			</div>
+		</div>
 	</div>
+</div>
+<!-- 下最右的按钮位置 -->
+<div class="xiayouanniuweizhi">
+	<!-- 按钮 -->
+	<div class="xuandinagcfang">
+		<button class="btn btn-success" style="width: 100px; "><b style="color: #000000; ">选定此方</b></button>
+		<div>
+			<button class="btn btn-danger" style="width: 100px; margin-top: 10px; "><b style="color: #000000; ">退出</b></button>
+		</div>
+	</div>
+</div>
 </body>
-	<!-- 点击换色的js -->
-<script type="text/javascript">
-		// <!-- 点击换色的js -->
-
-		function changeTrColor(obj) {
-			// alert(56); 
-			var _table = obj.parentNode;
-			for (var i = 0; i < _table.rows.length; i++) {
-				_table.rows[i].style.backgroundColor = "";
-			}
-			obj.style.backgroundColor = "#3399FF";
-		}
-		// 右侧处方名点击变色
-
-		function dianjiyou(obj) {
-			// alert(123);
-			var _tableyou = obj.parentNode;
-			for (var i = 0; i < _tableyou.rows.length; i++) {
-				_tableyou.rows[i].style.backgroundColor = "";
-			}
-			obj.style.backgroundColor = "#3399FF";
-		}
-	</script>
 </html>

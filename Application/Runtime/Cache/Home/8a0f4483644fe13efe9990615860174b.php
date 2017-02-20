@@ -79,9 +79,7 @@
                     <tr>
                         <td>单位：</td>
                         <td colspan="3">
-                            <textarea name="dw"  id="comp" class="lontext">
-                                <?php echo ($vozuo["dw"]); ?>
-                            </textarea>
+                            <textarea name="dw"  id="comp" class="lontext"><?php echo ($vozuo["dw"]); ?></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -147,7 +145,7 @@
                 $date = dd;//当前预约人数
 				// alert($date);
 				$(".dqyuyuexianshiren").html($date);
-            	// console.log(dd);
+            	console.log(dd);
             },
             error:function()
             {

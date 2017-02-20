@@ -32,7 +32,7 @@ class IndexController extends Controller {
         $show = $page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
         //以上是分页 ， 以下是数据
-        $data =  $rect->where('jz_flag=1')->order('p_date')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+        $data =  $rect->where('jz_flag=1')->order('p_date desc')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
         // dump($data);die;
         $this->assign('data',$data);// 赋值模板变量
         $this->display();
@@ -130,11 +130,13 @@ class IndexController extends Controller {
         if(empty($ghf)){
             //重定向到登记
             $this->redirect('Index/dengji', array('cwxinxi' => "挂号费未填写"));
+            die;
         }else{
             //判断出生年月int(1)
             if(empty($cs_date)){
                 //重定向到登记
                 $this->redirect('Index/dengji', array('cwxinxi' => "出生年月未填写"));
+                die;
             }else{
                 $station = M('station_p');
                 //判断是否是复诊
@@ -320,7 +322,7 @@ class IndexController extends Controller {
             $data = $user->where("br_id={$br_id} and xh={$dangqingjiuzhengcishu}")->select();
             // dump($xh);die;
             $this->assign('data',$data);// 模板变量赋值
-            session(id,$id);//设置病历号存入session
+            session(id,$br_id);//设置病历号存入session
             session(xh,$dangqingjiuzhengcishu);//设置序号存入session
             // dump($data);die;
         //接受接诊区传值(get方式)    
