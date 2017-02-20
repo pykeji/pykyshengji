@@ -5,6 +5,7 @@ $(document).ready(function(){
     //$("#duo").css("width",$("#duo").parent('span').parent('td').css("width"));
 })
 //家庭史
+//父亲选项
 // 双击事件
 $("#yw1").dblclick(function(){
     $("#jtsFarinp").val($("#yw1").val());
@@ -28,6 +29,12 @@ $(".jtscheck").click(function(){
     }
     $("#jtsFarinp").val(jtsFarc);
 })
+//母亲选项
+//双击事件
+//$("#yw2").dblclick(function(){
+//    $("#jtsFarinp").val($("#yw1").val());
+//    $(".jtsFar").toggle();
+//})
 //过敏史
 // 双击事件
 $("#gms").dblclick(function(){

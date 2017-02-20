@@ -29,6 +29,8 @@
 </script>
 <body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div id="judge" style="display:none;"><?php echo ($res1["tzname"]); ?></div>
+<div id="flag" style="display:none;"><?php echo ($flag); ?></div>
+<div id="saveYN" style="display:none;"><?php echo ($save); ?></div>
 <form action="<?php echo U('Index/tizhiSub');?>" method="post" id="form1">
     <div class="bg">
     <div class="xxk">
@@ -220,7 +222,7 @@
             </div>
             <div class="anniu">
                 <button type="button" class="btn btn-warning" id="sub">提交</button>
-                <button type="button" class="btn btn-warning" id="save">保存</button>
+                <button type="button" class="btn btn-warning" id="save" disabled="disabled">保存</button>
                 <button type="button" class="btn btn-warning" id="saveas">另存为</button>
                 <button type="button" class="btn btn-warning" onclick="preview(1);">打印</button>
             </div>
@@ -234,11 +236,13 @@
 <script type="text/javascript" src="/zySystem/Public/js/tizhi.js"></script>
 <script>
     $(".ti-content label input").click(function(){
+        $flag=0;
+        $("#flag").html(0);
         $.ajax({
             url:"<?php echo U('Index/tizhiCheckedAjax');?>",
             type:"post",
             dataType:"json",
-            data:"{aa,$('#judge').html()}",
+            data:{'flag':$flag},
             success:function(data){
                 /**
                  * session中存在患者数据可以进行答题，否则进行登记
@@ -264,11 +268,26 @@
     })
 //    数据保存
     $("#save").click(function(){
-        location.href="<?php echo U('Index/tizhiSave');?>";
+        $save=$("#saveYN").html();
+        if($save==1){
+            var r=confirm("您的答题记录已存在，是否要进行覆盖？");
+            if(r){
+                location.href="<?php echo U('Index/tizhiSave');?>";
+            }
+        }else{
+            location.href="<?php echo U('Index/tizhiSave');?>";
+        }
     })
 //    文件另存为
     $("#saveas").click(function(){
         location.href="<?php echo U('Index/saveAsTizhi');?>";
     })
-
+$(document).on("ready mouseover",function(){
+    $flag1=$("#flag").html();
+    if($flag1==1){
+        $("#save").removeAttr("disabled");
+    }else{
+        $("#save").attr("disabled","disabled");
+    }
+})
 </script>

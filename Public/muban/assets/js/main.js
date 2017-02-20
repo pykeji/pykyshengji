@@ -21,7 +21,7 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/newsticker/jquery.news
 
 });
 
-//------------------------------------------------------------- 
+//-------------------------------------------------------------
 
 
 ////Acordion and Sliding menu
@@ -56,8 +56,8 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/slidebars/slidebars.mi
 head.js("http://localhost/zySystem/Public/muban/assets/js/search/jquery.quicksearch.js", function() {
 
     $('input.id_search').quicksearch('#menu-showhide li, .menu-left-nest li');
-   
-   
+
+
 
 });
 //-------------------------------------------------------------
@@ -168,7 +168,7 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/tip/jquery.tooltipster
 
 
 });
-//------------------------------------------------------------- 
+//-------------------------------------------------------------
 
 //NICE SCROLL
 
@@ -176,7 +176,7 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/tip/jquery.tooltipster
 head.js("http://localhost/zySystem/Public/muban/assets/js/nano/jquery.nanoscroller.js", function() {
 
     $(".nano").nanoScroller({
-        //stop: true 
+        //stop: true
         scroll: 'top',
         scrollTop: 0,
         sliderMinHeight: 40,
@@ -186,14 +186,14 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/nano/jquery.nanoscroll
     });
 
 });
-//------------------------------------------------------------- 
+//-------------------------------------------------------------
 
 
 
 
 
 
-//------------------------------------------------------------- 
+//-------------------------------------------------------------
 //PAGE LOADER
 
 head.js("http://localhost/zySystem/Public/muban/assets/js/pace/pace.js", function() {
@@ -209,7 +209,7 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/pace/pace.js", functio
 
 });
 
-//------------------------------------------------------------- 
+//-------------------------------------------------------------
 
 //SPARKLINE CHART
 head.js("http://localhost/zySystem/Public/muban/assets/js/chart/jquery.sparkline.js", function() {
@@ -274,7 +274,7 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/chart/jquery.sparkline
 
 });
 
-//------------------------------------------------------------- 
+//-------------------------------------------------------------
 
 //DIGITAL CLOCK
 head.js("http://localhost/zySystem/Public/muban/assets/js/clock/jquery.clock.js", function() {
@@ -289,7 +289,7 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/clock/jquery.clock.js"
 });
 
 
-//------------------------------------------------------------- 
+//-------------------------------------------------------------
 
 head.js("http://localhost/zySystem/Public/muban/assets/js/gage/raphael.2.1.0.min.js", "http://localhost/zySystem/Public/muban/assets/js/gage/justgage.js", function() {
 

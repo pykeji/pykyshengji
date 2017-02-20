@@ -20,6 +20,13 @@ class IndexController extends Controller {
         $this->display();
     }
     public function home($rev){
+//        $blh=session(id);
+//        $xh=session(xh);
+//        $peo = M('station_p');//患者信息表
+//        if($blh && $peo){
+//            $user=$peo->where("br_id=$blh and xh=$xh")->find();
+//            $this->assign('age',$user[nl]);
+//        }
         $this->assign('rev',$rev);
         $this->display();
     }
@@ -302,52 +309,58 @@ class IndexController extends Controller {
     //健康档案
     public function jiankang(){
         //接受从患者登记处传值（post方式）
+        $station = M('station_p');//链接数据库
         if (IS_POST){
-            $station = M('station_p');//链接数据库
-                 //判断是否是复诊
-                $br_id = I('post.br_id');
-                // 查出就诊几次
-                $pdfuzhen = $station->where("br_id=$br_id")->count();
-                // 加一为当前就诊次数
-                $dangqingjiuzhengcishu = $pdfuzhen+1;
-                // dump($dangqingjiuzhengcishu);die;
-                $data = I('post.');//获取数据
-                // dump($data);die;
-                $data['xh'] = $dangqingjiuzhengcishu;
-                // dump($data);die;
+             //判断是否是复诊
+            $br_id = I('post.br_id');
+            // 查出就诊几次
+            $pdfuzhen = $station->where("br_id=$br_id")->count();
+            // 加一为当前就诊次数
+            $dangqingjiuzhengcishu = $pdfuzhen+1;
+            // dump($dangqingjiuzhengcishu);die;
+            $data = I('post.');//获取数据
+            // dump($data);die;
+            $data['xh'] = $dangqingjiuzhengcishu;
+            // dump($data);die;
             $station->data($data)->add();//添加数据
-            $user = M('station_p'); //二次链接数据库
-            $data = $user->where("br_id={$br_id} and xh={$dangqingjiuzhengcishu}")->select();
+//            $user = M('station_p'); //二次链接数据库
+//            $data = $user->where("br_id={$br_id} and xh={$dangqingjiuzhengcishu}")->select();
             // dump($xh);die;
-            $this->assign('data',$data);// 模板变量赋值
+//            $this->assign('data',$data);// 模板变量赋值
             session(id,$br_id);//设置病历号存入session
             session(xh,$dangqingjiuzhengcishu);//设置序号存入session
             // dump($data);die;
         //接受接诊区传值(get方式)    
         }else if(IS_GET){
             // 判断get.id是否存在
-            if (isset($_GET['id'])) {
+            if (isset($_GET['id'])){
                 $id = I('get.id');//获取条件
                 $xh = I('get.xh');
-                $user = M('station_p');
-                $data = $user->where("br_id={$id} and xh={$xh}")->select();
-                $this->assign('data',$data);// 模板变量赋值
+//                $user = M('station_p');
+//                $data = $station->where("br_id={$id} and xh={$xh}")->select();
+//                $this->assign('data',$data);// 模板变量赋值
                 session(id,$id);//设置编号存入session
                 session(xh,$xh);//设置编号存入session
-
             }
         }
-        // $this->assign('data',$data);// 模板变量赋值      
+        $blh=session(id);
+        $xh=session(xh);
+        $userInf=$station->where("br_id=$blh and xh=$xh")->select();//查询出患者信息
+//        将时间中的时分秒去掉
+        $userInf[0]['jz_date']=substr($userInf[0]['jz_date'],0,10);
+        $userInf[0]['cs_date']=substr($userInf[0]['cs_date'],0,10);
+        $this->assign('data',$userInf);//将患者信息传递到前端界面
+        // $this->assign('data',$data);// 模板变量赋值
         $this->display();
     }
 //    体质辨识答题界面
     public function tizhi(){
         $blh=session(id);
         $xh=session(xh);
-
+        //读取界面
         $tzti=M('tz_question');
         $ti=$tzti->select();//题目信息检索
-//      题目数组切割成为3*11
+        //题目数组切割成为3*11
         $ti1=array_slice($ti,0,11);
         $ti2=array_slice($ti,11,11);
         $ti3=array_slice($ti,22,11);
@@ -355,12 +368,15 @@ class IndexController extends Controller {
         $this->assign('ti2',$ti2);//12到22题序号
         $this->assign('ti3',$ti3);//23到33题序号
         $this->assign('ti',$ti);
+        //界面读取结束
+        //判断保存按钮是否能用
+        $this->assign(flag,session(flag));
+        $this->assign(save,session(save));
         $tzbs=I("get.");
-//        判断患者是否登记
+        //判断患者是否登记
         if($blh && $xh){
-            //保存患者的答题记录
-            $user=M('tz_jbxx');
-            $jieguo=M('tz_jieguo');
+            $user=M('tz_jbxx');//患者的答题记录表
+            $jieguo=M('tz_jieguo');//结果表
             $userInf=$user->where('tz_jbxx.id='.$xh.' and tz_jbxx.bianhao='.$blh)->find();//患者的选项信息
             $data=$jieguo->join('station_p on tz_jieguo.id=station_p.xh and tz_jieguo.bianhao=station_p.br_id')->where('tz_jieguo.id='.$xh.' and tz_jieguo.bianhao='.$blh)->find();//患者的个人信息和答题结果
 //            print_r($data);
@@ -416,7 +432,16 @@ class IndexController extends Controller {
         }
 
     }
-//体质辨识选择提交按钮执行的操作
+
+    /**
+     * 答题完成生成相应的答题结果并保存相应的信息
+     *$data患者的相关信息以及对应的九种体制信息
+     * $tz患者对应的体制类型
+     *session(userXXInf)患者的选项信息
+     * session(res1)患者的九种体制信息（$data截取获得）
+     * session(tzbsInf)患者信息，九种体制信息，患者对应的体制信息（$data与$tz合并获得）
+     * session(flag)=1已提交状态；=0未提交状态
+     */
     public function tizhiSub(){
         $blh=isset($_SESSION['id'])?$_SESSION['id']:"";
         $xh=isset($_SESSION['xh'])?$_SESSION['xh']:"";
@@ -501,11 +526,11 @@ class IndexController extends Controller {
         if($_POST['xx4'] == 1){
             $_POST['xx4'] = 5;
         }else if($_POST['xx4'] == 2){
-            $_POST['xx4'] == 4;
+            $_POST['xx4'] = 4;
         }else if($_POST['xx4'] == 4){
-            $_POST['xx4'] == 2;
+            $_POST['xx4'] = 2;
         }else if($_POST['xx4'] == 5){
-            $_POST['xx4'] == 1;
+            $_POST['xx4'] = 1;
         }
 
         if($_POST['xx5'] == 1){
@@ -539,9 +564,10 @@ class IndexController extends Controller {
             $data['tzname8'] = '平和质'; $data['tzfs8'] = $phz; $data['tzjg8'] = '否';
         }
         //体质辨识算法结束
-        session(userXXInf,$_POST);//保存患者答题信息
+        session(userXXInf,$_POST);//保存患者选项信息
+        //$data患者的相关信息以及对应的九种体制信息
         $res1=array_slice($data,9,27);
-        session(res1,$res1);//保存患者的答题结果
+        session(res1,$res1);//保存患者的答题结果（九种体质类型信息）
 //        体质辨识结果生成部分
         $tz=array();
         if($data[tzjg] != '否'){
@@ -571,47 +597,109 @@ class IndexController extends Controller {
         if($data[tzjg8] != '否'){
             $tz[] = $data[tzname8]."-".$data[tzjg8];
         }
-//      $tz结果内容
+//      $tz结果内容（患者对应的体制类型）
         $this -> assign('baoj',$tz);
-
-//        print_r($data);
         $tzbs=array_merge_recursive($data,$tz);
         session(tzbsInf,$tzbs);
+        session(flag,1);
         $this->redirect('Index/tizhi',$tzbs);
     }
 //    体质辨识提交ajax
     public function tizhiCheckedAjax(){
         $blh=session(id);
         $xh=session(xh);
+//      判断能保存数据
+        $flag=I('post.flag');
+        session(flag,$flag);
         if($blh&&$xh){
 //          可以继续答题
             $a=11;
-            $this->ajaxReturn($a);
+            $this->ajaxReturn($a,'json');
         }else{
 //          必须登记后才能进行答题
             $b=22;
-            $this->ajaxReturn($b);
+            $this->ajaxReturn($b,'json');
         }
     }
-//    体质辨识结果储存到数据库
+
+    /**
+     * 体质辨识结果存到数据库中
+     * 如果没有该患者的记录，直接插入数据
+     * 如果存在该患者的记录，询问是否要覆盖
+     */
     public function tizhiSave(){
         $userXXInf=session(userXXInf);//患者选项信息
         $res1=session(res1);//患者体制信息
         $data = array();
         $data['id']=session(xh);
         $data['bianhao']=session(id);
-//        数组组合
+        //平和质答题信息反向转换
+        if($userXXInf['xx2'] == 1){
+            $userXXInf['xx2'] = 5;
+        }else if($userXXInf['xx2'] == 2){
+            $userXXInf['xx2'] = 4;
+        }else if($userXXInf['xx2'] == 4){
+            $userXXInf['xx2'] = 2;
+        }else if($userXXInf['xx2'] == 5){
+            $userXXInf['xx2'] = 1;
+        }
+        if($userXXInf['xx4'] == 1){
+            $userXXInf['xx4'] = 5;
+        }else if($userXXInf['xx4'] == 2){
+            $userXXInf['xx4'] = 4;
+        }else if($userXXInf['xx4'] == 4){
+            $userXXInf['xx4'] = 2;
+        }else if($userXXInf['xx4'] == 5){
+            $userXXInf['xx4'] = 1;
+        }
+        if($userXXInf['xx5'] == 1){
+            $userXXInf['xx5'] = 5;
+        }else if($userXXInf['xx5'] == 2){
+            $userXXInf['xx5'] = 4;
+        }else if($userXXInf['xx5'] == 4){
+            $userXXInf['xx5'] = 2;
+        }else if($userXXInf['xx5'] == 5){
+            $userXXInf['xx5'] = 1;
+        }
+        if($userXXInf['xx13'] == 1){
+            $userXXInf['xx13'] = 5;
+        }else if($userXXInf['xx13'] == 2){
+            $userXXInf['xx13'] = 4;
+        }else if($userXXInf['xx13'] == 4){
+            $userXXInf['xx13'] = 2;
+        }else if($userXXInf['xx13'] == 5){
+            $userXXInf['xx13'] = 1;
+        }
+        //平和质答题信息反向转换完毕
+//      数组组合 $data患者病历号和序号 $res1患者的
         $userInf=array_merge($data,$userXXInf);
         $res=array_merge($data,$res1);
         $jbxx=M('tz_jbxx');  //存放患者选项信息的表
         $jieguo=M('tz_jieguo');  //存放答题结果信息表
-        $addUserInf=$jbxx->add($userInf);
-        $addJG=$jieguo->add($res);
-        if($addUserInf && $addJG){
-            $this->success('保存成功！',U('Index/tizhi'),3);
+        //根据序号和病历号查询病人的相关记录
+        $userInf1=$jbxx->where("id=".$data['id']." and bianhao=".$data['bianhao'])->select();
+        $jieguoInf1=$jieguo->where("id=".$data['id']." and bianhao=".$data['bianhao'])->select();
+        //如果存在相关记录禁止插入，只能修改或X
+        if($userInf1&&$jieguoInf1){
+            $upUserInf=$jbxx->save($userInf);
+            $upJG=$jieguo->save($jieguoInf1);
+            if($upUserInf || $upJG){
+                $this->success('更新成功！',U('Index/tizhi'),3);
+            }else{
+                $this->error('更新失败！',U('Index/tizhi'),3);
+            }
         }else{
-            $this->error('保存失败！',U('Index/tizhi'),3);
+            session(save,1);
+//          如果不存在相关记录则可以添加
+            $addUserInf=$jbxx->add($userInf);
+            $addJG=$jieguo->add($res);
+            if($addUserInf && $addJG){
+                $this->success('保存成功！',U('Index/tizhi'),3);
+            }else{
+                $this->error('保存失败！',U('Index/tizhi'),3);
+            }
         }
+
     }
     public function saveAsTizhi(){
         $tzbs=session(tzbsInf);
@@ -621,7 +709,17 @@ class IndexController extends Controller {
         $this->assign('baoj',$res2);
         $this->display();
     }
+//    中医调养
     public function tiaoyang(){
+        $this->display();
+    }
+    public function saveAsTy1(){
+        $this->display();
+    }
+    public function saveAsTy2(){
+        $this->display();
+    }
+    public function saveAsTy3(){
         $this->display();
     }
 }
