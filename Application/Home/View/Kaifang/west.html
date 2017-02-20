@@ -19,6 +19,7 @@
 		</div>
 		<div id="content">
 			<div id="inter">
+			<form action="" method="post">
 				<table id="ttab">
 					<tr class="tr1">
 						<th class="th1">
@@ -61,44 +62,45 @@
 							处方天数
 						</th>
 					</tr>
+					
 					<tr class="tr2">
 						<td class="td1">
 							X
 						</td>
 						<td class="td1">
-							<input type="text" class="textlon" value="">
+							<input type="text" class="textlon" value="" name="bianma">
 						</td>
 						<td class="td1">
-							<input type="text"  class="ypname" value="">
+							<input type="text"  class="ypname" value="" name="mingcheng">
 						</td>
 						<td class="td1">
-							<input type="text" class="sspan" readonly="readonly">
+							<input type="text" class="sspan" readonly="readonly" name="guige">
 						</td>
 						<td class="td1">
-							<input type="text" class="sspan" readonly="readonly">
+							<input type="text" class="sspan" readonly="readonly" name="hanliang">
 						</td>
 						<td class="td1">
-							<input type="text" class="sspan" readonly="readonly">
+							<input type="text" class="sspan" readonly="readonly" name="baozhuang">
 						</td>
 						<td class="td1">
-							<input type="text" class="textlon" value="1.00">
+							<input type="text" class="textlon" value="1.00" name="shuliang">
 						</td>
 						<td class="td1">
-							<input type="text" class="sspan" readonly="readonly">
+							<input type="text" class="sspan" readonly="readonly" name="zongliang">
 						</td>
 						<td class="td1">
-							<select class="textlon">
+							<select class="textlon" name="tujing">
 								<foreach name='useage' item='do'>
                             	<php>$powerid = $do['useage_code'];</php>
                                 <option value=<php>echo '"'.$powerid.'"';</php>>{$do.useage_name}</option>
-                            </foreach>  
+                            </foreach>
 							</select>
 						</td>
 						<td class="td1">
-							<input type="text" class="textlon" value="1.00">
+							<input type="text" class="textlon" value="1.00" name="yongliang">
 						</td>
 						<td class="td1">
-							<select class="textlon">
+							<select class="textlon" name="cishu">
                                <foreach name='usepl' item='ao'>
                             	<php>$plid = $ao['usep_code'];</php>
                                 <option value=<php>echo '"'.$plid.'"';</php>>{$ao.usep_name}</option>
@@ -107,10 +109,14 @@
 							</select>
 						</td>
 						<td class="td1">
-							<input type="radio" name="tsyf">无<input type="radio" name="tsyf">皮试<input type="radio" name="tsyf">小壶
+							<select name="tsyf" class="textlon">
+								<option value="0">无</option>
+								<option value="1">皮试</option>
+								<option value="2">小壶</option>
+							</select>
 						</td>
 						<td class="td1">
-							<input type="text" class="sspan" readonly="readonly">
+							<input type="text" class="sspan" readonly="readonly" name="tianshu">
 						</td>
 					</tr>
 
@@ -118,7 +124,7 @@
 				<div id="aja">
 					
 				</div>
-				<button class="btn btn-success" id="jia">加一味药</button><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<button class="btn btn-success" id="jia" type="button">加一味药</button><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			</div>
 		</div>
 			<div id="bzz">
@@ -130,6 +136,7 @@
 			</div>
 			<button class="btn btn-info" id="qdcf">确定此方</button>
 			<button class="btn btn-danger" id="ys">预审</button>
+			</form>
 	</body>
 	<script type="text/javascript">
 			$(function(){
@@ -184,12 +191,13 @@
             dataType:'json',
             success:function(aa)
             {
+            	//待完善，应改成this
                 // alert(aa['drug_spec']);
                 $('.tr2:last .sspan:nth(0)').val(aa['drug_spec']);
                 $('.tr2:last .sspan:nth(1)').val(aa['hl']);
-                $('.tr2:last .sspan:nth(2)').val('最小包装');
-                $('.tr2:last .sspan:nth(3)').val('总量');
-                $('.tr2:last .sspan:nth(4)').val('处方天数');
+                $('.tr2:last .sspan:nth(2)').val(aa['bzsl2']);
+                $('.tr2:last .sspan:nth(3)').val('');
+                $('.tr2:last .sspan:nth(4)').val('');
                 $('.tr2:last .textlon:nth(0)').val(aa['drug_code']);
                 $('.tr2:last .ypname:nth(0)').val(aa['drug_name']);
 
@@ -204,5 +212,74 @@
 				$(this).css('backgroundColor','');
 				$(this).css('color','');
 			});
+
+
+		//处方保存
+		$('#qdcf').click(function(){
+			    var bz = $('#bztext').val();
+				var bianma = '';
+				var mingcheng = '';
+				var guige = '';
+				var hanliang = '';
+				var baozhuang = '';
+				var shuliang = '';
+				var zongliang = '';
+				var tujing = '';
+				var yongliang = '';
+				var cishu = '';
+				var tsyf = '';
+				var tianshu = '';
+				$("input[name='bianma']").each(function(){
+         			bianma += ','+$(this).val();
+			});
+				$("input[name='mingcheng']").each(function(){
+         			mingcheng += ','+$(this).val();
+			});
+				$("input[name='guige']").each(function(){
+         			guige += ','+$(this).val();
+			});
+				$("input[name='hanliang']").each(function(){
+         			hanliang += ','+$(this).val();
+			});
+				$("input[name='baozhuang']").each(function(){
+         			baozhuang += ','+$(this).val();
+			});
+				$("input[name='shuliang']").each(function(){
+         			shuliang += ','+$(this).val();
+			});
+				$("input[name='zongliang']").each(function(){
+         			zongliang += ','+$(this).val();
+			});
+				$("select[name='tujing']").each(function(){
+         			tujing += ','+$(this).val();
+			});
+				$("input[name='yongliang']").each(function(){
+         			yongliang += ','+$(this).val();
+			});
+				$("select[name='cishu']").each(function(){
+         			cishu += ','+$(this).val();
+			});
+				$("select[name='tsyf']").each(function(){
+         			tsyf += ','+$(this).val();
+			});
+				$("input[name='tianshu']").each(function(){
+         			tianshu += ','+$(this).val();
+			});
+				$.ajax({
+            type:'POST',
+            url:"{:U('Ajax/Chufang')}",
+            data:{bianma:bianma,mingcheng:mingcheng,guige:guige,hanliang:hanliang,baozhuang:baozhuang,shuliang:shuliang,zongliang:zongliang,tujing:tujing,yongliang:yongliang,cishu:cishu,bz:bz,tsyf:tsyf},
+            dataType:'json',
+            success:function(dd)
+            {
+                alert(dd);
+            },
+            error:function()
+            {
+                alert('Ajax请求失败');
+            }
+        });
+				
+		});
 	</script>
 </html>

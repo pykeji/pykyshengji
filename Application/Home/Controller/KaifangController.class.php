@@ -3,7 +3,9 @@ namespace Home\Controller;
 use Think\Controller;
 class KaifangController extends Controller {
     public function bingMing(){
-        $user = M("");
+        $user = M("tcd_zybm");
+        $data = $user->select();
+        $this->assign('data',$data);
         $this->display();
     }
     public function zhengxing(){

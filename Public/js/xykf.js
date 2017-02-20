@@ -15,7 +15,7 @@ $(function(){
 	$('#jia').click(function(){
 		
 	 if($('.tr2').length<1){
-		$('.tr1').after('<tr class="tr2"><td class="td1">X</td><td class="td1"><input type="text" class="textlon"></td><td class="td1"><input type="text"  class="ypname"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><input type="text" class="textlon"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><select class="textlon">'+str+'</select></td><td class="td1"><input type="text" class="textlon"></td><td class="td1"><select class="textlon">'+plstr+'</select></td><td class="td1"><input type="radio" name="tsyf">无<input type="radio" name="tsyf">皮试<input type="radio" name="tsyf">小壶</td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td></tr>');
+		$('.tr1').after('<tr class="tr2"><td class="td1">X</td><td class="td1"><input type="text" name="bianma" class="textlon"></td><td class="td1"><input type="text"  class="ypname" name="mingcheng"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="guige"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="hanliang"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="baozhuang"></td><td class="td1"><input type="text" class="textlon" name="shuliang" value="1.00"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="zongliang"></td><td class="td1"><select class="textlon" name="tujing">'+str+'</select></td><td class="td1"><input type="text" class="textlon" name="yongliang"></td><td class="td1"><select class="textlon" name="cishu">'+plstr+'</select></td><td class="td1"><select name="tsyf" class="textlon"><option value="0">无</option><option value="1">皮试</option><option value="2">小壶</option></select></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="tianshu"></td></tr>');
 	 }else{
 	 	var nstr =  $('.tr2:last .textlon:nth(2)').html();
 		var nplstr = $('.tr2:last .textlon:nth(4)').html();
@@ -28,10 +28,15 @@ $(function(){
 		}else{
 			var id = $('.b1:last').html();
 		
-		$('.tr2:last').after('<tr class="tr2"><td class="td1">X</td><td class="td1"><input type="text" class="textlon"></td><td class="td1"><input type="text"  class="ypname"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><input type="text" class="textlon"></td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td><td class="td1"><select class="textlon">'+nstr+'</select></td><td class="td1"><input type="text" class="textlon"></td><td class="td1"><select class="textlon">'+nplstr+'</select></td><td class="td1"><input type="radio" name="tsyf">无<input type="radio" name="tsyf">皮试<input type="radio" name="tsyf">小壶</td><td class="td1"><input type="text" class="sspan" readonly="readonly"></td></tr>');
+		$('.tr2:last').after('<tr class="tr2"><td class="td1">X</td><td class="td1"><input type="text" name="bianma" class="textlon"></td><td class="td1"><input type="text"  class="ypname" name="mingcheng"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="guige"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="hanliang"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="baozhuang"></td><td class="td1"><input type="text" class="textlon" name="shuliang" value="1.00"></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="zongliang"></td><td class="td1"><select class="textlon" name="tujing">'+str+'</select></td><td class="td1"><input type="text" class="textlon" name="yongliang"></td><td class="td1"><select class="textlon" name="cishu">'+plstr+'</select></td><td class="td1"><select name="tsyf" class="textlon"><option value="0">无</option><option value="1">皮试</option><option value="2">小壶</option></select></td><td class="td1"><input type="text" class="sspan" readonly="readonly" name="tianshu"></td></tr>');
 		}
 	 }
 	});
+
+
+
+	//保存处方
+	
 
 
 	//输入药品名查询框
