@@ -115,3 +115,153 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
 
+[ 2017-02-20T08:17:30+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '' )  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.0040s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 20170220 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 56 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 57 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 58 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 59 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 60 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-20T08:20:14+08:00 ] ::1 /zysystem/index.php/Home/Index/dengji.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: SELECT `br_id` FROM `station_p`  [ RunTime:0.0030s ]
+NOTIC: [8] Undefined offset: 20170220 D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 91 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: br_name D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 44 行.
+NOTIC: [8] Undefined index: xb D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 47 行.
+NOTIC: [8] Undefined index: nl D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 59 行.
+NOTIC: [8] Undefined index: cs_date D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 61 行.
+NOTIC: [8] Undefined index: pass D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 65 行.
+NOTIC: [8] Undefined index: tel D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 67 行.
+NOTIC: [8] Undefined index: fax D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 71 行.
+NOTIC: [8] Undefined index: e_mail D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 73 行.
+NOTIC: [8] Undefined index: ghf D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 77 行.
+NOTIC: [8] Undefined index: p_date D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 79 行.
+NOTIC: [8] Undefined index: dw D:\www\zySystem\Application\Runtime\Cache\Home\e79ccf53c51c2c1282dfd5d080ba3cd8.php 第 85 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-20T08:21:13+08:00 ] ::1 /zysystem/index.php/Home/Index/jiankang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: INSERT INTO `station_p` (`br_id`,`br_name`,`xb`,`nl`,`cs_date`,`pass`,`tel`,`fax`,`e_mail`,`ghf`,`p_date`,`dw`,`jz_date`) VALUES ('201702201','廿十','男','20','1995-02-02','','','','','2.00','2017-02-20 08:21:12','                                                            ','2017-02-20 08:21:12') [ RunTime:0.0340s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id=201702201 )  [ RunTime:0.0280s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 270 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 271 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-20T08:21:19+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '201702201' )  [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.0030s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined offset: 20170220 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-20T08:21:27+08:00 ] ::1 /zysystem/index.php/Home/Huajia/ajax
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p_price_list` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `p_price_list` WHERE ( item_name = '挂号费' )  [ RunTime:0.0030s ]
+
+[ 2017-02-20T08:21:33+08:00 ] ::1 /zysystem/index.php/Home/Huajia/ajax
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `p_price_list` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `p_price_list` WHERE ( item_name = '中草药' )  [ RunTime:0.0000s ]
+
+[ 2017-02-20T08:21:40+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '201702201' )  [ RunTime:0.0180s ]
+NOTIC: [8] Use of undefined constant blh - assumed 'blh' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant brname - assumed 'brname' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 14 行.
+NOTIC: [8] Use of undefined constant brsex - assumed 'brsex' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 15 行.
+NOTIC: [8] Use of undefined constant brnl - assumed 'brnl' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 16 行.
+NOTIC: [8] Use of undefined constant brjzdate - assumed 'brjzdate' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 17 行.
+NOTIC: [8] Use of undefined constant pjh - assumed 'pjh' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 18 行.
+

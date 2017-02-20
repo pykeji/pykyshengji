@@ -10,7 +10,7 @@ class HuajiaController extends Controller {
         //收费列表信息(审核处方之后)
         if($_POST){
             $arr = array();
-            $arr[blh] = $_POST['sf_blh'];
+            $arr[bill_code] = $_POST['sf_blh'];
             $arr[brname] = $_POST['sf_brname'];
             $arr[brsex] = $_POST['sf_brsex'];
             $arr[brnl] = $_POST['sf_brnl'];
