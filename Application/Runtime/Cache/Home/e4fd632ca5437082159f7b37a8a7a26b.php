@@ -11,8 +11,8 @@
 </head>
 <body>
 	<!---->
-
-    <img id="img" src="/zysystem/Public/img/cxbg4.jpg" width="130" height="130" border="0" />
+<?php $day = date('ymd'); ?>
+    <img id="img" src="<?php echo '/zysystem/Uploads/'.'20'.$day.'/'.$_SESSION['photo']; ?>" width="130" height="130" border="0" />
     <input id="file_upload" name="file_upload" type="file" multiple="true" value="" />
 
     

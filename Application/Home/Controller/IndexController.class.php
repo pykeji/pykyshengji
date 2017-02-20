@@ -32,7 +32,7 @@ class IndexController extends Controller {
         $show = $page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
         //以上是分页 ， 以下是数据
-        $data =  $rect->where('jz_flag=1')->order('p_date')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
+        $data =  $rect->where('jz_flag=1')->order('p_date desc')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
         // dump($data);die;
         $this->assign('data',$data);// 赋值模板变量
         $this->display();

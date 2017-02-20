@@ -16,7 +16,7 @@
 		<input type="button" name="query" value="✔ 统计">
 		<input type="button" name="print" value="℗ 打印">
 		<input type="reset" name="clear" onclick="window.location.reload()" value="↻ 清除">
-		<input type="button" name="exit" value="✘ 退出">
+		<!-- <input type="button" name="exit" value="✘ 退出"> -->
 		<p id="demo"></p>
 	</div>
 	<div class="ypsy_top">

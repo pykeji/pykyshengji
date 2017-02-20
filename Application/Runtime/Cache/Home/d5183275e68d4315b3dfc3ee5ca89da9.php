@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/easyui.css">
 	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/huajia.css">
-	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/chaxun.css">
 	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
 	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
@@ -31,63 +30,34 @@
 				}
 			})
 		}
-		var zje = 0;
-		function zh(){
-			if($("#name").val() == ''){
-				return false;
-			}else{
-				var number = $("#number").val();
-				var price = $("#danjia").val();
-				var zh = (number*price).toFixed(2);
-				$("#jine").val(zh);
-				var flag = false;
-				$('#number').keypress(function(event){
-				    var keycode = (event.keyCode ? event.keyCode : event.which);
-				    if(keycode == '13'){
-				    	if(!flag == true){
-				    		var id = $(".tab4").find("tr").length;
-			                var name = $("#name").val();
-			                var danwei = $("#danwei").val();
-			                var danjia = $("#danjia").val();
-			                var number = $("#number").val();
-			                var jine = $("#jine").val();
-			                zje = (Number(zje) + Number(jine)).toFixed(2);
-			                $(".tab4").append("<tr><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
-			                
-			                $(".tab3 tr td:last").text('￥'+zje);
-			                $(".tab3 tr td:last").css("color","red");
-			                $(".tab3 tr td:last").css("font-weight","bold");
-			                flag = true;
-
-			                //清空上方数据
-			                $("#name").val('');
-				    		$("#guige").val('');
-			                $("#danwei").val('');
-			                $("#danjia").val('.00');
-			                $("#number").val('.00');
-			                $("#jine").val('.00');
-				    	}else{
-				    		return false;
-				    	}
-				    }  
-				});
-			}
-		}
+		$(document).ready(function(){
+			var zje = 0.00;
+			$(".tab4 tr").not(":first").each(function(){
+				obj = $(this).find("td:last").text();
+				zje = (Number(zje) + Number(obj)).toFixed(2);
+			});
+			$(".tab3 tr td:last").text('￥'+zje);
+			$(".tab3 tr td:last").css("color","red");
+			$(".tab3 tr td:last").css("font-weight","bold");
+			$(".tab3 tr td:last").css("font-size","20px");
+		});
 	</script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+	<form id="shoufei" method="post" action="/zysystem/index.php/Home/Huajia/huajia">
 	<div class="tool">
-		<input type="button" name="sf" value="¥ 收费">
+		<input type="button" name="sf" onClick="sub()" value="¥ 收费">
 		<input type="button" name="tf" data-toggle="modal" data-target="#myModal" value="✍ 退费">
-		<input type="button" name="sc" value="✘ 删除">
+		<input type="button" name="sc" value="✘ 删除" onClick="doFun('doShow')">
 		<p id="demo"></p>
 	</div>
+	
 	<div class="top">
-		<span>病历号:<b><?php echo ($_SESSION['id']); ?></b></span>
-		<span>姓名:<b><?php echo ($data["0"]["br_name"]); ?></b></span>
-		<span>性别:<b><?php echo ($data["0"]["xb"]); ?></b></span>
-		<span>年龄:<b><?php echo ($data["0"]["nl"]); ?></b></span>
-		<span>就诊日期:<b><?php echo ($data["0"]["jz_date"]); ?></b></span>
+		<span>病历号:<input type="text" name="sf_blh" value="<?php echo ($_SESSION['id']); ?>" readonly></span>
+		<span>姓名:<input type="text" name="sf_brname" value="<?php echo ($data["0"]["br_name"]); ?>" readonly></span>
+		<span>性别:<input type="text" name="sf_brsex" value="<?php echo ($data["0"]["xb"]); ?>" readonly></span>
+		<span>年龄:<input type="text" name="sf_brnl" value="<?php echo ($data["0"]["nl"]); ?>" readonly></span>
+		<span>就诊日期:<input type="text" name="sf_brjzdate" value="<?php echo ($data["0"]["jz_date"]); ?>" readonly></span>
 	</div>
 	<div class="center">
 		<div class="center_t">
@@ -100,11 +70,12 @@
 					<td class="tab1_r">
 						<h4>
 							<font color="#DDAA00">票据号:</font>
-							<font color="#C63300">201701090001</font>
+							<input type="text" name="sf_pjh" value="<?php echo ($pjh["0"]["piaojh"]); ?>" readonly>
 						</h4>
 					</td>
 				</tr>
 			</table>
+	</form>
 			<table class="tab2">
 				<tr>
 					<th width="25%">费用名称</th>
@@ -135,27 +106,27 @@
 							}
 						" >
 					</td>
-					<td><input type="text" id="guige" name="guige" value="" disabled></td>
-					<td><input type="text" id="danwei" name="danwei" value="" disabled></td>
+					<td><input type="text" id="guige" name="guige" value="" readonly></td>
+					<td><input type="text" id="danwei" name="danwei" value="" readonly></td>
 					<td><input type="text" id="danjia" name="danjia" value=".00"></td>
 					<td><input type="text" id="number" name="number" value=".00" onChange="zh()"></td>
-					<td><input type="text" id="jine" name="jine" value=".00" disabled></td>
+					<td><input type="text" id="jine" name="jine" value=".00" readonly></td>
 				</tr>
 			</table>
 		</div>
 		<div class="center_c">
 			<table class="tab3">
 				<tr>
-					<td class="tab3_l">
+					<td width="60%" class="tab3_l">
 						<img src="/zysystem/Public/muban/assets/img/iconpng.png" width="23" height="23">
 						<font size="+1">收费列表</font>
 					</td>
-					<td align="right"><font color='red'><b>合计金额：</b></font></td>
-					<td align="right"><font color='red'><b>￥0.00</b></font></td>
+					<td width="20%" align="right"><font color='red'><b>合计金额：</b></font></td>
+					<td width="20%" align="right"><font color='red' size="+1"><b>￥0.00</b></font></td>
 				</tr>
 			</table>
 			<div class="table4">
-				<table class="tab4">
+				<table id="tab4" class="tab4">
 					<tr>
 						<th width="15%">序号</th>
 						<th width="25%">项目名称</th>
@@ -164,19 +135,19 @@
 						<th width="15%">数量</th>
 						<th width="15%">金额</th>
 					</tr>
-					<tr>
+					<!-- <tr class="sty1" name="tableSty">
 						<td>1</td>
-						<td>中草药</td>
-						<td>/</td>
-						<td>1.00</td>
+						<td class="left">中草药</td>
+						<td class="left">/</td>
+						<td>1.000</td>
 						<td>5.00</td>
 						<td>5.00</td>
-					</tr>
+					</tr> -->
 				</table>
 			</div>
 		</div>
-	</div> 
-	<!-- 模态框（Modal） -->
+	</div>
+	<!-- 退费 -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
 	        <div class="modal-content">
@@ -266,5 +237,14 @@
 	        </div>
 	    </div>
 	</div>
+	<!-- 删除按钮 -->
+	<div id="Dshow" style="display:none;">
+		<div class="box">
+    		<h3>提示</h3>
+        	<p class="info">确定要删除选中项目？</p>
+        	<p class="btnX"><input type="button" value="确定" onClick="doFun('doClose')" /><input type="button" value="取消" onClick="doFun('returnFalse')" /></p>
+    	</div>
+	</div>
 </body>
 </html>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/huajia.js"></script>
