@@ -3,7 +3,11 @@ return array(
 	//'配置项'=>'配置值'
 	// 'DB_TYPE'   => 'sqlsrv', // 数据库类型
 	'DB_TYPE'   => 'mysql', // 数据库类型
+<<<<<<< HEAD
+	'DB_HOST'   => '192.168.2.249', // 服务器地址
+=======
 	'DB_HOST'   => '192.168.1.249', // 服务器地址
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 	'DB_NAME'   => 'pykj', // 数据库名
 	'DB_USER'   => 'myuser', // 用户名
 	'DB_PWD'    => 'mypassword', // 密码

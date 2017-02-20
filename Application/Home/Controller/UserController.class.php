@@ -7,6 +7,8 @@ class UserController extends Controller {
       $user->where("id={$id}")->delete();
       $this->redirect('Login/userManage');
     }
+<<<<<<< HEAD
+=======
     public function addManage(){
     	$data['userName'] = $_POST['userName'];
     	$data['power'] = $_POST['powerVal'];
@@ -27,5 +29,6 @@ class UserController extends Controller {
       $user->where("id=$id")->save($data);
       $this->redirect('Login/userManage');
     }
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
     
 }

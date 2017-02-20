@@ -22,16 +22,26 @@ class LoginController extends Controller {
            $level = $result['power'];
            $id = $result['id'];
            $pow = $result['power'];
+<<<<<<< HEAD
+=======
            $path = $result['photopath'];
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
            session('wh_power',$pow);
          //用户名存入session
             session('wh_userName',$name);
             session('wh_userId',$id);
+<<<<<<< HEAD
+           // var_dump($_SESSION);
+           // echo $level;
+           $photo = $result['userphoto'];
+           session('photo',$photo);
+=======
             session('wh_patha',$path);
            // var_dump($_SESSION);
            // echo $level;
            $photo = $result['userphoto'];
            session('wh_photo',$photo);
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
            $this->redirect('index/home',array('rev'=>$level));
         }else{
            $this->redirect('index/index',array('aa'=>1));
@@ -76,12 +86,15 @@ class LoginController extends Controller {
         for($z=0;$z<$num;++$z){
           $list[$z]['name'] = $newarr[$z]['name'];
         }
+<<<<<<< HEAD
+=======
         $powerdict = $nnaa->where('level=1')->select();
         $um = count($powerdict);
         for($x=0;$x<$um;++$x){
           $powerlist[$x] = $powerdict[$x];
         }
         $this->assign('powerlist',$powerlist);
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
         $this->assign('list',$list);
         $this->display('index/userManage');
     }

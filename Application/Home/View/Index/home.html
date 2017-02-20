@@ -18,6 +18,10 @@
     <link rel="shortcut icon" href="__PUBLIC__/muban/assets/ico/minus.png">
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<<<<<<< HEAD
+<php>$day = date('ymd');</php>
+=======
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 <nav role="navigation" class="navbar navbar-static-top">
     <div class="container-fluid">
         <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
@@ -48,7 +52,11 @@
                 </ul>
             </div>
             <ul style="margin-right:0" class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
+                <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="<?php echo '__ROOT__/Uploads/'.'20'.$day.'/'.$_SESSION['photo']; ?>"> <php>echo $_SESSION['wh_userName'];</php> <b class="caret"></b></a>
+=======
                 <li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><img alt="" class="admin-pic img-circle" src="<?php echo '__ROOT__/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>"> <php>echo $_SESSION['wh_userName'];</php> <b class="caret"></b></a>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                     <ul style="margin-top:14px" role="menu" class="dropdown-setting dropdown-menu">
                         <li><a href="{:U('Login/userInfo')}" target="menu"><span class="entypo-user"></span>&#160;&#160;个人信息</a></li>
                         <li><a href="{:U('Login/userManage')}" target="menu"><span class="entypo-vcard"></span>&#160;&#160;<php>if($rev == 1){echo '用户管理';}else{echo '用户列表';}</php></a></li>
@@ -155,7 +163,11 @@
                             <li><a class="tooltip-tip2 ajax-load" href="{:U('Book/wbtb')}" title="温病条辨" target="_blank">&nbsp; &nbsp; <i class="glyphicon glyphicon-book"></i><span>温病条辨</span></a></li>
                         </ul>
                     </li>
+<<<<<<< HEAD
+                    <li><a class="tooltip-tip ajax-load" href="__MODULE__/Mynote" title="我的文档" target="menu"><i class="glyphicon glyphicon-folder-open"></i><span>我的文档</span></a></li>
+=======
                     <li><a class="tooltip-tip ajax-load" href="#" title="我的文档" target="menu"><i class="glyphicon glyphicon-folder-open"></i><span>我的文档</span></a></li>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                     <li><a class="tooltip-tip ajax-load" href="#" title="临床诊断" target="menu"><i class="glyphicon glyphicon-file"></i><span>临床诊断</span></a></li>
                     <li><a class="tooltip-tip ajax-load" href="#" title="中医药学会诊断指南" target="menu"><i class="glyphicon glyphicon-file"></i><span>中医药学会诊断指南</span></a></li>
                     </li>
@@ -189,9 +201,15 @@
 </div>
 <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
 <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
+<<<<<<< HEAD
+<script type="text/javascript" src="__PUBLIC__/muban/assets/js/app.js"></script>
+<script type="text/javascript" src="__PUBLIC__/muban/assets/js/load.js"></script>
+<script type="text/javascript" src="__PUBLIC__/muban/assets/js/main.js"></script>
+=======
 <!--<script type="text/javascript" src="__PUBLIC__/muban/assets/js/app.js"></script>-->
 <script type="text/javascript" src="__PUBLIC__/muban/assets/js/load.js"></script>
 <!--<script type="text/javascript" src="__PUBLIC__/muban/assets/js/main.js"></script>-->
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
 <center>
     <p>
@@ -210,6 +228,8 @@
         $(this).css("background-color","#4e6277");
         $(".li").not(this).css("background-color","");
     })
+<<<<<<< HEAD
+=======
 
 //    app.js更换背景颜色
 
@@ -660,6 +680,7 @@
 
     });
 //    main.js结束
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 </script>
 <php>}else{</php>
     <h1><a href="{:U('index/index')}">滚去登录去</a></h1>

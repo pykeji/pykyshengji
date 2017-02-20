@@ -5,6 +5,15 @@
     <title>患者查询</title>
     <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/zySystem/Public/css/chaxun.css">
+<<<<<<< HEAD
+    <!-- 分页效果 -->
+    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+=======
 
     <!-- 分页效果 -->
     <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
@@ -29,11 +38,16 @@
 <!-- 阻止右键 -->
 <!-- <body oncontextmenu=self.event.returnValue=false onselectstart="return false"> -->
 <body >
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
     <div class="bg">
     <div class="title center" id="title">
         查询窗口
     </div>
+<<<<<<< HEAD
+    <form action="<?php echo U('Index/dochaxun');?>"  method="post">
+=======
     <form action="<?php echo U('Index/chaxun');?>"  method="post">
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
     <div class="chaxun center">
         <div>
             <img src="/zySystem/Public/img/chaxun.png" alt="图片加载失败！">
@@ -57,7 +71,11 @@
         </div>
         <div class="nb">
             <label><!-- <span><input type="checkbox"></span> --><span>性别：</span></label>
+<<<<<<< HEAD
+            <label><span><input type="radio" name="xb" value="男" checked="checked"><span>男</span></span></label>
+=======
             <label><span><input type="radio" name="xb" value="男" ><span>男</span></span></label>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
             <label><span><input type="radio" name="xb" value="女"><span>女</span></span></label>
         </div>
         <div class="but">
@@ -66,6 +84,44 @@
     </div>
     </form>
     <div class="cxtable center">
+<<<<<<< HEAD
+        <table border="0" width="100%" class="table1">
+            <tr>
+                <td width="5%">病历号</td>
+                <td width="5%">姓名</td>
+                <td width="3%">性别</td>
+                <td width="8%">挂号日期</td>
+                <!--<td width="10%">身份证</td>-->
+                <!--<td width="8%">出生日期</td>-->
+                <!--<td width="20%">单位</td>-->
+                <td width="8%">电话</td>
+                <!--<td width="8%">传真</td>-->
+                <!--<td width="10%">E-Mail</td>-->
+                <td width="8%">预约日期</td>
+                <td width="7%">操作</td>
+            </tr>
+            <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="cxtr1" name="cxtableSty">
+                <td><?php echo ($vo["br_id"]); ?></td>
+                <td><?php echo ($vo["br_name"]); ?></td>
+                <td><?php echo ($vo["xb"]); ?></td>
+                <td><?php echo ($vo["p_date"]); ?></td>
+                <td><?php echo ($vo["tel"]); ?></td>
+                <td><?php echo ($vo["p_date"]); ?></td>
+                <td>
+                    <span data-toggle="modal" data-target="#myModal">详细信息</span>
+                    <span>登记</span>
+                    <span>预约</span>
+                </td>
+            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+        </table>
+    </div>
+    <div class="fenye center">
+        <div class="result page">
+            <div class="pages">
+            <?php echo ($page); ?>
+            </div>
+        </div>
+=======
     <!-- 分页开始 -->
         <div class="nest" id="FootableClose">
             <div class="body-nest" id="Footable">
@@ -115,6 +171,7 @@
             </div>
         </div>
                 
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
     </div>
 </div>
     <script type="text/javascript">
@@ -129,25 +186,65 @@
                 <h4 class="modal-title" id="myModalLabel">患者详细信息</h4>
             </div>
             <div class="modal-body">
+<<<<<<< HEAD
+                <table border="0" class="mbt">
+                    <tr>
+                        <td>病历号：</td>
+                        <td><input type="text" readonly="readonly"></td>
+=======
 
                 <table border="0" class="mbt">
                     <tr>
                         <td>病历号：</td>
                         <td><input type="text" id="ajaxmtbrid" readonly="readonly"></td>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>姓名：</td>
+<<<<<<< HEAD
+                        <td><input type="text" readonly="readonly"></td>
+                        <td>性别：</td>
+                        <td>
+                            <label><input type="radio" name="sex" checked="checked" disabled="disabled"><span>男</span></label>
+                            <label><input type="radio" name="sex" disabled="disabled"><span>女</span></label>
+=======
                         <td><input type="text" id="ajaxmtbrname" readonly="readonly"></td>
                         <td>性别：</td>
                         <td>
                             <label><input type="radio" id="ajaxmtxbnan" name="xb" disabled="disabled"><span>男</span></label>
                             <label><input type="radio" id="ajaxmtxbnv" name="xb" disabled="disabled"><span>女</span></label>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                         </td>
                     </tr>
                     <tr>
                         <td>电话：</td>
+<<<<<<< HEAD
+                        <td><input type="text" readonly="readonly"></td>
+                        <td>出生年月：</td>
+                        <td><input type="text" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>身份证号：</td>
+                        <td colspan="3"><input type="text" class="lontext" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>单位：</td>
+                        <td colspan="3"><input type="text" class="lontext" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail：</td>
+                        <td><input type="text" readonly="readonly"></td>
+                        <td>传真：</td>
+                        <td><input type="text" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>挂号日期：</td>
+                        <td><input type="text" readonly="readonly"></td>
+                        <td>预约日期：</td>
+                        <td><input type="text" readonly="readonly"></td>
+=======
                         <td><input type="text" id="ajaxmttel" readonly="readonly"></td>
                         <td>出生年月：</td>
                         <td><input type="text" id="ajaxmtcsdate" readonly="readonly"></td>
@@ -171,6 +268,7 @@
                         <td><input type="text" id="ajaxmtpdategua" readonly="readonly"></td>
                         <td>预约日期：</td>
                         <td><input type="text" id="ajaxmtpdate" readonly="readonly"></td>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                     </tr>
                 </table>
             </div>
@@ -181,6 +279,12 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<<<<<<< HEAD
+</body>
+</html>
+<script src="/zySystem/Public/js/shijian.js"></script>
+<script src="/zySystem/Public/js/tr.js"></script>
+=======
 
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
@@ -299,3 +403,4 @@
         });
     });
 </script>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a

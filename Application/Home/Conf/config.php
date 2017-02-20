@@ -13,5 +13,9 @@ return array(
 	'DB_DEBUG'  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志 3.2.3新增
 	// 'DB_TYPE'=>'odbc', // 数据库类型配置不区分大小写
 	// 'DB_DSN'    => 'mysql:host=localhost;dbname=thinkphp;charset=utf8'
+<<<<<<< HEAD
+	// 
+=======
 
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 );

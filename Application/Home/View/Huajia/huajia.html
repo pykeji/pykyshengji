@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/easyui.css">
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/huajia.css">
+<<<<<<< HEAD
+	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
+=======
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/chaxun.css">
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
@@ -80,11 +85,16 @@
 			}
 		}
 	</script>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div class="tool">
 		<input type="button" name="sf" value="¥ 收费">
+<<<<<<< HEAD
+		<input type="button" name="tf" value="✍ 退费">
+=======
 		<input type="button" name="tf" data-toggle="modal" data-target="#myModal" value="✍ 退费">
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 		<input type="button" name="sc" value="✘ 删除">
 		<p id="demo"></p>
 	</div>
@@ -122,7 +132,11 @@
 				</tr>
 				<tr>
 					<td><!-- 通过选择名称在数据库查询其他信息 -->
+<<<<<<< HEAD
+						<input class="easyui-combogrid" data-options="
+=======
 						<input id="name" class="easyui-combogrid" data-options="
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 							panelWidth: 710,
 							idField: 'name',
 							textField: 'name',
@@ -134,6 +148,16 @@
 								{field:'danjia',title:'单价',width:100,align:'right'},
 								{field:'pym',title:'拼音码',width:165,align:'center'},
 							]],
+<<<<<<< HEAD
+							fitColumns: true
+						">
+					</td>
+					<td><input type="text" name="guige" value="" disabled></td>
+					<td><input type="text" name="danwei" value="" disabled></td>
+					<td><input type="text" name="danjia" value="" disabled></td>
+					<td><input type="text" name="number" value=".00"></td>
+					<td><input type="text" name="jine" value="" disabled></td>
+=======
 							fitColumns: true,
 							onChange: function(rowIndex,rowData){
 					   			var nval = $('#name').combogrid('getValue');
@@ -146,6 +170,7 @@
 					<td><input type="text" id="danjia" name="danjia" value=".00"></td>
 					<td><input type="text" id="number" name="number" value=".00" onChange="zh()"></td>
 					<td><input type="text" id="jine" name="jine" value=".00" disabled></td>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 				</tr>
 			</table>
 		</div>
@@ -161,16 +186,63 @@
 			<div class="table4">
 				<table class="tab4">
 					<tr>
+<<<<<<< HEAD
+						<th>序号</th>
+						<th width="300">项目名称</th>
+						<th>单位</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>金额</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td class="left">西药</td>
+						<td></td>
+						<td>4.00</td>
+						<td>1.00</td>
+						<td>4.00</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td class="left">中草药</td>
+						<td></td>
+						<td>12.60</td>
+						<td>1.00</td>
+						<td>12.60</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td class="left">西药</td>
+						<td></td>
+						<td>3.00</td>
+						<td>3.00</td>
+						<td>9.00</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td class="left">中草药</td>
+						<td></td>
+						<td>5.60</td>
+						<td>4.00</td>
+						<td>22.40</td>
+					</tr>
+					<tr>
+						<td colspan='2'><font color="red"><b>合计金额：</b></font></td>
+						<td colspan="4"><font color="red"><b>48.00</b></font></td>
+=======
 						<th width="15%">序号</th>
 						<th width="25%">项目名称</th>
 						<th width="15%">单位</th>
 						<th width="15%">单价</th>
 						<th width="15%">数量</th>
 						<th width="15%">金额</th>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 					</tr>
 				</table>
 			</div>
 		</div>
+<<<<<<< HEAD
+=======
 	</div> 
 	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -251,6 +323,7 @@
 	            </div>
 	        </div>
 	    </div>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 	</div>
 </body>
 </html>

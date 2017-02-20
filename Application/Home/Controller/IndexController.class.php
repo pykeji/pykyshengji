@@ -20,6 +20,7 @@ class IndexController extends Controller {
         $this->display();
     }
     public function home($rev){
+
 //        $blh=session(id);
 //        $xh=session(xh);
 //        $peo = M('station_p');//患者信息表
@@ -34,6 +35,7 @@ class IndexController extends Controller {
     public function jiezhen(){
         // 法一自己写的附带样式
         $rect = M('station_p');
+
         $count = $rect->where('jz_flag=1')->count();// 查询满足要求的总记录数 $map表示查询条件
         $page = getpage($count,9);//控制页面显示条数
         $show = $page->show();// 分页显示输出
@@ -41,6 +43,7 @@ class IndexController extends Controller {
         //以上是分页 ， 以下是数据
         $data =  $rect->where('jz_flag=1')->order('p_date desc')->limit($page->firstRow.','.$page->listRows)->select();//查询数据（未完成就诊的）$Page->firstRow 起始条数 $Page->listRows 获取多少条
         // dump($data);die;
+
         $this->assign('data',$data);// 赋值模板变量
         $this->display();
         // 法二官方写的不带样式
@@ -79,6 +82,7 @@ class IndexController extends Controller {
     }
     //患者登记
     public function dengji(){
+
         // 判断病例号id是否存在（存在是从查询处跳转过来的）
         $getid =  I('get.id');
         $xh = I('get.xh');
@@ -162,7 +166,6 @@ class IndexController extends Controller {
             }
                 
         }
-            
     }
     //患者预约
     public function yuyue(){
@@ -218,7 +221,6 @@ class IndexController extends Controller {
         // dump($yuyuedtime);die;
         //获取数据->where("p_date like '". $times."%'")
         $data = $user->where("reserve=2 and p_date like '".$yuyuedtime."%' ")->field('p_date,br_name')->select();
-        // dump($data);die;
         //是一个方法 直接调用（把二维数组 以一个字段为条件 升序排列）
         if (! function_exists('list_sort_by'))
         {

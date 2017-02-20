@@ -21,9 +21,12 @@
                 <div class="djfont">
                     患者基本信息
                 </div>
+<<<<<<< HEAD
+=======
                 <span>
                     <b style="margin-left:40px;color: red; ">{$cwxinxi}</b>
                 </span>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                 <div class="djdate">
                     <span>日期：</span>
                     <span class="djrq"></span>
@@ -32,16 +35,30 @@
         </div>
         <form action="{:U('Index/jiankang')}" method="post">
             <div class="inf center">
+<<<<<<< HEAD
+                <table border="0" class="mbt center">
+                    <tr>
+                        <td width="15%">病历号：</td>
+                        <td width="35%"><input type="text" value="{$id}" name="br_id" readonly="readonly" id="blNum"></td>
+=======
             <volist name="data" id="vo">
                 <table border="0" class="mbt center">
                     <tr>
                         <td width="15%">病历号：</td>
                         <td width="35%"><input type="text" value="{$vo.br_id}" name="br_id" readonly="readonly" id="blNum"></td>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                         <td width="15%"></td>
                         <td width="35%"></td>
                     </tr>
                     <tr>
                         <td>姓名：</td>
+<<<<<<< HEAD
+                        <td><input type="text" name="br_name" id="userName1"></td>
+                        <td>性别：</td>
+                        <td>
+                            <label><input type="radio" name="xb" value="男" checked="checked"><span>男</span></label>
+                            <label><input type="radio" name="xb" value="女"><span>女</span></label>
+=======
                         <td><input type="text" name="br_name" value="{$vo.br_name}" id="userName1"></td>
                         <td>性别：</td>
                         <td>
@@ -59,10 +76,38 @@
                             }
                         </php>
 
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                         </td>
                     </tr>
                     <tr>
                         <td>年龄：</td>
+<<<<<<< HEAD
+                        <td><input type="text" name="nl" id="age1"></td>
+                        <td>出生年月：</td>
+                        <td><input type="text" name="cs_date" placeholder="请选择时间！" id="datebut" onClick="jeDate({dateCell:'#datebut',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>身份证号：</td>
+                        <td><input type="text" name="pass" id="idNum1"></td>
+                        <td>电话：</td>
+                        <td><input type="text" name="tel" id="phone1"></td>
+                    </tr>
+                    <tr>
+                        <td>传真：</td>
+                        <td><input type="text" name="fax" id="chuanzhen1"></td>
+                        <td>E-Mail：</td>
+                        <td><input type="text" name="e_mail" id="mail1"></td>
+                    </tr>
+                    <tr>
+                        <td>挂号费：</td>
+                        <td><input type="text" name="ghf"></td>
+                        <td width="15%">预约日期：</td>
+                        <td width="35%"><input type="text" name="p_date" class="yyrq" readonly="readonly"></td>
+                    </tr>
+                    <tr>
+                        <td>单位：</td>
+                        <td colspan="3"><textarea name="dw" id="comp1"class="lontext"></textarea></td>
+=======
                         <td><input type="text" name="nl" value="{$vo.nl}" id="age1"></td>
                         <td>出生年月：</td>
                         <td><input type="text" name="cs_date" value="{$vo.cs_date}" placeholder="请选择时间！" id="datebut" onClick="jeDate({dateCell:'#datebut',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly"></td>
@@ -90,11 +135,15 @@
                         <td colspan="3">
                             <textarea align=align name="dw" id="comp1"class="lontext">{$vo.dw}</textarea>
                         </td>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                     </tr>
                     <!-- 就诊时间 -->
                     <input type="hidden"  name="jz_date" class="yyrq">
                 </table>
+<<<<<<< HEAD
+=======
             </volist>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
             </div>
         <div class="but">
             <div class="butt">
@@ -113,6 +162,11 @@
 <script type="text/javascript">
     jeDate.skin('gray');
 </script>
+<<<<<<< HEAD
+</body>
+</html>
+=======
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 <script type="text/javascript">
     $("#jsPreservation").click(function(){
         $("form").attr("action", "{:U('Index/hzbc')}" ).submit();
@@ -121,6 +175,10 @@
     // var jsPreservation=document.getElementById('jsPreservation');
 
 </script>
+<<<<<<< HEAD
+<script src="__PUBLIC__/js/shijian.js"></script>
+=======
 <script src="__PUBLIC__/js/shijian.js"></script>
 </body>
 </html>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a

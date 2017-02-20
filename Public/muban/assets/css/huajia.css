@@ -138,6 +138,8 @@
 	height:260px;
 	margin-top:1%;
 }
+<<<<<<< HEAD
+=======
 /*模态框*/
 #myModal{
 	width:100%;
@@ -220,3 +222,4 @@ input[name="exit"]{
 	font-weight:bold;
 	background:#C63300;
 }
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a

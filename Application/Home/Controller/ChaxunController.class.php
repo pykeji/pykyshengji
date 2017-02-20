@@ -2,6 +2,9 @@
 namespace Home\Controller;
 use Think\Controller;
 class ChaxunController extends Controller {
+<<<<<<< HEAD
+    public function sfzonghe(){
+=======
     //收费综合查询
     public function sfzonghe(){
         if (IS_GET) {
@@ -73,6 +76,7 @@ class ChaxunController extends Controller {
             // dump($data);die;
             $this->assign('data',$data);
         }
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
         $this->display();
     }
     public function fyhuizong(){
