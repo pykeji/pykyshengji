@@ -10,13 +10,22 @@ class HuajiaController extends Controller {
         //收费列表信息(审核处方之后)
         if($_POST){
             $arr = array();
-            $arr[bill_code] = $_POST['sf_blh'];
-            $arr[brname] = $_POST['sf_brname'];
-            $arr[brsex] = $_POST['sf_brsex'];
-            $arr[brnl] = $_POST['sf_brnl'];
-            $arr[brjzdate] = $_POST['sf_brjzdate'];
-            $arr[pjh] = $_POST['sf_pjh'];
-            print_r($arr);die;
+            $arr[BILL_CODE] = '';//处方号
+            $arr[ITEM_CODE] = $_POST['sf_brname'];//项目代码
+            $arr[CLINIC_NUM] = $_POST['sf_blh'];//病人ID
+            $arr[xh] = $data[0]['xh'];//挂号序号
+            $date = date('Y-m-d H:i:s');
+            $arr[CHARGE_DAT] = $date;//收费日期
+            $arr[UNIT_PRICE] = '';//单价
+            $arr[AMOUNT] = '';//数量
+            $arr[UNITS] = '';//单位
+            $arr[TOTAL] = '';//金额
+            $arr[OPERATOR_CODE] = $_SESSION['wh_userId'];//操作员编码
+            $arr[BILL_STATUS] = '';//收费状态
+            $arr[SERIAL_NO] = '';//项目收费序号
+            $arr[RETURN_DATE] = '';//退费日期
+            $arr[INVOICE_NO] = $_POST['sf_pjh'];//发票号
+            var_dump($arr);die;
         }
 
         $shouf = M('g_outp_bill_item');//收费信息 票据号

@@ -42,9 +42,9 @@
 	background-repeat:no-repeat;
 	background-size:100%;
 }
-.top span{margin-left:5%;}
+.top span{margin-left:4.5%;}
 .top input[name="sf_blh"]{
-	width:100px;
+	width:120px;
 	border:none;
 	font-weight:bold;
 	background:none;
@@ -68,7 +68,7 @@
 	background:none;
 }
 .top input[name="sf_brjzdate"]{
-	width:200px;
+	width:165px;
 	border:none;
 	font-weight:bold;
 	background:none;

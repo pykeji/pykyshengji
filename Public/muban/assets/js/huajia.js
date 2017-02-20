@@ -19,7 +19,7 @@ function zh(){
 		            var danjia = $("#danjia").val();
 		            var number = $("#number").val();
 		            var jine = $("#jine").val();
-		            $(".tab4").append("<tr class='sty1' name='tableSty'><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
+		            $(".tab4").append("<tr class='sty1' name='tableSty'><td><input type='hidden' id='xuhao' name='xuhao' value='"+id+"'>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
 		            flag = true;
 
 			        //清空上方数据
@@ -103,7 +103,7 @@ function sub(){
 	if($(".tab4 tr").length == 1){
 		return false;
 	}else{
-		var tableInfo = "";
+		var tableInfo = '';
 	 	var tableObj = document.getElementById('tab4');
 	 	for(var i = 0; i < tableObj.rows.length; i++) { //遍历Table的所有Row
 	  		for(var j = 0; j < tableObj.rows[i].cells.length; j++) { //遍历Row中的每一列
