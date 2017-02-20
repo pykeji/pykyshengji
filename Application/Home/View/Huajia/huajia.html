@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/easyui.css">
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/huajia.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/chaxun.css">
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
@@ -31,69 +30,34 @@
 				}
 			})
 		}
-		var zje = 0;
-		function zh(){
-			if($("#name").val() == ''){
-				return false;
-			}else{
-				var number = $("#number").val();
-				var price = $("#danjia").val();
-				var zh = (number*price).toFixed(2);
-				$("#jine").val(zh);
-				var flag = false;
-				$('#number').keypress(function(event){
-				    var keycode = (event.keyCode ? event.keyCode : event.which);
-				    if(keycode == '13'){
-				    	if(!flag == true){
-				    		var id = $(".tab4").find("tr").length;
-			                var name = $("#name").val();
-			                var danwei = $("#danwei").val();
-			                var danjia = $("#danjia").val();
-			                var number = $("#number").val();
-			                var jine = $("#jine").val();
-			                zje = (Number(zje) + Number(jine)).toFixed(2);
-			                if(id-1 == 0){
-			                	$(".tab4").append("<tr><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr><tr><td colspan='3'><font color='red'><b>合计金额：</b></font></td><td colspan='3' class='right'><font color='red'><b>"+zje+"</b></font></td></tr>");
-			                }else{
-			                	if(!flag == true){
-			                		var id = id - 1;
-			                		$(".tab4 tr:last").before("<tr><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
-			                		$(".tab4 tr td:last").text(zje);
-			                		$(".tab4 tr td:last").css("color","red");
-			                		$(".tab4 tr td:last").css("font-weight","bold");
-			                	}
-			                }
-			                flag = true;
-
-			                //清空上方数据
-			                $("#name").val('');
-				    		$("#guige").val('');
-			                $("#danwei").val('');
-			                $("#danjia").val('.00');
-			                $("#number").val('.00');
-			                $("#jine").val('.00');
-				    	}else{
-				    		return false;
-				    	}
-				    }  
-				});
-			}
-		}
+		$(document).ready(function(){
+			var zje = 0.00;
+			$(".tab4 tr").not(":first").each(function(){
+				obj = $(this).find("td:last").text();
+				zje = (Number(zje) + Number(obj)).toFixed(2);
+			});
+			$(".tab3 tr td:last").text('￥'+zje);
+			$(".tab3 tr td:last").css("color","red");
+			$(".tab3 tr td:last").css("font-weight","bold");
+			$(".tab3 tr td:last").css("font-size","20px");
+		});
 	</script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+	<form id="shoufei" method="post" action="__CONTROLLER__/huajia">
 	<div class="tool">
-		<input type="button" name="sf" value="¥ 收费">
+		<input type="button" name="sf" onClick="sub()" value="¥ 收费">
 		<input type="button" name="tf" data-toggle="modal" data-target="#myModal" value="✍ 退费">
-		<input type="button" name="sc" value="✘ 删除">
+		<input type="button" name="sc" value="✘ 删除" onClick="doFun('doShow')">
 		<p id="demo"></p>
 	</div>
+	
 	<div class="top">
-		<span>病历号:<b>{$_SESSION['id']}</b></span>
-		<span>姓名:<b>{$data.0.br_name}</b></span>
-		<span>性别:<b>{$data.0.xb}</b></span>
-		<span>年龄:<b>{$data.0.nl}</b></span>
-		<span>就诊日期:<b>{$data.0.jz_date}</b></span>
+		<span>病历号:<input type="text" name="sf_blh" value="{$_SESSION['id']}" readonly></span>
+		<span>姓名:<input type="text" name="sf_brname" value="{$data.0.br_name}" readonly></span>
+		<span>性别:<input type="text" name="sf_brsex" value="{$data.0.xb}" readonly></span>
+		<span>年龄:<input type="text" name="sf_brnl" value="{$data.0.nl}" readonly></span>
+		<span>就诊日期:<input type="text" name="sf_brjzdate" value="{$data.0.jz_date}" readonly></span>
 	</div>
 	<div class="center">
 		<div class="center_t">
@@ -106,11 +70,12 @@
 					<td class="tab1_r">
 						<h4>
 							<font color="#DDAA00">票据号:</font>
-							<font color="#C63300">201701090001</font>
+							<input type="text" name="sf_pjh" value="{$pjh.0.piaojh}" readonly>
 						</h4>
 					</td>
 				</tr>
 			</table>
+	</form>
 			<table class="tab2">
 				<tr>
 					<th width="25%">费用名称</th>
@@ -141,25 +106,27 @@
 							}
 						" >
 					</td>
-					<td><input type="text" id="guige" name="guige" value="" disabled></td>
-					<td><input type="text" id="danwei" name="danwei" value="" disabled></td>
+					<td><input type="text" id="guige" name="guige" value="" readonly></td>
+					<td><input type="text" id="danwei" name="danwei" value="" readonly></td>
 					<td><input type="text" id="danjia" name="danjia" value=".00"></td>
 					<td><input type="text" id="number" name="number" value=".00" onChange="zh()"></td>
-					<td><input type="text" id="jine" name="jine" value=".00" disabled></td>
+					<td><input type="text" id="jine" name="jine" value=".00" readonly></td>
 				</tr>
 			</table>
 		</div>
 		<div class="center_c">
 			<table class="tab3">
 				<tr>
-					<td class="tab3_l">
+					<td width="60%" class="tab3_l">
 						<img src="__PUBLIC__/muban/assets/img/iconpng.png" width="23" height="23">
 						<font size="+1">收费列表</font>
 					</td>
+					<td width="20%" align="right"><font color='red'><b>合计金额：</b></font></td>
+					<td width="20%" align="right"><font color='red' size="+1"><b>￥0.00</b></font></td>
 				</tr>
 			</table>
 			<div class="table4">
-				<table class="tab4">
+				<table id="tab4" class="tab4">
 					<tr>
 						<th width="15%">序号</th>
 						<th width="25%">项目名称</th>
@@ -168,11 +135,19 @@
 						<th width="15%">数量</th>
 						<th width="15%">金额</th>
 					</tr>
+					<tr class="sty1" name="tableSty">
+						<td><input type="hidden" id="xuhao" name="xuhao" value="1">1</td>
+						<td class="left"><input type="hidden" id="xmname" name="xmname" value="中草药">中草药</td>
+						<td class="left"><input type="hidden" id="danwei" name="danwei" value="/">/</td>
+						<td><input type="hidden" id="danjia" name="danjia" value="1.000">1.000</td>
+						<td><input type="hidden" id="number" name="number" value="5.00">5.00</td>
+						<td><input type="hidden" id="jine" name="jine" value="5.00">5.00</td>
+					</tr>
 				</table>
 			</div>
 		</div>
-	</div> 
-	<!-- 模态框（Modal） -->
+	</div>
+	<!-- 退费 -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
 	        <div class="modal-content">
@@ -195,21 +170,27 @@
 						<div class="modal-body-left-con">
 							<h4 class="tit"><img src="__PUBLIC__/muban/assets/img/014.png" class="body-img">
 							发票信息</h4>
-							<table class="table table-bordered">
+							<table class="tab5">
 								<thead>
 									<tr>
-										<th>票据号</th>
-										<th>姓名</th>
-										<th>收费金额</th>
-										<th>病历号</th>
+										<th width="30%">票据号</th>
+										<th width="20%">姓名</th>
+										<th width="20%">收费金额</th>
+										<th width="30%">病历号</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Tanmay</td>
-										<td>Bangalore</td>
-										<td>560001</td>
-										<td>Tanmay</td>
+										<td>201702150001</td>
+										<td>张三</td>
+										<td align="right">245.00</td>
+										<td>2017021701</td>
+									</tr>
+									<tr>
+										<td>201702150002</td>
+										<td>张三</td>
+										<td align="right">305.00</td>
+										<td>2017021702</td>
 									</tr>
 								</tbody>
 							</table>
@@ -219,25 +200,29 @@
 						<div class="modal-body-right-con">
 							<h4 class="tit"><img src="__PUBLIC__/muban/assets/img/iconpng.png" class="body-img">
 							收费明细</h4>
-							<table class="table table-bordered">
+							<table class="tab6">
 								<thead>
 									<tr>
-										<th width="10%">序号</th>
-										<th width="50%">项目名称</th>
-										<th width="10%">单位</th>
-										<th width="10%">单价</th>
-										<th width="10%">数量</th>
-										<th width="10%">金额</th>
+										<th width="12%">序号</th>
+										<th width="38%">项目名称</th>
+										<th width="12%">单位</th>
+										<th width="12%">单价</th>
+										<th width="12%">数量</th>
+										<th width="12%">金额</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Tanmay</td>
-										<td>Bangalore</td>
-										<td>560001</td>
-										<td>Tanmay</td>
-										<td>560001</td>
-										<td>Tanmay</td>
+										<td>1</td>
+										<td>B超费</td>
+										<td>次</td>
+										<td align="right">20.00</td>
+										<td align="right">1.00</td>
+										<td align="right">20.00</td>
+									</tr>
+									<tr class="hj">
+										<td colspan="3">合计：</td>
+										<td colspan="3">20.00</td>
 									</tr>
 								</tbody>
 							</table>
@@ -252,5 +237,14 @@
 	        </div>
 	    </div>
 	</div>
+	<!-- 删除按钮 -->
+	<div id="Dshow" style="display:none;">
+		<div class="box">
+    		<h3>提示</h3>
+        	<p class="info">确定要删除选中项目？</p>
+        	<p class="btnX"><input type="button" value="确定" onClick="doFun('doClose')" /><input type="button" value="取消" onClick="doFun('returnFalse')" /></p>
+    	</div>
+	</div>
 </body>
 </html>
+<script type="text/javascript" src="__PUBLIC__/muban/assets/js/huajia.js"></script>
