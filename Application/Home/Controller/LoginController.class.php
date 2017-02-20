@@ -27,11 +27,11 @@ class LoginController extends Controller {
          //用户名存入session
             session('wh_userName',$name);
             session('wh_userId',$id);
-            session('patha',$path);
+            session('wh_patha',$path);
            // var_dump($_SESSION);
            // echo $level;
            $photo = $result['userphoto'];
-           session('photo',$photo);
+           session('wh_photo',$photo);
            $this->redirect('index/home',array('rev'=>$level));
         }else{
            $this->redirect('index/index',array('aa'=>1));

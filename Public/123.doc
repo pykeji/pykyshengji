@@ -1,0 +1,43 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+			xmlns:w="urn:schemas-microsoft-com:office:word"
+			xmlns="http://www.w3.org/TR/REC-html40">    <div class="rep-title">中医体制辨识鉴定报告</div>
+    <div>
+        <table border="1" width="90%" class="center">
+            <tr>
+                <td width="5%">姓名</td>
+                <td colspan="2" width="10%"></td>
+                <td width="5%">性别</td>
+                <td width="5%"></td>
+                <td width="5%">年龄</td>
+                <td width="5%"></td>
+                <td width="10%">日期</td>
+                <td colspan="3" width="10%"></td>
+            </tr>
+            <tr>
+                <td>身份证号</td>
+                <td colspan="6"></td>
+                <td>联系方式</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td>工作单位</td>
+                <td colspan="10"></td>
+            </tr>
+            <tr>
+                <td rowspan="2">体制类型</td>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+            </tr>
+            <tr>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+                <td colspan="2"></td>
+            </tr>
+        </table>
+    </div>
+        </html>
