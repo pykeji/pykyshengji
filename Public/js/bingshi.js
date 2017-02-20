@@ -4,10 +4,15 @@
 $(document).ready(function(){
     //$("#duo").css("width",$("#duo").parent('span').parent('td').css("width"));
 })
+
 //家庭史
 //父亲选项
 // 双击事件
 $("#yw1").dblclick(function(){
+    var yw1=$("#yw1").offset();//获取单击位置的偏移量
+    $(".jtsFar").css("left","0px");
+    $(".jtsFar").css("top","0px");
+    $(".jtsFar").offset({top:yw1.top+20,left:yw1.left});//设置偏移量
     $("#jtsFarinp").val($("#yw1").val());
     $(".jtsFar").toggle();
 })
@@ -31,10 +36,10 @@ $(".jtscheck").click(function(){
 })
 //母亲选项
 //双击事件
-//$("#yw2").dblclick(function(){
-//    $("#jtsFarinp").val($("#yw1").val());
-//    $(".jtsFar").toggle();
-//})
+$("#yw2").dblclick(function(){
+    $("#jtsMotherInp").val($("#yw2").val());
+    $(".jtsMother").toggle();
+})
 //过敏史
 // 双击事件
 $("#gms").dblclick(function(){

@@ -347,12 +347,13 @@ class IndexController extends Controller {
         }
         $blh=session(id);
         $xh=session(xh);
-        $userInf=$station->where("br_id=$blh and xh=$xh")->select();//查询出患者信息
+        if($blh && $xh){
+            $userInf=$station->where("br_id=$blh and xh=$xh")->select();//查询出患者信息
 //        将时间中的时分秒去掉
-        $userInf[0]['jz_date']=substr($userInf[0]['jz_date'],0,10);
-        $userInf[0]['cs_date']=substr($userInf[0]['cs_date'],0,10);
-        $this->assign('data',$userInf);//将患者信息传递到前端界面
-        // $this->assign('data',$data);// 模板变量赋值
+            $userInf[0]['jz_date']=substr($userInf[0]['jz_date'],0,10);
+            $userInf[0]['cs_date']=substr($userInf[0]['cs_date'],0,10);
+            $this->assign('data',$userInf);//将患者信息传递到前端界面
+        }
         $this->display();
     }
 //    体质辨识答题界面
