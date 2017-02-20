@@ -1,0 +1,113 @@
+[ 2017-02-19T17:01:40+08:00 ] ::1 /zySystem/index.php/Home/Ajax/drugWest.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0106s ]
+SQL: SELECT `drug_name` FROM `drug_dict` WHERE `input_code` LIKE 'q%'  [ RunTime:0.0069s ]
+
+[ 2017-02-19T17:01:40+08:00 ] ::1 /zySystem/index.php/Home/Ajax/sele.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `sys_dm_jldw` [ RunTime:0.0451s ]
+SQL: SELECT * FROM `drug_dict` WHERE ( drug_name='强力天麻杜仲胶囊' ) LIMIT 1   [ RunTime:0.0315s ]
+SQL: SELECT `dw` FROM `sys_dm_jldw` WHERE ( dwdm=0001 )  [ RunTime:0.0038s ]
+SQL: SELECT `dw` FROM `sys_dm_jldw` WHERE ( dwdm=1001 )  [ RunTime:0.0042s ]
+
+[ 2017-02-19T17:02:33+08:00 ] ::1 /zySystem/index.php/Home/Ajax/drugWest.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0049s ]
+SQL: SELECT `drug_name` FROM `drug_dict` WHERE `input_code` LIKE ' %'  [ RunTime:0.0063s ]
+
+[ 2017-02-19T17:02:36+08:00 ] ::1 /zySystem/index.php/Home/Ajax/drugWest.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0048s ]
+SQL: SELECT `drug_name` FROM `drug_dict` WHERE `input_code` LIKE '阿莫西林胶囊%'  [ RunTime:0.0062s ]
+
+[ 2017-02-19T17:02:47+08:00 ] ::1 /zySystem/index.php/Home/Ajax/Chufang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+NOTIC: [8] Use of undefined constant bianma - assumed 'bianma' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 37 行.
+NOTIC: [8] Use of undefined constant mingcheng - assumed 'mingcheng' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 38 行.
+NOTIC: [8] Use of undefined constant guige - assumed 'guige' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 39 行.
+NOTIC: [8] Use of undefined constant hanliang - assumed 'hanliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 40 行.
+NOTIC: [8] Use of undefined constant baozhuang - assumed 'baozhuang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 41 行.
+NOTIC: [8] Use of undefined constant shuliang - assumed 'shuliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 42 行.
+NOTIC: [8] Use of undefined constant zongliang - assumed 'zongliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant tujing - assumed 'tujing' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant yongliang - assumed 'yongliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 45 行.
+NOTIC: [8] Use of undefined constant shuliang - assumed 'shuliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 46 行.
+NOTIC: [8] Use of undefined constant cishu - assumed 'cishu' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 47 行.
+NOTIC: [8] Use of undefined constant tsyf - assumed 'tsyf' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant tianshu - assumed 'tianshu' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 49 行.
+NOTIC: [8] Undefined index: tianshu F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 49 行.
+NOTIC: [8] Use of undefined constant bianma - assumed 'bianma' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant mingcheng - assumed 'mingcheng' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 52 行.
+NOTIC: [8] Use of undefined constant guige - assumed 'guige' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant hanliang - assumed 'hanliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 54 行.
+NOTIC: [8] Use of undefined constant baozhuang - assumed 'baozhuang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 55 行.
+NOTIC: [8] Use of undefined constant shuliang - assumed 'shuliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant zongliang - assumed 'zongliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 57 行.
+NOTIC: [8] Use of undefined constant tujing - assumed 'tujing' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 58 行.
+NOTIC: [8] Use of undefined constant yongliang - assumed 'yongliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 59 行.
+NOTIC: [8] Use of undefined constant shuliang - assumed 'shuliang' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 60 行.
+NOTIC: [8] Use of undefined constant cishu - assumed 'cishu' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant tsyf - assumed 'tsyf' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 62 行.
+NOTIC: [8] Use of undefined constant tianshu - assumed 'tianshu' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 63 行.
+NOTIC: [8] Undefined index: tianshu F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 63 行.
+SQL: SHOW COLUMNS FROM `xydrugcf_detial` [ RunTime:0.0072s ]
+SQL: SELECT `cf_id` FROM `xydrugcf_detial` WHERE `cf_id` LIKE '20170219%' ORDER BY cf_id desc LIMIT 1   [ RunTime:0.0066s ]
+NOTIC: [8] Use of undefined constant bz - assumed 'bz' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 81 行.
+NOTIC: [8] Undefined variable: brid F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 98 行.
+NOTIC: [8] Use of undefined constant bz - assumed 'bz' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 81 行.
+NOTIC: [8] Undefined variable: brid F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 98 行.
+SQL: INSERT INTO `xydrugcf_detial` (`doctor_id`,`cfbz`,`cf_id`,`cf_date`,`BR_ID`,`yp_code`,`yp_name`,`yp_spec`,`rl`,`yp_total_amount`,`zl`,`tujing`,`yongliang`,`cishu`,`yongfa`) VALUES ('7','','2017021900017','2017-02-19 17:02:47','2017021900009','0010017600001','强力天麻杜仲胶囊','0.2g*20粒/盒        ','0.20g','1.00','','1','1.00','1','0') [ RunTime:0.0361s ]
+SQL: INSERT INTO `xydrugcf_detial` (`doctor_id`,`cf_id`,`cf_date`,`BR_ID`,`yp_code`,`yp_name`,`yp_spec`,`rl`,`yp_total_amount`,`zl`,`tujing`,`yongliang`,`cishu`,`yongfa`) VALUES ('7','2017021900017','2017-02-19 17:02:47','2017021900009','123','阿莫西林胶囊','','','1.00','','1','','1','0') [ RunTime:0.0295s ]
+
+[ 2017-02-19T17:02:47+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/west.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `useage_table` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `usepl_table` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `usepl_table`  [ RunTime:0.0042s ]
+SQL: SELECT * FROM `useage_table`  [ RunTime:0.0027s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009910s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009960s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+

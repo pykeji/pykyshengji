@@ -24,6 +24,11 @@ class AjaxController extends Controller {
         $ke = M('sys_dm_jldw');
         $list = $drug->where("drug_name='$_POST[list]'")->find();
         $hlcode = $list['hl_unit'];
+        if($list['hl_unit']){
+          $hlcode = $list['hl_unit'];
+        }else{
+           $hlcode = '9583';
+        }
         $danwei = $ke->where("dwdm=$hlcode")->field('dw')->select();
         $bzdwcode = $list['bzdw1'];
         $bzdw =  $ke->where("dwdm=$bzdwcode")->field('dw')->select();;
@@ -96,11 +101,25 @@ class AjaxController extends Controller {
           $list[$i]['yongfa'] = $atsyf[$i+1];
           // $list[$i]['tianshu'] = $atianshu[$i+1];
           $list[$i]['BR_ID'] = session(id);
+          $list[$i]['xy_name'] = $_POST[xybm];
         }
 
           for($j = 0; $j < $num; $j++){
             $xydict->data($list[$j])->add();
           }
-          $this->ajaxReturn($_SESSION['id']);
+          $this->ajaxReturn(1);
+      }
+
+      public function westBing(){
+          $val = $_POST[val];
+          $xy = M('xy_name');
+        if(preg_match("/^[a-z]/i", $val)){
+          $where['spell'] = array('like',"{$val}%");
+          $list = $xy->where($where)->select();
+        }else{
+          $where['name'] = array('like',"{$val}%");
+          $list = $xy->where($where)->select();
+        };
+         $this->ajaxReturn($list);
       }
 }

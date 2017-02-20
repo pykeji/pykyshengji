@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 	<head>
-	<link rel="stylesheet" href="__PUBLIC__/css/xykf.css">
-	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.css">
-	<script type="text/javascript" src="__PUBLIC__/jq/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/xykf.js"></script>
+	<link rel="stylesheet" href="/zySystem/Public/css/xykf.css">
+	<link rel="stylesheet" href="/zySystem/Public/css/bootstrap.css">
+	<script type="text/javascript" src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/zySystem/Public/js/xykf.js"></script>
 	<style type="text/css">
 		html,body{
 			height:100%;
@@ -35,10 +35,8 @@
             <div class="modal-body" id="fangk">
            		<!-- <table>
            		<tr style="font-weight:bold;"><td>名称</td><td>拼音码</td></tr>
-           		 <foreach name='xyname' item='xo'>
-           		 	<php>$qwe = $xo['code'];</php>
-           			<tr class="xyntr"><td><input type="checkbox" value="<?php echo $qwe; ?>" class="xyche">{$xo.name}</td><td class="pym">{$xo.spell}</td></tr>
-           		 </foreach>
+           		 <?php if(is_array($xyname)): foreach($xyname as $key=>$xo): $qwe = $xo['code']; ?>
+           			<tr class="xyntr"><td><input type="checkbox" value="<?php echo $qwe; ?>" class="xyche"><?php echo ($xo["name"]); ?></td><td class="pym"><?php echo ($xo["spell"]); ?></td></tr><?php endforeach; endif; ?>
            		</table> -->
                 <h2>请输入查询条件</h2>
             </div>
@@ -61,7 +59,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel2">处方预审</h4>
             </div>
-            <form action="{:U('User/uploadinfo')}" method="post">
+            <form action="<?php echo U('User/uploadinfo');?>" method="post">
             <div class="modal-body" id="yscon">
               123
             </div>
@@ -149,10 +147,8 @@
 						</td>
 						<td class="td1">
 							<select class="textlon" name="tujing">
-								<foreach name='useage' item='do'>
-                            	<php>$powerid = $do['useage_code'];</php>
-                                <option value=<php>echo '"'.$powerid.'"';</php>>{$do.useage_name}</option>
-                            </foreach>
+								<?php if(is_array($useage)): foreach($useage as $key=>$do): $powerid = $do['useage_code']; ?>
+                                <option value=<?php echo '"'.$powerid.'"'; ?>><?php echo ($do["useage_name"]); ?></option><?php endforeach; endif; ?>
 							</select>
 						</td>
 						<td class="td1">
@@ -160,10 +156,8 @@
 						</td>
 						<td class="td1">
 							<select class="textlon" name="cishu">
-                               <foreach name='usepl' item='ao'>
-                            	<php>$plid = $ao['usep_code'];</php>
-                                <option value=<php>echo '"'.$plid.'"';</php>>{$ao.usep_name}</option>
-                            </foreach>  
+                               <?php if(is_array($usepl)): foreach($usepl as $key=>$ao): $plid = $ao['usep_code']; ?>
+                                <option value=<?php echo '"'.$plid.'"'; ?>><?php echo ($ao["usep_name"]); ?></option><?php endforeach; endif; ?>  
                             </foreach>  
 							</select>
 						</td>
@@ -197,7 +191,7 @@
 			<button class="btn btn-danger" id="ys" data-toggle='modal' data-target='#myModal2' name=''  type="button">预审</button>
 			</form>
 	</body>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
 	<script type="text/javascript">
 			
 
@@ -212,7 +206,7 @@
 				var val = $(this).val();
 				$.ajax({
             type:'POST',
-            url:"{:U('Ajax/westBing')}",
+            url:"<?php echo U('Ajax/westBing');?>",
             data:{val:val},
             dataType:'json',
             success:function(dd)
@@ -244,7 +238,7 @@
 				$('#aja').css('left',left+'px');
 				 $.ajax({
             type:'POST',
-            url:"{:U('Ajax/drugWest')}",
+            url:"<?php echo U('Ajax/drugWest');?>",
             data:{htm:htm},
             dataType:'json',
             success:function(dd)
@@ -277,7 +271,7 @@
 				var hht = $(this).html();
 					 $.ajax({
             type:'POST',
-            url:"{:U('Ajax/sele')}",
+            url:"<?php echo U('Ajax/sele');?>",
             data:{'list':hht},
             dataType:'json',
             success:function(aa)
@@ -379,7 +373,7 @@
 			var xy = $('#a123').html();
 				$.ajax({
             type:'POST',
-            url:"{:U('Ajax/Chufang')}",
+            url:"<?php echo U('Ajax/Chufang');?>",
             data:{bianma:bianma,mingcheng:mingcheng,guige:guige,hanliang:hanliang,baozhuang:baozhuang,shuliang:shuliang,zongliang:zongliang,tujing:tujing,yongliang:yongliang,cishu:cishu,bz:bz,tsyf:tsyf,xybm:xy},
             dataType:'json',
             success:function(dd)
