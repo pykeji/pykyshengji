@@ -29,31 +29,20 @@ class YuyueController extends Controller {
 	}
 	// 患者预约
     public function yuyue(){
-		$station = M('station_p');
-        $data = I('post.');//获取数据
-        $station->data($data)->add();//添加数据
-        $this->redirect('Index/jiezhen');//重定向到接诊区
-		// // 以下为显示预约人数
-  //   	// $data = I('post.');//获取数据
-  //       // $sp_date =I('post.p_date');//获取页面预约日期
-  //       $user = M('station_p');
-  //       // 获取数据库预约日期
-  //       $shujuku = $user->where("reserve=2")->field('p_date')->select(); 
-  //       // 转换为一维数组  便利每一个数据
-       
-  //       foreach ($shujuku as $v) {
-  //       	foreach ($v as $value) {
-  //       		$a[] .= abs(strtotime($sp_date)-strtotime($value));
-  //       		// $a[] .= $value." ";
-  //       	}
-  //       }
-  //        // 设置当前有多少人预约
-  //       $dangqyrs = 0 ;
-  //       foreach ($a as $value) {
-  //       	if ($value<900) {
-  //       		$dangqyrs++;
-  //       	}
-  //       }
-  //       dump($a);die;
+      $station = M('station_p');
+      // echo 1;die;
+      //判断是否是复诊
+      $br_id = I('post.br_id');
+      // 查出就诊几次
+      $pdfuzhen = $station->where("br_id=$br_id")->count();
+      // 加一为当前就诊次数
+      $dangqingjiuzhengcishu = $pdfuzhen+1;
+      // dump($dangqingjiuzhengcishu);die;
+      $data = I('post.');//获取数据
+      // dump($data);die;
+      $data['xh'] = $dangqingjiuzhengcishu;
+      // dump($data);die;
+      $station->data($data)->add();//添加数据
+      $this->redirect('Index/jiezhen');//重定向到接诊区
     }
 }
