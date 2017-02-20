@@ -9,7 +9,8 @@ class HuajiaController extends Controller {
 
         //收费列表信息(审核处方之后)
         if($_POST){
-            $arr = array();
+            dump($_POST);
+            /*$arr = array();
             $arr[BILL_CODE] = '';//处方号
             $arr[ITEM_CODE] = $_POST['sf_brname'];//项目代码
             $arr[CLINIC_NUM] = $_POST['sf_blh'];//病人ID
@@ -25,7 +26,7 @@ class HuajiaController extends Controller {
             $arr[SERIAL_NO] = '';//项目收费序号
             $arr[RETURN_DATE] = '';//退费日期
             $arr[INVOICE_NO] = $_POST['sf_pjh'];//发票号
-            var_dump($arr);die;
+            dump($arr);*/
         }
 
         $shouf = M('g_outp_bill_item');//收费信息 票据号

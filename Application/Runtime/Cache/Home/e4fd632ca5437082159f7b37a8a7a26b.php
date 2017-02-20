@@ -17,7 +17,7 @@
     <input id="file_upload" name="file_upload" type="file" multiple="true" value="" />
 
     
-123<?php echo session(id); ?>
+<?php echo session(id); ?>
 	<!---->
 </body>
 <script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>

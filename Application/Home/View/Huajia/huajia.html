@@ -135,14 +135,14 @@
 						<th width="15%">数量</th>
 						<th width="15%">金额</th>
 					</tr>
-					<!-- <tr class="sty1" name="tableSty">
-						<td>1</td>
-						<td class="left">中草药</td>
-						<td class="left">/</td>
-						<td>1.000</td>
-						<td>5.00</td>
-						<td>5.00</td>
-					</tr> -->
+					<tr class="sty1" name="tableSty">
+						<td><input type="hidden" id="xuhao" name="xuhao" value="1">1</td>
+						<td class="left"><input type="hidden" id="xmname" name="xmname" value="中草药">中草药</td>
+						<td class="left"><input type="hidden" id="danwei" name="danwei" value="/">/</td>
+						<td><input type="hidden" id="danjia" name="danjia" value="1.000">1.000</td>
+						<td><input type="hidden" id="number" name="number" value="5.00">5.00</td>
+						<td><input type="hidden" id="jine" name="jine" value="5.00">5.00</td>
+					</tr>
 				</table>
 			</div>
 		</div>

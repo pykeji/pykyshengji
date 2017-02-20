@@ -19,7 +19,7 @@ function zh(){
 		            var danjia = $("#danjia").val();
 		            var number = $("#number").val();
 		            var jine = $("#jine").val();
-		            $(".tab4").append("<tr class='sty1' name='tableSty'><td><input type='hidden' id='xuhao' name='xuhao' value='"+id+"'>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
+		            $(".tab4").append("<tr class='sty1' name='tableSty'><td><input type='hidden' id='xuhao' name='xuhao' value='"+id+"'>"+id+"</td><td class=left><input type='hidden' id='xuhao' name='xmname' value='"+name+"'>"+name+"</td><td class=left><input type='hidden' id='xuhao' name='danwei' value='"+danwei+"'>"+danwei+"</td><td><input type='hidden' id='xuhao' name='danjia' value='"+danjia+"'>"+danjia+"</td><td><input type='hidden' id='xuhao' name='number' value='"+number+"'>"+number+"</td><td><input type='hidden' id='xuhao' name='jine' value='"+jine+"'>"+jine+"</td></tr>");
 		            flag = true;
 
 			        //清空上方数据
@@ -103,16 +103,18 @@ function sub(){
 	if($(".tab4 tr").length == 1){
 		return false;
 	}else{
-		var tableInfo = '';
-	 	var tableObj = document.getElementById('tab4');
-	 	for(var i = 0; i < tableObj.rows.length; i++) { //遍历Table的所有Row
-	  		for(var j = 0; j < tableObj.rows[i].cells.length; j++) { //遍历Row中的每一列
-	   			tableInfo += tableObj.rows[i].cells[j].innerText; //获取Table中单元格的内容
-	   			tableInfo += " ";
-	  		}
-	  		tableInfo += "\n";
+	 	var int = document.getElementsByTagName('input');
+	 	var hidArr = [];
+	 	var Arr = [];
+	 	for(var i=0;i<int.length;i++){
+	 		if(int[i].type == 'hidden'){
+	 			hidArr.push(int[i]);
+	 		}
 	 	}
-	 	alert(tableInfo);
+	 	/*for(var key in hidArr){
+	 		document.writeln(hidArr[key].value);
+	 	}*/
+	 	
 		$("form").submit();
 	}
 }
