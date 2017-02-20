@@ -2,6 +2,7 @@
  * Created by dark on 2017/1/10.
  */
 //测试结果记录弹出
+<<<<<<< HEAD
 $(".tztitle").click(function(){
     if($(".tzstyle").css('left')<'0px'){
         $(".tzstyle").animate({left:'1px',opacity:'1'},1000);
@@ -9,6 +10,24 @@ $(".tztitle").click(function(){
         $(".tzstyle").animate({left:'-400px',opacity:'0'},1000);
     }
 })
+=======
+//$(".tztitle").click(function(){
+//    if($(".tzstyle").css('left')<'0px'){
+//        $(".tzstyle").animate({left:'1px',opacity:'1'},1000);
+//    }else{
+//        $(".tzstyle").animate({left:'-400px',opacity:'0'},1000);
+//    }
+//})
+//鼠标划过结果记录弹出
+$(".tztitle").mouseover(function(){
+    if($(".tzstyle").css('left')<'0px'){
+        $(".tzstyle").animate({left:'1px',opacity:'1'},1000);
+    }
+})
+$(".tztitle").mouseout(function(){
+    $(".tzstyle").animate({left:'-400px',opacity:'0'},1000);
+})
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 //外部点击关闭
 //$(".report").click(function(){
 //    $(".tzstyle").animate({left:'-400px',opacity:'0'},1000);
@@ -73,4 +92,35 @@ $("#syt").click(function(){
             }
         }
     }
+<<<<<<< HEAD
+=======
+})
+//判断存在结果
+$(window).load(function(){
+    if($('#judge').html()==""){
+        $("#pinghez").html("平和质[体制1]");
+        $("#qixuz").html("气虚质[体制2]");
+        $("#yangxuz").html("阳虚质[体制3]");
+        $("#yinxuz").html("阴虚质[体制4]");
+        $("#tanshiz").html("痰湿质[体制5]");
+        $("#shirez").html("湿热质[体制6]");
+        $("#xueyuz").html("血瘀质[体制7]");
+        $("#qiyuz").html("气郁质[体制8]");
+        $("#tebingz").html("特禀质[体制9]");
+    }else{
+        $("#checkRes").click();
+    }
+    var a=1;
+    var sty=document.getElementsByClassName('sty2');
+    for(var j=0;j<sty.length+1;j++){
+        var xxn="xx"+a;
+        a++;
+        var xx=document.getElementsByName(xxn);
+        for(var i=0;i<xx.length;i++){
+            if(xx[i].checked){
+                $("#"+xxn).css("background-color","#d6faf6");
+            }
+        }
+    }
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 })

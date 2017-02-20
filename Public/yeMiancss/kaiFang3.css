@@ -12,7 +12,11 @@ body input[type=text]{color:#000!important;border:1px #DFD7D7 solid!important}
 .ka3youShangHanZi1{border:1px #FFFBF0 solid;height:60px;color:#8E852D}
 .ka3youShangHanZi2{height:40px;font-size:15px}
 .ka3youShangHanZi3{margin-left:50px;height:60px;width:300px;color:maroon}
+<<<<<<< HEAD
 .ka3xiaCeChuFang{float:left;height:50%;width:83%;overflow:auto;border-radius:5px;border:1px #DFD7D7 solid}
+=======
+.ka3xiaCeChuFang{float:left;height:47%;width:83%;overflow:auto;border-radius:5px;border:1px #DFD7D7 solid}
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 .ka3xiaCeChuFangZI{border:1px #FFFBF0 solid;width:600px;height:35px;margin-top:10px;text-align:center;font-size:20px}
 .ka1zuihouanniu{width:130px;text-align:center;float:left;margin-top:130px;font-size:20px;color:#8E852D}
 .chuFangHeBingtuichu{margin-top:10px}

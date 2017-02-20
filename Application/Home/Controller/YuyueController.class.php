@@ -29,6 +29,7 @@ class YuyueController extends Controller {
 	}
 	// 患者预约
     public function yuyue(){
+<<<<<<< HEAD
 		$station = M('station_p');
         $data = I('post.');//获取数据
         $station->data($data)->add();//添加数据
@@ -55,5 +56,22 @@ class YuyueController extends Controller {
   //       	}
   //       }
   //       dump($a);die;
+=======
+      $station = M('station_p');
+      // echo 1;die;
+      //判断是否是复诊
+      $br_id = I('post.br_id');
+      // 查出就诊几次
+      $pdfuzhen = $station->where("br_id=$br_id")->count();
+      // 加一为当前就诊次数
+      $dangqingjiuzhengcishu = $pdfuzhen+1;
+      // dump($dangqingjiuzhengcishu);die;
+      $data = I('post.');//获取数据
+      // dump($data);die;
+      $data['xh'] = $dangqingjiuzhengcishu;
+      // dump($data);die;
+      $station->data($data)->add();//添加数据
+      $this->redirect('Index/jiezhen');//重定向到接诊区
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
     }
 }

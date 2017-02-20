@@ -5,6 +5,10 @@ $(document).ready(function(){
     //$("#duo").css("width",$("#duo").parent('span').parent('td').css("width"));
 })
 //家庭史
+<<<<<<< HEAD
+=======
+//父亲选项
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 // 双击事件
 $("#yw1").dblclick(function(){
     $("#jtsFarinp").val($("#yw1").val());
@@ -28,6 +32,15 @@ $(".jtscheck").click(function(){
     }
     $("#jtsFarinp").val(jtsFarc);
 })
+<<<<<<< HEAD
+=======
+//母亲选项
+//双击事件
+//$("#yw2").dblclick(function(){
+//    $("#jtsFarinp").val($("#yw1").val());
+//    $(".jtsFar").toggle();
+//})
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 //过敏史
 // 双击事件
 $("#gms").dblclick(function(){

@@ -36,7 +36,10 @@ label{font-weight: 400!important;}
 .cxtable .table1 tr td{border-top:1px solid #CCCCCC;font-size:16px;}
 .cxtable .table1 tr:last-child{border-bottom:1px solid #CCCCCC;}
 .cxtable tr:first-child{background-color:#f0f0f0;color:#333333;}
+<<<<<<< HEAD
 .cxtable tr:first-child td{font-size:18px;}
+=======
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 .cxtable table .cxtr1{color:#000000;}
 .cxtable table .cxtr1:hover{background-color:rgba(134,190,248,0.5);}
 .cxtable table .cxtr2{background-color:rgba(0,96,197,0.5);color:#ffffff;}

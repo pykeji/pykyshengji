@@ -43,7 +43,11 @@
 				<label for="chuFangHeBing">处方合并</label>&nbsp;&nbsp;
 			</div>
 			<div class="anniuchuxuandingcifang" >
+<<<<<<< HEAD
 				<a href="{:U('Kaifang/zykf')}"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
+=======
+				<a href="{:U('Kaifang/zyhome')}"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 			</div>
 			<div class="qingchusoufudong">
 			</div>
@@ -55,6 +59,7 @@
 					病名
 				</th>
 			</tr>
+<<<<<<< HEAD
 			<tr onclick="dianjiyou(this)">
 				<td>
 					麻杏石甘汤
@@ -95,6 +100,15 @@
 					麻杏石甘汤
 				</td>
 			</tr>
+=======
+			<volist name="data" id="vo">
+			<tr onclick="dianjiyou(this)">
+				<td>
+					{$vo.name}
+				</td>
+			</tr>
+			</volist>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 			</table>
 		</div>
 		<!-- 右侧处方 -->

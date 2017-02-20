@@ -72,7 +72,11 @@
                         
                     <td>
                         <span data-toggle="modal" data-target="#myModal" name=""  class="ajaxxinxishuju" >详细信息</span>
+<<<<<<< HEAD
                         <a href='{:U("Index/jiankang",array("id"=>$vo[br_id]))}' ><span>就诊</span></a>
+=======
+                        <a href='{:U("Index/jiankang",array("id"=>$vo[br_id],"xh"=>$vo[xh]))}' ><span>就诊</span></a>
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                         <span data-toggle="modal" data-target="#myModal2" class="ajaxxiugaishuju">修改</span>
                         <span>收费</span>
                     </td>
@@ -243,6 +247,10 @@
             dataType:'json',
             success:function(dd)
             {
+<<<<<<< HEAD
+=======
+                // alert(dd);
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
                 // console.log(dd);
                 // 获取对应的病人基本信息
                 $br_id = dd[0]['br_id'];

@@ -20,7 +20,11 @@ body input[type=text]{color:#000!important;border:1px #DFD7D7 solid!important}
 .ka3YouShangDakuaiChuFang2{height:100%;overflow:auto;border-radius:5px;border:1px #DFD7D7 solid}
 .quxiaofudzysbiaoge{clear:both}
 .zhongyouxia{border-radius:5px;border:1px #DFD7D7 solid;float:left;width:80%;height:60%}
+<<<<<<< HEAD
 .ka3xiaCeChuFang{height:85%;width:100%;overflow:auto;border-radius:5px}
+=======
+.ka3xiaCeChuFang{height:77%;width:100%;overflow:auto;border-radius:5px}
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 .ka3xiaCeChuFangZI{border:1px #FFFBF0 solid;width:600px;height:35px;margin-top:10px;text-align:center;font-size:20px}
 .zhongyouanniu{float:left;margin-left:30px;margin-top:200px}
 .qingchuzhongyouanniu{clear:both}

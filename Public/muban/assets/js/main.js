@@ -21,7 +21,11 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/newsticker/jquery.news
 
 });
 
+<<<<<<< HEAD
 //------------------------------------------------------------- 
+=======
+//-------------------------------------------------------------
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 
 
 ////Acordion and Sliding menu
@@ -56,8 +60,13 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/slidebars/slidebars.mi
 head.js("http://localhost/zySystem/Public/muban/assets/js/search/jquery.quicksearch.js", function() {
 
     $('input.id_search').quicksearch('#menu-showhide li, .menu-left-nest li');
+<<<<<<< HEAD
    
    
+=======
+
+
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 
 });
 //-------------------------------------------------------------
@@ -168,7 +177,11 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/tip/jquery.tooltipster
 
 
 });
+<<<<<<< HEAD
 //------------------------------------------------------------- 
+=======
+//-------------------------------------------------------------
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 
 //NICE SCROLL
 
@@ -176,7 +189,11 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/tip/jquery.tooltipster
 head.js("http://localhost/zySystem/Public/muban/assets/js/nano/jquery.nanoscroller.js", function() {
 
     $(".nano").nanoScroller({
+<<<<<<< HEAD
         //stop: true 
+=======
+        //stop: true
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
         scroll: 'top',
         scrollTop: 0,
         sliderMinHeight: 40,
@@ -186,14 +203,22 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/nano/jquery.nanoscroll
     });
 
 });
+<<<<<<< HEAD
 //------------------------------------------------------------- 
+=======
+//-------------------------------------------------------------
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 
 
 
 
 
 
+<<<<<<< HEAD
 //------------------------------------------------------------- 
+=======
+//-------------------------------------------------------------
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 //PAGE LOADER
 
 head.js("http://localhost/zySystem/Public/muban/assets/js/pace/pace.js", function() {
@@ -209,7 +234,11 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/pace/pace.js", functio
 
 });
 
+<<<<<<< HEAD
 //------------------------------------------------------------- 
+=======
+//-------------------------------------------------------------
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 
 //SPARKLINE CHART
 head.js("http://localhost/zySystem/Public/muban/assets/js/chart/jquery.sparkline.js", function() {
@@ -274,7 +303,11 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/chart/jquery.sparkline
 
 });
 
+<<<<<<< HEAD
 //------------------------------------------------------------- 
+=======
+//-------------------------------------------------------------
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 
 //DIGITAL CLOCK
 head.js("http://localhost/zySystem/Public/muban/assets/js/clock/jquery.clock.js", function() {
@@ -289,7 +322,11 @@ head.js("http://localhost/zySystem/Public/muban/assets/js/clock/jquery.clock.js"
 });
 
 
+<<<<<<< HEAD
 //------------------------------------------------------------- 
+=======
+//-------------------------------------------------------------
+>>>>>>> 2c33002989b94e03d184eb00c0203b568881180a
 
 head.js("http://localhost/zySystem/Public/muban/assets/js/gage/raphael.2.1.0.min.js", "http://localhost/zySystem/Public/muban/assets/js/gage/justgage.js", function() {
 
