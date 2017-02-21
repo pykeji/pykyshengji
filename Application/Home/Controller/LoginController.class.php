@@ -44,7 +44,9 @@ class LoginController extends Controller {
         $User = M('user-info-dict');
         $pow = $User->where("id={$id}")->getField('power');
         $name = $Model->where("id={$pow}")->getField('name');
+        $phone = $User->where("id={$id}")->getField('userPhone');
         $this->assign('zhiwei',$name);
+        $this->assign('phone',$phone);
         $this->display('index/userHome');
     }
     //退出登录
