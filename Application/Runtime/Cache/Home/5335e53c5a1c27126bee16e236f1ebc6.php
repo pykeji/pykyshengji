@@ -21,7 +21,7 @@
 					<input id="bmtjchaxun" type="text"  class="form-control" placeholder="请输入病名" />
 					<span class="input-group-btn">
 					<button type="submit" class="btn btn-info btn-search">
-					<b style="color: #000000;">查找</b>
+					<b style="color: #000000;">没用的按钮</b>
 					</button>
 					</span>
 				</div>
@@ -29,10 +29,10 @@
 			<!-- 整形搜索 -->
 			<div class="zhengxingsousuo">
 				<div class="input-group ">
-					<input type="text"  class="form-control"placeholder="请输入证型名" />
+					<input id="zxzfchazhao" type="text"  class="form-control"placeholder="请输入证型名" />
 					<span class="input-group-btn">
 					<button class="btn btn-info btn-search">
-					<b style="color: #000000;">查找</b>
+					<b style="color: #000000;">没用的按钮</b>
 					</button>
 					</span>
 				</div>
@@ -75,7 +75,7 @@
 					处方名称
 				</th>
 			</tr>
-			<tr onclick="changeTrColor(this)">
+			<!-- <tr onclick="changeTrColor(this)">
 				<td style="text-align: center;">
 					<input type="checkbox" name="aa" value="jlk">
 				</td>
@@ -88,7 +88,7 @@
 				<td>
 					麻杏石甘汤
 				</td>
-			</tr>
+			</tr> -->
 			</table>
 		</div>
 		<div class="qingchuchufangfudong">
@@ -105,17 +105,19 @@
 		</div>
 		<!-- 下侧处方 -->
 		<div class="ka1xXiaceChufang">
-			<table>
 			<div class="ka1xXiacehanzi">
-				<strong>方剂名称:<尽量快圣诞节（爱思）></strong>
+				<strong >方剂名称:<span class="fuzhichufangmingcheng"></span></strong>
 			</div>
-			<div style="width: 700px;">
+			<div class="xiacechufangyaopin"></div>
+			<!-- <div style="width: 700px;">
 				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
 					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
 						1
 					</div>
 					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
+						<select style="width: 50px;" >
+							<?php if(is_array($yongfdata)): $i = 0; $__LIST__ = $yongfdata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$yongfavo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($yongfavo["code"]); ?>"><?php echo ($yongfavo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+						</select>
 					</div>
 					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
 						前胡
@@ -124,12 +126,11 @@
 						9.00克
 					</div>
 				</div>
-			</div>
-			</table>
+			</div> -->
 		</div>
 
 	</div>
-	<!-- 点击换色的js -->
+	<!-- 点击换色焕值的js -->
 	<script type="text/javascript">
 		// 左侧处方名点击变色
 		$(document).on("click",".sty1",function(){
@@ -140,8 +141,8 @@
 		        tsty1[i].className="sty1";
 		    }
 		    $(this).attr("class","sty2");
-		    var tjzuobingm =$(this).children('td').children('input').val();
 		    //ajax改变右侧值
+		    var tjzuobingm =$(this).children('td').children('input').val();
 		    $.ajax({
 			 	type:'POST',
 	            url:"<?php echo U('Kaifang/ajaxgaibiyouzhi');?>",
@@ -154,7 +155,7 @@
 	            	str = '<tr height="40"><th style="background-color:#fe9;text-align:center">选择</th><th style="background-color:#FE9;text-align:center">证型</th><th style="background-color:#FE9;text-align:center">治法</th><th style="background-color:#FE9;text-align:center">处方名称</th></tr>';
 	            	$.each(dd,function(idx,item){
 
-	            		str += '<tr onclick="changeTrColor(this)"><td style="text-align:center"><input type="checkbox" name="aa" value="jlk"></td><td>'+item.zx+'</td><td>'+item.zf+'</td><td>'+item.cf_name+'</td></tr>';
+	            		str += '<tr class="sty3" name="dotableSty"><td style="text-align:center"><input type="checkbox" name="aa" value="jlk"></td><td>'+item.zx+'</td><td>'+item.zf+'</td><td><span>'+item.cf_name+'</span><input type="hidden" class="xiazhengxinggai" value="'+item.cf_tree+'"></td></tr>';
 	                });
 	                $("#youcezhengxing").html(str);
 	            },
@@ -164,14 +165,44 @@
 			 });
 		});
 		// 右侧处方名点击变色
-		function changeTrColor(obj) {
-			// alert(56); 
-			var _table = obj.parentNode;
-			for (var i = 0; i < _table.rows.length; i++) {
-				_table.rows[i].style.backgroundColor = "";
-			}
-			obj.style.backgroundColor = "#3399FF";
-		}
+		$(document).on("click",".sty3",function(){
+			// 点击变色
+		    var tsty1=document.getElementsByName("dotableSty");
+		    // alert(tsty1.length);
+		    for(var i=0;i<tsty1.length;i++){
+		        tsty1[i].className="sty3";
+		    }
+		    $(this).attr("class","sty4");
+		    //ajax改变右侧值
+		    //获取cf_tree根据cf_tree获取处方
+		    var tjyouzhengxing =$(this).find("td:last").find("input").val();
+		    //获取处方名称
+		    var chufangmingcheng =$(this).find("td:last").find("span").html();
+		    // alert(chufangmingcheng);
+		    // 赋值
+		    $(".fuzhichufangmingcheng").html(chufangmingcheng);
+		    $.ajax({
+		    	type:'post',
+		    	url:"<?php echo U('Kaifang/ajaxgaibianchufang');?>",
+		    	data:{"tjyouzhengxing":tjyouzhengxing},
+		    	dataType:'json',
+		    	success:function(dd){
+		    		// alert(dd);
+		    		// console.log(dd);
+		    		// 处方名称
+		    		var str = '';
+		    		$.each(dd,function(idx,item){
+		    			// alert(item.drug_name);
+		    			str += '<div style="width:700px"><div style="float:left;margin:5px;border-radius:5px;width:150px;height:100px;border:1px #000 solid"><div style="border:1px #FFFBF0 solid;width:10px;position:relative;left:5px;top:5px;color:red">'+item.serial_no+'</div><div style="border:1px #000 solid;width:40px;border-width:0 0 1px 0;position:relative;left:100px;top:-10px">'+item.yf+'</div><div style="border:1px #000 solid;width:80px;border-width:0 0 1px 0;position:relative;left:10px;top:-5px;font-size:20px">'+item.drug_name+'</div><div style="border:1px #000 solid;width:70px;border-width:0 0 1px 0;position:relative;left:50px;top:0;text-align:right">'+item.sl+item.dw+'</div></div></div>';
+		    		});
+		    		$(".xiacechufangyaopin").html(str);
+		    	},
+		    	error:function(){
+		    		alert("链接ajax失败");
+		    	}
+		    });
+		    // alert(tjyouzhengxing);
+		});
 	</script>
 	<!-- 按病名查找 -->
 	<script type="text/javascript">
@@ -181,7 +212,7 @@
 			 $.ajax({
 			 	type:'POST',
 	            url:"<?php echo U('Kaifang/ajaxtjbm');?>",
-	            data:{tjbm:tjbm},
+	            data:{"tjbm":tjbm},
 	            dataType:'json',
 	            success:function(dd)
 	            {
@@ -191,14 +222,41 @@
 	            	$.each(dd,function(idx,item){
 	                //输出
 	                // alert(item.name);
-	              		str += '<tr class="sty1" name="tableSty"><td >'+item.name+'<input type="hidden" value="'+item.code+'">'+'</td></tr>';
+	              		str += '<tr class="sty1" name="tableSty"><td >'+item.name+'<input type="hidden" value="'+item.code+'"></td></tr>';
 	                });
 	            	$("#tjbmjieguo").html(str);
 	            },
 	            error:function(){
 	            	alert("链接ajax失败");
 	            }
-			 });
+			});
+		});
+	</script>
+	<!-- 按证型治法查找 -->
+	<script type="text/javascript">
+		$(document).on("input","#zxzfchazhao",function(){
+			// 病名的code
+			var tjbmzxzf = $(".sty2").children('td').children('input').val();
+			//证型治法的首字母
+			var zxzfjg = $(this).val();
+			$.ajax({
+				type:'post',
+				url:"<?php echo U('Kaifang/ajaxzhengxingzhif');?>",
+				data:{"tjbmzxzf":tjbmzxzf,"zxzfjg":zxzfjg},
+				dataType:'json',
+				success:function(dd){
+					str = '<tr height="40"><th style="background-color:#fe9;text-align:center">选择</th><th style="background-color:#FE9;text-align:center">证型</th><th style="background-color:#FE9;text-align:center">治法</th><th style="background-color:#FE9;text-align:center">处方名称</th></tr>';
+	            	$.each(dd,function(idx,item){
+
+	            		str += '<tr class="sty3" name="dotableSty"><td style="text-align:center"><input type="checkbox" name="aa" value="jlk"></td><td>'+item.zx+'</td><td>'+item.zf+'</td><td>'+item.cf_name+'<input type="hidden" value="'+item.cf_tree+'"></td></tr>';
+	                });
+	                $("#youcezhengxing").html(str);
+				},
+				error:function(){
+					alert("链接ajax失败");
+				}
+			});
+			// alert(tjzxzf);
 		});
 	</script>
 </body>

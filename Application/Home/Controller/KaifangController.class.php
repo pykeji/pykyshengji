@@ -4,9 +4,13 @@ use Think\Controller;
 class KaifangController extends Controller {
     public function bingMing(){
         $user = M("tcd_zybm");
-        $where['BM'] = '04';
+        $where['BM'] = '000';
         $data = $user->where($where)->distinct(true)->field('name,code')->select();
+        //二次链接数据库
+        // $douser = M("dict_usage");//别删
+        // $yongfdata = $douser->field('name,code')->select();//别删
         $this->assign('data',$data);
+        // $this->assign('yongfdata',$yongfdata);//别删
         $this->display();
     }
     //按病名查找
@@ -15,7 +19,7 @@ class KaifangController extends Controller {
         if(preg_match ("/^[a-z]/i", $tjbm)){
             $user = M("tcd_zybm");
             $where['BM_INPUT'] = array('like',"{$tjbm}%");
-            $where['BM'] = '04';
+            $where['BM'] = '000';
             $data = $user->where($where)->distinct(true)->field('name,code')->select();
             // $where['bm_input'] = array('like',"'$tjbm%'");
             // $data = $user->where("bm_input like '".$user."%' ")->field('name')->select();
@@ -24,7 +28,7 @@ class KaifangController extends Controller {
         }else{
             $user = M("tcd_zybm");
             $where['NAME'] = array('like',"{$tjbm}%");
-            $where['BM'] = '04';
+            $where['BM'] = '000';
             $data = $user->where($where)->distinct(true)->field('name,code')->select();
             // $where['bm_input'] = array('like',"'$tjbm%'");
             // $data = $user->where("bm_input like '".$user."%' ")->field('name')->select();
@@ -38,6 +42,29 @@ class KaifangController extends Controller {
         $user = M("tcd_zybm");
         $data = $user->where("CODE = {$tjzuobingm}")->field('zx,zf,cf_name,cf_tree')->select();
 
+        $this->ajaxReturn($data);
+    }
+    //ajax根据查询条件改变证型治法值
+    public function ajaxzhengxingzhif(){
+        $tjbmzxzf = I('post.tjbmzxzf');//接受ajax传过来的病名code条件
+        $zxzfjg = I('post.zxzfjg');//接受ajax传过来的条件
+        $user = M("tcd_zybm");
+        $where['ZX_INPUT'] = array('like',"{$zxzfjg}%");
+        $where['ZF_INPUT'] = array('like',"{$zxzfjg}%");
+        $where['_logic'] = 'or';
+        $map['_complex'] = $where;
+        $map['CODE'] = $tjbmzxzf;
+        // $where['_string'] = ' (ZX_INPUT like "{$zxzfjg}%")  OR ( ZF_INPUT like "{$zxzfjg}%") ';
+        $data = $user->where($map)->field('zx,zf,cf_name,cf_tree')->select();
+        $this->ajaxReturn($data);
+
+    }
+    //ajax改变下侧处方
+    public function ajaxgaibianchufang(){
+        $tjyouzhengxing = I('post.tjyouzhengxing');//接受ajax传过来的条件
+        $user = M("bz_cf");
+        $where['bz_cf.cfdm'] = $tjyouzhengxing;
+        $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')->select();
         $this->ajaxReturn($data);
     }
     public function zhengxing(){
