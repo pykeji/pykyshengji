@@ -16,5 +16,7 @@ body input[type=text]{border:1px #DFD7D7 solid!important;color:#000!important}
 .zhongjianhanziimg{margin-left:60px;width:30px}
 .zhongjianhanzichu{font-size:20px}
 .zhongjianhanzizhu{margin-left:10px;color:maroon}
-.ka1xXiaceChufang{overflow:auto;margin-left:60px;padding-left:20px;width:70%;height:55%;border:1px solid;border-radius:5px}
+.ka1xXiaceChufang{overflow:auto;margin-left:60px;padding-left:20px;width:70%;height:45%;border:1px solid;border-radius:5px}
 .ka1xXiacehanzi{margin-top:5px;width:600px;height:30px;text-align:center;font-size:20px}
+.sty1 td{color:#000000;}
+.sty2 td{background-color:#3399FF;}

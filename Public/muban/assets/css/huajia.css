@@ -42,7 +42,37 @@
 	background-repeat:no-repeat;
 	background-size:100%;
 }
-.top span{margin-left:6%;}
+.top span{margin-left:4.5%;}
+.top input[name="sf_blh"]{
+	width:120px;
+	border:none;
+	font-weight:bold;
+	background:none;
+}
+.top input[name="sf_brname"]{
+	width:70px;
+	border:none;
+	font-weight:bold;
+	background:none;
+}
+.top input[name="sf_brsex"]{
+	width:30px;
+	border:none;
+	font-weight:bold;
+	background:none;
+}
+.top input[name="sf_brnl"]{
+	width:30px;
+	border:none;
+	font-weight:bold;
+	background:none;
+}
+.top input[name="sf_brjzdate"]{
+	width:165px;
+	border:none;
+	font-weight:bold;
+	background:none;
+}
 .center{
 	width:90%;
 	height:380px;
@@ -69,6 +99,13 @@
 	font-weight:bold;
 }
 .tab1 tr td{ width:50%;}
+.tab1 input{
+	width:145px;
+	border:none;
+	font-weight:bold;
+	background:none;
+	color:#C63300;
+}
 .tab2{ 
 	width:100%; 
 	height:80px; 
@@ -138,7 +175,7 @@
 	height:260px;
 	margin-top:1%;
 }
-/*模态框*/
+/*模态框--退费*/
 #myModal{
 	width:100%;
 	height:100%;
@@ -181,9 +218,55 @@
 .modal-body-left-con{
 	float:left;
 	margin-top:2%;
-}
-.modal-body-left-con table{
 	width:100%;
+}
+.tab5{
+	width:100%;
+	height:100%;
+	text-align:center;
+	border-collapse:collapse;
+}
+.tab5 th{
+	height:30px;
+	background-color:#D3D3D3;
+	text-align:center;
+
+}
+.tab5 tr{
+	height:30px;
+}
+.tab5 td{
+	border-left:1px solid #333;
+	border-top:0px solid #333;
+	border-right:0px solid #333;
+	border-bottom:1px solid #333;
+}
+.tab6{
+	width:98%;
+	height:100%;
+	margin-left:1%;
+	text-align:center;
+	border-collapse:collapse;
+}
+.tab6 th{
+	height:30px;
+	background-color:#AA7700;
+	text-align:center;
+
+}
+.tab6 tr{
+	height:30px;
+}
+.tab6 td{
+	border-left:0px solid #333;
+	border-top:0px solid #333;
+	border-right:1px solid #333;
+	border-bottom:1px solid #333;
+}
+.tab6 .hj{
+	color:red;
+	text-align:right;
+	font-weight:bold;
 }
 .modal-body-right{
 	float:left;
@@ -219,4 +302,67 @@ input[name="exit"]{
 	color:#FFF;
 	font-weight:bold;
 	background:#C63300;
+} 
+.sty1{ 
+background: #F0F8FF; 
+} 
+.sty2{ 
+background: #AFEEEE; 
+}
+/*模态框--删除*/
+/*Confirm样式*/
+#Dshow{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.7);
+	display:none;
+}
+#Dshow .box{
+	width:300px;
+	height:145px;
+	background:#FFF;
+	border-radius:5px;
+	overflow:hidden;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-72px auto auto -150px;
+}
+#Dshow .box h3{
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	font-weight:bold;
+	font-family:"微软雅黑";
+	color:#000;
+	background:#DDAA00;
+	margin:0;
+	padding:0;
+	text-indent:0.8em;
+}
+#Dshow .box .info{
+	color:#FF3333;
+	text-align:center;
+	font-size:16px;
+	margin-top:15px;
+}
+#Dshow .box .btnX{
+	position:absolute;
+	bottom:10px;
+	left:0;
+	width:100%;
+	text-align:center;
+}
+#Dshow .box .btnX input[type="button"]{
+	background:#2a9bc5;
+	color:#FFF;
+	border:none;
+	outline:none;
+	height:30px;
+	line-height:24px;
+	width:80px;
+	margin:0px 5px;
 }

@@ -30,8 +30,8 @@ img{border:0px;}
 .jkda-table .day{width:16px;}
 /*家庭史*/
 .jtsFar{
-	position:absolute;background-color:#fff;width:250px;height:80px;top:360px;
-	left:400px;overflow:auto;display:none;border:1px solid #ccc;
+	position:absolute;background-color:#fff;width:250px;height:80px;
+	overflow:auto;display:none;border:1px solid #ccc;
 }
 .jtsFar label{display:block;}
 .jkda-table .chufang>div{padding-bottom:10px;width:100%;float:left;}
