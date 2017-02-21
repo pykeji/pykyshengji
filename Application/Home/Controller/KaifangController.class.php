@@ -67,8 +67,34 @@ class KaifangController extends Controller {
         $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')->select();
         $this->ajaxReturn($data);
     }
+    //证型治法页面
     public function zhengxing(){
+        $user = M("tcd_zybm");
+        $where['BM'] = '04';
+        $data = $user->where($where)->distinct(true)->field('name,zx,zf,cf_name,cf_tree')->select();
+        // dump($data);
+        $this->assign('data',$data);
         $this->display();
+    }
+    //ajax 页面2 按查询条件得出证型治法
+    public function yeerajaxzxzf(){
+        $yerzxzfjg = I('post.yerzxzfjg');//接受ajax传过来的条件
+        $user = M("tcd_zybm");
+        $where['ZX_INPUT'] = array('like',"{$yerzxzfjg}%");
+        $where['ZF_INPUT'] = array('like',"{$yerzxzfjg}%");
+        $where['_logic'] = 'or';
+        $map['_complex'] = $where;
+        $map['BM'] = "000";
+        $data = $user->where($map)->field('name,zx,zf,cf_name,cf_tree')->select();
+        $this->ajaxReturn($data);
+    }
+    //ajax 页面2处方赋值
+    public function yeerchufangfuzhi(){
+        $tjyouzhengxing = I('post.tjyouzhengxing');//接受ajax传过来的条件
+        $user = M("bz_cf");
+        $where['bz_cf.cfdm'] = $tjyouzhengxing;
+        $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')->select();
+        $this->ajaxReturn($data);
     }
     public function zhiLiaoZhinan(){
         $this->display();
