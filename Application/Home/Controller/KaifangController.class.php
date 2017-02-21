@@ -95,6 +95,11 @@ class KaifangController extends Controller {
         $this->display();
     }
     public function zyhome(){
+        $dict = M('bz_cf');
+        $where['bz_cf.cfdm'] = '1413.1001';
+        $data = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw')->select();
+        // dump($data);die;
+        $this->assign('zy_yp',$data);
         $this->display();
     }
 }

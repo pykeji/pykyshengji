@@ -662,5 +662,6 @@
 //    main.js结束
 </script>
 <?php }else{ ?>
-    <h1><a href="<?php echo U('index/index');?>">滚去登录去</a></h1>
+
+    <center>    <h1><a href="<?php echo U('index/index');?>">请登录</a></h1></center>
 <?php } ?>
