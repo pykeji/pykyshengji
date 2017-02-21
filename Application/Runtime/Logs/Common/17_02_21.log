@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [ 2017-02-21T08:26:37+08:00 ] ::1 /zySystem/Public/muban/assets/css/bootstrap.css.map
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
@@ -446,5 +447,11 @@ ERR: 无法加载模块:Public
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+=======
+[ 2017-02-21T08:11:57+08:00 ] ::1 /zySystem/Public/muban/assets/fonts/open-sans-bold.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+>>>>>>> 7dcc1c4ccb3264032b44b697b28a775f4c9f51ea
 ERR: 无法加载模块:Public
 

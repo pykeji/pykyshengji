@@ -72,12 +72,38 @@ body input{
 	color:#000;
 	float:left;
 }
+#xybmspan{
+	font-size:20px;
+}
+#xybmtext{
+	width:120px;
+}
+#fangk{
+	overflow-y:scroll;
+	height:300px;
+}
+.westtr{
+	cursor:pointer;
+}
+#footmt{
+	height:60px;
+}
+#a123{
+	font-size:15px!important; 
+}
 #bzy{
 	width:70%;
 	height:10%;
 	border:1px solid #000;
 	float:left;
 	margin-top: 5px;
+}
+#xybm1{
+	float:right;
+	font-size:20px;
+	font-weight:normal;
+	margin-right:10px;
+	margin-top:5px;
 }
 #bztext{
 	width:100%;
@@ -92,6 +118,7 @@ body input{
 	margin-top:26px;
 	margin-right:60px;
 	font-size:16px!important;
+	display:none;
 }
 #ys{
 	float:right;
@@ -100,6 +127,9 @@ body input{
 	margin-top:26px;
 	margin-right:25px;
 	font-size:16px!important;
+}
+#yscon{
+	height:300px;
 }
 .tr2>:first-child{
 	background-color:#E57976;
