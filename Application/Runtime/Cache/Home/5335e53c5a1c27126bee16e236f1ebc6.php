@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<!-- 自己写的css -->
 	
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="__PUBLIC__/jq/jquery-3.1.1.min.js"></script>
+    <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="__PUBLIC__/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/yeMiancss/kaiFang1.css">
-    <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/zySystem/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang1.css">
+    <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<div style="height:100%; width:100%; min-width: 1050px;">
@@ -43,7 +43,7 @@
 				<label for="chuFangHeBing">处方合并</label>&nbsp;&nbsp;
 			</div>
 			<div class="anniuchuxuandingcifang" >
-				<a href="{:U('Kaifang/zyhome')}"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
+				<a href="<?php echo U('Kaifang/zyhome');?>"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
 			</div>
 			<div class="qingchusoufudong">
 			</div>
@@ -55,9 +55,7 @@
 					病名
 				</th>
 			</tr>
-			<volist name="data" id="vo">
-				<tr class="sty1" name="tableSty"><td>{$vo.name}<input type="hidden" value="{$vo.code}"></td></tr>
-			</volist>
+			<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="sty1" name="tableSty"><td><?php echo ($vo["name"]); ?><input type="hidden" value="<?php echo ($vo["code"]); ?>"></td></tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
 		</div>
 		<!-- 右侧处方 -->
@@ -97,7 +95,7 @@
 		</div>
 		<!-- 中间汉字 -->
 		<div class="zhongjianhanzi">
-			<img src="__PUBLIC__/img/iconpng.png" class="zhongjianhanziimg" alt="图片加载中。。。。">
+			<img src="/zySystem/Public/img/iconpng.png" class="zhongjianhanziimg" alt="图片加载中。。。。">
 			<span class="zhongjianhanzichu">
 			<b>处方信息</b>
 			</span>
@@ -118,9 +116,7 @@
 					</div>
 					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
 						<select style="width: 50px;" >
-							<volist name="yongfdata" id="yongfavo">
-							<option value="{$yongfavo.code}">{$yongfavo.name}</option>
-							</volist>
+							<?php if(is_array($yongfdata)): $i = 0; $__LIST__ = $yongfdata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$yongfavo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($yongfavo["code"]); ?>"><?php echo ($yongfavo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 						</select>
 					</div>
 					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
@@ -149,7 +145,7 @@
 		    var tjzuobingm =$(this).children('td').children('input').val();
 		    $.ajax({
 			 	type:'POST',
-	            url:"{:U('Kaifang/ajaxgaibiyouzhi')}",
+	            url:"<?php echo U('Kaifang/ajaxgaibiyouzhi');?>",
 	            data:{"tjzuobingm":tjzuobingm},
 	            dataType:'json',
 	            success:function(dd)
@@ -187,7 +183,7 @@
 		    $(".fuzhichufangmingcheng").html(chufangmingcheng);
 		    $.ajax({
 		    	type:'post',
-		    	url:"{:U('Kaifang/ajaxgaibianchufang')}",
+		    	url:"<?php echo U('Kaifang/ajaxgaibianchufang');?>",
 		    	data:{"tjyouzhengxing":tjyouzhengxing},
 		    	dataType:'json',
 		    	success:function(dd){
@@ -215,7 +211,7 @@
 			// alert(tjbm);
 			 $.ajax({
 			 	type:'POST',
-	            url:"{:U('Kaifang/ajaxtjbm')}",
+	            url:"<?php echo U('Kaifang/ajaxtjbm');?>",
 	            data:{"tjbm":tjbm},
 	            dataType:'json',
 	            success:function(dd)
@@ -245,7 +241,7 @@
 			var zxzfjg = $(this).val();
 			$.ajax({
 				type:'post',
-				url:"{:U('Kaifang/ajaxzhengxingzhif')}",
+				url:"<?php echo U('Kaifang/ajaxzhengxingzhif');?>",
 				data:{"tjbmzxzf":tjbmzxzf,"zxzfjg":zxzfjg},
 				dataType:'json',
 				success:function(dd){
