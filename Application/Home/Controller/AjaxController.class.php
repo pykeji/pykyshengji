@@ -14,8 +14,14 @@ class AjaxController extends Controller {
       }
       public function drugWest($htm){
         $durg = M('drug_dict');
-        $where['input_code'] = array('like',"{$htm}%");
-        $list = $durg->where($where)->field('drug_name')->select();
+        if(preg_match("/^[a-z]/i", $htm)){
+          $where['input_code'] = array('like',"{$htm}%");
+          $list = $durg->where($where)->field('drug_name')->select();
+      }else{
+          $where2['drug_name'] = array('like',"{$htm}%");
+          $list = $durg->where($where2)->field('drug_name')->select();
+      }
+       
         $this->ajaxReturn($list);
       }
       public function sele(){
@@ -121,5 +127,38 @@ class AjaxController extends Controller {
           $list = $xy->where($where)->select();
         };
          $this->ajaxReturn($list);
+      }
+
+      //用户密码重置
+      
+      public function reset(){
+        $id = $_POST[id];
+        $user = M('user-info-dict');
+        $data['passWord'] = '123456';
+        $user->where("id=$id")->save($data);
+        $this->ajaxReturn(1);
+      }
+
+      //个人信息修改
+      public function updateU(){
+        $id = $_POST[id];
+        $user = M('user-info-dict');
+        $list = $user->where("id=$id")->find();
+        $this->ajaxReturn($list);
+      }
+
+      //信息修改操作
+      public function updateUser(){
+        $id = $_POST[id];
+        $name = $_POST[name];
+        $phone = $_POST[phone];
+        $pass = $_POST[pass];
+        $user = M('user-info-dict');
+        $data['userName'] = $name;
+        $data['userPhone'] = $phone;
+        $data['passWord'] = $pass;
+        $user->where("id=$id")->save($data);
+        $this->ajaxReturn(1);
+
       }
 }

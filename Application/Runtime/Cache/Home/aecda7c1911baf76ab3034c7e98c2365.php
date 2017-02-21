@@ -250,4 +250,9 @@
 	</div>
 </div>
 	</body>
+	<script type="text/javascript">
+		$(function(){
+			alert(1);
+		});
+	</script>
 </html>

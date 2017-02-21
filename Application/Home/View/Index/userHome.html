@@ -1,15 +1,15 @@
-<?php if (!defined('THINK_PATH')) exit();?><!-- <h2>用户id是：<b>
-	<?php echo $_SESSION['wh_userId']; ?>
+<!-- <h2>用户id是：<b>
+	<php>echo $_SESSION['wh_userId'];</php>
 </b></h2><h2>所属机构编码是：<b>
-	<?php echo $_SESSION['wh_code']; ?>
+	<php>echo $_SESSION['wh_code'];</php>
 </b></h2><h2>职位是：<b>
-	<?php echo $zhiwei; ?> -->
-    <!-- <?php dump($_SESSION); ?> -->
+	<php>echo $zhiwei;</php> -->
+    <!-- <php>dump($_SESSION);</php> -->
 </b></h2>
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" href="/zySystem/Public/css/bootstrap.css">
-<link rel="stylesheet" href="/zySystem/uploadify/uploadify.css">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.css">
+<link rel="stylesheet" href="__ROOT__/uploadify/uploadify.css">
 <style type="text/css">
     #left{
         width:35%;
@@ -47,7 +47,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel2">个人信息修改</h4>
             </div>
-            <form action="<?php echo U('User/uploadinfo');?>" method="post">
+            <form action="{:U('User/uploadinfo')}" method="post">
             <div class="modal-body" id="yscon" style="height:300px;">
               <b>姓　　名：</b><input type="text" value="" id="namein" class="text"><br/>
               <b>联系方式：</b><input type="text" value="" id="phonein" class="text"><br/>
@@ -64,30 +64,30 @@
 </div></div>
             <!-- 模态结束 -->
 
-<!-- <?php $day = date('ymd'); ?> -->
-   <!--  <img id="img" src="<?php echo '/zySystem/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>" width="130" height="130" border="0" />
+<!-- <php>$day = date('ymd');</php> -->
+   <!--  <img id="img" src="<?php echo '__ROOT__/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>" width="130" height="130" border="0" />
     <input id="file_upload" name="file_upload" type="file" multiple="true" value="" /> -->
     
-   <!--  <h1><?php echo $_SESSION['wh_userName'] ?>的个人信息</h1>
-    <b>用户姓名：</b><input type="text" value="<?php echo $_SESSION['wh_userName']; ?>"><br/>
-    <b>所属机构：</b><input type="text" value="<?php echo $_SESSION['wh_code']; ?>"><br/>
-    <b>职　　位：</b><input type="text" value="<?php echo $zhiwei; ?>"><br/>
-    <b>联系方式：</b><input type="text" value="<?php echo $phone; ?>"><br/>
-    <b>您的头像：</b><img id="img" src="<?php echo '/zySystem/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>" width="130" height="130" border="0" />  -->
+   <!--  <h1><php>echo $_SESSION['wh_userName']</php>的个人信息</h1>
+    <b>用户姓名：</b><input type="text" value="<php>echo $_SESSION['wh_userName'];</php>"><br/>
+    <b>所属机构：</b><input type="text" value="<php>echo $_SESSION['wh_code'];</php>"><br/>
+    <b>职　　位：</b><input type="text" value="<php>echo $zhiwei;</php>"><br/>
+    <b>联系方式：</b><input type="text" value="<php>echo $phone;</php>"><br/>
+    <b>您的头像：</b><img id="img" src="<?php echo '__ROOT__/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>" width="130" height="130" border="0" />  -->
     <center>
     <div id="left">
-        <div class="lediv"><?php echo $_SESSION['wh_userName'] ?>的个人信息</div>
-        <input type="hidden" value="<?php echo $_SESSION['wh_userId'] ?>" id="hid">
-        <div class="lediv"><b>用户姓名：</b><input type="text" value="<?php echo $_SESSION['wh_userName']; ?>" readonly="readonly"></div>
-        <div class="lediv"><b>所属机构：</b><input type="text" value="<?php echo $_SESSION['wh_code']; ?>" readonly="readonly"></div>
-        <div class="lediv"><b>职　　位：</b><input type="text" value="<?php echo $zhiwei; ?>" readonly="readonly"></div>
-        <div class="lediv"><b>联系方式：</b><input type="text" value="<?php echo $phone; ?>" readonly="readonly"></div>
+        <div class="lediv"><php>echo $_SESSION['wh_userName']</php>的个人信息</div>
+        <input type="hidden" value="<php>echo $_SESSION['wh_userId']</php>" id="hid">
+        <div class="lediv"><b>用户姓名：</b><input type="text" value="<php>echo $_SESSION['wh_userName'];</php>" readonly="readonly"></div>
+        <div class="lediv"><b>所属机构：</b><input type="text" value="<php>echo $_SESSION['wh_code'];</php>" readonly="readonly"></div>
+        <div class="lediv"><b>职　　位：</b><input type="text" value="<php>echo $zhiwei;</php>" readonly="readonly"></div>
+        <div class="lediv"><b>联系方式：</b><input type="text" value="<php>echo $phone;</php>" readonly="readonly"></div>
         <br/>
         <div class="lediv"><button class="btn btn-primary btn-lg" id="update" data-toggle='modal' data-target='#myModal2' name=''  type="button">修改个人信息</button></div>
     </div>
     <div id="right">
         <div class="lediv">用户头像</div>
-        <img id="img" src="<?php echo '/zySystem/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>" width="160" height="160" border="0" />
+        <img id="img" src="<?php echo '__ROOT__/Uploads/'.$_SESSION['wh_patha'].'/'.$_SESSION['wh_photo']; ?>" width="160" height="160" border="0" />
         <br/><br/>
          <input id="file_upload" name="file_upload" type="file" multiple="true" value="" /><br/>
          <button class="btn btn-danger btn-lg" id="mmcz">密码重置</button>
@@ -102,18 +102,18 @@
 	<!---->
 </body>
 
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
-<script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="/zySystem/uploadify/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
+<js file='__ROOT__/uploadify/jquery.uploadify.min.js'/>
 <script type="text/javascript">
 //上传插件
 $(function() {
     $('#file_upload').uploadify({
-        'swf'      : '/zySystem/uploadify/uploadify.swf',
-        'uploader' : '<?php echo U("News/uploadify");?>',
+        'swf'      : '__ROOT__/uploadify/uploadify.swf',
+        'uploader' : '{:U("News/uploadify")}',
         'buttonText' : '点击修改',
         'onUploadSuccess' : function(file, data, response) {
-            $('#img').attr('src','/zySystem/Uploads/'+ data);
+            $('#img').attr('src','__ROOT__/Uploads/'+ data);
             $('#images').val(data);
         },
     });
@@ -123,7 +123,7 @@ $('#mmcz').click(function(){
         var id = $('#hid').val();
         $.ajax({
             type:'POST',
-            url:"<?php echo U('Ajax/reset');?>",
+            url:"{:U('Ajax/reset')}",
             data:{id:id},
             dataType:'json',
             success:function(dd)
@@ -146,7 +146,7 @@ $('#mmcz').click(function(){
         var id = $('#hid').val();
         $.ajax({
             type:'POST',
-            url:"<?php echo U('Ajax/updateU');?>",
+            url:"{:U('Ajax/updateU')}",
             data:{id:id},
             dataType:'json',
             success:function(dd)
@@ -185,12 +185,12 @@ $('#mmcz').click(function(){
 
         $.ajax({
             type:'POST',
-            url:"<?php echo U('Ajax/updateUser');?>",
+            url:"{:U('Ajax/updateUser')}",
             data:{id:id,name:name,phone:phone,pass:pass},
             dataType:'json',
             success:function(dd)
             {
-                alert(dd);
+               
             },
             error:function()
             {
