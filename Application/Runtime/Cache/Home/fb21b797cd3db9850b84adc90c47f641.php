@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>患者查询</title>
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/zySystem/Public/css/chaxun.css">
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zysystem/Public/css/chaxun.css">
 
     <!-- 分页效果 -->
-    <link href="/zySystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
+    <link href="/zysystem/Public/css/mypage.css" rel="stylesheet" type="text/css"/>
 
     <!-- 别删开始 -->
 
    
     <!-- Le styles -->
 
-    <!-- <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/style.css"> -->
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/loader-style.css">
+    <!-- <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/style.css"> -->
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/css/loader-style.css">
 
 
-    <link href="/zySystem/Public/muban/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
-    <link href="/zySystem/Public/muban/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
-    <link href="/zySystem/Public/muban/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
+    <link href="/zysystem/Public/muban/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css">
+    <link href="/zysystem/Public/muban/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css">
+    <link href="/zysystem/Public/muban/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
-    <link rel="stylesheet" href="/zySystem/Public/muban/assets/js/dataTable/css/datatables.responsive.css">
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="/zysystem/Public/muban/assets/js/dataTable/css/datatables.responsive.css">
     <!-- 别删结束 -->
 </head>
 <!-- 阻止右键 -->
@@ -36,7 +36,7 @@
     <form action="<?php echo U('Index/chaxun');?>"  method="post">
     <div class="chaxun center">
         <div>
-            <img src="/zySystem/Public/img/chaxun.png" alt="图片加载失败！">
+            <img src="/zysystem/Public/img/chaxun.png" alt="图片加载失败！">
         </div>
         <div class="cxfont">
             查询条件:
@@ -182,20 +182,20 @@
     </div><!-- /.modal -->
 </div>
 
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
-    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
+    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zysystem/Public/js/jeDate/jedate.js"></script>
     <!-- 别删开始 -->
-    <!-- <script type="text/javascript" src="/zySystem/Public/muban/assets/js/preloader.js"></script> -->
-    <!-- <script type="text/javascript" src="/zySystem/Public/muban/assets/js/app.js"></script> -->
-    <!-- <script type="text/javascript" src="/zySystem/Public/muban/assets/js/load.js"></script> -->
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/main.js"></script>
-    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/toggle_close.js"></script>
-    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
-    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
-    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
-    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
-    <script src="/zySystem/Public/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+    <!-- <script type="text/javascript" src="/zysystem/Public/muban/assets/js/preloader.js"></script> -->
+    <!-- <script type="text/javascript" src="/zysystem/Public/muban/assets/js/app.js"></script> -->
+    <!-- <script type="text/javascript" src="/zysystem/Public/muban/assets/js/load.js"></script> -->
+    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/main.js"></script>
+    <script type="text/javascript" src="/zysystem/Public/muban/assets/js/toggle_close.js"></script>
+    <script src="/zysystem/Public/muban/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zysystem/Public/muban/assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zysystem/Public/muban/assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zysystem/Public/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/zysystem/Public/muban/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
 
 
     <script type="text/javascript">
@@ -246,8 +246,8 @@
     <!-- 别删结束 -->
 </body>
 </html>
-<script src="/zySystem/Public/js/shijian.js"></script>
-<script src="/zySystem/Public/js/tr.js"></script>
+<script src="/zysystem/Public/js/shijian.js"></script>
+<script src="/zysystem/Public/js/tr.js"></script>
 <script type="text/javascript">
     $(".ajaxChaXiangxi").click(function(){
         $id = $(this).parent().parent().find(".ajaxChacanshu").val();

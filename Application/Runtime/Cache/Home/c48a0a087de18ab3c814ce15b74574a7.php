@@ -5,7 +5,7 @@
 	<title>我的文档</title>
 </head>
 <frameset cols="22%,*">
-	<frame src="/zySystem/index.php/Home/Mynote/mllist" scrolling="No" noresize="noresize" id="leftTree">
-	<frame src="/zySystem/index.php/Home/Mynote/rpro" scrolling="No" noresize="noresize" id="rightTree" name="right">
+	<frame src="/zysystem/index.php/Home/Mynote/mllist" scrolling="No" noresize="noresize" id="leftTree">
+	<frame src="/zysystem/index.php/Home/Mynote/rpro" scrolling="No" noresize="noresize" id="rightTree" name="right">
 </frameset>
 </html>

@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang='en'>
 	<head>
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>《黄帝内经》</title>
-        <link rel="shortcut icon" href="__PUBLIC__/book/minus.png" type="images/x-icon"/>
-        <link rel="stylesheet" href="__PUBLIC__/book/mkcommon.css">
-        <script src="__PUBLIC__/book/jquery-1.11.3.min.js"></script>    
-        <link rel="stylesheet" href="__PUBLIC__/book/mkcatalogue.css">
-        <link rel="stylesheet" href="__PUBLIC__/book/mkheader.css">  
-        <script src="__PUBLIC__/book/mkcatalogue.js"></script>
+        <link rel="shortcut icon" href="/zysystem/Public/book/minus.png" type="images/x-icon"/>
+        <link rel="stylesheet" href="/zysystem/Public/book/mkcommon.css">
+        <script src="/zysystem/Public/book/jquery-1.11.3.min.js"></script>    
+        <link rel="stylesheet" href="/zysystem/Public/book/mkcatalogue.css">
+        <link rel="stylesheet" href="/zysystem/Public/book/mkheader.css">  
+        <script src="/zysystem/Public/book/mkcatalogue.js"></script>
         <style>
             .red{color:red;}
             .blue{color:blue;}

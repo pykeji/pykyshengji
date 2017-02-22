@@ -34,10 +34,10 @@ function ees(){
 </script>
 <body>
 	<br><br><br><br>
-	<form action="/zySystem/index.php/Home/Mynote/mlsubmit" method="post" id="fr">
+	<form action="/zysystem/index.php/Home/Mynote/mlsubmit" method="post" id="fr">
 		目录名称:<input type="text" name="element" class="ml"><br><br>
 		<input type="button" value="保存" class="subm" onclick="ees()">&emsp;
-		<a href="/zySystem/index.php/Home/Mynote/rpro">
+		<a href="/zysystem/index.php/Home/Mynote/rpro">
 			<input type="button" value="返回" class="subm">
 		</a>
 	</form>

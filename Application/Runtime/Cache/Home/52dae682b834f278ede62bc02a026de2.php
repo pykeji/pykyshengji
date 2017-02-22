@@ -1,9 +1,9 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 	<head>
-	<link rel="stylesheet" href="/zySystem/Public/css/xykf.css">
-	<link rel="stylesheet" href="/zySystem/Public/css/bootstrap.css">
-	<script type="text/javascript" src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="/zySystem/Public/js/xykf.js"></script>
+	<link rel="stylesheet" href="/zysystem/Public/css/xykf.css">
+	<link rel="stylesheet" href="/zysystem/Public/css/bootstrap.css">
+	<script type="text/javascript" src="/zysystem/Public/jq/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/js/xykf.js"></script>
 	<style type="text/css">
 		html,body{
 			height:100%;

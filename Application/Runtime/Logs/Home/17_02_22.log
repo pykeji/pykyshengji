@@ -1,0 +1,1257 @@
+[ 2017-02-22T08:03:39+08:00 ] ::1 /zysystem/index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.039002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.053003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.040003s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.041003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.332019s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.332019s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.017001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.017001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.034002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.034002s ]
+
+[ 2017-02-22T08:04:13+08:00 ] ::1 /zysystem/index.php/Home/Login/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user-info-dict` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `user-info-dict` WHERE `userName` = '单志辉' AND `passWord` = '123456' LIMIT 1   [ RunTime:0.0070s ]
+
+[ 2017-02-22T08:04:13+08:00 ] ::1 /zysystem/index.php/Home/index/home/rev/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: wh_patha D:\www\zySystem\Application\Runtime\Cache\Home\39b332e5f8883cb2938d6d989e0f6c27.php 第 51 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:04:14+08:00 ] ::1 /zysystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `station_p` WHERE ( jz_flag=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flag=1 ) ORDER BY p_date desc LIMIT 0,9   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.225013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.225013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:04:16+08:00 ] ::1 /zysystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `station_p` WHERE ( jz_flag=1 ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flag=1 ) ORDER BY p_date desc LIMIT 0,9   [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:05:48+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '' )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.0030s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined offset: 20170222 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 41 行.
+SQL: SELECT DISTINCT  `invoice_no` FROM `g_outp_bill_item` WHERE ( CLINIC_NUM = '' )  [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant invoice_no - assumed 'invoice_no' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+SQL: SELECT * FROM `g_outp_bill_item` WHERE ( invoice_no = '' )  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 57 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 58 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 59 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 60 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:11:45+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.1740s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '' )  [ RunTime:0.3110s ]
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.1150s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.1530s ]
+NOTIC: [8] Undefined offset: 20170222 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 41 行.
+SQL: SELECT DISTINCT  `invoice_no` FROM `g_outp_bill_item` WHERE ( CLINIC_NUM = '' )  [ RunTime:0.3150s ]
+NOTIC: [8] Use of undefined constant invoice_no - assumed 'invoice_no' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+SQL: SELECT * FROM `g_outp_bill_item` WHERE ( invoice_no = '' )  [ RunTime:0.0550s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 57 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 58 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 59 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 60 行.
+NOTIC: [8] Undefined offset: 0 D:\www\zySystem\Application\Runtime\Cache\Home\d5183275e68d4315b3dfc3ee5ca89da9.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:16:49+08:00 ] ::1 /zysystem/index.php/Home/Index/chaxun.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: a D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [8] Undefined variable: b D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [2] array_combine() expects parameter 1 to be array, null given D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+SQL: SELECT * FROM `station_p` WHERE `p_date` BETWEEN ' 00:00:00' AND ' 23:59:59'  [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-02-22T08:16:58+08:00 ] ::1 /zysystem/index.php/Home/Index/chaxun.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: a D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [8] Undefined variable: b D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [2] array_combine() expects parameter 1 to be array, null given D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+SQL: SELECT * FROM `station_p` WHERE `p_date` BETWEEN '2017-02-01 00:00:00' AND '2017-02-22 23:59:59'  [ RunTime:0.0070s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:17:56+08:00 ] ::1 /zysystem/index.php/Home/Index/chaxun.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: a D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [8] Undefined variable: b D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [2] array_combine() expects parameter 1 to be array, null given D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+SQL: SELECT * FROM `station_p` WHERE `p_date` BETWEEN '2017-02-01 00:00:00' AND '2017-02-22 23:59:59'  [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:20:52+08:00 ] ::1 /zysystem/index.php/Home/Index/chaxun.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined variable: a D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [8] Undefined variable: b D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+NOTIC: [2] array_combine() expects parameter 1 to be array, null given D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 291 行.
+SQL: SELECT * FROM `station_p` WHERE `p_date` BETWEEN '2017-02-01 00:00:00' AND '2017-02-22 23:59:59'  [ RunTime:0.0110s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 103 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Runtime\Cache\Home\fb21b797cd3db9850b84adc90c47f641.php 第 104 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:21:11+08:00 ] ::1 /zysystem/index.php/Home/Index/dengji/id/2017022000001/xh/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id=2017022000001 and xh=2 )  [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-02-22T08:21:17+08:00 ] ::1 /zysystem/index.php/Home/Index/jiankang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `station_p` WHERE ( br_id=2017022000001 ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: INSERT INTO `station_p` (`br_id`,`br_name`,`xb`,`nl`,`cs_date`,`pass`,`tel`,`fax`,`e_mail`,`ghf`,`p_date`,`dw`,`jz_date`,`xh`) VALUES ('2017022000001','廿十','男','20','1997-02-18 00:00:00','','','','','2.00','2017-02-22 08:21:16','','2017-02-22 08:21:16','3') [ RunTime:0.0420s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 332 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 333 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Home\Controller\IndexController.class.php 第 349 行.
+SQL: SELECT * FROM `station_p` WHERE ( br_id=2017022000001 and xh=3 )  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:21:20+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '2017022000001' )  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.0030s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 20170222 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 41 行.
+SQL: SELECT DISTINCT  `invoice_no` FROM `g_outp_bill_item` WHERE ( CLINIC_NUM = '2017022000001' )  [ RunTime:0.0030s ]
+NOTIC: [8] Use of undefined constant invoice_no - assumed 'invoice_no' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+SQL: SELECT * FROM `g_outp_bill_item` WHERE ( invoice_no = '2017022000002' )  [ RunTime:0.0030s ]
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-02-22T08:21:27+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '2017022000001' )  [ RunTime:0.0040s ]
+NOTIC: [8] Use of undefined constant BILL_CODE - assumed 'BILL_CODE' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 14 行.
+NOTIC: [8] Use of undefined constant ITEM_CODE - assumed 'ITEM_CODE' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 15 行.
+NOTIC: [8] Use of undefined constant CLINIC_NUM - assumed 'CLINIC_NUM' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 16 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 17 行.
+NOTIC: [8] Use of undefined constant CHARGE_DAT - assumed 'CHARGE_DAT' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 19 行.
+NOTIC: [8] Use of undefined constant UNIT_PRICE - assumed 'UNIT_PRICE' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 20 行.
+NOTIC: [8] Use of undefined constant AMOUNT - assumed 'AMOUNT' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 21 行.
+NOTIC: [8] Use of undefined constant UNITS - assumed 'UNITS' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant TOTAL - assumed 'TOTAL' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 23 行.
+NOTIC: [8] Use of undefined constant OPERATOR_CODE - assumed 'OPERATOR_CODE' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 24 行.
+NOTIC: [8] Use of undefined constant BILL_STATUS - assumed 'BILL_STATUS' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 25 行.
+NOTIC: [8] Use of undefined constant SERIAL_NO - assumed 'SERIAL_NO' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant RETURN_DATE - assumed 'RETURN_DATE' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant INVOICE_NO - assumed 'INVOICE_NO' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 28 行.
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.0030s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined offset: 20170222 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 41 行.
+SQL: SELECT DISTINCT  `invoice_no` FROM `g_outp_bill_item` WHERE ( CLINIC_NUM = '2017022000001' )  [ RunTime:0.0030s ]
+NOTIC: [8] Use of undefined constant invoice_no - assumed 'invoice_no' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+SQL: SELECT * FROM `g_outp_bill_item` WHERE ( invoice_no = '2017022000002' )  [ RunTime:0.0120s ]
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:21:30+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '2017022000001' )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.0030s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 20170222 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 41 行.
+SQL: SELECT DISTINCT  `invoice_no` FROM `g_outp_bill_item` WHERE ( CLINIC_NUM = '2017022000001' )  [ RunTime:0.0040s ]
+NOTIC: [8] Use of undefined constant invoice_no - assumed 'invoice_no' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+SQL: SELECT * FROM `g_outp_bill_item` WHERE ( invoice_no = '2017022000002' )  [ RunTime:0.0030s ]
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-02-22T08:22:55+08:00 ] ::1 /zysystem/index.php/Home/Huajia/huajia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `station_p` WHERE ( br_id = '2017022000001' )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `g_outp_bill_item` [ RunTime:0.0030s ]
+SQL: SELECT `invoice_no` FROM `g_outp_bill_item`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined offset: 20170222 D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 41 行.
+SQL: SELECT DISTINCT  `invoice_no` FROM `g_outp_bill_item` WHERE ( CLINIC_NUM = '2017022000001' )  [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant invoice_no - assumed 'invoice_no' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 65 行.
+SQL: SELECT * FROM `g_outp_bill_item` WHERE ( invoice_no = '2017022000002' )  [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+NOTIC: [8] Use of undefined constant total - assumed 'total' D:\www\zySystem\Application\Home\Controller\HuajiaController.class.php 第 71 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:31:14+08:00 ] ::1 /zysystem/index.php/Home/Login/logOut.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-22T08:31:14+08:00 ] ::1 /zysystem/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

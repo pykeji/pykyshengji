@@ -4,12 +4,12 @@
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>《黄帝内经》</title>
-    	<link rel="shortcut icon" href="/zySystem/Public/book/minus.png" type="images/x-icon"/>
-		<link rel="stylesheet" href="/zySystem/Public/book/mkcommon.css">
-		<script src="/zySystem/Public/book/jquery-1.11.3.min.js"></script>	
-		<link rel="stylesheet" href="/zySystem/Public/book/mkcatalogue.css">
-        <link rel="stylesheet" href="/zySystem/Public/book/mkheader.css">  
-		<script src="/zySystem/Public/book/mkcatalogue.js"></script>
+    	<link rel="shortcut icon" href="/zysystem/Public/book/minus.png" type="images/x-icon"/>
+		<link rel="stylesheet" href="/zysystem/Public/book/mkcommon.css">
+		<script src="/zysystem/Public/book/jquery-1.11.3.min.js"></script>	
+		<link rel="stylesheet" href="/zysystem/Public/book/mkcatalogue.css">
+        <link rel="stylesheet" href="/zysystem/Public/book/mkheader.css">  
+		<script src="/zysystem/Public/book/mkcatalogue.js"></script>
         <style>
             .red{color:red;}
             .blue{color:blue;}
@@ -20,7 +20,7 @@
         <div class="m-hd-body-wrap">
             <div class="m-hd-body">
                 <span class="m-hd-logo">
-                    <a href="#" target="_self">
+                    <a href="#">
                         <span class="u-logo">
                             <font color="#000" size="4">中医四大名著</font>
                         </span>

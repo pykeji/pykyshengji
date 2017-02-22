@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/zySystem/Public/css/note.css"/>
-	<link rel="stylesheet" type="text/css" href="/zySystem/Public/editor/styles/simditor.css"/>
-	<script type="text/javascript" src="/zySystem/Public/editor/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="/zySystem/Public/editor/scripts/module.js"></script>
-	<script type="text/javascript" src="/zySystem/Public/editor/scripts/hotkeys.js"></script>
-	<script type="text/javascript" src="/zySystem/Public/editor/scripts/simditor.js"></script>
+	<link rel="stylesheet" type="text/css" href="/zysystem/Public/css/note.css"/>
+	<link rel="stylesheet" type="text/css" href="/zysystem/Public/editor/styles/simditor.css"/>
+	<script type="text/javascript" src="/zysystem/Public/editor/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/editor/scripts/module.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/editor/scripts/hotkeys.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/editor/scripts/simditor.js"></script>
 </head>
 <script>
 $(document).ready(function(){
@@ -27,7 +27,7 @@ function frsub(){
 </script>
 <body>
 	<br><br>
-	<form action="/zySystem/index.php/Home/Mynote/consub" method="post" id="fr">
+	<form action="/zysystem/index.php/Home/Mynote/consub" method="post" id="fr">
 		标题：<input type="text" name="list" class="mlk">
 		(<span style="color:red;">*必填</span>)&emsp;&emsp;
 		<input type="button" value="保 存" onclick="frsub()" class="sub">

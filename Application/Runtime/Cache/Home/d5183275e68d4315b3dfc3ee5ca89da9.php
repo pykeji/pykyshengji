@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/easyui.css">
 	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/huajia.css">
+	<!-- <script src="/zysystem/Public/js/jeDate/jedate.js"></script> -->
 	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
 	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
@@ -163,7 +164,7 @@
 	            <div class="modal-body">
 					<div class="modal-body-left">
 						<div class="modal-body-left-top">
-							收费日期：<input type="text" name="sfdata" value="2017-02-14">
+							收费日期：<input type="text" name="sfdata" value="<?php echo ($sfrq); ?>" >
 							<input type="button" name="query" value="✔ 查询">
 							<br><br>
 						</div>
@@ -180,18 +181,12 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>201702150001</td>
-										<td>张三</td>
-										<td align="right">245.00</td>
-										<td>2017021701</td>
-									</tr>
-									<tr>
-										<td>201702150002</td>
-										<td>张三</td>
-										<td align="right">305.00</td>
-										<td>2017021702</td>
-									</tr>
+									<?php if(is_array($sfls)): $i = 0; $__LIST__ = $sfls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+											<td><?php echo ($vo["invoice_no"]); ?></td>
+											<td><?php echo ($data["0"]["br_name"]); ?></td>
+											<td align="right"><?php echo ($czjine); ?></td>
+											<td><?php echo ($data["0"]["br_id"]); ?></td>
+										</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 								</tbody>
 							</table>
 						</div>
@@ -248,3 +243,6 @@
 </body>
 </html>
 <script type="text/javascript" src="/zysystem/Public/muban/assets/js/huajia.js"></script>
+<script type="text/javascript">
+    jeDate.skin('gray');
+</script>

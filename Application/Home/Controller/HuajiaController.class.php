@@ -6,11 +6,11 @@ class HuajiaController extends Controller {
     	$br_id = session('id');
     	$jbxx = M('station_p');//病人基本信息
     	$data = $jbxx -> where("br_id = '$br_id'") -> select();
-
+        $sfrq = date('Y-m-d');
         //收费列表信息(审核处方之后)
         if($_POST){
             dump($_POST);
-            /*$arr = array();
+            $arr = array();
             $arr[BILL_CODE] = '';//处方号
             $arr[ITEM_CODE] = $_POST['sf_brname'];//项目代码
             $arr[CLINIC_NUM] = $_POST['sf_blh'];//病人ID
@@ -26,7 +26,7 @@ class HuajiaController extends Controller {
             $arr[SERIAL_NO] = '';//项目收费序号
             $arr[RETURN_DATE] = '';//退费日期
             $arr[INVOICE_NO] = $_POST['sf_pjh'];//发票号
-            dump($arr);*/
+            dump($arr);
         }
 
         $shouf = M('g_outp_bill_item');//收费信息 票据号
@@ -58,8 +58,22 @@ class HuajiaController extends Controller {
         }else{
             $piaojh = date('Ymd')."00001";
         }
-        $pjh[0]['piaojh'] = $piaojh;
-        $this->assign('pjh',$pjh);//设置票据号
+        $pjh[0]['piaojh'] = $piaojh;//设置票据号
+
+        //查询当前病人历史收费情况
+        $sfls = $shouf -> distinct(true) ->field('invoice_no') -> where("CLINIC_NUM = '$br_id'") -> select();
+        $fph =  $sfls[0][invoice_no];
+        //消费总额
+        $zjine = $shouf -> where("invoice_no = '$fph'") -> select();
+        $czjine = 0;
+        $count = count($zjine);
+        for($i=0;$i<$count;$i++){
+            $czjine = $czjine + $zjine[$i][total];
+        }
+        $this -> assign('czjine',$czjine);
+        $this -> assign('sfls',$sfls);
+        $this -> assign('pjh',$pjh);
+        $this -> assign('sfrq',$sfrq);
     	$this -> assign('data',$data);
         $this->display();
     }
