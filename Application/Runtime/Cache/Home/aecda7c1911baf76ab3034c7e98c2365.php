@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 	<head>
-	<link rel="stylesheet" href="__PUBLIC__/css/zykf.css">
-	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.css">
-	<script type="text/javascript" src="__PUBLIC__/jq/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/echarts.simple.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/zykf.js"></script>
+	<link rel="stylesheet" href="/zySystem/Public/css/zykf.css">
+	<link rel="stylesheet" href="/zySystem/Public/css/bootstrap.css">
+	<script type="text/javascript" src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/zySystem/Public/js/echarts.simple.min.js"></script>
+	<script type="text/javascript" src="/zySystem/Public/js/zykf.js"></script>
 	</head>
 	<body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <div id="waibig">
@@ -114,12 +114,10 @@
 		<div id="xtshk">
 			<center><h3>审核</h3></center>
 		</div>
-		<php>$numdr = 1;</php>
-		 <foreach name='zy_yp' item='vo'>
-
-			<div class="zykf_yp">
+		<?php $numdr = 1; ?>
+		 <?php if(is_array($zy_yp)): foreach($zy_yp as $key=>$vo): ?><div class="zykf_yp">
 				<div class="yp1">
-					<b class="b1"><php>echo $numdr;</php></b>
+					<b class="b1"><?php echo $numdr; ?></b>
 					<span class="jianyao">X</span>
 				</div>
 				<div class="yp2">
@@ -128,16 +126,15 @@
 					</select>
 				</div>
 				<div class="yp3">
-					<input type="text" name="ylypm" class="ylypnm" value="{$vo.drug_name}">
-					<!-- {$vo.drug_name} -->
+					<input type="text" name="ylypm" class="ylypnm" value="<?php echo ($vo["drug_name"]); ?>">
+					<!-- <?php echo ($vo["drug_name"]); ?> -->
 				</div>
 				<div class="yp4">
 					<input type="checkbox" name="xuanzeyp" class="xzypche">
-					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">{$vo.dw}</span>
+					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke"><?php echo ($vo["dw"]); ?></span>
 				</div>
 			</div>
-			<php>$numdr++;</php>
-		 </foreach>	
+			<?php $numdr++; endforeach; endif; ?>	
 		</div>
 		
 		<!-- 温热平寒占比 -->

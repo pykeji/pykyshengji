@@ -126,37 +126,12 @@ $(function(){
 						});
 					}
 				});
-			$(document).on("input",".ylypnm",function(){
-				var top = $(this).offset().top 
-				var left = $(this).offset().left
-				top = top-40;
-				left = left -110;
-				$('#zykf_cxypk').css('top',top+'px');
-				$('#zykf_cxypk').css('left',left+'px');
-				$('#zykf_cxypk').html($(this).val());
-				$('#zykf_cxypk').fadeIn();
-				$(this).blur(function(){
-				$('#zykf_cxypk').fadeOut();
-			});
-			});
+			
 		}else{
 			var str = '<div class="zykf_yp"><div class="yp1"><b class="b1">1</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm"></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>'
 			$('#cfmx').append(str);
 			// $('#gjwys').html($('.zykf_yp').length);
 				$('.ylypnm:last').focus()
-			$(document).on("input",".ylypnm",function(){
-				var top = $(this).offset().top 
-				var left = $(this).offset().left
-				top = top-40;
-				left = left -110;
-				$('#zykf_cxypk').css('top',top+'px');
-				$('#zykf_cxypk').css('left',left+'px');
-				$('#zykf_cxypk').html($(this).val());
-				$('#zykf_cxypk').fadeIn();
-				$(this).blur(function(){
-				$('#zykf_cxypk').fadeOut();
-			});
-			});
 			
 		}
 	}
