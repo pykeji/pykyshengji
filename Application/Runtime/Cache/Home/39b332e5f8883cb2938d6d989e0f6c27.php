@@ -155,7 +155,7 @@
                             <li><a class="tooltip-tip2 ajax-load" href="<?php echo U('Book/wbtb');?>" title="温病条辨" target="_blank">&nbsp; &nbsp; <i class="glyphicon glyphicon-book"></i><span>温病条辨</span></a></li>
                         </ul>
                     </li>
-                    <li><a class="tooltip-tip ajax-load" href="/zySystem/index.php/Home/Mynote" title="我的文档" target="menu"><i class="glyphicon glyphicon-folder-open"></i><span>我的文档</span></a></li>
+                    <li><a class="tooltip-tip ajax-load" href="#" title="我的文档" target="menu"><i class="glyphicon glyphicon-folder-open"></i><span>我的文档</span></a></li>
                     <li><a class="tooltip-tip ajax-load" href="#" title="临床诊断" target="menu"><i class="glyphicon glyphicon-file"></i><span>临床诊断</span></a></li>
                     <li><a class="tooltip-tip ajax-load" href="#" title="中医药学会诊断指南" target="menu"><i class="glyphicon glyphicon-file"></i><span>中医药学会诊断指南</span></a></li>
                     </li>
@@ -662,6 +662,5 @@
 //    main.js结束
 </script>
 <?php }else{ ?>
-
-    <center>    <h1><a href="<?php echo U('index/index');?>">请登录</a></h1></center>
+    <h1><a href="<?php echo U('index/index');?>">滚去登录去</a></h1>
 <?php } ?>
