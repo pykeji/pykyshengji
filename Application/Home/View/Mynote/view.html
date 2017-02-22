@@ -31,6 +31,9 @@ function vtan(){
 	});
 }
 </script>
+<script>
+	document.oncontextmenu=new Function("event.returnValue=false;");
+</script>
 <body>
 	<br><br><br>
 	<div style="width:96%;margin-left:2%;">

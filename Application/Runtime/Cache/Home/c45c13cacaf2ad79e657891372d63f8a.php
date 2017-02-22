@@ -17,36 +17,26 @@ $(document).ready(function(){
 		placeholder:'请在此输入内容......',
 	});
 });
-function vtan(){
-	var id=<?php echo ($cons[0]['id']); ?>;
-	$.ajax({
-		type:"post",
-		url:"/zySystem/index.php/Home/Mynote/vdel",
-		dataType:"json",
-		data:{"id":id},
-		success:function(e){
-			alert(e);
-			parent.location.reload();
-		}
-	});
+function frsub(){
+	if($('input[name=list]').val()=='' || $('#editor').val()==''){
+		alert("标题或内容不能为空！");
+	}else{
+		$('#fr').submit();
+	}
 }
 </script>
 <script>
 	document.oncontextmenu=new Function("event.returnValue=false;");
 </script>
 <body>
-	<br><br><br>
-	<div style="width:96%;margin-left:2%;">
-		<form action="/zySystem/index.php/Home/Mynote/vsave/id/<?php echo ($cons[0]['id']); ?>" method="post">
-			文章标题：<input type="text" name="list" value="<?php echo ($cons[0]['list']); ?>" class="vml">
-			<input type="submit" value="保存修改" class="vsub">&emsp;
-			<input type="button" value="删除文档" class="del" onclick="vtan()">&emsp;
-			<a href="/zySystem/index.php/Home/Mynote/rpro">
-				<input type="button" value="关闭" class="sub">
-			</a><br>
-			<br><hr style="width:100%;height:3px;background:#000;"/><br>
-			<textarea id="editor" name="contents"><?php echo ($cons[0]['contents']); ?></textarea>
-		</form>
-	</div>
+	<br><br>
+	<form action="/zySystem/index.php/Home/Mynote/consub" method="post" id="fr">
+		标题：<input type="text" name="list" class="mlk">
+		(<span style="color:red;">*必填</span>)&emsp;&emsp;
+		<input type="button" value="保 存" onclick="frsub()" class="sub">
+		<input type="hidden" name="p_id" value="<?php echo ($mlid); ?>">
+		<br><br><hr style="width:100%;height:3px;background:#000;"/><br>
+		<textarea id="editor" name="contents" autofocus></textarea>
+	</form>
 </body>
 </html>

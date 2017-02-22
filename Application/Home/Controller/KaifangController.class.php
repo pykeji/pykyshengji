@@ -74,6 +74,7 @@ class KaifangController extends Controller {
         $this->display();
     }
     public function jingDian(){
+        
         $this->display();
     }
     public function jingYan(){

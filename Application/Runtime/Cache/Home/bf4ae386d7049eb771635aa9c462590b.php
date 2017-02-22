@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -25,13 +25,10 @@
 		}
 	</style>
 </head>
-<script>
-	document.oncontextmenu=new Function("event.returnValue=false;");
-</script>
 <body>
 	<br><br><br>
 	<div style="width:80%;text-align:right;margin:auto;">
-		<a href="__CONTROLLER__/rpro">
+		<a href="/zySystem/index.php/Home/Mynote/rpro">
 			<input type="button" value="返回" class="sback">
 		</a>
 	</div><br>
@@ -41,15 +38,13 @@
 			<td style="width:60%;">目录名称</td>
 			<td style="width:20%;">操作</td>
 		</tr>
-		<foreach name="nodes" item="nodes">
-			<tr>
-				<td>{$nodes.id}</td>
-				<td>{$nodes.element}</td>
+		<?php if(is_array($nodes)): foreach($nodes as $key=>$nodes): ?><tr>
+				<td><?php echo ($nodes["id"]); ?></td>
+				<td><?php echo ($nodes["element"]); ?></td>
 				<td>
-					<a href="__CONTROLLER__/delete?id={$nodes.id}">删除</a>
+					<a href="/zySystem/index.php/Home/Mynote/delete?id=<?php echo ($nodes["id"]); ?>">删除</a>
 				</td>
-			</tr>
-		</foreach>
+			</tr><?php endforeach; endif; ?>
 	</table>	
 </body>
 </html>
