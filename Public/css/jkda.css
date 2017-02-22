@@ -20,19 +20,48 @@ img{border:0px;}
 .title2 div span{font-weight:bold;}
 .jkda-table textarea{border:1px solid #ccc;}
 /*过敏史*/
-.gm{
-	position:absolute;background-color:#fff;width:275px;height:210px;top:350px;
-	left:315px;overflow:auto;display:none;z-index:10;border:1px solid #ccc;
+.gm,.jts11,.jts22,.jts33,.jts44{
+	position:absolute;background-color:#D3D5DA;width:290px;height:210px;display:none;z-index:10;border:1px solid #ccc;
 }
-.gm label{display:block;}
+.gm label,.jts11 label,.jts22 label,.jts33 label,.jts44 label{display:block;}
 .jkda-table .year{width:35px;}
 .jkda-table .month{width:16px;}
 .jkda-table .day{width:16px;}
-/*家庭史*/
-.jtsFar{
-	position:absolute;background-color:#fff;width:250px;height:80px;top:360px;
-	left:400px;overflow:auto;display:none;border:1px solid #ccc;
+/*家庭史and心悸(有无)*/
+.jtsFar,.jtsMother,.jts3,.jts4,.xj1{
+	position:absolute;background-color:#D3D5DA;width:275px;height:80px;
+	overflow:auto;display:none;border:1px solid #ccc;
 }
-.jtsFar label{display:block;}
+.jtsFar label,.jtsMother label,.jts3 label,.jts4 label,.xj1 label{display:block;}
 .jkda-table .chufang>div{padding-bottom:10px;width:100%;float:left;}
 .jkda-table .chufang ul li{float:left;width:25%;text-align:center;margin-top:5px;}
+/*整体状况*/
+.zt1,.zt2,.zt3,.zt4{
+	position:absolute;background-color:#D3D5DA;width:290px;height:150px;
+	overflow:auto;display:none;border:1px solid #ccc;
+}
+.zt1 label,.zt2 label,.zt3 label,.zt4 label{display: block;}
+/*现在状况*/
+.xz1,.xz2,.xz3,.xz4,.xz5,.xz6,.xz7,.xz8{
+	position:absolute;background-color:#D3D5DA;width:290px;height:210px;overflow:auto;display:none;z-index:10;border:1px solid #ccc;
+}
+.xz1 label,.xz2 label,.xz3 label,.xz4 label,.xz5 label,.xz6 label,.xz7 label,.xz8 label{display: block;}
+/*情致*/
+.qz1,.qz2{
+	position:absolute;background-color:#D3D5DA;width:275px;height:210px;overflow:auto;display:none;z-index:10;border:1px solid #ccc;
+}
+.qz1 label,.qz2 label{display: block;}
+/*舌诊and脉诊*/
+.sz1,.sz2,.sz3,.sz4,.sz5,.mz1{
+	position:absolute;background-color:#D3D5DA;width:290px;height:210px;overflow:auto;display:none;z-index:10;border:1px solid #ccc;
+}
+.sz1 label,.sz2 label,.sz3 label,.sz4 label,.sz5 label,.mz1 label{display: block;}
+/*既往史*/
+.jws1,.jws2{
+	position:absolute;background-color:#D3D5DA;width:290px;height:210px;overflow:auto;display:none;z-index:10;border:1px solid #ccc;
+}
+.jws1 label,.jws2 label{display: block;}
+
+/*隐藏框下的两个div*/
+.div1{height:25px;}
+.div2{height:auto;max-height:170px;overflow: auto;}

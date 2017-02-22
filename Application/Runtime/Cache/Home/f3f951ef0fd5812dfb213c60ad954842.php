@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>健康档案</title>
-    <link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/jkda.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/jiankang.css">
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-    <script src="__PUBLIC__/js/jeDate/jedate.js"></script>
+    <link rel="stylesheet" href="/zySystem/Public/muban/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/jkda.css">
+    <link rel="stylesheet" href="/zySystem/Public/css/jiankang.css">
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
+    <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
 </head>
 <body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
     <div class="bg">
@@ -20,51 +20,51 @@
                 <table>
                     <tr>
                         <td><label for="blNumber">病历号：</label></td>
-                        <td><input type="text" value="{$data.0.br_id}" id="blNumber" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["br_id"]); ?>" id="blNumber" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="name1">姓名：</label></td>
-                        <td><input type="text" value="{$data.0.br_name}" id="name1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["br_name"]); ?>" id="name1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="sex1">性别：</label></td>
-                        <td><input type="text" value="{$data.0.xb}" id="sex1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["xb"]); ?>" id="sex1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="age1">年龄：</label></td>
-                        <td><input type="text" value="{$data.0.nl}" id="age1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["nl"]); ?>" id="age1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="birth">出生日期：</label></td>
-                        <td><input type="text" value="{$data.0.cs_date}" id="birth" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["cs_date"]); ?>" id="birth" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="userID1">身份证号：</label></td>
-                        <td><input type="text" value="{$data.0.pass}" id="userID1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["pass"]); ?>" id="userID1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="dw">单位：</label></td>
-                        <td><input type="text" value="{$data.0.dw}" id="dw" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["dw"]); ?>" id="dw" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="phone1">电话：</label></td>
-                        <td><input type="text" value="{$data.0.tel}" id="phone1" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["tel"]); ?>" id="phone1" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="cz">传真：</label></td>
-                        <td><input type="text" value="{$data.0.fax}" id="cz" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["fax"]); ?>" id="cz" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="mail">E-Mail：</label></td>
-                        <td><input type="text" value="{$data.0.e_mail}" id="mail" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["e_mail"]); ?>" id="mail" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="yydate">预约日期：</label></td>
-                        <td><input type="text" value="{$data.0.jz_date}" id="yydate" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["jz_date"]); ?>" id="yydate" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="ghcost">挂号费：</label></td>
-                        <td><input type="text" value="{$data.0.ghf}" id="ghcost" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["ghf"]); ?>" id="ghcost" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="jzcost">就诊费：</label></td>
@@ -104,36 +104,36 @@
                             <div class="title2">
                                 <div>
                                     <span>就诊日期：</span>
-                                    <span id="jzrq">{$data.0.jz_date}</span>
+                                    <span id="jzrq"><?php echo ($data["0"]["jz_date"]); ?></span>
                                 </div>
                                 <div>
                                     <span>病历号：</span>
-                                    <span id="blnum">{$data.0.br_id}</span>
+                                    <span id="blnum"><?php echo ($data["0"]["br_id"]); ?></span>
                                 </div>
                             </div>
                             <tr>
                                 <th width="8%"><label for="name">姓名</label></th>
                                 <td colspan="2" width="10%">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" value="{$data.0.br_name}" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
+                                            <input type="text" onkeydown="this.onkeyup();" value="<?php echo ($data["0"]["br_name"]); ?>" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
                                         </span>
                                 </td>
                                 <th width="6%"><label for="sex">性别</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" value="{$data.0.xb}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
+                                            <input type="text" value="<?php echo ($data["0"]["xb"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="age">年龄</label></th>
                                 <td width="7%">
                                         <span>
-                                            <input type="text" value="{$data.0.nl}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
+                                            <input type="text" value="<?php echo ($data["0"]["nl"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
                                         </span>
                                 </td>
                                 <th width="7%"><label for="birthday">出生日期</label></th>
                                 <td width="11%">
                                         <span>
-                                            <input type="text" value="{$data.0.cs_date}" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
+                                            <input type="text" value="<?php echo ($data["0"]["cs_date"]); ?>" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
                                         </span>
                                 </td>
                             </tr>
@@ -141,13 +141,13 @@
                                 <th><label for="userID">身份证号</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" value="{$data.0.pass}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>17?this.value.length:17);" size="17" id="userID">
+                                            <input type="text" value="<?php echo ($data["0"]["pass"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>17?this.value.length:17);" size="17" id="userID">
                                         </span>
                                 </td>
                                 <th colspan="2"><label for="phone">联系方式</label></th>
                                 <td colspan="3">
                                         <span>
-                                            <input type="text" value="{$data.0.tel}" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
+                                            <input type="text" value="<?php echo ($data["0"]["tel"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
                                         </span>
                                 </td>
                             </tr>
@@ -156,7 +156,7 @@
                                 <td colspan="8">
                                         <span>
                                             <!-- <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>20?this.value.length:20);" size="20" id="work"> -->
-                                            <textarea name=""  id="duo" cols="70" rows="3">{$data.0.dw}</textarea>
+                                            <textarea name=""  id="duo" cols="70" rows="3"><?php echo ($data["0"]["dw"]); ?></textarea>
                                         </span>
                                 </td>
                             </tr>
@@ -181,11 +181,7 @@
                                                 <input type="button" value="关闭" class="clo">
                                             </div>
                                             <div class="div2">
-                                                <volist name="bls" id="vo">
-                                                    <if condition="$vo['typeid'] eq 1">
-                                                        <label><input type="checkbox" name="jws" class="jiwangshi1" onclick="checked2('jiwangshi1','jws1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                                    </if>
-                                                </volist>
+                                                <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 1): ?><label><input type="checkbox" name="jws" class="jiwangshi1" onclick="checked2('jiwangshi1','jws1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                             </div>
                                         </div>,
                                         <span>确认时间：</span>
@@ -203,11 +199,7 @@
                                                 <input type="button" value="关闭" class="clo">
                                             </div>
                                             <div class="div2">
-                                                <volist name="bls" id="vo">
-                                                    <if condition="$vo['typeid'] eq 2">
-                                                         <label><input type="checkbox" name="crbs" class="jiwangshi2" onclick="checked2('jiwangshi2','jws2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                                     </if>
-                                                </volist>
+                                                <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 2): ?><label><input type="checkbox" name="crbs" class="jiwangshi2" onclick="checked2('jiwangshi2','jws2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                             </div>
                                         </div>,
                                         <span>确认时间：</span>
@@ -248,11 +240,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 1">
-                                                <label><input type="checkbox" name="jtsFQ" class="gmcheck11" onclick="checked2('gmcheck11','jts11inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 1): ?><label><input type="checkbox" name="jtsFQ" class="gmcheck11" onclick="checked2('gmcheck11','jts11inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <td colspan="3">
@@ -285,11 +273,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 1">
-                                                <label><input type="checkbox" name="jtsMQ" class="gmcheck22" onclick="checked2('gmcheck22','jts22inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 1): ?><label><input type="checkbox" name="jtsMQ" class="gmcheck22" onclick="checked2('gmcheck22','jts22inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -324,11 +308,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 1">
-                                                <label><input type="checkbox" name="jtsXD" class="gmcheck33" onclick="checked2('gmcheck33','jts33inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 1): ?><label><input type="checkbox" name="jtsXD" class="gmcheck33" onclick="checked2('gmcheck33','jts33inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <td colspan="3">
@@ -361,11 +341,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 1">
-                                                <label><input type="checkbox" name="jtsZN" class="gmcheck44" onclick="checked2('gmcheck44','jts44inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 1): ?><label><input type="checkbox" name="jtsZN" class="gmcheck44" onclick="checked2('gmcheck44','jts44inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -383,11 +359,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 3">
-                                                <label><input type="checkbox" name="gm" class="gmcheck" onclick="checked2('gmcheck','gmsinp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 3): ?><label><input type="checkbox" name="gm" class="gmcheck" onclick="checked2('gmcheck','gmsinp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th><label for="weight">体重</label></th>
@@ -447,11 +419,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 4">
-                                                <label><input type="radio" name="wshen" class="zhengti1" onclick="checked1('zhengti1','zt1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 4): ?><label><input type="radio" name="wshen" class="zhengti1" onclick="checked1('zhengti1','zt1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -469,11 +437,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 5">
-                                                <label><input type="radio" name="wse" class="zhengti2" onclick="checked1('zhengti2','zt2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 5): ?><label><input type="radio" name="wse" class="zhengti2" onclick="checked1('zhengti2','zt2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -492,11 +456,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 6">
-                                                <label><input type="radio" name="tt" class="zhengti3" onclick="checked1('zhengti3','zt3inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 6): ?><label><input type="radio" name="tt" class="zhengti3" onclick="checked1('zhengti3','zt3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="tx">体形</label></th>
@@ -512,11 +472,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 7">
-                                                <label><input type="radio" name="tx" class="zhengti4" onclick="checked1('zhengti4','zt4inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 7): ?><label><input type="radio" name="tx" class="zhengti4" onclick="checked1('zhengti4','zt4inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -536,11 +492,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 8">
-                                                <label><input type="checkbox" name="zl" class="xianzai1" onclick="checked2('xianzai1','xz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 8): ?><label><input type="checkbox" name="zl" class="xianzai1" onclick="checked2('xianzai1','xz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="sj">时间</label></th>
@@ -556,11 +508,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 9">
-                                                <label><input type="radio" name="sj" class="xianzai2" onclick="checked1('xianzai2','xz2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 9): ?><label><input type="radio" name="sj" class="xianzai2" onclick="checked1('xianzai2','xz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -578,11 +526,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 10">
-                                                <label><input type="radio" name="sy" class="xianzai3" onclick="checked1('xianzai3','xz3inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 10): ?><label><input type="radio" name="sy" class="xianzai3" onclick="checked1('xianzai3','xz3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -600,11 +544,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 11">
-                                                <label><input type="checkbox" name="kw" class="xianzai4" onclick="checked2('xianzai4','xz4inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 11): ?><label><input type="checkbox" name="kw" class="xianzai4" onclick="checked2('xianzai4','xz4inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -623,11 +563,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 12">
-                                                <label><input type="radio" name="dbc" class="xianzai5" onclick="checked1('xianzai5','xz5inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 12): ?><label><input type="radio" name="dbc" class="xianzai5" onclick="checked1('xianzai5','xz5inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="bz">便质</label></th>
@@ -643,11 +579,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 13">
-                                                <label><input type="radio" name="bz" class="xianzai6" onclick="checked1('xianzai6','xz6inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 13): ?><label><input type="radio" name="bz" class="xianzai6" onclick="checked1('xianzai6','xz6inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -666,11 +598,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 14">
-                                                <label><input type="radio" name="xbc" class="xianzai7" onclick="checked1('xianzai7','xz7inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 14): ?><label><input type="radio" name="xbc" class="xianzai7" onclick="checked1('xianzai7','xz7inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="bs">便色</label></th>
@@ -686,11 +614,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 15">
-                                                <label><input type="radio" name="bs" class="xianzai8" onclick="checked1('xianzai8','xz8inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 15): ?><label><input type="radio" name="bs" class="xianzai8" onclick="checked1('xianzai8','xz8inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -709,11 +633,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 16">
-                                                <label><input type="radio" name="xq" class="qingzhi1" onclick="checked1('qingzhi1','qz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 16): ?><label><input type="radio" name="xq" class="qingzhi1" onclick="checked1('qingzhi1','qz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="xg">性格</label></th>
@@ -729,11 +649,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 17">
-                                                <label><input type="radio" name="xg" class="qingzhi2" onclick="checked1('qingzhi2','qz2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 17): ?><label><input type="radio" name="xg" class="qingzhi2" onclick="checked1('qingzhi2','qz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -769,11 +685,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 18">
-                                                <label><input type="radio" name="ss" class="shezhen1" onclick="checked1('shezhen1','sz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 18): ?><label><input type="radio" name="ss" class="shezhen1" onclick="checked1('shezhen1','sz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th><label for="st">舌体</label></th>
@@ -789,11 +701,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 19">
-                                                <label><input type="radio" name="st" class="shezhen2" onclick="checked1('shezhen2','sz2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 19): ?><label><input type="radio" name="st" class="shezhen2" onclick="checked1('shezhen2','sz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="dt">动态</label></th>
@@ -809,11 +717,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 20">
-                                                <label><input type="radio" name="dt" class="shezhen3" onclick="checked1('shezhen3','sz3inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 20): ?><label><input type="radio" name="dt" class="shezhen3" onclick="checked1('shezhen3','sz3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -831,11 +735,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 21">
-                                                <label><input type="radio" name="tz" class="shezhen4" onclick="checked1('shezhen4','sz4inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 21): ?><label><input type="radio" name="tz" class="shezhen4" onclick="checked1('shezhen4','sz4inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th><label for="ts">苔色</label></th>
@@ -851,11 +751,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 22">
-                                                <label><input type="radio" name="ts" class="shezhen5" onclick="checked1('shezhen5','sz5inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 22): ?><label><input type="radio" name="ts" class="shezhen5" onclick="checked1('shezhen5','sz5inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -873,11 +769,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <volist name="bls" id="vo">
-                                            <if condition="$vo['typeid'] eq 23">
-                                                <label><input type="checkbox" name="mz" class="maizhen1" onclick="checked2('maizhen1','mz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
-                                            </if>
-                                        </volist>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 23): ?><label><input type="checkbox" name="mz" class="maizhen1" onclick="checked2('maizhen1','mz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -971,4 +863,4 @@
     </script>
 </body>
 </html>
-<script src="__PUBLIC__/js/bingshi.js"></script>
+<script src="/zySystem/Public/js/bingshi.js"></script>
