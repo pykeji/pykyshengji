@@ -183,19 +183,14 @@ class KaifangController extends Controller {
                 ->select();
         $this->ajaxReturn($fjm);
     }
-    function fangjie(){
-        $model=M();
-        $result=$model->field('b1.*,b2.drug_name')
-                    ->table('bz_cf as b1,dict_drug_zy as b2')
-                    ->where('b2.drug_code=b1.ypdm')
+    function fangjie(){ 
+        $model=M('bz_cf');
+        $result=$model->field('bz_cf.*,b2.drug_name')
+                    ->join('bz_cf left join dict_drug_zy as b2 on b2.drug_code=bz_cf.ypdm')
+                    ->where("bz_cf.cfdm='$_POST[tree]'")
                     ->order('serial_no asc')
                     ->select();
-        foreach($result as $k=>$v){
-            if($v['cfdm']==$_POST['tree']){
-                $con[]=$v;
-            }
-        }
-        $this->ajaxReturn($con);
+        $this->ajaxReturn($result);
     }
     function fjcon(){
         $model=M('y_recipemain');

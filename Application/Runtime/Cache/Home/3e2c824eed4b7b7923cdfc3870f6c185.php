@@ -41,14 +41,7 @@
 		                    	</div>
 		                    	<p>标题：阿萨德发生大</p>
 		                    	<p>内容：问问哦</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
 		                    	<img src="/zySystem/Public/img/tu1.jpg" alt="别急">
-=======
->>>>>>> 4796b075facee71e9982cf30d71c17223dd9e7a6
-=======
-		                    	<img src="/zySystem/Public/img/tu1.jpg" alt="别急">
->>>>>>> 05677c642c7b5f473462f5d6b4c18179a2790474
 		                    </div>
 		                <div data-dismiss="modal" style=" width:40px; position:absolute; top:0px;right:12px;"><button  class="btn ">&times;</button></div>
 		            </div><!-- /.modal-dialog -->

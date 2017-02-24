@@ -40,6 +40,10 @@
 		.fjcon{
 			width:600px;margin:20px;
 		}
+		.trsty{
+			border-bottom:1px solid #ccc;height:30px;
+			line-height:30px;
+		}
     </style>
 </head>
 <script>
@@ -52,7 +56,7 @@ $(document).on("input","#impid",function(){
 			success:function(e){
 				var trd='';
 				for(var i=0;i<e.length;i++){
-					trd+='<tr><td>'+e[i]['name']+'</td></tr>';
+					trd+='<tr class="trsty" id='+e[i]['tree']+'  onclick="fangjie(id)"><td>'+e[i]['name']+'</td></tr>';
 				}
 				$("#fjmtab").html(trd);
 			}
@@ -61,20 +65,26 @@ $(document).on("input","#impid",function(){
 $(document).ready(function(){
 	$('.py').click(function(){
 		var ss=this.innerHTML;
-		$('#impid').val(ss);
+		var kk=$('#impid').val();
+		$('#impid').val(kk+ss);
 		$.ajax({
 			type:"post",
 			url:"/zySystem/index.php/Home/Kaifang/impidajax",
 			dataType:"json",
 			data:{"pym":$('#impid').val()},
 			success:function(e){
+				console.log(e);
 				var trd='';
 				for(var i=0;i<e.length;i++){
-					trd+='<tr><td>'+e[i]['name']+'</td></tr>';
+					trd+='<tr class="trsty" id='+e[i]['tree']+' onclick="fangjie(id)"><td>'+e[i]['name']+'</td></tr>';
 				}
 				$("#fjmtab").html(trd);
 			}
 		}); 
+	});
+	$('#fjmtab tr').click(function(){
+		$(this).css("background-color","#FE9");
+		$('#fjmtab tr').not(this).css("background-color","#fff");
 	});
 });
 function fangjie(id){
@@ -183,9 +193,9 @@ function fangjie(id){
 			<div class="input-group">
 				<input type="text" class="form-control"placeholder="请输入经典方名称" id="impid"/>
 				<span class="input-group-btn">
-				<button class="btn btn-info btn-search">
+				<!-- <button class="btn btn-info btn-search">
 				<b style="color:#000000;">查找</b>
-				</button>
+				</button> -->
 			</div>
 		</div>
 		<!-- 列表 -->

@@ -9,6 +9,15 @@
     <!-- bootstrap的引用 -->
     <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+		.py{
+			background-color:#FFFFFF;color:red;margin-right:5px;
+		}
+		.text{
+			width:100%;border:none;outline:none;
+			height:100%;
+		}
+    </style>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<!-- 上 -->
@@ -22,32 +31,32 @@
 				<img src="__PUBLIC__/img/tu1.jpg" style="margin-top: 20px;  width: 40px; "  alt="图片加载中。。。。">
 				&nbsp;
 				<div class="kuangneianniu">
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >A</button>
-					<button style="background-color:#FFFFFF;  color:red; margin-right: 5px;" >B</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >C</button>
-					<button style="background-color:#FFFFFF;  color:red; margin-right: 5px;" >D</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >E</button>
-					<button style=" background-color:#FFFFFF; color:red; margin-right: 5px;" >F</button>
-					<button style="background-color:#FFFFFF;  color:red; margin-right: 5px;" >G</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >H</button>
-					<button style=" background-color:#FFFFFF; color:red; margin-right: 5px;" >I</button>
-					<button style=" background-color:#FFFFFF; color:red; margin-right: 5px;" >J</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >K</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >L</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >M</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >N</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >O</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >P</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >Q</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >R</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >S</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >T</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >U</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >V</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >W</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >X</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >Y</button>
-					<button style="background-color:#FFFFFF; color:red; margin-right: 5px;" >Z</button>
+					<button class="py">A</button>
+					<button class="py">B</button>
+					<button class="py">C</button>
+					<button class="py">D</button>
+					<button class="py">E</button>
+					<button class="py">F</button>
+					<button class="py">G</button>
+					<button class="py">H</button>
+					<button class="py">I</button>
+					<button class="py">J</button>
+					<button class="py">K</button>
+					<button class="py">L</button>
+					<button class="py">M</button>
+					<button class="py">N</button>
+					<button class="py">O</button>
+					<button class="py">P</button>
+					<button class="py">Q</button>
+					<button class="py">R</button>
+					<button class="py">S</button>
+					<button class="py">T</button>
+					<button class="py">U</button>
+					<button class="py">V</button>
+					<button class="py">W</button>
+					<button class="py">X</button>
+					<button class="py">Y</button>
+					<button class="py">Z</button>
 				</div>
 			</div>
 		</fieldset>
@@ -68,31 +77,29 @@
 			<div class="xiaZuoshang">
 				
 				<div class="xiaZuoshang3 ">
-					<button  class="btn  btn-info " data-toggle="modal" data-target="#tianjiachufang"  >
-						<b style="color: #000000; font-size: 12px; ">添加处方</b>	
+					<button  class="btn  btn-info" data-toggle="modal" data-target="#tianjiachufang">
+						<b style="color:#000000;font-size:12px;">添加处方</b>	
+					</button>
+					<button  class="btn btn-info">
+						<b id="shanchuchufang" style="color:#000000;">删除处方</b>	
 					</button>
 					<button  class="btn btn-info "  >
-						<b id="shanchuchufang" style="color: #000000;  ">删除处方</b>	
-					</button>
-					<button  class="btn btn-info "  >
-						<b style="color: #000000;  ">保存处方</b>	
+						<b style="color: #000000;">保存处方</b>	
 					</button>
 				</div>
 				<!-- 添加处方模态框开始 -->
 				<div class="modal fade" id="tianjiachufang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			    <div class="modal-dialog">
 			        <div class="modal-content">
-			            <div class="modal-header">
-			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			                <h4 class="modal-title" id="myModalLabel">此处填写处方名称</h4>
-			            </div>
-			            <div class="modal-body">此处填写处方的药品
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-			            </div>
+			            <form action="__CONTROLLER__/jysub" method="post">
+				            <div class="modal-header">
+				                <input type="button" value="&times;" class="close" data-dismiss="modal" aria-hidden="true">
+				                <input type="text" name="title" placeholder="此处填写处方名称">
+				            </div>
+				            <textarea class="modal-body text" name="zztxt" placeholder="此处填写处方主治功能"> 
+				            </textarea>
+			            </form>   
+			            
 			            <div class="modal-footer">
 			                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 			                <button type="button" class="btn btn-primary">确认添加</button>
@@ -101,7 +108,6 @@
 			    </div><!-- /.modal -->
 			</div>
 				<!-- 添加处方模态框结束 -->
-
 			</div>
 				<!-- 方剂列表 -->
 				<div data-spy="scroll" data-target="#navbar-example" data-offset="0"  class="xiaZuochufang">
@@ -110,42 +116,6 @@
 				 		<th class="trdebingming">处方名称</th>
 				 		<th class="trdebingming1">主治</th>
 				 	</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
 					<tr onclick="dianjiyou(this)">
 						<td>麻杏石甘汤</td>
 						<td>麻杏石甘汤</td>
