@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ 2017-02-21T17:04:11+08:00 ] ::1 /zySystem/
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
@@ -2822,6 +2823,359 @@ INFO: [ view_filter ] --END-- [ RunTime:0.000643s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+=======
+[ 2017-02-21T17:24:05+08:00 ] ::1 /zySystem/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-21T17:24:09+08:00 ] ::1 /zySystem/index.php/Home/Login/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `user-info-dict` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user-info-dict` WHERE `userName` = 'yxy' AND `passWord` = '' LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2017-02-21T17:24:09+08:00 ] ::1 /zySystem/index.php/Home/index/home/rev/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-21T17:24:10+08:00 ] ::1 /zySystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `station_p` WHERE ( jz_flag=1 ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flag=1 ) ORDER BY p_date desc LIMIT 0,9   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-02-21T17:24:10+08:00 ] ::1 /zySystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `station_p` WHERE ( jz_flag=1 ) LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flag=1 ) ORDER BY p_date desc LIMIT 0,9   [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-02-21T17:24:16+08:00 ] ::1 /zySystem/index.php/Home/Mynote
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-21T17:24:17+08:00 ] ::1 /zySystem/index.php/Home/Mynote/mllist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `nodes` [ RunTime:0.0020s ]
+SQL: SELECT n1.*,n2.* FROM nodes as n1,note as n2 WHERE ( n2.p_id=n1.id )  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `nodes` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nodes`  [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-02-21T17:24:17+08:00 ] ::1 /zySystem/index.php/Home/Mynote/rpro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-21T17:24:44+08:00 ] ::1 /zySystem/index.php/Home/Mynote
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-21T17:24:44+08:00 ] ::1 /zySystem/index.php/Home/Mynote/mllist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `nodes` [ RunTime:0.0060s ]
+SQL: SELECT n1.*,n2.* FROM nodes as n1,note as n2 WHERE ( n2.p_id=n1.id )  [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `nodes` [ RunTime:0.1170s ]
+SQL: SELECT * FROM `nodes`  [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 56 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+NOTIC: [8] Use of undefined constant wh_userId - assumed 'wh_userId' C:\xampp\htdocs\zySystem\Application\Home\Controller\MynoteController.class.php 第 61 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-02-21T17:24:44+08:00 ] ::1 /zySystem/index.php/Home/Mynote/rpro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-21T17:24:46+08:00 ] ::1 /zySystem/index.php/Home/Book/shlx.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.006001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.290016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.290016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-21T18:19:58+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/zhiLiaoZhinan.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+>>>>>>> 05677c642c7b5f473462f5d6b4c18179a2790474
 =======
 [ 2017-02-21T08:09:19+08:00 ] ::1 /zySystem/index.php/Home/index/index.html
 INFO: [ app_init ] --START--
@@ -13527,5 +13881,9 @@ INFO: [ view_filter ] --END-- [ RunTime:0.000623s ]
 INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000864s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001036s ]
+<<<<<<< HEAD
 >>>>>>> 4796b075facee71e9982cf30d71c17223dd9e7a6
+=======
+>>>>>>> c2db0f7d6e02cad20cd0b4f063ce893592baf218
+>>>>>>> 05677c642c7b5f473462f5d6b4c18179a2790474
 
