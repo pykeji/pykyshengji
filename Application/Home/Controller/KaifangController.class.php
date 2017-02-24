@@ -109,8 +109,13 @@ class KaifangController extends Controller {
         $zhuaxuyhaoid = I('post.zhuaxuyhaoid');//接受ajax传过来的条件
         $user = M('v_tcd_zyxk');
         $where['BM'] = $zhuaxuyhaoid;
-        $databingm = $user->where($where)->field('name,code')->select();
-        $this->ajaxReturn($databingm);
+        $databingm = $user->where($where)->field('name', 'code')->select();
+        if ($databingm) {
+            $this->ajaxReturn(array('msg' => '查询成功', 'res' => $databingm));
+        } else {
+            $this->ajaxReturn(array('msg' => '查询失败', 'res' => $databingm));
+        }
+        
 
     }
     //
@@ -172,8 +177,92 @@ class KaifangController extends Controller {
     public function jingYan(){
         $this->display();
     }
+    //页面6辩证处方
     public function bianZheng(){
+        $user = M("y_mainsypmpotm");
+        //获取主症的分类
+        //ISSHOW 字段为0是主键 为1是点击主键对应的值
+        $where['ISSHOW']= 0;
+        $data = $user->where($where)->field('name,tree')->select();
+        $this->assign("data",$data);
+        //获取主症的常用选择
+        $dowhere['ISSHOW'] = 1;
+        $dowhere['MNEMONIC'] = 1;
+        $dodata = $user->where($dowhere)->field('name,code')->select();
+        $this->assign("dodata",$dodata);
     	$this->display();
+    }
+    //页面6 ajax 点击主症
+    public function yeliuajaxdianzz(){
+        $dianjizhuzheng = I('post.dianjizhuzheng');//接受传过来的主症tree号
+        $user = M("y_mainsypmpotm");
+        $where['TREE'] = array('like',"{$dianjizhuzheng}%");
+        $where['ISSHOW']= 1;
+        $data = $user->where($where)->field('name,code')->select();
+        // $this->ajaxReturn($data);
+        if ($data) {
+            $this->ajaxReturn(array('msg' => '查询成功', 'res' => $data));
+        } else {
+            $this->ajaxReturn(array('msg' => '查询失败', 'res' => $data));
+        }
+    }
+    //页面6 ajax 主症下搜索框搜索证型
+    public function yeliuajaxzhengxingss(){
+        $zxzfjg = I('post.zxzfjg');//接受传过来的输入的值
+        $tjbmzxzf = I('post.tjbmzxzf');//接受传过来的主症tree号
+        $user = M("y_mainsypmpotm");
+        $where['TREE'] = array('like',"{$tjbmzxzf}%");
+        $where['SPELL'] = array('like',"{$zxzfjg}%");
+        $where['ISSHOW']= 1;
+        $data = $user->where($where)->field('name,tree')->select();
+        if ($data) {
+            $this->ajaxReturn(array('msg' => '查询成功', 'res' => $data));
+        } else {
+            $this->ajaxReturn(array('msg' => '查询失败', 'res' => $data));
+        }
+    }
+    //页面6 ajax 点击设为常用选择
+    public function yeliuajaxchangyongxz(){
+        $zhuzheng = I('post.zhuzheng');//接受传过来的输入的值
+        $pieces  =  explode ( " " ,  $zhuzheng );//转为数组
+        $user = M("y_mainsypmpotm");
+        $where['CODE'] = array("in",$pieces);
+        $where['ISSHOW']= 1;
+        $gaidong['MNEMONIC'] = 1;
+        $data = $user->where($where)->save($gaidong);
+        if ($data) {
+            $this->ajaxReturn("你好像成功了");
+        } else {
+            $this->ajaxReturn("哎呀，失败了");
+        }
+    }
+    //页面6 ajax 主症取消常用选择
+    public function yeliuajaxzhuzquxcyxx(){
+        $quxiaocycode = I('post.quxiaocycode');//接受传过来的输入的值
+        $user = M("y_mainsypmpotm");
+        $where['CODE']= $quxiaocycode;
+        $where['ISSHOW']= 1;
+        $gaidong['MNEMONIC'] = "";
+        $data = $user->where($where)->save($gaidong);
+        if ($data) {
+            $this->ajaxReturn("你好像成功了");
+        } else {
+            $this->ajaxReturn("哎呀，失败了");
+        }
+    }
+    //页面6 ajax 主症下常用选择搜索
+    public function yeliuajaxzhuzcyxzss(){
+        $cyxztj = I('post.cyxztj');//接受传过来的输入的值
+        $user = M("y_mainsypmpotm");
+        $where['SPELL'] = array('like',"{$cyxztj}%");
+        $where['ISSHOW'] = 1;
+        $where['MNEMONIC'] = 1;
+        $data = $user->where($where)->field('name,code')->select();
+        if ($data) {
+            $this->ajaxReturn(array('msg' => '查询成功', 'res' => $data));
+        } else {
+            $this->ajaxReturn(array('msg' => '查询失败', 'res' => $data));
+        }
     }
     public function west(){
         $use = M('useage_table');
