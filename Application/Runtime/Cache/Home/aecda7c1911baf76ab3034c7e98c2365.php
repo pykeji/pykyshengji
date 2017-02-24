@@ -114,9 +114,10 @@
 		<div id="xtshk">
 			<center><h3>审核</h3></center>
 		</div>
-			<div class="zykf_yp">
+		<?php $numdr = 1; ?>
+		 <?php if(is_array($zy_yp)): foreach($zy_yp as $key=>$vo): ?><div class="zykf_yp">
 				<div class="yp1">
-					<b class="b1">1</b>
+					<b class="b1"><?php echo $numdr; ?></b>
 					<span class="jianyao">X</span>
 				</div>
 				<div class="yp2">
@@ -125,85 +126,15 @@
 					</select>
 				</div>
 				<div class="yp3">
-					茯苓
+					<input type="text" name="ylypm" class="ylypnm" value="<?php echo ($vo["drug_name"]); ?>">
+					<!-- <?php echo ($vo["drug_name"]); ?> -->
 				</div>
 				<div class="yp4">
 					<input type="checkbox" name="xuanzeyp" class="xzypche">
-					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span>
+					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke"><?php echo ($vo["dw"]); ?></span>
 				</div>
 			</div>
-			<div class="zykf_yp">
-				<div class="yp1">
-					<b class="b1">2</b>
-					<span class="jianyao">X</span>
-				</div>
-				<div class="yp2">
-					<select class="jfselect">
-						<option value="1">煎法</option>
-					</select>
-				</div>
-				<div class="yp3">
-					茯苓
-				</div>
-				<div class="yp4">
-					<input type="checkbox" name="xuanzeyp" class="xzypche">
-					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span>
-				</div>
-			</div>
-			<div class="zykf_yp">
-				<div class="yp1">
-					<b class="b1">3</b>
-					<span class="jianyao">X</span>
-				</div>
-				<div class="yp2">
-					<select class="jfselect">
-						<option value="1">煎法</option>
-					</select>
-				</div>
-				<div class="yp3">
-					茯苓
-				</div>
-				<div class="yp4">
-					<input type="checkbox" name="xuanzeyp" class="xzypche">
-					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span>
-				</div>
-			</div>
-			<div class="zykf_yp">
-				<div class="yp1">
-					<b class="b1">4</b>
-					<span class="jianyao">X</span>
-				</div>
-				<div class="yp2">
-					<select class="jfselect">
-						<option value="1">煎法</option>
-					</select>
-				</div>
-				<div class="yp3">
-					茯苓
-				</div>
-				<div class="yp4">
-					<input type="checkbox" name="xuanzeyp" class="xzypche">
-					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span>
-				</div>
-			</div>
-			<div class="zykf_yp">
-				<div class="yp1">
-					<b class="b1">5</b>
-					<span class="jianyao">X</span>
-				</div>
-				<div class="yp2">
-					<select class="jfselect">
-						<option value="1">煎法</option>
-					</select>
-				</div>
-				<div class="yp3">
-					茯苓
-				</div>
-				<div class="yp4">
-					<input type="checkbox" name="xuanzeyp" class="xzypche">
-					<span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span>
-				</div>
-			</div>
+			<?php $numdr++; endforeach; endif; ?>	
 		</div>
 		
 		<!-- 温热平寒占比 -->
@@ -251,8 +182,19 @@
 </div>
 	</body>
 	<script type="text/javascript">
-		$(function(){
-			alert(1);
-		});
+		$(document).on("input",".ylypnm",function(){
+				
+				var top = $(this).offset().top 
+				var left = $(this).offset().left
+				top = top-40;
+				left = left -110;
+				$('#zykf_cxypk').css('top',top+'px');
+				$('#zykf_cxypk').css('left',left+'px');
+				$('#zykf_cxypk').html($(this).val());
+				$('#zykf_cxypk').fadeIn();
+				$(this).blur(function(){
+				$('#zykf_cxypk').fadeOut();
+			});
+			});
 	</script>
 </html>

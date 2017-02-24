@@ -32,6 +32,9 @@ function ees(){
 	}
 }
 </script>
+<script>
+	document.oncontextmenu=new Function("event.returnValue=false;");
+</script>
 <body>
 	<br><br><br><br>
 	<form action="/zySystem/index.php/Home/Mynote/mlsubmit" method="post" id="fr">

@@ -12,11 +12,14 @@
 <link rel="stylesheet" href="/zySystem/uploadify/uploadify.css">
 <style type="text/css">
     #left{
+        margin-top:60px;
+        margin-left:50px;
         width:35%;
         height:500px;
         float:left;
     }
      #right{
+        margin-top:60px;
         width:35%;
         height:500px;
         float:left;
@@ -190,7 +193,7 @@ $('#mmcz').click(function(){
             dataType:'json',
             success:function(dd)
             {
-                alert(dd);
+               
             },
             error:function()
             {

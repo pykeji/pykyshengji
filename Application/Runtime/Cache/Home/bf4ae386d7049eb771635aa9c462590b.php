@@ -25,6 +25,9 @@
 		}
 	</style>
 </head>
+<script>
+	document.oncontextmenu=new Function("event.returnValue=false;");
+</script>
 <body>
 	<br><br><br>
 	<div style="width:80%;text-align:right;margin:auto;">
@@ -34,9 +37,9 @@
 	</div><br>
 	<table>
 		<tr>
-			<td style="width:20%;">ID</td>
-			<td style="width:60%;">目录名称</td>
-			<td style="width:20%;">操作</td>
+			<td style="width:20%;font-weight:bold;">ID</td>
+			<td style="width:60%;font-weight:bold;">目录名称</td>
+			<td style="width:20%;font-weight:bold;">操作</td>
 		</tr>
 		<?php if(is_array($nodes)): foreach($nodes as $key=>$nodes): ?><tr>
 				<td><?php echo ($nodes["id"]); ?></td>

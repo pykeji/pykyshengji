@@ -9,7 +9,130 @@
     <!-- bootstrap的引用 -->
     <link href="/zySystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+		.py{
+			background-color:#FFFFFF;color:red;margin-right:5px;
+		}
+		.d1{
+			float:left; margin:5px; border-radius:5px; width:150px;
+			height:100px;border: 1px #000000 solid;
+		}
+		.d2{
+			border: 1px #FFFBF0 solid; width:10px; position:relative;
+			left:5px;top:5px;color:red;
+		}
+		.d3{
+			border: 1px #000000 solid; width:40px;border-width:0 0 1px 0;
+			position:relative;left: 100px;top: -10px;
+		}
+		.d4{
+			border: 1px #000000 solid; width:80px; border-width:0 0 1px 0;
+			position:relative; left: 10px; top: -5px; font-size:20px;
+		}
+		.d5{
+			border: 1px #000000 solid; width:70px;border-width: 0 0 1px 0;
+			position:relative; left: 50px; top: 0px; text-align: right;
+		}
+		.fjt{
+			border: 1px #FFFBF0 solid;width: 600px; height: 50px;
+			text-align:center; font-size:20px;color:#8E852D
+		}
+		.fjcon{
+			width:600px;margin:20px;
+		}
+    </style>
 </head>
+<script>
+$(document).on("input","#impid",function(){
+	$.ajax({
+			type:"post",
+			url:"/zySystem/index.php/Home/Kaifang/impidajax",
+			dataType:"json",
+			data:{"pym":$('#impid').val()},
+			success:function(e){
+				var trd='';
+				for(var i=0;i<e.length;i++){
+					trd+='<tr><td>'+e[i]['name']+'</td></tr>';
+				}
+				$("#fjmtab").html(trd);
+			}
+		}); 
+});
+$(document).ready(function(){
+	$('.py').click(function(){
+		var ss=this.innerHTML;
+		$('#impid').val(ss);
+		$.ajax({
+			type:"post",
+			url:"/zySystem/index.php/Home/Kaifang/impidajax",
+			dataType:"json",
+			data:{"pym":$('#impid').val()},
+			success:function(e){
+				var trd='';
+				for(var i=0;i<e.length;i++){
+					trd+='<tr><td>'+e[i]['name']+'</td></tr>';
+				}
+				$("#fjmtab").html(trd);
+			}
+		}); 
+	});
+});
+function fangjie(id){
+	$.ajax({
+		type:"post",
+		url:"/zySystem/index.php/Home/Kaifang/fangjie",
+		dataType:"json",
+		data:{"tree":id},
+		success:function(e){
+			var str='';
+			for(var i=0;i<e.length;i++){
+				str+='<div style="width:700px;"><div class="d1"><div class="d2">'+e[i]["serial_no"]+'</div><div class="d3">'+e[i]["yf"]+'</div><div class="d4">'+e[i]["drug_name"]+'</div><div class="d5">'+e[i]["sl"]+e[i]["dw"]+'</div></div></div>';
+			}
+			$('#fjtab').html(str);
+		}
+	});
+	$.ajax({
+		type:"post",
+		url:"/zySystem/index.php/Home/Kaifang/fjcon",
+		dataType:"json",
+		data:{"tree":id},
+		success:function(f){
+			console.log(f);
+			var str1='方剂名称:'+f[0]['name'];
+			var str2='<strong>方解：</strong>'+f[0]['explain'];
+			if(f[0]['source']==null){
+				var str3='<strong>来源：</strong>';
+			}else{
+				var str3='<strong>来源：</strong>'+f[0]['source'];
+			}
+			if(f[0]['efficacy']==null){
+				var str4='<strong>功效：</strong>';
+			}else{
+				var str4='<strong>功效：</strong>'+f[0]['efficacy'];
+			}
+			if(f[0]['maincure']==null){
+				var str5='<strong>主治：</strong>';
+			}else{
+				var str5='<strong>主治：</strong>'+f[0]['maincure'];
+			}
+			
+			if(f[0]['tsyf']==null){
+				var str6='<strong>用法：</strong>';
+			}else{
+				var str6='<strong>用法：</strong>'+f[0]['tsyf'];
+			}
+			
+			$('.XYFnagJiMing').html(str1);	
+			$('.fjt').html(str1);
+			$('#fjcon1').html(str2);
+			$('#fjcon2').html(str3);
+			$('#fjcon3').html(str4);
+			$('#fjcon4').html(str5);
+			$('#fjcon5').html(str6);
+		}
+	});  
+}
+</script>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<!-- 使边框中有文字 -->
 <div class="ka1dadekuang1">
@@ -22,32 +145,32 @@
 			<img src="/zySystem/Public/img/tu1.jpg" style="margin-top: 20px; width: 40px; " alt="图片加载中。。。。">
 					&nbsp;
 			<div class="kuangneianniu">
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">A</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">B</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">C</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">D</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">E</button>
-				<button style=" background-color:#ffffff; color:red; margin-right: 5px;">F</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">G</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">H</button>
-				<button style=" background-color:#ffffff; color:red; margin-right: 5px;">I</button>
-				<button style=" background-color:#ffffff; color:red; margin-right: 5px;">J</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">K</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">L</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">M</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">N</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">O</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">P</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">Q</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">R</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">S</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">T</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">U</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">V</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">W</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">X</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">Y</button>
-				<button style="background-color:#FFFFFF; color:red; margin-right: 5px;">Z</button>
+				<button class="py">A</button>
+				<button class="py">B</button>
+				<button class="py">C</button>
+				<button class="py">D</button>
+				<button class="py">E</button>
+				<button class="py">F</button>
+				<button class="py">G</button>
+				<button class="py">H</button>
+				<button class="py">I</button>
+				<button class="py">J</button>
+				<button class="py">K</button>
+				<button class="py">L</button>
+				<button class="py">M</button>
+				<button class="py">N</button>
+				<button class="py">O</button>
+				<button class="py">P</button>
+				<button class="py">Q</button>
+				<button class="py">R</button>
+				<button class="py">S</button>
+				<button class="py">T</button>
+				<button class="py">U</button>
+				<button class="py">V</button>
+				<button class="py">W</button>
+				<button class="py">X</button>
+				<button class="py">Y</button>
+				<button class="py">Z</button>
 			</div>
 		</div>
 	</fieldset>
@@ -57,93 +180,24 @@
 	<!-- 下左 -->
 	<div class="xiazuofudong">
 		<div class="XZShuLu">
-			<div class="input-group ">
-				<input type="text" class="form-control"placeholder="请输入经典方名称" />
+			<div class="input-group">
+				<input type="text" class="form-control"placeholder="请输入经典方名称" id="impid"/>
 				<span class="input-group-btn">
 				<button class="btn btn-info btn-search">
-				<b style="color: #000000;">查找</b>
+				<b style="color:#000000;">查找</b>
 				</button>
 			</div>
 		</div>
 		<!-- 列表 -->
 		<!-- 方剂列表 -->
 		<div data-spy="scroll" data-target="#navbar-example" data-offset="0" class="XZfangJiLieBiao">
-			<table class="table table-condensed">
-			<tr height="20">
-				<th class="trdebingming">
-					经典方
-				</th>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
-			<tr onclick="dianjiyou(this)">
-				<td>
-					麻杏石甘汤
-				</td>
-			</tr>
+			<p class="trdebingming">经典方</p>
+			<table class="table table-condensed" id="fjmtab">
+			<?php if(is_array($cons)): foreach($cons as $key=>$cs): ?><tr id="<?php echo ($cs["tree"]); ?>" onclick="fangjie(id)">
+					<td>
+						<?php echo ($cs["name"]); ?>
+					</td>
+				</tr><?php endforeach; endif; ?>
 			</table>
 		</div>
 		<!-- </fieldset> -->
@@ -176,190 +230,30 @@
 				注：双击药品名称，显示药解信息！
 			</div>
 			<div class="XYFnagJiMing">
-				<strong>方剂名称:<尽量快圣诞节（爱思）></strong>
+				方剂名称：
 			</div>
 			<!-- 药品 -->
-			<table>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
-			<div style="width: 700px;">
-				<div style=" float:left; margin:5px; border-radius:5px; width:150px; height:100px; border: 1px #000000 solid;">
-					<div style="border: 1px #FFFBF0 solid; width:10px; position:relative; left: 5px; top: 5px; color: red;">
-						1
-					</div>
-					<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-						后下
-					</div>
-					<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0; position:relative; left: 10px; top: -5px; font-size:20px; ">
-						前胡
-					</div>
-					<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-						9.00克
-					</div>
-				</div>
-			</div>
+			<table id="fjtab">
 			</table>
 		</div>
 		<div class="tab-pane fade" id="ios">
 			<!-- 内容 -->
-			<div style="border: 1px #FFFBF0 solid;width: 600px; height: 50px; text-align:center; font-size:20px;color:#8E852D">
-				<strong>方剂名称:<尽量快圣诞节（爱思）></strong>
+			<div class="fjt">
+				方剂名称:
 			</div>
-			<div style=" width: 600px; margin:20px; ">
-				<strong>方解：</strong>家里卡手机登录方可将阿里卡世纪东方
+			<div class="fjcon" id="fjcon1">
+				<strong>方解：</strong>
 			</div>
-			<div style=" width: 600px; margin:20px; ">
+			<div class="fjcon" id="fjcon2">
 				<strong>来源：</strong>
 			</div>
-			<div style=" width: 600px; margin:20px; ">
+			<div class="fjcon" id="fjcon3">
 				<strong>功效：</strong>
 			</div>
-			<div style=" width: 600px; margin:20px; ">
+			<div class="fjcon" id="fjcon4">
 				<strong>主治：</strong>
 			</div>
-			<div style=" width: 600px; margin:20px; ">
+			<div class="fjcon" id="fjcon5">
 				<strong>用法：</strong>
 			</div>
 		</div>

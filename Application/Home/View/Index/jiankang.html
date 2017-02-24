@@ -172,124 +172,222 @@
                                 <th><label for="jws">既往史</label></th>
                                 <td colspan="8">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="jws">
-                                        </span>,
-                                    <span>确认时间：</span>
+                                            <input type="text" ondblclick="douCli('jws','jws1','jws1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="jws">
+                                        </span>
+                                        <div class="jws1">
+                                            <div class="div1">
+                                                <input type="text" id="jws1inp" style="border:1px solid #ccc;" placeholder="既往病史（多选）">
+                                                <input type="button" value="提交" id="jws1tj" onclick="sub('jws','jws1','jws1inp')">
+                                                <input type="button" value="关闭" class="clo">
+                                            </div>
+                                            <div class="div2">
+                                                <volist name="bls" id="vo">
+                                                    <if condition="$vo['typeid'] eq 1">
+                                                        <label><input type="checkbox" name="jws" class="jiwangshi1" onclick="checked2('jiwangshi1','jws1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                                    </if>
+                                                </volist>
+                                            </div>
+                                        </div>,
+                                        <span>确认时间：</span>
                                         <span>
                                             <!-- <input type="date" name="" style="width:130px;"> -->
                                             <input type="text" id="qrsj1" style="width:80px;" onClick="jeDate({dateCell:'#qrsj1',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly">
                                         </span>
-                                    <!-- <br/> -->
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
-                                        </span>,
-                                    <span>确认时间：</span>
+                                            <input type="text" ondblclick="douCli('crbs','jws2','jws2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="crbs">
+                                        </span>
+                                        <div class="jws2">
+                                            <div class="div1">
+                                                <input type="text" id="jws2inp" style="border:1px solid #ccc;" placeholder="传染病史（多选）">
+                                                <input type="button" value="提交" id="jws2tj" onclick="sub('crbs','jws2','jws2inp')">
+                                                <input type="button" value="关闭" class="clo">
+                                            </div>
+                                            <div class="div2">
+                                                <volist name="bls" id="vo">
+                                                    <if condition="$vo['typeid'] eq 2">
+                                                         <label><input type="checkbox" name="crbs" class="jiwangshi2" onclick="checked2('jiwangshi2','jws2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                                     </if>
+                                                </volist>
+                                            </div>
+                                        </div>,
+                                        <span>确认时间：</span>
                                         <span>
                                             <input type="text" id="qrsj2" style="width:80px;" onClick="jeDate({dateCell:'#qrsj2',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly">
                                         </span>
                                 </td>
                             </tr>
-                            <!-- <script>
-                                $(".year").keydown(function(){
-                                    if($(this).val().length>=4){
-                                        $(this).parent().next().children().focus();
-                                    }
-                                })
-                                $(".month").keydown(function(){
-                                    if($(this).val().length>=2){
-                                        $(this).parent().next().children().focus();
-                                    }
-                                })
-                            </script> -->
                             <tr style="position:relative;">
-                                <th rowspan="2"><label for="fq">家庭史</label></th>
+                                <th rowspan="2"><label for="yw1">家庭史</label></th>
                                 <td colspan="5">
-                                    <span><label for="fq">父亲：</label></span>
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="fq">
-                                        </span>
+                                    <span><label for="yw1">父亲：</label></span>
+                                        <!--<span>-->
+                                            <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="fq">-->
+                                        <!--</span>-->
                                         <span>[
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw1">]
+                                            <input type="text" ondblclick="douCli('yw1','jtsFar','jtsFarinp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw1">]
                                         </span>/
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
+                                            <input type="text" ondblclick="douCli('jtsFQ','jts11','jts11inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="jtsFQ">
                                         </span>
                                 </td>
                                 <div class="jtsFar">
-                                    <input type="text" id="jtsFarinp" style="border:1px solid #ccc;">
-                                    <input type="button" value="提交" id="jtsFartj">
-                                    <label><input type="radio" name="jt" class="jtscheck" value="无"><span>无</span></label>
-                                    <label><input type="radio" name="jt" class="jtscheck" value="有"><span>有</span></label>
+                                    <div class="div1">
+                                        <input type="text" id="jtsFarinp" style="border:1px solid #ccc;" placeholder="有无（单选）">
+                                        <input type="button" value="提交" id="jtsFartj" onclick="sub('yw1','jtsFar','jtsFarinp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <label><input type="radio" name="jtsyw1" class="jtscheck" value="无" onclick="checked1('jtscheck','jtsFarinp')"><span>无</span></label>
+                                        <label><input type="radio" name="jtsyw1" class="jtscheck" value="有" onclick="checked1('jtscheck','jtsFarinp')"><span>有</span></label>
+                                    </div>
+                                </div>
+                                <div class="jts11">
+                                    <div class="div1">
+                                        <input type="text" id="jts11inp" style="border:1px solid #ccc;" placeholder="既往病史（多选）">
+                                        <input type="button" value="提交" id="jts11tj" onclick="sub('jtsFQ','jts11','jts11inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 1">
+                                                <label><input type="checkbox" name="jtsFQ" class="gmcheck11" onclick="checked2('gmcheck11','jts11inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
                                 </div>
                                 <td colspan="3">
-                                    <span><label for="mq">母亲：</label></span>
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="mq">
-                                        </span>
+                                    <span><label for="yw2">母亲：</label></span>
+                                        <!--<span>-->
+                                            <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="mq">-->
+                                        <!--</span>-->
                                         <span>[
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw2">]
+                                            <input type="text" ondblclick="douCli('yw2','jtsMother','jtsMotherInp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw2">]
                                         </span>/
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
+                                            <input type="text" ondblclick="douCli('jtsMQ','jts22','jts22Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>6?this.value.length:6);" size="6" id="jtsMQ">
                                         </span>
                                 </td>
-                                <div class="jtsMother" style="display:none;">
-                                    <input type="text" id="jtsMotherInp" style="border:1px solid #ccc;">
-                                    <input type="button" value="提交" id="jtsMotherTj">
-                                    <label><input type="radio" name="jt" class="jtscheck" value="无"><span>无</span></label>
-                                    <label><input type="radio" name="jt" class="jtscheck" value="有"><span>有</span></label>
+                                <div class="jtsMother">
+                                    <div class="div1">
+                                        <input type="text" id="jtsMotherInp" style="border:1px solid #ccc;" placeholder="有无（单选）">
+                                        <input type="button" value="提交" id="jtsMotherTj" onclick="sub('yw2','jtsMother','jtsMotherInp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <label><input type="radio" name="jtsyw2" class="jtscheck2" value="无" onclick="checked1('jtscheck2','jtsMotherInp')"><span>无</span></label>
+                                        <label><input type="radio" name="jtsyw2" class="jtscheck2" value="有" onclick="checked1('jtscheck2','jtsMotherInp')"><span>有</span></label>
+                                    </div>
+                                </div>
+                                <div class="jts22">
+                                    <div class="div1">
+                                        <input type="text" id="jts22inp" style="border:1px solid #ccc;" placeholder="既往病史（多选）">
+                                        <input type="button" value="提交" id="jts22tj" onclick="sub('jtsMQ','jts22','jts22inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 1">
+                                                <label><input type="checkbox" name="jtsMQ" class="gmcheck22" onclick="checked2('gmcheck22','jts22inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
                                 </div>
                             </tr>
                             <tr>
                                 <td colspan="5">
-                                    <span><label for="xdjm">兄弟姐妹：</label></span>
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xdjm">
-                                        </span>
+                                    <span><label for="yw3">兄弟姐妹：</label></span>
+                                        <!--<span>-->
+                                            <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xdjm">-->
+                                        <!--</span>-->
                                         <span>[
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无">]
+                                            <input type="text" ondblclick="douCli('yw3','jts3','jts3Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw3">]
                                         </span>/
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
+                                            <input type="text" ondblclick="douCli('jtsXD','jts33','jts33Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="jtsXD">
                                         </span>
                                 </td>
+                                <div class="jts3">
+                                    <div class="div1">
+                                        <input type="text" id="jts3Inp" style="border:1px solid #ccc;" placeholder="有无（单选）">
+                                        <input type="button" value="提交" id="jts3Tj" onclick="sub('yw3','jts3','jts3Inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <label><input type="radio" name="jtsyw3" class="jtscheck3" value="无" onclick="checked1('jtscheck3','jts3Inp')"><span>无</span></label>
+                                        <label><input type="radio" name="jtsyw3" class="jtscheck3" value="有" onclick="checked1('jtscheck3','jts3Inp')"><span>有</span></label>
+                                    </div>
+                                </div>
+                                <div class="jts33">
+                                    <div class="div1">
+                                        <input type="text" id="jts33inp" style="border:1px solid #ccc;" placeholder="既往病史（多选）">
+                                        <input type="button" value="提交" id="jts33tj" onclick="sub('jtsXD','jts33','jts33inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 1">
+                                                <label><input type="checkbox" name="jtsXD" class="gmcheck33" onclick="checked2('gmcheck33','jts33inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <td colspan="3">
-                                    <span><label for="zn">子女：</label></span>
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="zn">
-                                        </span>
-                                        <span>[
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无">]
-                                        </span>/
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
-                                        </span>
+                                    <span><label for="yw4">子女：</label></span>
+                                    <!--<span>-->
+                                        <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="zn">-->
+                                    <!--</span>-->
+                                    <span>[
+                                        <input type="text" ondblclick="douCli('yw4','jts4','jts4Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw4">]
+                                    </span>/
+                                    <span>
+                                        <input type="text" ondblclick="douCli('jtsZN','jts44','jts44Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>6?this.value.length:6);" size="6" id="jtsZN">
+                                    </span>
                                 </td>
+                                <div class="jts4">
+                                    <div class="div1">
+                                        <input type="text" id="jts4Inp" style="border:1px solid #ccc;" placeholder="有无（单选）">
+                                        <input type="button" value="提交" id="jts4Tj" onclick="sub('yw4','jts4','jts4Inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <label><input type="radio" name="jtsyw4" class="jtscheck4" value="无" onclick="checked1('jtscheck4','jts4Inp')"><span>无</span></label>
+                                        <label><input type="radio" name="jtsyw4" class="jtscheck4" value="有" onclick="checked1('jtscheck4','jts4Inp')"><span>有</span></label>
+                                    </div>
+                                </div>
+                                <div class="jts44">
+                                    <div class="div1">
+                                        <input type="text" id="jts44inp" style="border:1px solid #ccc;" placeholder="既往病史（多选）">
+                                        <input type="button" value="提交" id="jts44tj" onclick="sub('jtsZN','jts44','jts44inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 1">
+                                                <label><input type="checkbox" name="jtsZN" class="gmcheck44" onclick="checked2('gmcheck44','jts44inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr style="position:relative;">
                                 <th><label for="gms">过敏史</label></th>
                                 <td colspan="6" style="width:395px;">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>15?this.value.length:15);" size="15" id="gms">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('gms','gm','gmsinp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:10);" size="30" id="gms">
+                                    </span>
                                 </td>
                                 <div class="gm">
-                                    <div>
-                                        <input type="text" id="gmsinp" style="border:1px solid #ccc;">
-                                        <input type="button" value="提交" id="gmstj">
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="无"><span>无</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="否认药物及食物过敏史"><span>否认药物及食物过敏史</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="青霉素"><span>青霉素</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="链霉素"><span>链霉素</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="普鲁卡因"><span>普鲁卡因</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="血清"><span>血清</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="头孢菌素"><span>头孢菌素</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="磺胺类药物"><span>磺胺类药物</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="海鲜"><span>海鲜</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="花粉"><span>花粉</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="鱼"><span>鱼</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="虾"><span>虾</span></label>
-                                        <label><input type="checkbox" name="gm" class="gmcheck" value="蟹"><span>蟹</span></label>
+                                    <div class="div1">
+                                        <input type="text" id="gmsinp" style="border:1px solid #ccc;" placeholder="过敏史（多选）">
+                                        <input type="button" value="提交" id="gmstj" onclick="sub('gms','gm','gmsinp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 3">
+                                                <label><input type="checkbox" name="gm" class="gmcheck" onclick="checked2('gmcheck','gmsinp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
                                     </div>
                                 </div>
                                 <th><label for="weight">体重</label></th>
@@ -305,21 +403,21 @@
                                 <td colspan="2">
                                     <span><label for="tw">体温:</label></span>
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="tw">
+                                            <input type="text" size="1" id="tw">
                                         </span>
                                     <span>℃</span>
                                 </td>
                                 <td colspan="2">
                                     <span><label for="mb">脉搏:</label></span>
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="mb">
+                                            <input type="text" size="1" id="mb">
                                         </span>
                                     <span>次/分</span>
                                 </td>
                                 <td colspan="2">
                                     <span><label for="hx">呼吸:</label></span>
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="hx">
+                                            <input type="text" size="1" id="hx">
                                         </span>
                                     <span>次/分</span>
                                 </td>
@@ -338,180 +436,471 @@
                                 <th rowspan="3"><label for="wshen">整体状况</label></th>
                                 <th><label for="wshen">忘神</label></th>
                                 <td colspan="7">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="wshen">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('wshen','zt1','zt1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="wshen">
+                                    </span>
                                 </td>
+                                <div class="zt1">
+                                    <div class="div1">
+                                        <input type="text" id="zt1inp" style="border:1px solid #ccc;" placeholder="忘神（单选）">
+                                        <input type="button" value="提交" id="zt1tj" onclick="sub('wshen','zt1','zt1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 4">
+                                                <label><input type="radio" name="wshen" class="zhengti1" onclick="checked1('zhengti1','zt1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="wse">忘色</label></th>
                                 <td colspan="7">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="wse">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('wse','zt2','zt2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="wse">
+                                    </span>
                                 </td>
+                                <div class="zt2">
+                                    <div class="div1">
+                                        <input type="text" id="zt2inp" style="border:1px solid #ccc;" placeholder="忘色（单选）">
+                                        <input type="button" value="提交" id="zt2tj" onclick="sub('wse','zt2','zt2inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 5">
+                                                <label><input type="radio" name="wse" class="zhengti2" onclick="checked1('zhengti2','zt2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th width="5%"><label for="tt">忘形</label></th>
                                 <th width="5%"><label for="tt">体态</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="tt">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('tt','zt3','zt3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="tt">
+                                    </span>
                                 </td>
+                                <div class="zt3">
+                                    <div class="div1">
+                                        <input type="text" id="zt3inp" style="border:1px solid #ccc;" placeholder="体态（单选）">
+                                        <input type="button" value="提交" id="zt3tj" onclick="sub('tt','zt3','zt3inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 6">
+                                                <label><input type="radio" name="tt" class="zhengti3" onclick="checked1('zhengti3','zt3inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th colspan="2"><label for="tx">体形</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="tx">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('tx','zt4','zt4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="tx">
+                                    </span>
                                 </td>
+                                <div class="zt4">
+                                    <div class="div1">
+                                        <input type="text" id="zt4inp" style="border:1px solid #ccc;" placeholder="体形（单选）">
+                                        <input type="button" value="提交" id="zt4tj" onclick="sub('tx','zt4','zt4inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 7">
+                                                <label><input type="radio" name="tx" class="zhengti4" onclick="checked1('zhengti4','zt4inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th rowspan="5"><label for="zl">现在状况</label></th>
                                 <th><label for="zl">睡眠</label></th>
                                 <th><label for="zl">质量</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="zl">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('zl','xz1','xz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="zl">
+                                    </span>
                                 </td>
+                                <div class="xz1">
+                                    <div class="div1">
+                                        <input type="text" id="xz1inp" style="border:1px solid #ccc;" placeholder="睡眠质量（多选）">
+                                        <input type="button" value="提交" id="xz1tj" onclick="sub('zl','xz1','xz1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 8">
+                                                <label><input type="checkbox" name="zl" class="xianzai1" onclick="checked2('xianzai1','xz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th colspan="2"><label for="sj">时间</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sj">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('sj','xz2','xz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="sj">
+                                    </span>
                                 </td>
+                                <div class="xz2">
+                                    <div class="div1">
+                                        <input type="text" id="xz2inp" style="border:1px solid #ccc;" placeholder="睡眠时间（单选）">
+                                        <input type="button" value="提交" id="xz2tj" onclick="sub('sj','xz2','xz2inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 9">
+                                                <label><input type="radio" name="sj" class="xianzai2" onclick="checked1('xianzai2','xz2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="sy">食欲</label></th>
                                 <td colspan="7">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sy">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('sy','xz3','xz3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="sy">
+                                    </span>
                                 </td>
+                                <div class="xz3">
+                                    <div class="div1">
+                                        <input type="text" id="xz3inp" style="border:1px solid #ccc;" placeholder="食欲（单选）">
+                                        <input type="button" value="提交" id="xz3tj" onclick="sub('sy','xz3','xz3inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 10">
+                                                <label><input type="radio" name="sy" class="xianzai3" onclick="checked1('xianzai3','xz3inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="kw">口味</label></th>
                                 <td colspan="7">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="kw">
+                                            <input type="text" ondblclick="douCli('kw','xz4','xz4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="kw">
                                         </span>
                                 </td>
+                                <div class="xz4">
+                                    <div class="div1">
+                                        <input type="text" id="xz4inp" style="border:1px solid #ccc;" placeholder="口味（多选）">
+                                        <input type="button" value="提交" id="xz4tj" onclick="sub('kw','xz4','xz4inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 11">
+                                                <label><input type="checkbox" name="kw" class="xianzai4" onclick="checked2('xianzai4','xz4inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="dbc">大便</label></th>
                                 <th><label for="dbc">便次</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="dbc">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('dbc','xz5','xz5inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="dbc">
+                                    </span>
                                 </td>
+                                <div class="xz5">
+                                    <div class="div1">
+                                        <input type="text" id="xz5inp" style="border:1px solid #ccc;" placeholder="大便便次（单选）">
+                                        <input type="button" value="提交" id="xz5tj" onclick="sub('dbc','xz5','xz5inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 12">
+                                                <label><input type="radio" name="dbc" class="xianzai5" onclick="checked1('xianzai5','xz5inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th colspan="2"><label for="bz">便质</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="bz">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('bz','xz6','xz6inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="bz">
+                                    </span>
                                 </td>
+                                <div class="xz6">
+                                    <div class="div1">
+                                        <input type="text" id="xz6inp" style="border:1px solid #ccc;" placeholder="大便便质（单选）">
+                                        <input type="button" value="提交" id="xz6tj" onclick="sub('bz','xz6','xz6inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 13">
+                                                <label><input type="radio" name="bz" class="xianzai6" onclick="checked1('xianzai6','xz6inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="xbc">小便</label></th>
                                 <th><label for="xbc">便次</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xbc">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('xbc','xz7','xz7inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="xbc">
+                                    </span>
                                 </td>
+                                <div class="xz7">
+                                    <div class="div1">
+                                        <input type="text" id="xz7inp" style="border:1px solid #ccc;" placeholder="小便便次（单选）">
+                                        <input type="button" value="提交" id="xz7tj" onclick="sub('xbc','xz7','xz7inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 14">
+                                                <label><input type="radio" name="xbc" class="xianzai7" onclick="checked1('xianzai7','xz7inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th colspan="2"><label for="bs">便色</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="bs">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('bs','xz8','xz8inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="bs">
+                                    </span>
                                 </td>
+                                <div class="xz8">
+                                    <div class="div1">
+                                        <input type="text" id="xz8inp" style="border:1px solid #ccc;" placeholder="小便便色（单选）">
+                                        <input type="button" value="提交" id="xz8tj" onclick="sub('bs','xz8','xz8inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 15">
+                                                <label><input type="radio" name="bs" class="xianzai8" onclick="checked1('xianzai8','xz8inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="xq">情致</label></th>
                                 <th><label for="xq">性情</label></th>
                                 <td colspan="3">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xq">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('xq','qz1','qz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="xq">
+                                    </span>
                                 </td>
+                                <div class="qz1">
+                                    <div class="div1">
+                                        <input type="text" id="qz1inp" style="border:1px solid #ccc;" placeholder="情致（单选）">
+                                        <input type="button" value="提交" id="qz1tj" onclick="sub('xq','qz1','qz1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 16">
+                                                <label><input type="radio" name="xq" class="qingzhi1" onclick="checked1('qingzhi1','qz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th colspan="2"><label for="xg">性格</label></th>
                                 <td colspan="2">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xg">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('xg','qz2','qz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="xg">
+                                    </span>
                                 </td>
+                                <div class="qz2">
+                                    <div class="div1">
+                                        <input type="text" id="qz2inp" style="border:1px solid #ccc;" placeholder="性格（单选）">
+                                        <input type="button" value="提交" id="qz2tj" onclick="sub('xg','qz2','qz2inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 17">
+                                                <label><input type="radio" name="xg" class="qingzhi2" onclick="checked1('qingzhi2','qz2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="xj">心悸</label></th>
                                 <td colspan="8">[
-                                    <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="xj">]
+                                    <input type="text" ondblclick="douCli('xj','xj1','xj1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="xj">]
                                 </td>
+                                <div class="xj1">
+                                    <div class="div1">
+                                        <input type="text" id="xj1inp" style="border:1px solid #ccc;" placeholder="有无（单选）">
+                                        <input type="button" value="提交" id="xj1tj" onclick="sub('xj','xj1','xj1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <label><input type="radio" name="xj" class="xinji1" onclick="checked1('xinji1','xj1inp')" value="有"><span>有</span></label>
+                                        <label><input type="radio" name="xj" class="xinji1" onclick="checked1('xinji1','xj1inp')" value="无"><span>无</span></label>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th rowspan="2"><label for="ss">舌诊</label></th>
                                 <th><label for="ss">舌色</label></th>
                                 <td>
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="ss">
+                                            <input type="text" ondblclick="douCli('ss','sz1','sz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="ss">
                                         </span>
                                 </td>
+                                <div class="sz1">
+                                    <div class="div1">
+                                        <input type="text" id="sz1inp" style="border:1px solid #ccc;" placeholder="舌诊-舌色（单选）">
+                                        <input type="button" value="提交" id="sz1tj" onclick="sub('ss','sz1','sz1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 18">
+                                                <label><input type="radio" name="ss" class="shezhen1" onclick="checked1('shezhen1','sz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th><label for="st">舌体</label></th>
                                 <td colspan="2">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="st">
+                                            <input type="text" ondblclick="douCli('st','sz2','sz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="st">
                                         </span>
                                 </td>
+                                <div class="sz2">
+                                    <div class="div1">
+                                        <input type="text" id="sz2inp" style="border:1px solid #ccc;" placeholder="舌诊-舌体（单选）">
+                                        <input type="button" value="提交" id="sz2tj" onclick="sub('st','sz2','sz2inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 19">
+                                                <label><input type="radio" name="st" class="shezhen2" onclick="checked1('shezhen2','sz2inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th colspan="2"><label for="dt">动态</label></th>
                                 <td>
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="dt">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('dt','sz3','sz3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="dt">
+                                    </span>
                                 </td>
+                                <div class="sz3">
+                                    <div class="div1">
+                                        <input type="text" id="sz3inp" style="border:1px solid #ccc;" placeholder="舌诊-动态（单选）">
+                                        <input type="button" value="提交" id="sz3tj" onclick="sub('dt','sz3','sz3inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 20">
+                                                <label><input type="radio" name="dt" class="shezhen3" onclick="checked1('shezhen3','sz3inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="tz">苔质</label></th>
                                 <td>
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="tz">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('tz','sz4','sz4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="tz">
+                                    </span>
                                 </td>
+                                <div class="sz4">
+                                    <div class="div1">
+                                        <input type="text" id="sz4inp" style="border:1px solid #ccc;" placeholder="舌诊-苔质（单选）">
+                                        <input type="button" value="提交" id="sz4tj" onclick="sub('tz','sz4','sz4inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 21">
+                                                <label><input type="radio" name="tz" class="shezhen4" onclick="checked1('shezhen4','sz4inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                                 <th><label for="ts">苔色</label></th>
                                 <td colspan="5">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="ts">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('ts','sz5','sz5inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="ts">
+                                    </span>
                                 </td>
+                                <div class="sz5">
+                                    <div class="div1">
+                                        <input type="text" id="sz5inp" style="border:1px solid #ccc;" placeholder="舌诊-苔色（单选）">
+                                        <input type="button" value="提交" id="sz5tj" onclick="sub('ts','sz5','sz5inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 22">
+                                                <label><input type="radio" name="ts" class="shezhen5" onclick="checked1('shezhen5','sz5inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="mz">脉诊</label></th>
                                 <td colspan="8">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="mz">
-                                        </span>
+                                    <span>
+                                        <input type="text" ondblclick="douCli('mz','mz1','mz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="mz">
+                                    </span>
                                 </td>
+                                <div class="mz1">
+                                    <div class="div1">
+                                        <input type="text" id="mz1inp" style="border:1px solid #ccc;" placeholder="脉诊（多选）">
+                                        <input type="button" value="提交" id="mz1tj" onclick="sub('mz','mz1','mz1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <volist name="bls" id="vo">
+                                            <if condition="$vo['typeid'] eq 23">
+                                                <label><input type="checkbox" name="mz" class="maizhen1" onclick="checked2('maizhen1','mz1inp')" value="{$vo.name}"><span>{$vo.name}</span></label>
+                                            </if>
+                                        </volist>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="tzbs">体质辨识</label></th>
                                 <td colspan="8">
-                                        <span>
-                                            [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="tzbs" value="体质辨识">]
-                                        </span>
+                                    <span>
+                                        [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>65?this.value.length:65);" size="65" id="tzbs" value="体质辨识" style="text-align: center;">]
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
                                 <th><label for="zyzd">中医诊断</label></th>
                                 <td colspan="4">
-                                        <span>
-                                            [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="zyzd" value="中医诊断">]
-                                        </span>
+                                    <span>
+                                        [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="zyzd" value="中医诊断">]
+                                    </span>
                                 </td>
                                 <th><label for="xyzd">西医诊断</label></th>
                                 <td colspan="3">
-                                        <span>
-                                            [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="xyzd" value="西医诊断">]
-                                        </span>
+                                    <span>
+                                        [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="xyzd" value="西医诊断">]
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
@@ -531,13 +920,6 @@
                             <tr>
                                 <th>处置</th>
                                 <td colspan="8">
-                                    <!-- <div>
-                                        <span>[</span>
-                                        <span>
-                                            [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="4" id="zycz" value="中医处置">]
-                                        </span>
-                                        <span>]</span>
-                                    </div> -->
                                     <div class="chufang">
                                         <div>
                                             <span>【中药处方】：</span>
@@ -565,7 +947,7 @@
                                 <th>其他治疗计划</th>
                                 <td colspan="8">
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
+                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>20?this.value.length:20);" size="20">
                                         </span>
                                 </td>
                             </tr>
