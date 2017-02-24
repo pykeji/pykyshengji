@@ -108,6 +108,7 @@ class AjaxController extends Controller {
           // $list[$i]['tianshu'] = $atianshu[$i+1];
           $list[$i]['BR_ID'] = session(id);
           $list[$i]['xy_name'] = $_POST[xybm];
+          $list[$i]['XH'] = session(xh);
         }
 
           for($j = 0; $j < $num; $j++){
@@ -161,4 +162,21 @@ class AjaxController extends Controller {
         $this->ajaxReturn(1);
 
       }
+      //中医药品查询
+      public function zysele(){
+        $val = $_POST[val];
+         $durg = M('drug_dict');
+        if(preg_match("/^[a-z]/i", $val)){
+          $where['input_code'] = array('like',"{$val}%");
+          $where['drug_indicator'] = 2;
+          $list = $durg->where($where)->where("drug_indicator=2")->field('drug_name')->select();
+      }else{
+          $where2['drug_name'] = array('like',"{$val}%");
+          $where2['drug_indicator'] = 2;
+          $list = $durg->where($where2)->field('drug_name')->select();
+      }
+       
+        $this->ajaxReturn($list);
+      }
+      
 }

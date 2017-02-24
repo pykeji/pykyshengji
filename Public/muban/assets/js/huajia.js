@@ -114,7 +114,18 @@ function sub(){
 	 	/*for(var key in hidArr){
 	 		document.writeln(hidArr[key].value);
 	 	}*/
-	 	
+	 	var ss=$(".sty1").children("tr");
+
+	 	for(var i-0;i<ss.length;i++){
+		var tdarr=ss.eq(i).find("td");
+		var k0=tdArr.eq(0).find("input").val();
+		var k1=tdArr.eq(1).find("input").val();
+		var k2=tdArr.eq(2).find("input").val();
+		var k3=tdArr.eq(3).find("input").val();
+		var k4=tdArr.eq(4).find("input").val();
+		var k5=tdArr.eq(5).find("input").val();
+		alert(k0);
+	}
 		$("form").submit();
 	}
 }

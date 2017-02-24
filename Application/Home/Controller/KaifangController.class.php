@@ -22,7 +22,7 @@ class KaifangController extends Controller {
             $where['BM'] = '000';
             $data = $user->where($where)->distinct(true)->field('name,code')->select();
             // $where['bm_input'] = array('like',"'$tjbm%'");
-            // $data = $user->where("bm_input like '".$user."%' ")->field('name')->select();
+            // .$user."%' ")->field('name')->sel$data = $user->where("bm_input like '"ect();
             // $data = $user->where("bm_input = 'XEGM' ")->field('name')->select();
             $this->ajaxReturn($data,'json');
         }else{
@@ -64,7 +64,10 @@ class KaifangController extends Controller {
         $tjyouzhengxing = I('post.tjyouzhengxing');//接受ajax传过来的条件
         $user = M("bz_cf");
         $where['bz_cf.cfdm'] = $tjyouzhengxing;
-        $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')->select();
+        $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')
+                    ->where($where)
+                    ->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')
+                    ->select();
         $this->ajaxReturn($data);
     }
     //证型治法页面
@@ -96,12 +99,104 @@ class KaifangController extends Controller {
         $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')->select();
         $this->ajaxReturn($data);
     }
+    //治疗指南
     public function zhiLiaoZhinan(){
+        $user = M("jbxx");
+        $where['XXLBDM'] = '16';
+        $data = $user->where($where)->order('xxdm')->select();
+        $this->assign("data",$data);
         $this->display();
+    }
+    // ajax治疗指南点击出现子类
+    public function ajaxzlznzilei(){
+        $zhuaxuyhaoid = I('post.zhuaxuyhaoid');//接受ajax传过来的条件
+        $user = M('v_tcd_zyxk');
+        $where['BM'] = $zhuaxuyhaoid;
+        $databingm = $user->where($where)->field('name,code')->select();
+        $this->ajaxReturn($databingm);
+
+    }
+    //
+    public function yeerajaxtjbm(){
+        $tjbm = I('post.tjbm');//接受ajax传过来的条件
+        if(preg_match ("/^[a-z]/i", $tjbm)){
+            $user = M("v_tcd_zyxk");
+            $where['input_code'] = array('like',"{$tjbm}%");
+            $data = $user->where($where)->distinct(true)->field('BM,name,code')->select();
+            // $where['bm_input'] = array('like',"'$tjbm%'");
+            // $data = $user->where("bm_input like '".$user."%' ")->field('name')->select();
+            // $data = $user->where("bm_input = 'XEGM' ")->field('name')->select();
+            $this->ajaxReturn($data);
+        }else{
+            $user = M("v_tcd_zyxk");
+            $where['NAME'] = array('like',"{$tjbm}%");
+            $data = $user->where($where)->distinct(true)->field('BM,name,code')->select();
+            // $where['bm_input'] = array('like',"'$tjbm%'");
+            // $data = $user->where("bm_input like '".$user."%' ")->field('name')->select();
+            // $data = $user->where("bm_input = 'XEGM' ")->field('name')->select();
+            $this->ajaxReturn($data);
+        }
+        
+    }
+    //页面3ajax改变右侧证型
+    public function yesanajaxyouzhengxing(){
+        $tjzuobingm = I('post.tjzuobingm');//接受ajax传过来的条件
+        $user = M("tcd_zybm");
+        $where['zyyxh_code'] = $tjzuobingm;
+        $data = $user->where($where)->field('ZX,ZF,cf_name,cf_tree,explain')->select();
+
+        $this->ajaxReturn($data);
+    }
+    //页面3按证型搜索赋值
+    public function yesanajaxzhengxingzhif(){
+        $tjbmzxzf = I('post.tjbmzxzf');//接受ajax传过来的病名code条件
+        $zxzfjg = I('post.zxzfjg');//接受ajax传过来的条件
+        $user = M("tcd_zybm");
+        $where['ZX_INPUT'] = array('like',"{$zxzfjg}%");
+        $where['ZF_INPUT'] = array('like',"{$zxzfjg}%");
+        $where['_logic'] = 'or';
+        $map['_complex'] = $where;
+        $map['zyyxh_code'] = $tjbmzxzf;
+        // $where['_string'] = ' (ZX_INPUT like "{$zxzfjg}%")  OR ( ZF_INPUT like "{$zxzfjg}%") ';
+        $data = $user->where($map)->field('ZX,ZF,cf_name,cf_tree,explain')->select();
+        $this->ajaxReturn($data);
+    }
+    //页面3 ajax 点击证型 改变处方 
+    public function yesanajaxgaibianchufang(){
+        $tjyouzhengxing = I('post.tjyouzhengxing');//接受ajax传过来的条件
+        $user = M("bz_cf");
+        $where['bz_cf.cfdm'] = $tjyouzhengxing;
+        $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')->select();
+        $this->ajaxReturn($data);
     }
     public function jingDian(){
+        $model=M('y_recipemain');
+        $cons=$model->where("type='1'")->order('type asc,tree')->select();
+        $this->assign('cons',$cons);
         $this->display();
     }
+    function impidajax(){
+        $model=M('y_recipemain');
+
+        $fjm=$model->where("spell like '%".$_POST[pym]."%'")
+                ->order('type asc,tree')
+                ->select();
+        $this->ajaxReturn($fjm);
+    }
+    function fangjie(){ 
+        $model=M('bz_cf');
+        $result=$model->field('bz_cf.*,b2.drug_name')
+                    ->join('bz_cf left join dict_drug_zy as b2 on b2.drug_code=bz_cf.ypdm')
+                    ->where("bz_cf.cfdm='$_POST[tree]'")
+                    ->order('serial_no asc')
+                    ->select();
+        $this->ajaxReturn($result);
+    }
+    function fjcon(){
+        $model=M('y_recipemain');
+        $data=$model->where("tree='$_POST[tree]'")->select();
+        $this->ajaxReturn($data);
+    } 
     public function jingYan(){
         $this->display();
     }
@@ -123,9 +218,13 @@ class KaifangController extends Controller {
     public function zyhome(){
         $dict = M('bz_cf');
         $where['bz_cf.cfdm'] = '1413.1001';
-        $data = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw')->select();
+        $data = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->join('drug_dict on dict_drug_zy.drug_code=drug_dict.drug_code')->field('dict_drug_zy.drug_name,bz_cf.dw,dict_drug_zy.drug_code,drug_dict.xw1')->select();
         // dump($data);die;
+        $cfTree = M('tcd_szjj');
+        $szjj = $cfTree->where("CF_TREE='1002.1006'")->select();
+        // var_dump($data);die;
         $this->assign('zy_yp',$data);
+        $this->assign('szjj',$szjj);
         $this->display();
     }
 }
