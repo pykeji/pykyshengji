@@ -10,6 +10,32 @@
     <script type="text/javascript" src="/zySystem/Public/muban/assets/js/bootstrap.js"></script>
     <script src="/zySystem/Public/js/jeDate/jedate.js"></script>
 </head>
+<style>
+    @media print{
+        .wu{display:none;}
+    }
+</style>
+<script language=javascript>
+    //    打印功能JS
+    function preview(oper)
+    {
+        $("#qrsj1").attr("value",$("#qrsj1").val());
+        $("#qrsj2").attr("value",$("#qrsj2").val());
+        if (oper < 10){
+            bdhtml=window.document.body.innerHTML;//获取当前页的html代码
+            sprnstr="<!--startprint"+oper+"-->";//设置打印开始区域
+            eprnstr="<!--endprint"+oper+"-->";//设置打印结束区域
+            prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取htm
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+            window.document.body.innerHTML=bdhtml;
+        }
+        else {
+            window.print();
+        }
+    }
+</script>
 <body  oncontextmenu=self.event.returnValue=false onselectstart="return false">
     <div class="bg">
         <!--病人基本信息-->
@@ -60,15 +86,15 @@
                     </tr>
                     <tr>
                         <td><label for="yydate">预约日期：</label></td>
-                        <td><input type="text" value="<?php echo ($data["0"]["jz_date"]); ?>" id="yydate" readonly></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["p_date"]); ?>" id="yydate" readonly></td>
                     </tr>
                     <tr>
                         <td><label for="ghcost">挂号费：</label></td>
                         <td><input type="text" value="<?php echo ($data["0"]["ghf"]); ?>" id="ghcost" readonly></td>
                     </tr>
                     <tr>
-                        <td><label for="jzcost">就诊费：</label></td>
-                        <td><input type="text" value="不知道" id="jzcost" readonly></td>
+                        <td><label for="jzdate">就诊日期：</label></td>
+                        <td><input type="text" value="<?php echo ($data["0"]["jz_date"]); ?>" id="jzdate" readonly></td>
                     </tr>
                 </table>
             </div>
@@ -82,14 +108,14 @@
                     <tr class="first-tr">
                         <td colspan="2">本次病历</td>
                     </tr>
-                    <tr class="other-tr">
-                        <td>2016-11-28 15:01:00</td>
+                    <?php if(is_array($his)): foreach($his as $key=>$vo): ?><tr class="other-tr">
+                        <td><?php echo ($vo["jz_date"]); ?></td>
                         <td width="75">
                             <div class="butt">
-                                <button type="button" class="btn btn-warning">查看处方</button>
+                                <a href='<?php echo U("Index/jiankang",array("jid"=>$vo[br_id],"jxh"=>$vo[xh]));?>'>查看处方</a>
                             </div>
                         </td>
-                    </tr>
+                    </tr><?php endforeach; endif; ?>
                 </table>
             </div>
         </div>
@@ -98,12 +124,14 @@
             <!--健康档案-->
             <div class="right-center">
                 <div class="health-file center">
-                    <form action="#" method="post">
+                    <form action="<?php echo U('Index/jiankangSave');?>" method="post" id="form1">
+                        <!--startprint1-->
                         <table border="1" cellspacing="1" class="jkda-table">
                             <div class="title">中医健康档案</div>
                             <div class="title2">
                                 <div>
                                     <span>就诊日期：</span>
+                                    <?php $data[0]['jz_date']=substr($data[0]['jz_date'],0,10); ?>
                                     <span id="jzrq"><?php echo ($data["0"]["jz_date"]); ?></span>
                                 </div>
                                 <div>
@@ -114,83 +142,84 @@
                             <tr>
                                 <th width="8%"><label for="name">姓名</label></th>
                                 <td colspan="2" width="10%">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" value="<?php echo ($data["0"]["br_name"]); ?>" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
-                                        </span>
+                                    <span>
+                                        <input type="text" name="br_name" onkeydown="this.onkeyup();" value="<?php echo ($data["0"]["br_name"]); ?>" onkeyup="this.size=(this.value.length>3?this.value.length:3);" size="3" id="name">
+                                    </span>
                                 </td>
                                 <th width="6%"><label for="sex">性别</label></th>
                                 <td width="7%">
-                                        <span>
-                                            <input type="text" value="<?php echo ($data["0"]["xb"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
-                                        </span>
+                                    <span>
+                                        <input type="text" name="xb" value="<?php echo ($data["0"]["xb"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="sex">
+                                    </span>
                                 </td>
                                 <th width="7%"><label for="age">年龄</label></th>
                                 <td width="7%">
-                                        <span>
-                                            <input type="text" value="<?php echo ($data["0"]["nl"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
-                                        </span>
+                                    <span>
+                                        <input type="text" name="nl" value="<?php echo ($data["0"]["nl"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="age">
+                                    </span>
                                 </td>
                                 <th width="7%"><label for="birthday">出生日期</label></th>
                                 <td width="11%">
-                                        <span>
-                                            <input type="text" value="<?php echo ($data["0"]["cs_date"]); ?>" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
-                                        </span>
+                                    <span>
+                                        <input type="text" name="cs_date" value="<?php echo ($data["0"]["cs_date"]); ?>" style="width:80px;"  onClick="jeDate({dateCell:'#birthday',isTime:true,format:'YYYY-MM-DD'})" size="1" id="birthday">
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
                                 <th><label for="userID">身份证号</label></th>
                                 <td colspan="3">
-                                        <span>
-                                            <input type="text" value="<?php echo ($data["0"]["pass"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>17?this.value.length:17);" size="17" id="userID">
-                                        </span>
+                                    <span>
+                                        <input type="text" name="pass" value="<?php echo ($data["0"]["pass"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>17?this.value.length:17);" size="17" id="userID">
+                                    </span>
                                 </td>
                                 <th colspan="2"><label for="phone">联系方式</label></th>
                                 <td colspan="3">
-                                        <span>
-                                            <input type="text" value="<?php echo ($data["0"]["tel"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
-                                        </span>
+                                    <span>
+                                        <input type="text" name="tel" value="<?php echo ($data["0"]["tel"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:15);" size="10" id="phone">
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
                                 <th><label for="duo">工作单位</label></th>
                                 <td colspan="8">
-                                        <span>
-                                            <!-- <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>20?this.value.length:20);" size="20" id="work"> -->
-                                            <textarea name=""  id="duo" cols="70" rows="3"><?php echo ($data["0"]["dw"]); ?></textarea>
-                                        </span>
+                                    <span>
+                                        <!-- <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>20?this.value.length:20);" size="20" id="work"> -->
+                                        <textarea name="dw" id="duo" cols="70" rows="3"><?php echo ($data["0"]["dw"]); ?></textarea>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
                                 <th><label for="main">主诉</label></th>
                                 <td colspan="8">
-                                        <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>30?this.value.length:30);" size="30" id="main">
-                                        </span>
+                                    <span>
+                                        <input type="text" name="zs" value="<?php echo ($jk1["zs"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>30?this.value.length:30);" size="30" id="main">
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
-                                <th><label for="jws">既往史</label></th>
+                                <th><label for="jws11">既往史</label></th>
                                 <td colspan="8">
                                         <span>
-                                            <input type="text" ondblclick="douCli('jws','jws1','jws1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="jws">
+                                            <input type="text" name="jws" value="<?php echo ($jk1["jws"]); ?>" ondblclick="douCli('jws11','jws1','jws1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>5?this.value.length*2:5);" size="5" id="jws11">
                                         </span>
                                         <div class="jws1">
                                             <div class="div1">
                                                 <input type="text" id="jws1inp" style="border:1px solid #ccc;" placeholder="既往病史（多选）">
-                                                <input type="button" value="提交" id="jws1tj" onclick="sub('jws','jws1','jws1inp')">
+                                                <input type="button" value="提交" id="jws1tj" onclick="sub('jws11','jws1','jws1inp')">
                                                 <input type="button" value="关闭" class="clo">
                                             </div>
                                             <div class="div2">
-                                                <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 1): ?><label><input type="checkbox" name="jws" class="jiwangshi1" onclick="checked2('jiwangshi1','jws1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                                <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 1): ?><label><input type="checkbox" name="jws1" class="jiwangshi1" onclick="checked2('jiwangshi1','jws1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                             </div>
                                         </div>,
-                                        <span>确认时间：</span>
+                                        <span id="sj1">确认时间：</span>
                                         <span>
                                             <!-- <input type="date" name="" style="width:130px;"> -->
-                                            <input type="text" id="qrsj1" style="width:80px;" onClick="jeDate({dateCell:'#qrsj1',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly">
+                                            <input type="text" id="qrsj1" name="jws_date" value="<?php echo ($jk1["jws_date"]); ?>" style="width:80px;" onClick="jeDate({dateCell:'#qrsj1',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly">
                                         </span>
+                                        <!--既往病史结束，传染病史开始-->
                                         <span>
-                                            <input type="text" ondblclick="douCli('crbs','jws2','jws2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="crbs">
+                                            <input type="text" name="crbs" value="<?php echo ($jk1["crbs"]); ?>" ondblclick="douCli('crbs','jws2','jws2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>5?this.value.length*2:5);" size="5" id="crbs">
                                         </span>
                                         <div class="jws2">
                                             <div class="div1">
@@ -199,12 +228,12 @@
                                                 <input type="button" value="关闭" class="clo">
                                             </div>
                                             <div class="div2">
-                                                <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 2): ?><label><input type="checkbox" name="crbs" class="jiwangshi2" onclick="checked2('jiwangshi2','jws2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                                <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 2): ?><label><input type="checkbox" name="crbs1" class="jiwangshi2" onclick="checked2('jiwangshi2','jws2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                             </div>
                                         </div>,
                                         <span>确认时间：</span>
                                         <span>
-                                            <input type="text" id="qrsj2" style="width:80px;" onClick="jeDate({dateCell:'#qrsj2',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly">
+                                            <input type="text" name="crbs_date" value="<?php echo ($jk1["crbs_date"]); ?>" id="qrsj2" style="width:80px;" onClick="jeDate({dateCell:'#qrsj2',isTime:true,format:'YYYY-MM-DD'})" readonly="readonly">
                                         </span>
                                 </td>
                             </tr>
@@ -215,11 +244,13 @@
                                         <!--<span>-->
                                             <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="fq">-->
                                         <!--</span>-->
-                                        <span>[
-                                            <input type="text" ondblclick="douCli('yw1','jtsFar','jtsFarinp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw1">]
+                                        <span><span class="wu">[</span>
+                                            <?php if($jk1["jts_fq1"] == ''): ?><input type="text" name="jts_fq1" ondblclick="douCli('yw1','jtsFar','jtsFarinp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw1"><span class="wu">]</span>
+                                            <?php else: ?>
+                                             <input type="text" name="jts_fq1" ondblclick="douCli('yw1','jtsFar','jtsFarinp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="<?php echo ($jk1["jts_fq1"]); ?>" id="yw1"><span class="wu">]</span><?php endif; ?>
                                         </span>/
                                         <span>
-                                            <input type="text" ondblclick="douCli('jtsFQ','jts11','jts11inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="jtsFQ">
+                                            <input type="text" name="jts_fq2" value="<?php echo ($jk1["jts_fq2"]); ?>" ondblclick="douCli('jtsFQ','jts11','jts11inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="jtsFQ">
                                         </span>
                                 </td>
                                 <div class="jtsFar">
@@ -229,8 +260,8 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <label><input type="radio" name="jtsyw1" class="jtscheck" value="无" onclick="checked1('jtscheck','jtsFarinp')"><span>无</span></label>
-                                        <label><input type="radio" name="jtsyw1" class="jtscheck" value="有" onclick="checked1('jtscheck','jtsFarinp')"><span>有</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw1" class="yw1" value="无" onclick="checked1('yw1','jtsFarinp')"><span>无</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw1" class="yw1" value="有" onclick="checked1('yw1','jtsFarinp')"><span>有</span></label>
                                     </div>
                                 </div>
                                 <div class="jts11">
@@ -248,11 +279,13 @@
                                         <!--<span>-->
                                             <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="mq">-->
                                         <!--</span>-->
-                                        <span>[
-                                            <input type="text" ondblclick="douCli('yw2','jtsMother','jtsMotherInp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw2">]
+                                        <span><span class="wu">[</span>
+                                            <?php if($jk1["jts_mq1"] == ''): ?><input type="text" name="jts_mq1" ondblclick="douCli('yw2','jtsMother','jtsMotherInp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw2"><span class="wu">]</span>
+                                            <?php else: ?>
+                                            <input type="text" name="jts_mq1" value="<?php echo ($jk1["jts_mq1"]); ?>" ondblclick="douCli('yw2','jtsMother','jtsMotherInp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="yw2"><span class="wu">]</span><?php endif; ?>
                                         </span>/
                                         <span>
-                                            <input type="text" ondblclick="douCli('jtsMQ','jts22','jts22Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>6?this.value.length:6);" size="6" id="jtsMQ">
+                                            <input type="text" name="jts_mq2" value="<?php echo ($jk1["jts_mq2"]); ?>" ondblclick="douCli('jtsMQ','jts22','jts22Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>6?this.value.length:6);" size="6" id="jtsMQ">
                                         </span>
                                 </td>
                                 <div class="jtsMother">
@@ -262,8 +295,8 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <label><input type="radio" name="jtsyw2" class="jtscheck2" value="无" onclick="checked1('jtscheck2','jtsMotherInp')"><span>无</span></label>
-                                        <label><input type="radio" name="jtsyw2" class="jtscheck2" value="有" onclick="checked1('jtscheck2','jtsMotherInp')"><span>有</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw2" class="yw2" value="无" onclick="checked1('yw2','jtsMotherInp')"><span>无</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw2" class="yw2" value="有" onclick="checked1('yw2','jtsMotherInp')"><span>有</span></label>
                                     </div>
                                 </div>
                                 <div class="jts22">
@@ -283,11 +316,13 @@
                                         <!--<span>-->
                                             <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xdjm">-->
                                         <!--</span>-->
-                                        <span>[
-                                            <input type="text" ondblclick="douCli('yw3','jts3','jts3Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw3">]
+                                        <span><span class="wu">[</span>
+                                            <?php if($jk1["jts_xdjm1"] == ''): ?><input type="text" name="jts_xdjm1" ondblclick="douCli('yw3','jts3','jts3Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw3"><span class="wu">]</span>
+                                            <?php else: ?>
+                                            <input type="text" name="jts_xdjm1" value="<?php echo ($jk1["jts_xdjm1"]); ?>" ondblclick="douCli('yw3','jts3','jts3Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="yw3"><span class="wu">]</span><?php endif; ?>
                                         </span>/
                                         <span>
-                                            <input type="text" ondblclick="douCli('jtsXD','jts33','jts33Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="jtsXD">
+                                            <input type="text" name="jts_xdjm2" value="<?php echo ($jk1["jts_xdjm2"]); ?>" ondblclick="douCli('jtsXD','jts33','jts33Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="jtsXD">
                                         </span>
                                 </td>
                                 <div class="jts3">
@@ -297,8 +332,8 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <label><input type="radio" name="jtsyw3" class="jtscheck3" value="无" onclick="checked1('jtscheck3','jts3Inp')"><span>无</span></label>
-                                        <label><input type="radio" name="jtsyw3" class="jtscheck3" value="有" onclick="checked1('jtscheck3','jts3Inp')"><span>有</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw3" class="yw3" value="无" onclick="checked1('yw3','jts3Inp')"><span>无</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw3" class="yw3" value="有" onclick="checked1('yw3','jts3Inp')"><span>有</span></label>
                                     </div>
                                 </div>
                                 <div class="jts33">
@@ -316,11 +351,13 @@
                                     <!--<span>-->
                                         <!--<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="zn">-->
                                     <!--</span>-->
-                                    <span>[
-                                        <input type="text" ondblclick="douCli('yw4','jts4','jts4Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw4">]
+                                    <span><span class="wu">[</span>
+                                        <?php if($jk1["jts_xdjm1"] == ''): ?><input type="text" name="jts_zn1" ondblclick="douCli('yw4','jts4','jts4Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="yw4"><span class="wu">]</span>
+                                        <?php else: ?>
+                                        <input type="text" name="jts_zn1" value="<?php echo ($jk1["jts_zn1"]); ?>" ondblclick="douCli('yw4','jts4','jts4Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="yw4"><span class="wu">]</span><?php endif; ?>
                                     </span>/
                                     <span>
-                                        <input type="text" ondblclick="douCli('jtsZN','jts44','jts44Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>6?this.value.length:6);" size="6" id="jtsZN">
+                                        <input type="text" name="jts_zn2" value="<?php echo ($jk1["jts_zn2"]); ?>" ondblclick="douCli('jtsZN','jts44','jts44Inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>6?this.value.length:6);" size="6" id="jtsZN">
                                     </span>
                                 </td>
                                 <div class="jts4">
@@ -330,8 +367,8 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <label><input type="radio" name="jtsyw4" class="jtscheck4" value="无" onclick="checked1('jtscheck4','jts4Inp')"><span>无</span></label>
-                                        <label><input type="radio" name="jtsyw4" class="jtscheck4" value="有" onclick="checked1('jtscheck4','jts4Inp')"><span>有</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw4" class="yw4" value="无" onclick="checked1('yw4','jts4Inp')"><span>无</span></label>
+                                        <label class="dblCli"><input type="radio" name="jtsyw4" class="yw4" value="有" onclick="checked1('yw4','jts4Inp')"><span>有</span></label>
                                     </div>
                                 </div>
                                 <div class="jts44">
@@ -349,7 +386,7 @@
                                 <th><label for="gms">过敏史</label></th>
                                 <td colspan="6" style="width:395px;">
                                     <span>
-                                        <input type="text" ondblclick="douCli('gms','gm','gmsinp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:10);" size="30" id="gms">
+                                        <input type="text" name="gms" value="<?php echo ($jk1["gms"]); ?>" ondblclick="douCli('gms','gm','gmsinp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length:10);" size="30" id="gms">
                                     </span>
                                 </td>
                                 <div class="gm">
@@ -365,7 +402,7 @@
                                 <th><label for="weight">体重</label></th>
                                 <td>
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="weight">
+                                            <input type="text" name="weight" value="<?php echo ($jk1["weight"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="weight">
                                         </span>
                                     <span>KG</span>
                                 </td>
@@ -375,31 +412,31 @@
                                 <td colspan="2">
                                     <span><label for="tw">体温:</label></span>
                                         <span>
-                                            <input type="text" size="1" id="tw">
+                                            <input type="text" name="temperature" value="<?php echo ($jk1["temperature"]); ?>" size="1" id="tw">
                                         </span>
                                     <span>℃</span>
                                 </td>
                                 <td colspan="2">
                                     <span><label for="mb">脉搏:</label></span>
                                         <span>
-                                            <input type="text" size="1" id="mb">
+                                            <input type="text" name="pulse" value="<?php echo ($jk1["pulse"]); ?>" size="1" id="mb">
                                         </span>
                                     <span>次/分</span>
                                 </td>
                                 <td colspan="2">
                                     <span><label for="hx">呼吸:</label></span>
                                         <span>
-                                            <input type="text" size="1" id="hx">
+                                            <input type="text" name="breath" value="<?php echo ($jk1["breath"]); ?>" size="1" id="hx">
                                         </span>
                                     <span>次/分</span>
                                 </td>
                                 <td colspan="2">
                                     <span><label for="xy">血压:</label></span>
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xy">
+                                            <input type="text" name="blood_pre1" value="<?php echo ($jk1["blood_pre1"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="xy">
                                         </span>/
                                         <span>
-                                            <input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
+                                            <input type="text" name="blood_pre2" value="<?php echo ($jk1["blood_pre2"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1">
                                         </span>
                                     <span>mmHg</span>
                                 </td>
@@ -409,7 +446,7 @@
                                 <th><label for="wshen">忘神</label></th>
                                 <td colspan="7">
                                     <span>
-                                        <input type="text" ondblclick="douCli('wshen','zt1','zt1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="wshen">
+                                        <input type="text" name="zt_wshen" value="<?php echo ($jk1["zt_wshen"]); ?>" ondblclick="douCli('wshen','zt1','zt1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="wshen">
                                     </span>
                                 </td>
                                 <div class="zt1">
@@ -419,7 +456,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 4): ?><label><input type="radio" name="wshen" class="zhengti1" onclick="checked1('zhengti1','zt1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 4): ?><label class="dblCli"><input type="radio" name="wshen" class="wshen" onclick="checked1('wshen','zt1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -427,7 +464,7 @@
                                 <th><label for="wse">忘色</label></th>
                                 <td colspan="7">
                                     <span>
-                                        <input type="text" ondblclick="douCli('wse','zt2','zt2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="wse">
+                                        <input type="text" name="zt_wse" value="<?php echo ($jk1["zt_wse"]); ?>" ondblclick="douCli('wse','zt2','zt2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="wse">
                                     </span>
                                 </td>
                                 <div class="zt2">
@@ -437,7 +474,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 5): ?><label><input type="radio" name="wse" class="zhengti2" onclick="checked1('zhengti2','zt2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 5): ?><label class="dblCli"><input type="radio" name="wse" class="wse" onclick="checked1('wse','zt2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -446,7 +483,7 @@
                                 <th width="5%"><label for="tt">体态</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('tt','zt3','zt3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="tt">
+                                        <input type="text" name="zt_tt" value="<?php echo ($jk1["zt_tt"]); ?>" ondblclick="douCli('tt','zt3','zt3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="tt">
                                     </span>
                                 </td>
                                 <div class="zt3">
@@ -456,13 +493,13 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 6): ?><label><input type="radio" name="tt" class="zhengti3" onclick="checked1('zhengti3','zt3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 6): ?><label class="dblCli"><input type="radio" name="tt" class="tt" onclick="checked1('tt','zt3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="tx">体形</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('tx','zt4','zt4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="tx">
+                                        <input type="text" name="zt_tx" value="<?php echo ($jk1["zt_tx"]); ?>" ondblclick="douCli('tx','zt4','zt4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="tx">
                                     </span>
                                 </td>
                                 <div class="zt4">
@@ -472,7 +509,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 7): ?><label><input type="radio" name="tx" class="zhengti4" onclick="checked1('zhengti4','zt4inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 7): ?><label class="dblCli"><input type="radio" name="tx" class="tx" onclick="checked1('tx','zt4inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -482,7 +519,7 @@
                                 <th><label for="zl">质量</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('zl','xz1','xz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="zl">
+                                        <input type="text" name="xz_smzl" value="<?php echo ($jk1["xz_smzl"]); ?>" ondblclick="douCli('zl','xz1','xz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>12?this.value.length*2:12);" size="12" id="zl">
                                     </span>
                                 </td>
                                 <div class="xz1">
@@ -498,7 +535,7 @@
                                 <th colspan="2"><label for="sj">时间</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('sj','xz2','xz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="sj">
+                                        <input type="text" name="xz_smsj" value="<?php echo ($jk1["xz_smsj"]); ?>" ondblclick="douCli('sj','xz2','xz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>10?this.value.length*2:10);" size="10" id="sj">
                                     </span>
                                 </td>
                                 <div class="xz2">
@@ -508,7 +545,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 9): ?><label><input type="radio" name="sj" class="xianzai2" onclick="checked1('xianzai2','xz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 9): ?><label class="dblCli"><input type="radio" name="sj" class="sj" onclick="checked1('sj','xz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -516,7 +553,7 @@
                                 <th><label for="sy">食欲</label></th>
                                 <td colspan="7">
                                     <span>
-                                        <input type="text" ondblclick="douCli('sy','xz3','xz3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="sy">
+                                        <input type="text" name="xz_sy" value="<?php echo ($jk1["xz_sy"]); ?>" ondblclick="douCli('sy','xz3','xz3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>30?this.value.length*2:30);" size="30" id="sy">
                                     </span>
                                 </td>
                                 <div class="xz3">
@@ -526,7 +563,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 10): ?><label><input type="radio" name="sy" class="xianzai3" onclick="checked1('xianzai3','xz3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 10): ?><label class="dblCli"><input type="radio" name="sy" class="sy" onclick="checked1('sy','xz3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -534,7 +571,7 @@
                                 <th><label for="kw">口味</label></th>
                                 <td colspan="7">
                                         <span>
-                                            <input type="text" ondblclick="douCli('kw','xz4','xz4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="kw">
+                                            <input type="text" name="xz_kw" value="<?php echo ($jk1["xz_kw"]); ?>" ondblclick="douCli('kw','xz4','xz4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>30?this.value.length*2:30);" size="30" id="kw">
                                         </span>
                                 </td>
                                 <div class="xz4">
@@ -553,7 +590,7 @@
                                 <th><label for="dbc">便次</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('dbc','xz5','xz5inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="dbc">
+                                        <input type="text" name="xz_dbbc" value="<?php echo ($jk1["xz_dbbc"]); ?>" ondblclick="douCli('dbc','xz5','xz5inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length*2:4);" size="4" id="dbc">
                                     </span>
                                 </td>
                                 <div class="xz5">
@@ -563,13 +600,13 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 12): ?><label><input type="radio" name="dbc" class="xianzai5" onclick="checked1('xianzai5','xz5inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 12): ?><label class="dblCli"><input type="radio" name="dbc" class="dbc" onclick="checked1('dbc','xz5inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="bz">便质</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('bz','xz6','xz6inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="bz">
+                                        <input type="text" name="xz_dbbz" value="<?php echo ($jk1["xz_dbbz"]); ?>" ondblclick="douCli('bz','xz6','xz6inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="bz">
                                     </span>
                                 </td>
                                 <div class="xz6">
@@ -579,7 +616,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 13): ?><label><input type="radio" name="bz" class="xianzai6" onclick="checked1('xianzai6','xz6inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 13): ?><label class="dblCli"><input type="radio" name="bz" class="bz" onclick="checked1('bz','xz6inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -588,7 +625,7 @@
                                 <th><label for="xbc">便次</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('xbc','xz7','xz7inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="xbc">
+                                        <input type="text" name="xz_xbbc" value="<?php echo ($jk1["xz_xbbc"]); ?>" ondblclick="douCli('xbc','xz7','xz7inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="xbc">
                                     </span>
                                 </td>
                                 <div class="xz7">
@@ -598,13 +635,13 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 14): ?><label><input type="radio" name="xbc" class="xianzai7" onclick="checked1('xianzai7','xz7inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 14): ?><label class="dblCli"><input type="radio" name="xbc" class="xbc" onclick="checked1('xbc','xz7inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="bs">便色</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('bs','xz8','xz8inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="bs">
+                                        <input type="text" name="xz_xbbs" value="<?php echo ($jk1["xz_xbbs"]); ?>" ondblclick="douCli('bs','xz8','xz8inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="bs">
                                     </span>
                                 </td>
                                 <div class="xz8">
@@ -614,7 +651,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 15): ?><label><input type="radio" name="bs" class="xianzai8" onclick="checked1('xianzai8','xz8inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 15): ?><label class="dblCli"><input type="radio" name="bs" class="bs" onclick="checked1('bs','xz8inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -623,7 +660,7 @@
                                 <th><label for="xq">性情</label></th>
                                 <td colspan="3">
                                     <span>
-                                        <input type="text" ondblclick="douCli('xq','qz1','qz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="xq">
+                                        <input type="text" name="qz_xq" value="<?php echo ($jk1["qz_xq"]); ?>" ondblclick="douCli('xq','qz1','qz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="xq">
                                     </span>
                                 </td>
                                 <div class="qz1">
@@ -633,13 +670,13 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 16): ?><label><input type="radio" name="xq" class="qingzhi1" onclick="checked1('qingzhi1','qz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 16): ?><label class="dblCli"><input type="radio" name="xq" class="xq" onclick="checked1('xq','qz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="xg">性格</label></th>
                                 <td colspan="2">
                                     <span>
-                                        <input type="text" ondblclick="douCli('xg','qz2','qz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="xg">
+                                        <input type="text" name="qz_xg" value="<?php echo ($jk1["qz_xg"]); ?>" ondblclick="douCli('xg','qz2','qz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="xg">
                                     </span>
                                 </td>
                                 <div class="qz2">
@@ -649,14 +686,14 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 17): ?><label><input type="radio" name="xg" class="qingzhi2" onclick="checked1('qingzhi2','qz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 17): ?><label class="dblCli"><input type="radio" name="xg" class="xg" onclick="checked1('xg','qz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
                             <tr>
                                 <th><label for="xj">心悸</label></th>
-                                <td colspan="8">[
-                                    <input type="text" ondblclick="douCli('xj','xj1','xj1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" value="有无" id="xj">]
+                                <td colspan="8"><span class="wu">[</span>
+                                    <input type="text" name="xj" ondblclick="douCli('xj','xj1','xj1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" value="有无" id="xj"><span class="wu">]</span>
                                 </td>
                                 <div class="xj1">
                                     <div class="div1">
@@ -665,8 +702,8 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <label><input type="radio" name="xj" class="xinji1" onclick="checked1('xinji1','xj1inp')" value="有"><span>有</span></label>
-                                        <label><input type="radio" name="xj" class="xinji1" onclick="checked1('xinji1','xj1inp')" value="无"><span>无</span></label>
+                                        <label class="dblCli"><input type="radio" name="xj1" class="xj" onclick="checked1('xj','xj1inp')" value="有"><span>有</span></label>
+                                        <label class="dblCli"><input type="radio" name="xj1" class="xj" onclick="checked1('xj','xj1inp')" value="无"><span>无</span></label>
                                     </div>
                                 </div>
                             </tr>
@@ -675,7 +712,7 @@
                                 <th><label for="ss">舌色</label></th>
                                 <td>
                                         <span>
-                                            <input type="text" ondblclick="douCli('ss','sz1','sz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="ss">
+                                            <input type="text" name="sz_ss" value="<?php echo ($jk1["sz_ss"]); ?>" ondblclick="douCli('ss','sz1','sz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>2?this.value.length:2);" size="2" id="ss">
                                         </span>
                                 </td>
                                 <div class="sz1">
@@ -685,13 +722,13 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 18): ?><label><input type="radio" name="ss" class="shezhen1" onclick="checked1('shezhen1','sz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 18): ?><label class="dblCli"><input type="radio" name="ss" class="ss" onclick="checked1('ss','sz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th><label for="st">舌体</label></th>
                                 <td colspan="2">
                                         <span>
-                                            <input type="text" ondblclick="douCli('st','sz2','sz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="st">
+                                            <input type="text" name="sz_st" value="<?php echo ($jk1["sz_st"]); ?>" ondblclick="douCli('st','sz2','sz2inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="st">
                                         </span>
                                 </td>
                                 <div class="sz2">
@@ -701,13 +738,13 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 19): ?><label><input type="radio" name="st" class="shezhen2" onclick="checked1('shezhen2','sz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 19): ?><label class="dblCli"><input type="radio" name="st" class="st" onclick="checked1('st','sz2inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th colspan="2"><label for="dt">动态</label></th>
                                 <td>
                                     <span>
-                                        <input type="text" ondblclick="douCli('dt','sz3','sz3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="dt">
+                                        <input type="text" name="sz_dt" value="<?php echo ($jk1["sz_dt"]); ?>" ondblclick="douCli('dt','sz3','sz3inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="dt">
                                     </span>
                                 </td>
                                 <div class="sz3">
@@ -717,7 +754,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 20): ?><label><input type="radio" name="dt" class="shezhen3" onclick="checked1('shezhen3','sz3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 20): ?><label class="dblCli"><input type="radio" name="dt" class="dt" onclick="checked1('dt','sz3inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -725,7 +762,7 @@
                                 <th><label for="tz">苔质</label></th>
                                 <td>
                                     <span>
-                                        <input type="text" ondblclick="douCli('tz','sz4','sz4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length:1);" size="1" id="tz">
+                                        <input type="text" name="sz_tz" value="<?php echo ($jk1["sz_tz"]); ?>" ondblclick="douCli('tz','sz4','sz4inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="tz">
                                     </span>
                                 </td>
                                 <div class="sz4">
@@ -735,13 +772,13 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 21): ?><label><input type="radio" name="tz" class="shezhen4" onclick="checked1('shezhen4','sz4inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 21): ?><label class="dblCli"><input type="radio" name="tz" class="tz" onclick="checked1('tz','sz4inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                                 <th><label for="ts">苔色</label></th>
                                 <td colspan="5">
                                     <span>
-                                        <input type="text" ondblclick="douCli('ts','sz5','sz5inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="ts">
+                                        <input type="text" name="sz_ts" value="<?php echo ($jk1["sz_ts"]); ?>" ondblclick="douCli('ts','sz5','sz5inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="ts">
                                     </span>
                                 </td>
                                 <div class="sz5">
@@ -751,7 +788,7 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 22): ?><label><input type="radio" name="ts" class="shezhen5" onclick="checked1('shezhen5','sz5inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 22): ?><label class="dblCli"><input type="radio" name="ts" class="ts" onclick="checked1('ts','sz5inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
@@ -759,7 +796,7 @@
                                 <th><label for="mz">脉诊</label></th>
                                 <td colspan="8">
                                     <span>
-                                        <input type="text" ondblclick="douCli('mz','mz1','mz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>8?this.value.length:8);" size="8" id="mz">
+                                        <input type="text" name="mz" value="<?php echo ($jk1["mz"]); ?>" ondblclick="douCli('mz','mz1','mz1inp')" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>15?this.value.length*2:15);" size="15" id="mz">
                                     </span>
                                 </td>
                                 <div class="mz1">
@@ -769,15 +806,15 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 23): ?><label><input type="checkbox" name="mz" class="maizhen1" onclick="checked2('maizhen1','mz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array($bls)): $i = 0; $__LIST__ = $bls;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['typeid'] == 23): ?><label><input type="checkbox" name="mz1" class="maizhen1" onclick="checked2('maizhen1','mz1inp')" value="<?php echo ($vo["name"]); ?>"><span><?php echo ($vo["name"]); ?></span></label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </tr>
                             <tr>
-                                <th><label for="tzbs">体质辨识</label></th>
+                                <th><label for="tzbs">体质诊断</label></th>
                                 <td colspan="8">
                                     <span>
-                                        [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>65?this.value.length:65);" size="65" id="tzbs" value="体质辨识" style="text-align: center;">]
+                                        <input type="text" name="tzzd" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>68?this.value.length:68);" size="68" id="tzbs" value="<?php echo ($tzzd); ?>">
                                     </span>
                                 </td>
                             </tr>
@@ -785,27 +822,47 @@
                                 <th><label for="zyzd">中医诊断</label></th>
                                 <td colspan="4">
                                     <span>
-                                        [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="zyzd" value="中医诊断">]
+                                        <input type="text" name="zyzd" ondblclick="douCli('zyzd','zyzd1','zyzd1inp')" value="<?php echo ($jk2["zy_name"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="zyzd">
                                     </span>
                                 </td>
+                                <div class="zyzd1">
+                                    <div class="div1">
+                                        <input type="text" id="zyzd1inp" style="border:1px solid #ccc;" placeholder="中医病名">
+                                        <input type="button" value="提交" id="zyzd1tj" onclick="sub('zyzd','zyzd1','zyzd1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <label><input type="checkbox" name="zyzd1" class="zhongyi1" onclick="checked2('zhongyi1','zyzd1inp')" value="11"><span>11</span></label>
+                                    </div>
+                                </div>
                                 <th><label for="xyzd">西医诊断</label></th>
                                 <td colspan="3">
                                     <span>
-                                        [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="xyzd" value="西医诊断">]
+                                        <input type="text" name="xyzd" ondblclick="douCli('xyzd','xyzd1','xyzd1inp')" value="<?php echo ($jk2["xy_name"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="xyzd">
                                     </span>
                                 </td>
+                                <div class="xyzd1">
+                                    <div class="div1">
+                                        <input type="text" id="xyzd1inp" style="border:1px solid #ccc;" placeholder="西医病名">
+                                        <input type="button" value="提交" id="xyzd1tj" onclick="sub('xyzd','xyzd1','xyzd1inp')">
+                                        <input type="button" value="关闭" class="clo">
+                                    </div>
+                                    <div class="div2">
+                                        <label><input type="checkbox" name="xyzd1" class="xiyi1" onclick="checked2('xiyi1','xyzd1inp')" value="11"><span>11</span></label>
+                                    </div>
+                                </div>
                             </tr>
                             <tr>
                                 <th><label for="zybz">辩证</label></th>
                                 <td colspan="4">
-                                        <span>
-                                            [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="zybz" value="中医辩证">]
-                                        </span>
+                                    <span>
+                                        <input type="text" name="zybz" value="<?php echo ($jk2["lunzhi"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="zybz">
+                                    </span>
                                 </td>
                                 <th><label for="zyzz">治则</label></th>
                                 <td colspan="3">
                                         <span>
-                                            [<input type="text" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>4?this.value.length:4);" size="8" id="zyzz" value="中医治则">]
+                                            <input type="text" name="zyzz" value="<?php echo ($jk2["lunzhi_sm"]); ?>" onkeydown="this.onkeyup();" onkeyup="this.size=(this.value.length>1?this.value.length*2:1);" size="1" id="zyzz">
                                         </span>
                                 </td>
                             </tr>
@@ -833,6 +890,22 @@
                                             <span>【医嘱】：<span></span></span>
                                         </div>
                                     </div>
+                                    <div class="xiyao">
+                                        <div>
+                                            <span>【西药处方1】</span>
+                                        </div>
+                                        <div class="xyInf">
+                                            <span>维生素B12片</span>
+                                            <span>25mg*100片/瓶</span>
+                                            <span>1瓶</span>
+                                            <span>1mg/次</span>
+                                            <span>口服</span>
+                                            <span>1/日</span>
+                                        </div>
+                                        <div>
+                                            【备注】：
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -844,22 +917,26 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--endprint1-->
                     </form>
                 </div>
             </div>
         </div>
         <!--按钮-->
-        <button class="btn btn-warning but1">
+        <button class="btn btn-warning but1" id="save">
             <!--<i class="glyphicon glyphicon-floppy-disk"></i>-->
             保<br/>存
         </button>
-        <button class="btn btn-warning but2">
+        <button class="btn btn-warning but2" onclick="preview(1);" id="dayin" type="button">
             <!--<i class="glyphicon glyphicon-print"></i>-->
             打<br/>印
         </button>
     </div>
     <script type="text/javascript">
         jeDate.skin('gray');
+        $("#save").click(function(){
+            $("#form1").submit();
+        })
     </script>
 </body>
 </html>

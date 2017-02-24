@@ -347,42 +347,103 @@ class IndexController extends Controller {
         }
         $blh=session(id);
         $xh=session(xh);
+        //如果患者已经进行登记
         if($blh && $xh){
             $userInf=$station->where("br_id=$blh and xh=$xh")->select();//查询出患者信息
-//        将时间中的时分秒去掉
-            $userInf[0]['jz_date']=substr($userInf[0]['jz_date'],0,10);
+            //将时间中的时分秒去掉
+            $userInf[0]['p_date']=substr($userInf[0]['p_date'],0,10);
             $userInf[0]['cs_date']=substr($userInf[0]['cs_date'],0,10);
             $this->assign('data',$userInf);//将患者信息传递到前端界面
+            //获取患者的体制信息
+            $tz=session(tzbsInf);
+            $tzzd=array_slice($tz,36);//患者的体质
+            $tzStr=implode(",",$tzzd);//将体制信息转化为字符串
+            $this->assign('tzzd',$tzStr);
+            //判断是否有保存数据
+            $jkda=M('jkda_xx');//实例化健康档案选项信息表
+            $bqxx=M('bqxx');
+            //如果通过历史就诊记录传值
+            if(I('get.jid') && I('get.jxh')){
+                $blh=I('get.jid');
+                $xh=I('get.jxh');
+            }
+            $jkdaConf=$jkda->where("br_id=$blh and xh=$xh")->find();
+            $bqxxConf=$bqxx->where("br_id=$blh and xh=$xh")->find();
+            if($jkdaConf && $bqxxConf){
+                $this->assign('jk1',$jkdaConf);//将患者的选项信息传回页面
+                $this->assign('jk2',$bqxxConf);//将患者的病名信息传回页面
+            }
+            //如果患者存在历史记录(历史完成就诊记录信息)
+            $xh=session(xh);
+            $his=$bqxx->join('station_p on bqxx.BR_ID=station_p.br_id and bqxx.XH=station_p.xh')->field('bqxx.BR_ID,bqxx.XH,bqxx.jz_date')->where("bqxx.BR_ID=$blh and station_p.jz_flag=2 and bqxx.XH!=$xh")->select();
+            $this->assign('his',$his);
         }
         /** typeId=
-         * 1：既往病史；
-         * 2：传染病史；
-         * 3：过敏史；
-         * 4：忘神；
-         * 5：忘色；
-         * 6：体态；
-         * 7：体型；
-         * 8：质量；
-         * 9：时间；
-         * 10：食欲；
-         * 11：口味；
-         * 12：大便便次；
-         * 13：便质；
-         * 14：小便便次；
-         * 15：便色；
-         * 16：性情；
-         * 17：性格；
-         * 18：舌色；
-         * 19：舌体；
-         * 20：动态；
-         * 21：苔质；
-         * 22：苔色；
-         * 23：脉诊；
+         * 1：既往病史；2：传染病史；3：过敏史；4：忘神；5：忘色；6：体态；
+         * 7：体型；8：质量；9：时间；10：食欲；11：口味；12：大便便次；13：便质；
+         * 14：小便便次；15：便色；16：性情；17：性格；18：舌色；19：舌体；20：动态；
+         * 21：苔质；22：苔色；23：脉诊；
          */
-        $bl=M('jkda_bl');//健康档案病历史表
+        $bl=M('jkda_bl');//健康档案病历表
         $bls=$bl->select();
         $this->assign('bls',$bls);
+//        $this->assign('jkSave',session('jkdaSave'));
         $this->display();
+    }
+
+    /**
+     * 点击健康档案的保存按钮将患者的病例信息分别存放到jkda_xx和bqxx表中
+     * 如果已经存在该患者的相关信息则提示，是否进行信息更新
+     */
+    public function jiankangSave(){
+        $userJKInf=I('post.');//病人健康档案信息
+        $jkda=M('jkda_xx');//实例化健康档案选项信息表
+        $bqxx=M('bqxx');
+        //获取患者的体制信息
+        $tz=session(tzbsInf);
+        $tzzd=array_slice($tz,36);//患者的体质
+        $tzStr=implode(",",$tzzd);//将体制信息转化为字符串
+        $userJKInf['tzzd']=$tzStr;//体质信息赋值
+        $data = array();
+        $data['br_id']=session(id);
+        $data['xh']=session(xh);
+        //组合bqxx表
+        $data1 = array();
+        $data1['BR_ID']=session(id);
+        $data1['XH']=session(xh);
+        $data1['LUNZHI']=$userJKInf['zybz'];
+        $data1['LUNZHI_SM']=$userJKInf['zyzz'];
+        $data1['zy_name']=$userJKInf['zyzd'];
+        $data1['xy_name']=$userJKInf['xyzd'];
+        $data1['jz_date']=date("Y-m-d H:i:s");
+        //组合bqxx表结束
+        //判断患者是否登记
+        if($data['br_id'] && $data['xh']){
+            $jkdaInf=array_merge($data,$userJKInf);//将患者的id和xh与患者的选项信息合并
+            $jkdaConf=$jkda->where("br_id=$data[br_id] and xh=$data[xh]")->select();
+            $bqxxConf=$bqxx->where("br_id=$data[br_id] and xh=$data[xh]")->select();
+            //判断患者是否进行过保存
+            if($jkdaConf || $bqxxConf){
+                $jkdaChange=$jkda->save($jkdaInf);
+                $bqxxChange=$bqxx->save($data1);
+                if($jkdaChange || $bqxxChange){
+                    $this->success('保存成功！',U('Index/jiankang'),3);
+                }else{
+                    $this->success('保存失败！',U('Index/jiankang'),3);
+                }
+            }else{
+//                session('jkdaSave',1);//判断是否有保存数据
+                $jkdaSave=$jkda->add($jkdaInf);
+                $jkdaSave2=$bqxx->add($data1);
+                if($jkdaSave && $jkdaSave2){
+                    $this->success('保存成功！',U('Index/jiankang'),3);
+                }else{
+                    $this->success('保存失败！',U('Index/jiankang'),3);
+                }
+            }
+        }else{
+            $this->error('您还没有登记，请您先去登记！',U('Index/dengji'),3);
+        }
     }
 //    体质辨识答题界面
     public function tizhi(){
