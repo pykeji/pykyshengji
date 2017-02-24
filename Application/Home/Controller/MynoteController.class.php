@@ -9,10 +9,11 @@ class MynoteController extends Controller{
         $con=M('note');
 
         $data=I('post.');
+        dump($data);exit;
         $data[userid]=session(wh_userId);
         $info=$con->add($data);
         if ($info) {
-            header("Location:".$_SERVER[HTTP_REFERER]);
+            echo "<script>parent.location.reload();</script>";
         }
     }
     function view(){
@@ -51,18 +52,17 @@ class MynoteController extends Controller{
                     ->select();
         $elet=M('nodes');
         $elements=$elet->select();
-        
-        foreach ($result as $v) {
-            if($v[userid]=$_SESSION[wh_userId]){
+        foreach ($result as $k=>$v) {
+            if($result[$k][userid]==$_SESSION[wh_userId]){
                 $res[]=$v;
             }
         }
-        foreach ($elements as $v) {
-            if($v[userid]=$_SESSION[wh_userId]){
+        
+        foreach ($elements as $k=>$v) {
+            if($v[userid]==$_SESSION[wh_userId]){
                 $elets[]=$v;
             }
         }
-        
         $this->assign('elet',$elets);
         $this->assign('res',$res);
         $this->display();

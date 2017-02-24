@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>我的文档</title>
 </head>
+<script>
+	document.oncontextmenu=new Function("event.returnValue=false;");
+</script>
 <frameset cols="22%,*">
 	<frame src="__CONTROLLER__/mllist" scrolling="No" noresize="noresize" id="leftTree">
 	<frame src="__CONTROLLER__/rpro" scrolling="No" noresize="noresize" id="rightTree" name="right">

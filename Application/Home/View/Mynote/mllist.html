@@ -12,6 +12,9 @@ window.onload=function(){
 	});
 }
 </script>
+<!-- <script>
+	document.oncontextmenu=new Function("event.returnValue=false;");
+</script> -->
 <body>
 	<br><br>
 	<p class="titlep">目录列表</p>

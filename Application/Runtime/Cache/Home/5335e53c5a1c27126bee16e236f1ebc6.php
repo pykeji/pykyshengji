@@ -188,7 +188,7 @@
 		    	dataType:'json',
 		    	success:function(dd){
 		    		// alert(dd);
-		    		// console.log(dd);
+		    		console.log(dd);
 		    		// 处方名称
 		    		var str = '';
 		    		$.each(dd,function(idx,item){

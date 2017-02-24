@@ -22,7 +22,7 @@ class KaifangController extends Controller {
             $where['BM'] = '000';
             $data = $user->where($where)->distinct(true)->field('name,code')->select();
             // $where['bm_input'] = array('like',"'$tjbm%'");
-            // $data = $user->where("bm_input like '".$user."%' ")->field('name')->select();
+            // .$user."%' ")->field('name')->sel$data = $user->where("bm_input like '"ect();
             // $data = $user->where("bm_input = 'XEGM' ")->field('name')->select();
             $this->ajaxReturn($data,'json');
         }else{
@@ -64,7 +64,10 @@ class KaifangController extends Controller {
         $tjyouzhengxing = I('post.tjyouzhengxing');//接受ajax传过来的条件
         $user = M("bz_cf");
         $where['bz_cf.cfdm'] = $tjyouzhengxing;
-        $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')->select();
+        $data = $user->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')
+                    ->where($where)
+                    ->field('dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no')
+                    ->select();
         $this->ajaxReturn($data);
     }
     //证型治法页面
@@ -172,8 +175,33 @@ class KaifangController extends Controller {
         $this->ajaxReturn($data);
     }
     public function jingDian(){
+        $model=M('y_recipemain');
+        $cons=$model->where("type='1'")->order('type asc,tree')->select();
+        $this->assign('cons',$cons);
         $this->display();
     }
+    function impidajax(){
+        $model=M('y_recipemain');
+
+        $fjm=$model->where("spell like '%".$_POST[pym]."%'")
+                ->order('type asc,tree')
+                ->select();
+        $this->ajaxReturn($fjm);
+    }
+    function fangjie(){ 
+        $model=M('bz_cf');
+        $result=$model->field('bz_cf.*,b2.drug_name')
+                    ->join('bz_cf left join dict_drug_zy as b2 on b2.drug_code=bz_cf.ypdm')
+                    ->where("bz_cf.cfdm='$_POST[tree]'")
+                    ->order('serial_no asc')
+                    ->select();
+        $this->ajaxReturn($result);
+    }
+    function fjcon(){
+        $model=M('y_recipemain');
+        $data=$model->where("tree='$_POST[tree]'")->select();
+        $this->ajaxReturn($data);
+    } 
     public function jingYan(){
         $this->display();
     }

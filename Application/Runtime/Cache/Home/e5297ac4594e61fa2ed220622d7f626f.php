@@ -18,12 +18,17 @@ $(document).ready(function(){
 	});
 });
 function frsub(){
-	if($('input[name=list]').val()=='' || $('#editor').val()==''){
+	if($('input[type=hidden]')==''){
+		alert("请选择目录！");
+	}else if($('input[name=list]').val()=='' || $('#editor').val()==''){
 		alert("标题或内容不能为空！");
 	}else{
 		$('#fr').submit();
 	}
 }
+</script>
+<script>
+	document.oncontextmenu=new Function("event.returnValue=false;");
 </script>
 <body>
 	<br>
