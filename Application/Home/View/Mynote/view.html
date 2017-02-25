@@ -32,6 +32,9 @@ function vtan(){
 }
 </script>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<script>
+	document.oncontextmenu=new Function("event.returnValue=false;");
+</script>
 	<br><br><br>
 	<div style="width:96%;margin-left:2%;">
 		<form action="__CONTROLLER__/vsave/id/{$cons[0]['id']}" method="post">

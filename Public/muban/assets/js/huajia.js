@@ -112,6 +112,10 @@ function sub(){
 	 			hidArr.push(int[i]);
 	 		}
 	 	}
+	 	/*for(var key in hidArr){
+	 		document.writeln(hidArr[key].value);
+	 	}*/
+	 	
 		$("form").submit();
 	}
 }
