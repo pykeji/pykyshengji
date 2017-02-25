@@ -3,12 +3,12 @@
 <head>
 	<title></title>
 	<!-- 自己写的css -->
-	<link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang3.css">
+	<link rel="stylesheet" type="text/css" href="/zysystem/Public/yeMiancss/kaiFang3.css">
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+    <script src="/zysystem/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="/zySystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/zysystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/zysystem/Public/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 		<div style=" width: 100%;height: 100%;">
@@ -40,6 +40,7 @@
 		                    	</div>
 		                    	<p>标题：阿萨德发生大</p>
 		                    	<p>内容：问问哦</p>
+		                    	<img src="/zysystem/Public/img/tu1.jpg" alt="别急">
 		                    </div>
 		                <div data-dismiss="modal" style=" width:40px; position:absolute; top:0px;right:12px;"><button  class="btn ">&times;</button></div>
 		            </div><!-- /.modal-dialog -->
@@ -180,7 +181,7 @@
 					<!-- 中间汉字 -->
 					<div class="ka3youShangHanZi">
 						<span  class="ka3youShangHanZi1">
-							<img src="/zySystem/Public/img/iconpng.png" style="width:30px;" alt="图片加载中。。。。">
+							<img src="/zysystem/Public/img/iconpng.png" style="width:30px;" alt="图片加载中。。。。">
 						</span>
 						<!-- <span class="ka3youShangHanZi2"> -->
 							<b class="ka3youShangHanZi2">处方信息</b>

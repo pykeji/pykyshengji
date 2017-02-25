@@ -32,7 +32,7 @@ function ees(){
 	}
 }
 </script>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<br><br><br><br>
 	<form action="/zysystem/index.php/Home/Mynote/mlsubmit" method="post" id="fr">
 		目录名称:<input type="text" name="element" class="ml"><br><br>

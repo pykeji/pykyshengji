@@ -354,6 +354,34 @@ class IndexController extends Controller {
             $userInf[0]['cs_date']=substr($userInf[0]['cs_date'],0,10);
             $this->assign('data',$userInf);//将患者信息传递到前端界面
         }
+        /** typeId=
+         * 1：既往病史；
+         * 2：传染病史；
+         * 3：过敏史；
+         * 4：忘神；
+         * 5：忘色；
+         * 6：体态；
+         * 7：体型；
+         * 8：质量；
+         * 9：时间；
+         * 10：食欲；
+         * 11：口味；
+         * 12：大便便次；
+         * 13：便质；
+         * 14：小便便次；
+         * 15：便色；
+         * 16：性情；
+         * 17：性格；
+         * 18：舌色；
+         * 19：舌体；
+         * 20：动态；
+         * 21：苔质；
+         * 22：苔色；
+         * 23：脉诊；
+         */
+        $bl=M('jkda_bl');//健康档案病历史表
+        $bls=$bl->select();
+        $this->assign('bls',$bls);
         $this->display();
     }
 //    体质辨识答题界面

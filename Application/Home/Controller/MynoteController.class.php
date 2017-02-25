@@ -12,7 +12,8 @@ class MynoteController extends Controller{
         $data[userid]=session(wh_userId);
         $info=$con->add($data);
         if ($info) {
-            header("Location:".$_SERVER[HTTP_REFERER]);
+            //header("Location:".$_SERVER[HTTP_REFERER]);
+            echo "<script>parent.location.reload();</script>" ;
         }
     }
     function view(){

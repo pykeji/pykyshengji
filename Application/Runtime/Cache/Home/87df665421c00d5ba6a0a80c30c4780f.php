@@ -31,7 +31,7 @@ function vtan(){
 	});
 }
 </script>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<br><br><br>
 	<div style="width:96%;margin-left:2%;">
 		<form action="/zysystem/index.php/Home/Mynote/vsave/id/<?php echo ($cons[0]['id']); ?>" method="post">

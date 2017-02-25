@@ -25,10 +25,10 @@
 		}
 	</style>
 </head>
-<body>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<br><br><br>
 	<div style="width:80%;text-align:right;margin:auto;">
-		<a href="/zySystem/index.php/Home/Mynote/rpro">
+		<a href="/zysystem/index.php/Home/Mynote/rpro">
 			<input type="button" value="返回" class="sback">
 		</a>
 	</div><br>
@@ -42,7 +42,7 @@
 				<td><?php echo ($nodes["id"]); ?></td>
 				<td><?php echo ($nodes["element"]); ?></td>
 				<td>
-					<a href="/zySystem/index.php/Home/Mynote/delete?id=<?php echo ($nodes["id"]); ?>">删除</a>
+					<a href="/zysystem/index.php/Home/Mynote/delete?id=<?php echo ($nodes["id"]); ?>">删除</a>
 				</td>
 			</tr><?php endforeach; endif; ?>
 	</table>	
