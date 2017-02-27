@@ -320,8 +320,8 @@ class KaifangController extends Controller {
         // $this->assign('xyname',$xyname);
         $this->display();
     }
+    //显示自定义开方页面
     public function zyhome(){
-        
         $dict = M('bz_cf');
         $where['bz_cf.cfdm'] = '1413.1001';
         $data = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->join('drug_dict on dict_drug_zy.drug_code=drug_dict.drug_code')->join('tcd_zybm on tcd_zybm.cf_tree="1413.1001"')->field('dict_drug_zy.drug_name,bz_cf.dw,dict_drug_zy.drug_code,drug_dict.xw1,tcd_zybm.cf_name')->select();
@@ -336,7 +336,27 @@ class KaifangController extends Controller {
     }
     //接受处方号
     public function jieshouchufanghao(){
-        $a = I("get.");
-        dump($a);die;
+        $pd = $_GET[id];
+        $cf = $_GET[pid];
+        if($pd == '1'){
+            // 合并
+        }else if($pd == '2'){
+            // 没合并
+            $dict = M('bz_cf');
+            $cf_tree = explode(' ',$cf);
+            array_pop($cf_tree);
+            array_shift($cf_tree);
+            // dump($cf_tree);
+            $num = count($cf_tree);
+            for($i = 0;$i < $num; $i++){
+                $where['bz_cf.cfdm'] = $cf_tree[$i];
+                $data[$i] = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->join('drug_dict on dict_drug_zy.drug_code=drug_dict.drug_code')->join("tcd_zybm on tcd_zybm.cf_tree=$cf_tree[$i]")->field('dict_drug_zy.drug_name,bz_cf.dw,dict_drug_zy.drug_code,drug_dict.xw1,tcd_zybm.cf_name')->select();
+            }
+            $cfTree = M('tcd_szjj');
+            
+            dump($data);
+        }else{
+            //小孟传的
+        }
     }
 }

@@ -89,7 +89,7 @@ class AjaxController extends Controller {
           $brId = $_SESSION['id'];
           for($i = 0; $i < $num; $i++){
           $list[$i]['doctor_id'] = $_SESSION['wh_userId'];
-          $list[0]['cfbz'] = $_POST[bz];
+          $list[0]['yp_mem'] = $_POST[bz];
           $list[$i]['cf_id'] = $newId;
           $list[$i]['cf_date'] = $today;
           $list[$i]['BR_ID'] = $brid;
@@ -100,11 +100,11 @@ class AjaxController extends Controller {
           // $list[$i]['baozhuang'] = $abaozhuang[$i+1];
           $list[$i]['yp_total_amount'] = $ashuliang[$i+1];
           $list[$i]['zl'] = $azongliang[$i+1];
-          $list[$i]['tujing'] = $atujing[$i+1];
-          $list[$i]['yongliang'] = $ayongliang[$i+1];
+          $list[$i]['yp_speco_use_flag'] = $atujing[$i+1];
+          $list[$i]['yp_yc_amount'] = $ayongliang[$i+1];
           // $list[$i]['shuliang'] = $ashuliang[$i+1];
-          $list[$i]['cishu'] = $acishu[$i+1];
-          $list[$i]['yongfa'] = $atsyf[$i+1];
+          $list[$i]['yp_pl_day'] = $acishu[$i+1];
+          $list[$i]['yp_useage'] = $atsyf[$i+1];
           // $list[$i]['tianshu'] = $atianshu[$i+1];
           $list[$i]['BR_ID'] = session(id);
           $list[$i]['xy_name'] = $_POST[xybm];
