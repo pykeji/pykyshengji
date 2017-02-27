@@ -19880,3 +19880,189 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001317s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001532s ]
 
+[ 2017-02-24T17:59:30+08:00 ] ::1 /zySystem/index.php/Home/Index/jiankang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000133s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010420s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0043s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' G:\wamp\www\zySystem\Application\Home\Controller\IndexController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' G:\wamp\www\zySystem\Application\Home\Controller\IndexController.class.php 第 349 行.
+SQL: SHOW COLUMNS FROM `jkda_bl` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `jkda_bl`  [ RunTime:0.0033s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000442s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000604s ]
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 49 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 53 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 57 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 61 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 65 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 69 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 73 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 77 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 81 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 85 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 89 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 93 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 97 行.
+NOTIC: [8] Undefined variable: his G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 111 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 134 行.
+NOTIC: [8] Undefined index: br_id G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 139 行.
+NOTIC: [8] Undefined index: br_name G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 146 行.
+NOTIC: [8] Undefined index: xb G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 152 行.
+NOTIC: [8] Undefined index: nl G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 158 行.
+NOTIC: [8] Undefined index: cs_date G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 164 行.
+NOTIC: [8] Undefined index: pass G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 172 行.
+NOTIC: [8] Undefined index: tel G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 178 行.
+NOTIC: [8] Undefined index: dw G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 187 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 195 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 203 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 218 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 222 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 236 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 248 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 253 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 283 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 288 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 320 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 325 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 355 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 360 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 389 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 405 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 415 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 422 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 429 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 436 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 439 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 449 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 467 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 486 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 502 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 522 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 538 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 556 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 574 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 593 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 609 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 628 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 644 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 663 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 679 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 715 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 731 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 747 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 765 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 781 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 799 行.
+NOTIC: [8] Undefined variable: tzzd G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 817 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 825 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 841 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 859 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 865 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.264764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.264948s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.034196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.034491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003604s ]
+
+[ 2017-02-24T17:59:31+08:00 ] ::1 /zySystem/index.php/Home/Index/jiankang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000855s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' G:\wamp\www\zySystem\Application\Home\Controller\IndexController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' G:\wamp\www\zySystem\Application\Home\Controller\IndexController.class.php 第 349 行.
+SQL: SHOW COLUMNS FROM `jkda_bl` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jkda_bl`  [ RunTime:0.0038s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000476s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000637s ]
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 49 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 53 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 57 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 61 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 65 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 69 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 73 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 77 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 81 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 85 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 89 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 93 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 97 行.
+NOTIC: [8] Undefined variable: his G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 111 行.
+NOTIC: [8] Undefined variable: data G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 134 行.
+NOTIC: [8] Undefined index: br_id G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 139 行.
+NOTIC: [8] Undefined index: br_name G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 146 行.
+NOTIC: [8] Undefined index: xb G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 152 行.
+NOTIC: [8] Undefined index: nl G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 158 行.
+NOTIC: [8] Undefined index: cs_date G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 164 行.
+NOTIC: [8] Undefined index: pass G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 172 行.
+NOTIC: [8] Undefined index: tel G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 178 行.
+NOTIC: [8] Undefined index: dw G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 187 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 195 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 203 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 218 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 222 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 236 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 248 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 253 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 283 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 288 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 320 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 325 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 355 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 360 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 389 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 405 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 415 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 422 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 429 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 436 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 439 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 449 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 467 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 486 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 502 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 522 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 538 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 556 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 574 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 593 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 609 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 628 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 644 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 663 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 679 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 715 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 731 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 747 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 765 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 781 行.
+NOTIC: [8] Undefined variable: jk1 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 799 行.
+NOTIC: [8] Undefined variable: tzzd G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 817 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 825 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 841 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 859 行.
+NOTIC: [8] Undefined variable: jk2 G:\wamp\www\zySystem\Application\Runtime\Cache\Home\f3f951ef0fd5812dfb213c60ad954842.php 第 865 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.172032s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.172324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001573s ]
+
