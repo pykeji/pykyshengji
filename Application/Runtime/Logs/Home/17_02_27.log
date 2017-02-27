@@ -20543,3 +20543,245 @@ INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 
+[ 2017-02-27T14:50:08+08:00 ] ::1 /zySystem/index.php/Home/index/home/rev/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-27T14:50:11+08:00 ] ::1 /zySystem/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-27T14:50:16+08:00 ] ::1 /zySystem/index.php/Home/Login/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `user-info-dict` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user-info-dict` WHERE `userName` = 'yxy' AND `passWord` = '' LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2017-02-27T14:50:16+08:00 ] ::1 /zySystem/index.php/Home/index/home/rev/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-02-27T14:50:17+08:00 ] ::1 /zySystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `station_p` WHERE ( jz_flag=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flag=1 ) ORDER BY p_date desc LIMIT 0,9   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-02-27T14:50:17+08:00 ] ::1 /zySystem/index.php/Home/Index/jiezhen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `station_p` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `station_p` WHERE ( jz_flag=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `station_p` WHERE ( jz_flag=1 ) ORDER BY p_date desc LIMIT 0,9   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant br_id - assumed 'br_id' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+NOTIC: [8] Use of undefined constant xh - assumed 'xh' C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\f57058ef33cdbd30d34e0f5f8cf47eda.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-02-27T14:50:22+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/bingMing.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tcd_zybm` [ RunTime:0.0040s ]
+SQL: SELECT DISTINCT  `name`,`code` FROM `tcd_zybm` WHERE `BM` = '000'  [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: yongfdata C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\5335e53c5a1c27126bee16e236f1ebc6.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2017-02-27T14:50:24+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/jieshouchufanghao.html?pid=%20&id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-02-27T14:50:27+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/jieshouchufanghao.html?pid=%20&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-02-27T14:50:29+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/bingMing.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tcd_zybm` [ RunTime:0.0030s ]
+SQL: SELECT DISTINCT  `name`,`code` FROM `tcd_zybm` WHERE `BM` = '000'  [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: yongfdata C:\xampp\htdocs\zySystem\Application\Runtime\Cache\Home\5335e53c5a1c27126bee16e236f1ebc6.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-02-27T14:50:30+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/ajaxgaibiyouzhi.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tcd_zybm` [ RunTime:0.0050s ]
+SQL: SELECT `zx`,`zf`,`cf_name`,`cf_tree` FROM `tcd_zybm` WHERE ( CODE = 1018 )  [ RunTime:0.0060s ]
+
+[ 2017-02-27T14:50:31+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/ajaxgaibianchufang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `bz_cf` [ RunTime:0.0080s ]
+SQL: SELECT dict_drug_zy.drug_name,bz_cf.dw,bz_cf.sl,bz_cf.yf,bz_cf.serial_no FROM `bz_cf` INNER JOIN dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm  WHERE bz_cf.cfdm = '1018.1002'  [ RunTime:0.0600s ]
+
+[ 2017-02-27T14:50:34+08:00 ] ::1 /zySystem/index.php/Home/Kaifang/jieshouchufanghao.html?pid=%201018.1002%20&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+

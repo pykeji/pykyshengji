@@ -19,7 +19,8 @@ function zh(){
 		            var danjia = $("#danjia").val();
 		            var number = $("#number").val();
 		            var jine = $("#jine").val();
-		            $(".tab4").append("<tr class='sty1' name='tableSty'><td><input type='hidden' id='xuhao' name='xuhao' value='"+id+"'>"+id+"</td><td class=left><input type='hidden' id='xuhao' name='xmname' value='"+name+"'>"+name+"</td><td class=left><input type='hidden' id='xuhao' name='danwei' value='"+danwei+"'>"+danwei+"</td><td><input type='hidden' id='xuhao' name='danjia' value='"+danjia+"'>"+danjia+"</td><td><input type='hidden' id='xuhao' name='number' value='"+number+"'>"+number+"</td><td><input type='hidden' id='xuhao' name='jine' value='"+jine+"'>"+jine+"</td></tr>");
+		            $(".tab4").append("<tr class='sty1' name='tableSty'><td><input type='hidden' id='xuhao' name='xuhao["+id+"]' value='"+id+"'>"+id+"</td><td class=left><input type='hidden' id='xuhao' name='xmname["+id+"]' value='"+name+"'>"+name+"</td><td class=left><input type='hidden' id='xuhao' name='danwei["+id+"]' value='"+danwei+"'>"+danwei+"</td><td><input type='hidden' id='xuhao' name='danjia["+id+"]' value='"+danjia+"'>"+danjia+"</td><td><input type='hidden' id='xuhao' name='number["+id+"]' value='"+number+"'>"+number+"</td><td><input type='hidden' id='xuhao' name='jine["+id+"]' value='"+jine+"'>"+jine+"</td></tr>");
+		            //$(".tab4").append("<tr class='sty1' name='tableSty'><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
 		            flag = true;
 
 			        //清空上方数据
@@ -114,18 +115,7 @@ function sub(){
 	 	/*for(var key in hidArr){
 	 		document.writeln(hidArr[key].value);
 	 	}*/
-	 	var ss=$(".sty1").children("tr");
-
-	 	for(var i-0;i<ss.length;i++){
-		var tdarr=ss.eq(i).find("td");
-		var k0=tdArr.eq(0).find("input").val();
-		var k1=tdArr.eq(1).find("input").val();
-		var k2=tdArr.eq(2).find("input").val();
-		var k3=tdArr.eq(3).find("input").val();
-		var k4=tdArr.eq(4).find("input").val();
-		var k5=tdArr.eq(5).find("input").val();
-		alert(k0);
-	}
+	 	
 		$("form").submit();
 	}
 }
