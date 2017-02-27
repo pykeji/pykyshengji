@@ -39,11 +39,13 @@
 			</div>
 			<!-- 按钮 -->
 			<div class="anniuchufanghebing">
-				<input type="checkbox" id="chuFangHeBing">
+				<input type="checkbox" class="chufanghbtjchenggong" id="chuFangHeBing">
 				<label for="chuFangHeBing">处方合并</label>&nbsp;&nbsp;
 			</div>
 			<div class="anniuchuxuandingcifang" >
-				<a href="{:U('Kaifang/zyhome')}"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
+				<!-- <a href="{:U('Kaifang/zyhome')}"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a> -->
+				<a id="xdcffuzhi" href="{:U('')}"><button class="btn btn-success" style="width: 80px;"><b style="color: #000000;">选定此方</b></button></a>
+
 			</div>
 			<div class="qingchusoufudong">
 			</div>
@@ -155,11 +157,11 @@
 	            success:function(dd)
 	            {
 	            	// alert(dd);
-	            	// console(dd);
+	            	// console.log(dd);
 	            	str = '<tr height="40"><th style="background-color:#fe9;text-align:center">选择</th><th style="background-color:#FE9;text-align:center">证型</th><th style="background-color:#FE9;text-align:center">治法</th><th style="background-color:#FE9;text-align:center">处方名称</th></tr>';
 	            	$.each(dd,function(idx,item){
 
-	            		str += '<tr class="sty3" name="dotableSty"><td style="text-align:center"><input type="checkbox" name="aa" value="jlk"></td><td>'+item.zx+'</td><td>'+item.zf+'</td><td><span>'+item.cf_name+'</span><input type="hidden" class="xiazhengxinggai" value="'+item.cf_tree+'"></td></tr>';
+	            		str += '<tr class="sty3" name="dotableSty"><td style="text-align:center"><input type="checkbox" value="aa" class="bwcheck"></td><td>'+item.zx+'</td><td>'+item.zf+'</td><td><span>'+item.cf_name+'</span><input type="text" class="xiazhengxinggai" value="'+item.cf_tree+'"></td></tr>';
 	                });
 	                $("#youcezhengxing").html(str);
 	            },
@@ -177,7 +179,7 @@
 		        tsty1[i].className="sty3";
 		    }
 		    $(this).attr("class","sty4");
-		    //ajax改变右侧值
+		    //ajax改变下侧值
 		    //获取cf_tree根据cf_tree获取处方
 		    var tjyouzhengxing =$(this).find("td:last").find("input").val();
 		    //获取处方名称
@@ -192,7 +194,7 @@
 		    	dataType:'json',
 		    	success:function(dd){
 		    		// alert(dd);
-		    		console.log(dd);
+		    		// console.log(dd);
 		    		// 处方名称
 		    		var str = '';
 		    		$.each(dd,function(idx,item){
@@ -261,6 +263,39 @@
 				}
 			});
 			// alert(tjzxzf);
+		});
+		//处方合并按钮
+		$(document).on("click",".chufanghbtjchenggong",function(){
+			$(this).attr("class","chufanghbtjfou");
+			$(this).attr("value","chufhebcuo");
+		});
+		//处方合并转换
+		$(document).on("click",".chufanghbtjfou",function(){
+			$(this).attr("class","chufanghbtjchenggong");
+			$(this).attr("value","chufhebfou");
+		});
+		//选定次方按钮赋值
+		$(document).on("click","#xdcffuzhi",function(){
+			var pdcftj = $(".chufanghbtjfou").val()
+			// 判断是否点击处方合并
+			if (pdcftj == 'chufhebcuo') {
+				var zhenchufanghao = ' ';
+				var id = '1';
+	 			$("#youcezhengxing input:checked").each(function(){
+	 				var chufhcd =$(this).parent().parent().find("td:last").find("input").val();
+	 				zhenchufanghao += chufhcd + ' ';
+	 			});
+	 			 $(this).attr("href",'{:U("Kaifang/jieshouchufanghao")}'+'?pid='+zhenchufanghao+'&id='+id);
+			}else{
+				var zhenchufanghao = ' ';
+				var id = '2';
+	 			$("#youcezhengxing input:checked").each(function(){
+	 				var chufhcd =$(this).parent().parent().find("td:last").find("input").val();
+	 				zhenchufanghao += chufhcd + ' ';
+	 			});
+	 			 $(this).attr("href",'{:U("Kaifang/jieshouchufanghao")}'+'?pid='+zhenchufanghao+'&id='+id);
+			}
+				
 		});
 	</script>
 </body>

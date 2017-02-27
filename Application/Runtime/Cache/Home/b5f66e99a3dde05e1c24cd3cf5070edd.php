@@ -135,6 +135,7 @@
 													});
 													// alert(a);
 									     		});
+									     		//赋值将复选框点击后变为chenked=checked状态
 									     		$(document).on("click",".sty3",function(){
 									     			// alert(123);
 									     			$(this).attr("checked","checked");
@@ -169,13 +170,13 @@
 								     			// alert(123);
 								     			var nj = document.getElementsByClassName("sty3");
 								     			// alert(nj);
-								     			var zhuzheng='';
+								     			var dozhuzheng='';
 								     			for (var i = 0; i < nj.length; i++) {
 								     				if (nj[i].checked) {
-								     					zhuzheng += nj[i].value+' ';
+								     					dozhuzheng += nj[i].value+' ';
 								     				}
 								     			}
-								     			$("#fenleifuzhizhuzheng").val(zhuzheng);
+								     			$("#fenleifuzhizhuzheng").val(dozhuzheng);
 								     			// alert(zhuzheng);
 								     		});
 								     		//点击主症下的设为常用选项按钮按钮
@@ -202,6 +203,22 @@
 															alert("ajax链接失败");
 														}
 													});
+								     		});
+								     		//主症下检索设为常用选项
+								     		$(document).on("click",".jssheweizhuchangyongxz",function(){
+								     			var sheweicycode =$(this).find("input").val();
+								     			$.ajax({
+													type:"post",
+													url:"<?php echo U('kaifang/yeliuajaxzhuzsheweicyxx');?>",
+													data:{"sheweicycode":sheweicycode},
+													dataType:'json',
+													success:function(dd){
+														alert(dd);
+													},
+													error:function(){
+														alert("ajax链接失败");
+													}
+												});
 								     		});
 								     		//主症下取消常用选项
 								     		$(document).on("click",".quxiaozhuchangyongxz",function(){
@@ -241,7 +258,6 @@
 														alert("ajax链接失败");
 													}
 												});
-
 								     		});
 									     	</script>
 									     	<!-- 全选按钮 -->
@@ -281,8 +297,41 @@
 									    </div>
 									    <!-- 选项卡2 -->
 									    <div class="tab-pane fade" id="iosmot">
-									      <!-- 内容 -->
-									     收到
+							<!-- 内容 -->
+					    	<div style="overflow: auto; width: 100%;height: 480px;">
+					    		<div style=" width:100%; height: 80px; background-color: #F0F0F0; text-align: center; ">
+									<!-- 按钮 -->
+									<div style="  height: 50px; ">
+										<input  placeholder="请输入症状名" type="text" style="margin-top:10px;  "> 搜索
+										<button  type="button" class="btn btn-primary btn-sm" data-dismiss="modal" >确定</button>
+									</div>
+										
+									<div style="margin-top: 5px;">
+										<input type="radio" name="a1name2" class="btn" id="yixuanSelectAll2">
+										<label for="yixuanSelectAll2">已选</label>
+										<input type="radio"  name="a1name" class="btn" id="weixuanSelectAll2">
+										<label for="weixuanSelectAll2">未选</label>
+										<input type="radio" name="a1name" class="btn" id="quanXuanselectAll2">
+										<label for="quanXuanselectAll2">全选</label>
+										<input type="radio"  name="a1name" class="btn" id="quanBuXuanSelect2">
+										<label for="quanBuXuanSelect2">全不选</label>
+										<input type="radio" value="显示全部" name="a1name" class="btn" id="quanbuSelectAll2">
+										<label for="quanbuSelectAll2">显示全部</label>
+									</div>
+									<div style=" overflow:auto; text-align: center; width:100%; height: 400px;">
+									    	<table  width="100%;">
+									    	<?php if(is_array($jsdata)): $i = 0; $__LIST__ = $jsdata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$zhuzhengjsvo): $mod = ($i % 2 );++$i;?><tr style="border-bottom: 1px #DDDDDD solid;">
+									    			<td style=" width:50%;">
+									    				<label><input type="checkbox" value="1"><?php echo ($zhuzhengjsvo["name"]); ?> </label>
+									    			</td>
+									    			<td>
+									    				<span class="jssheweizhuchangyongxz" style="color: #0500FF;">设为常用症状<input type="hidden" value="<?php echo ($zhuzhengjsvo["code"]); ?>"></span>
+									    			</td> 
+									    		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+									    	</table>
+									</div>
+								</div>
+					    	</div>		    
 									    </div>
 									    <!-- 选项卡3 -->
 									    <div class="tab-pane fade" id="changyong">

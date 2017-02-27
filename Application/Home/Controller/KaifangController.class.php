@@ -213,6 +213,9 @@ class KaifangController extends Controller {
         $where['ISSHOW']= 0;
         $data = $user->where($where)->field('name,tree')->select();
         $this->assign("data",$data);
+         $jswhere['ISSHOW'] = 1;
+        $jsdata = $user->where($jswhere)->field('name,code')->select();
+        $this->assign("jsdata",$jsdata);
         //获取主症的常用选择
         $dowhere['ISSHOW'] = 1;
         $dowhere['MNEMONIC'] = 1;
@@ -264,7 +267,20 @@ class KaifangController extends Controller {
             $this->ajaxReturn("哎呀，失败了");
         }
     }
-    //页面6 ajax 主症取消常用选择
+    //页面6 ajax 主症设为常用选择
+    public function yeliuajaxzhuzsheweicyxx(){
+        $sheweicycode = I('post.sheweicycode');//接受传过来的输入的值
+        $user = M("y_mainsypmpotm");
+        $where['CODE']= $sheweicycode;
+        $where['ISSHOW']= 1;
+        $gaidong['MNEMONIC'] = "1";
+        $data = $user->where($where)->save($gaidong);
+        if ($data) {
+            $this->ajaxReturn("你好像成功了");
+        } else {
+            $this->ajaxReturn("哎呀，失败了");
+        }
+    }//页面6 ajax 主症取消常用选择
     public function yeliuajaxzhuzquxcyxx(){
         $quxiaocycode = I('post.quxiaocycode');//接受传过来的输入的值
         $user = M("y_mainsypmpotm");
@@ -305,6 +321,7 @@ class KaifangController extends Controller {
         $this->display();
     }
     public function zyhome(){
+        
         $dict = M('bz_cf');
         $where['bz_cf.cfdm'] = '1413.1001';
         $data = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->join('drug_dict on dict_drug_zy.drug_code=drug_dict.drug_code')->field('dict_drug_zy.drug_name,bz_cf.dw,dict_drug_zy.drug_code,drug_dict.xw1')->select();
@@ -315,5 +332,10 @@ class KaifangController extends Controller {
         $this->assign('zy_yp',$data);
         $this->assign('szjj',$szjj);
         $this->display();
+    }
+    //接受处方号
+    public function jieshouchufanghao(){
+        $a = I("get.");
+        dump($a);die;
     }
 }
