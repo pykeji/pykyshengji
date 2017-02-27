@@ -25,10 +25,10 @@ function frsub(){
 	}
 }
 </script>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <script>
 	document.oncontextmenu=new Function("event.returnValue=false;");
 </script>
-<body>
 	<br><br>
 	<form action="__CONTROLLER__/consub" method="post" id="fr">
 		标题：<input type="text" name="list" class="mlk">
