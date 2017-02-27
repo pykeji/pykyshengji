@@ -123,11 +123,12 @@ class KaifangController extends Controller {
     public function zyhome(){
         $dict = M('bz_cf');
         $where['bz_cf.cfdm'] = '1413.1001';
-        $data = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->join('drug_dict on dict_drug_zy.drug_code=drug_dict.drug_code')->field('dict_drug_zy.drug_name,bz_cf.dw,dict_drug_zy.drug_code,drug_dict.xw1')->select();
+        $data = $dict->join('dict_drug_zy on dict_drug_zy.drug_code=bz_cf.ypdm')->where($where)->join('drug_dict on dict_drug_zy.drug_code=drug_dict.drug_code')->join('tcd_zybm on tcd_zybm.cf_tree="1413.1001"')->field('dict_drug_zy.drug_name,bz_cf.dw,dict_drug_zy.drug_code,drug_dict.xw1,tcd_zybm.cf_name')->select();
         // dump($data);die;
         $cfTree = M('tcd_szjj');
         $szjj = $cfTree->where("CF_TREE='1002.1006'")->select();
-        // var_dump($data);die;
+        // dump($data);die;
+        $data[0]['cf_tree'] = '1413.1001';
         $this->assign('zy_yp',$data);
         $this->assign('szjj',$szjj);
         $this->display();

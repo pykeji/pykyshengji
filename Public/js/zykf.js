@@ -96,47 +96,14 @@ $(function(){
 				$(this).html($(this).html()-1);
 			});
 			$(this).parent().parent().detach();
+			
 			// $('#gjwys').html($('.zykf_yp').length);
 		});
 	}).on("mouseout",".jianyao",function(){
 		$(this).css('backgroundColor','#FFB3A9').css('color','#000');
 	});
 
-	//加药
-	$('#jyan').click(function(){
-		if($('.ylypnm:last').val() == ''|| $('.ylypnm:last').val() == ' ' || $('.ylypnm:last').val() == '   '){
-			return false;
-		}else{
-		if($('.zykf_yp').length > 0){
-			var num = $('.zykf_yp:last .b1').html();
-			$('.zykf_yp:last').after('<div class="zykf_yp"><div class="yp1"><b class="b1">'+(num*1+1)+'</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm" id="'+'a'+(num*1+1)+'"></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>');
-				// $('#gjwys').html($('.zykf_yp').length);
-				$('.ylypnm:last').focus().keydown(function(env){
-					if(env.keyCode==13){
-						// $(this).blur();
-						$('.ypylke').focus().select().keydown(function(env){
-							alert(left);
-							if(env.keyCode==13){
-								if($(this).val() == 0.00){
-									alert('请输入药量');
-								}else{
-									$(this).blur();
-								}
-							}
-						});
-					}
-				});
-			
-		}else{
-			var str = '<div class="zykf_yp"><div class="yp1"><b class="b1">1</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm" id="'+'a'+(num*1+1)+'"></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>'
-			$('#cfmx').append(str);
-			// $('#gjwys').html($('.zykf_yp').length);
-				$('.ylypnm:last').focus()
-			
-		}
-	}
-		
-	});
+	
 	//限制药量只能输入数字
 	//待完成
 	//

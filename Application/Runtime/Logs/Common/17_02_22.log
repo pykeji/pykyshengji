@@ -622,3 +622,45 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
 ERR: 无法加载模块:Public
 
+[ 2017-02-22T17:00:54+08:00 ] 127.0.0.1 /zySystem/Public/muban/assets/fonts/open-sans-bold.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+ERR: 无法加载模块:Public
+
+[ 2017-02-22T17:00:59+08:00 ] 127.0.0.1 /zySystem/Public/muban/assets/fonts/open-sans-bold.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+ERR: 无法加载模块:Public
+
+[ 2017-02-22T17:03:00+08:00 ] ::1 /zySystem/Public/muban/assets/fonts/open-sans-bold.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+ERR: 无法加载模块:Public
+
+[ 2017-02-22T17:04:45+08:00 ] ::1 /zySystem/Uploads/20170222/eb11589069917b8c02983f55e135d72f.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+ERR: 无法加载模块:Uploads
+
+[ 2017-02-22T17:04:45+08:00 ] ::1 /zySystem/Uploads//e900084c2924d61966ab95fd054aead8.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+ERR: 无法加载模块:Uploads
+
+[ 2017-02-22T17:04:45+08:00 ] ::1 /zySystem/Uploads//182312.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+ERR: 无法加载模块:Uploads
+
+[ 2017-02-22T17:04:48+08:00 ] ::1 /zySystem/Public/muban/assets/fonts/open-sans-bold.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+ERR: 无法加载模块:Public
+
