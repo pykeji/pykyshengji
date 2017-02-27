@@ -19,7 +19,8 @@ function zh(){
 		            var danjia = $("#danjia").val();
 		            var number = $("#number").val();
 		            var jine = $("#jine").val();
-		            $(".tab4").append("<tr class='sty1' name='tableSty'><td><input type='hidden' id='xuhao' name='xuhao' value='"+id+"'>"+id+"</td><td class=left><input type='hidden' id='xuhao' name='xmname' value='"+name+"'>"+name+"</td><td class=left><input type='hidden' id='xuhao' name='danwei' value='"+danwei+"'>"+danwei+"</td><td><input type='hidden' id='xuhao' name='danjia' value='"+danjia+"'>"+danjia+"</td><td><input type='hidden' id='xuhao' name='number' value='"+number+"'>"+number+"</td><td><input type='hidden' id='xuhao' name='jine' value='"+jine+"'>"+jine+"</td></tr>");
+		            $(".tab4").append("<tr class='sty1' name='tableSty'><td><input type='hidden' id='xuhao' name='xuhao["+id+"]' value='"+id+"'>"+id+"</td><td class=left><input type='hidden' id='xuhao' name='xmname["+id+"]' value='"+name+"'>"+name+"</td><td class=left><input type='hidden' id='xuhao' name='danwei["+id+"]' value='"+danwei+"'>"+danwei+"</td><td><input type='hidden' id='xuhao' name='danjia["+id+"]' value='"+danjia+"'>"+danjia+"</td><td><input type='hidden' id='xuhao' name='number["+id+"]' value='"+number+"'>"+number+"</td><td><input type='hidden' id='xuhao' name='jine["+id+"]' value='"+jine+"'>"+jine+"</td></tr>");
+		            //$(".tab4").append("<tr class='sty1' name='tableSty'><td>"+id+"</td><td class=left>"+name+"</td><td class=left>"+danwei+"</td><td>"+danjia+"</td><td>"+number+"</td><td>"+jine+"</td></tr>");
 		            flag = true;
 
 			        //清空上方数据

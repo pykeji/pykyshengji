@@ -35,6 +35,8 @@ img{border:0px;}
 .jtsFar label,.jtsMother label,.jts3 label,.jts4 label,.xj1 label{display:block;}
 .jkda-table .chufang>div{padding-bottom:10px;width:100%;float:left;}
 .jkda-table .chufang ul li{float:left;width:25%;text-align:center;margin-top:5px;}
+/*西药处方*/
+.xiyao .xyInf span{margin-left:20px;}
 /*整体状况*/
 .zt1,.zt2,.zt3,.zt4{
 	position:absolute;background-color:#D3D5DA;width:290px;height:150px;
@@ -61,7 +63,11 @@ img{border:0px;}
 	position:absolute;background-color:#D3D5DA;width:290px;height:210px;overflow:auto;display:none;z-index:10;border:1px solid #ccc;
 }
 .jws1 label,.jws2 label{display: block;}
-
-/*隐藏框下的两个div*/
+/*中医诊断和西医诊断*/
+.zyzd1,.xyzd1{
+	position:absolute;background-color:#D3D5DA;width:290px;height:210px;overflow:auto;display:none;z-index:10;border:1px solid #ccc;
+}
+.zyzd1 label,.xyzd1 label{display: block;}
+/*弹出框下的两个div*/
 .div1{height:25px;}
 .div2{height:auto;max-height:170px;overflow: auto;}

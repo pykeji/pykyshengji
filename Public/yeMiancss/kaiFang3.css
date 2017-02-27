@@ -5,7 +5,7 @@ body input[type=text]{color:#000!important;border:1px #DFD7D7 solid!important}
 .zlznmtk{float:left;margin-left:150px;margin-top:5px}
 .ka1dadekuang2{float:left;margin-top:5px;margin-left:50px;width:22%}
 .qingchushangfudong{clear:both}
-.ka3ZuoDaKuai{float:left;border-radius:5px;border:1px #DFD7D7 solid;margin-left:20px;margin-top:5px;width:22%;height:485px}
+.ka3ZuoDaKuai{float:left;border-radius:5px;border:1px #DFD7D7 solid;overflow:auto;margin-left:20px;margin-top:5px;width:22%;height:485px}
 .ka3YouDaKuai{float:left;margin-left:10px;margin-top:5px;width:74%;height:98%}
 .ka3YouShangDakuaiChuFang{height:35%;overflow:auto;border-radius:5px;border:1px #DFD7D7 solid}
 .ka3youShangHanZi{margin-top:3px}
@@ -18,3 +18,7 @@ body input[type=text]{color:#000!important;border:1px #DFD7D7 solid!important}
 .chuFangHeBingtuichu{margin-top:10px}
 .qingchuanniufudong{clear:both}
 .qingchushangfudong{clear:both}
+.sty1 td{color:#000000;}
+.sty3 td{color:#000000;}
+.sty2 td{background-color:#3399FF;}
+.sty4 td{background-color:#3399FF;}
