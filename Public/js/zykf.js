@@ -96,7 +96,35 @@ $(function(){
 				$(this).html($(this).html()-1);
 			});
 			$(this).parent().parent().detach();
-			
+			$('.wrphhid').each(function(){
+        		aa = $(this).val();
+        		
+        		if(aa == '温'){
+        			wen = wen*1+1;
+        		}else if(aa == '热'){
+        			re = re*1+1;
+        		}else if(aa == '平'){
+        			ping = ping*1+1;
+        		}else if(aa == '寒'){
+        			han = han*1+1;
+        		}else if(aa == '微温'){
+        			weiwen = weiwen*1+1;
+        		}else if(aa == '微寒'){
+        			weihan = weihan*1+1;
+        		}else if(aa == '凉'){
+        			liang = liang*1+1;
+        		}
+        	});
+        	zong = $('.wrphhid').length;
+        	wenbi = Math.round((wen / zong * 10000) / 100.00);
+        	rebi = Math.round((re / zong * 10000) / 100.00);
+        	pingbi = Math.round((ping / zong * 10000) / 100.00);
+        	hanbi = Math.round((han / zong * 10000) / 100.00);
+        	weiwenbi = Math.round((weiwen / zong * 10000) / 100.00);
+        	weihanbi = Math.round((weihan / zong * 10000) / 100.00);
+        	liangbi = Math.round((liang / zong * 10000) / 100.00);
+
+
 			// $('#gjwys').html($('.zykf_yp').length);
 		});
 	}).on("mouseout",".jianyao",function(){
