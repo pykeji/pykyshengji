@@ -413,7 +413,7 @@
 				$(this).html($(this).html()-1);
 			});
 			$(this).parent().parent().detach();
-		
+
 
 			// $('#gjwys').html($('.zykf_yp').length);
 		});
@@ -635,8 +635,8 @@
 		});
 
 
-
   
+
 
 		 // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('wrphbzt'));
