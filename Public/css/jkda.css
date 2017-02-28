@@ -1,4 +1,4 @@
-*{font-size:16px;}
+*{font-size:16px;margin:0px;padding:0px;}
 html,body{width:100%;}
 a{text-decoration:none;}
 img{border:0px;}
@@ -36,7 +36,7 @@ img{border:0px;}
 .jkda-table .chufang>div{padding-bottom:10px;width:100%;float:left;}
 .jkda-table .chufang ul li{float:left;width:25%;text-align:center;margin-top:5px;}
 /*西药处方*/
-.xiyao .xyInf span{margin-left:20px;}
+.xiyao .xyInf tr td{text-align: center;line-height:30px;}
 /*整体状况*/
 .zt1,.zt2,.zt3,.zt4{
 	position:absolute;background-color:#D3D5DA;width:290px;height:150px;

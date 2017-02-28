@@ -968,7 +968,9 @@
                                         <input type="button" value="关闭" class="clo">
                                     </div>
                                     <div class="div2">
-                                        <label><input type="checkbox" name="xyzd1" class="xiyi1" onclick="checked2('xiyi1','xyzd1inp')" value="11"><span>11</span></label>
+                                        <volist name="xyName" id="xy">
+                                            <label><input type="checkbox" name="xyzd1" class="xiyi1" onclick="checked2('xiyi1','xyzd1inp')" value="{$xy.name}"><span>{$xy.name}</span></label>
+                                        </volist>
                                     </div>
                                 </div>
                             </tr>
@@ -1014,15 +1016,19 @@
                                         <div>
                                             <span>【西药处方1】</span>
                                         </div>
-                                        <div class="xyInf">
-                                            <span>维生素B12片</span>
-                                            <span>25mg*100片/瓶</span>
-                                            <span>1瓶</span>
-                                            <span>1mg/次</span>
-                                            <span>口服</span>
-                                            <span>1/日</span>
-                                        </div>
-                                        <div>
+                                        <table class="xyInf" width="100%">
+                                            <volist name="xyCZ" id="xyInf">
+                                                <tr>
+                                                    <td style="width:25%">{$xyInf.yp_name}</td>
+                                                    <td style="width:25%">{$xyInf.yp_spec}</td>
+                                                    <td style="width:10%">{$xyInf.yp_total_amount}</td>
+                                                    <td style="width:12.5%">{$xyInf.yp_yc_amount}</td>
+                                                    <td style="width:17.5%">{$xyInf.yp_useage}</td>
+                                                    <td style="width:10%">{$xyInf.yp_pl_day}</td>
+                                                </tr>
+                                            </volist>
+                                        </table>
+                                        <div style="clear: both;">
                                             【备注】：
                                         </div>
                                     </div>
@@ -1061,3 +1067,440 @@
 </body>
 </html>
 <script src="__PUBLIC__/js/bingshi.js"></script>
+<script>
+//    既往史AJAX
+ $(document).on('input','#jws1inp',function(){
+     var val=$(this).val();
+     var str="";
+     $.ajax({
+         url:"{:U('JianKangAjax/jws')}",
+         type:'post',
+         data:{'value':val},
+         dataType:'json',
+         success:function(data){
+             $.each(data,function(index,item){
+                 str += '<label><input type="checkbox" name="jws1" class="jiwangshi1" onclick="checked2(\'jiwangshi1\',\'jws1inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+             })
+            $(".jws1").children(".div2").html(str);
+         }
+     })
+ })
+//传染病史AJAX
+ $(document).on('input','#jws2inp',function(){
+     var val=$(this).val();
+     var str="";
+     $.ajax({
+         url:"{:U('JianKangAjax/crbs')}",
+         type:'post',
+         data:{'value':val},
+         dataType:'json',
+         success:function(data){
+             $.each(data,function(index,item){
+                 str += '<label><input type="checkbox" name="crbs1" class="jiwangshi2" onclick="checked2(\'jiwangshi2\',\'jws2inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+             })
+             $(".jws2").children(".div2").html(str);
+         }
+     })
+ })
+//    家庭史AJAX
+$(document).on('input','#jts11inp,#jts22inp,#jts33inp,#jts44inp',function(){
+    var th=$(this).parent(".div1").parent().attr('class');
+    var ids=$(this).attr('id');
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/jws')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                if(ids=='jts11inp'){
+                    str += ' <label><input type="checkbox" name="jtsFQ" class="gmcheck11" onclick="checked2(\'gmcheck11\',\'jts11inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+                }else if(ids=='jts22inp'){
+                    str += ' <label><input type="checkbox" name="jtsMQ" class="gmcheck22" onclick="checked2(\'gmcheck22\',\'jts22inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+                }else if(ids=='jts33inp'){
+                    str += ' <label><input type="checkbox" name="jtsXD" class="gmcheck33" onclick="checked2(\'gmcheck33\',\'jts33inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+                }else if(ids=='jts44inp'){
+                    str += ' <label><input type="checkbox" name="jtsZN" class="gmcheck44" onclick="checked2(\'gmcheck44\',\'jts44inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+                }
+            })
+            $("."+th).children(".div2").html(str);
+        }
+    })
+})
+//    过敏史
+$(document).on('input','#gmsinp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/gms')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label><input type="checkbox" name="gm" class="gmcheck" onclick="checked2(\'gmcheck\',\'gmsinp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".gm").children(".div2").html(str);
+        }
+    })
+})
+//    忘神
+$(document).on('input','#zt1inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/wangshen')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="wshen" class="wshen" onclick="checked1(\'wshen\',\'zt1inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".zt1").children(".div2").html(str);
+        }
+    })
+})
+//    忘色
+$(document).on('input','#zt2inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/wangse')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="wse" class="wse" onclick="checked1(\'wse\',\'zt2inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".zt2").children(".div2").html(str);
+        }
+    })
+})
+//    体态
+$(document).on('input','#zt3inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/titai')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="tt" class="tt" onclick="checked1(\'tt\',\'zt3inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".zt3").children(".div2").html(str);
+        }
+    })
+})
+//    体形
+$(document).on('input','#zt4inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/tixing')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="tx" class="tx" onclick="checked1(\'tx\',\'zt4inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".zt4").children(".div2").html(str);
+        }
+    })
+})
+//    睡眠质量
+$(document).on('input','#xz1inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/shuimianzl')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label><input type="checkbox" name="zl" class="xianzai1" onclick="checked2(\'xianzai1\',\'xz1inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz1").children(".div2").html(str);
+        }
+    })
+})
+//    睡眠时间
+$(document).on('input','#xz2inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/shuimiansj')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="sj" class="sj" onclick="checked1(\'sj\',\'xz2inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz2").children(".div2").html(str);
+        }
+    })
+})
+//食欲
+$(document).on('input','#xz3inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/shiyu')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="sy" class="sy" onclick="checked1(\'sy\',\'xz3inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz3").children(".div2").html(str);
+        }
+    })
+})
+//    口味
+$(document).on('input','#xz4inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/kouwei')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label><input type="checkbox" name="kw" class="xianzai4" onclick="checked2(\'xianzai4\',\'xz4inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz4").children(".div2").html(str);
+        }
+    })
+})
+//大便便次
+$(document).on('input','#xz5inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/dbbc')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="dbc" class="dbc" onclick="checked1(\'dbc\',\'xz5inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz5").children(".div2").html(str);
+        }
+    })
+})
+//大便便质
+$(document).on('input','#xz6inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/dbbz')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="bz" class="bz" onclick="checked1(\'bz\',\'xz6inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz6").children(".div2").html(str);
+        }
+    })
+})
+//小便便次
+$(document).on('input','#xz7inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/xbbc')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="xbc" class="xbc" onclick="checked1(\'xbc\',\'xz7inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz7").children(".div2").html(str);
+        }
+    })
+})
+//小便便色
+$(document).on('input','#xz8inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/xbbs')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="bs" class="bs" onclick="checked1(\'bs\',\'xz8inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xz8").children(".div2").html(str);
+        }
+    })
+})
+//    性情
+$(document).on('input','#qz1inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/xingqing')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="xq" class="xq" onclick="checked1(\'xq\',\'qz1inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".qz1").children(".div2").html(str);
+        }
+    })
+})
+//性格
+$(document).on('input','#qz2inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/xingge')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="xg" class="xg" onclick="checked1(\'xg\',\'qz2inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".qz2").children(".div2").html(str);
+        }
+    })
+})
+//舌色
+$(document).on('input','#sz1inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/shese')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="ss" class="ss" onclick="checked1(\'ss\',\'sz1inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".sz1").children(".div2").html(str);
+        }
+    })
+})
+//舌体
+$(document).on('input','#sz2inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/sheti')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="st" class="st" onclick="checked1(\'st\',\'sz2inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".sz2").children(".div2").html(str);
+        }
+    })
+})
+//动态
+$(document).on('input','#sz3inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/dongtai')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="dt" class="dt" onclick="checked1(\'dt\',\'sz3inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".sz3").children(".div2").html(str);
+        }
+    })
+})
+//苔质
+$(document).on('input','#sz4inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/taizhi')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="tz" class="tz" onclick="checked1(\'tz\',\'sz4inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".sz4").children(".div2").html(str);
+        }
+    })
+})
+//苔色
+$(document).on('input','#sz5inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/taise')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label class="dblCli"><input type="radio" name="ts" class="ts" onclick="checked1(\'ts\',\'sz5inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".sz5").children(".div2").html(str);
+        }
+    })
+})
+//    脉诊
+$(document).on('input','#mz1inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/maizhen')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label><input type="checkbox" name="mz1" class="maizhen1" onclick="checked2(\'maizhen1\',\'mz1inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".mz1").children(".div2").html(str);
+        }
+    })
+})
+//西医诊断
+$(document).on('input','#xyzd1inp',function(){
+    var val=$(this).val();
+    var str="";
+    $.ajax({
+        url:"{:U('JianKangAjax/xiyizd')}",
+        type:'post',
+        data:{'value':val},
+        dataType:'json',
+        success:function(data){
+            $.each(data,function(index,item){
+                str += '<label><input type="checkbox" name="xyzd1" class="xiyi1" onclick="checked2(\'xiyi1\',\'xyzd1inp\')" value="'+item.name+'"><span>"'+item.name+'"</span></label>'
+            })
+            $(".xyzd1").children(".div2").html(str);
+        }
+    })
+})
+</script>

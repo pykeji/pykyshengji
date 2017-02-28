@@ -377,7 +377,14 @@ class IndexController extends Controller {
             $xh=session(xh);
             $his=$bqxx->join('station_p on bqxx.BR_ID=station_p.br_id and bqxx.XH=station_p.xh')->field('bqxx.BR_ID,bqxx.XH,bqxx.jz_date')->where("bqxx.BR_ID=$blh and station_p.jz_flag=2 and bqxx.XH!=$xh")->select();
             $this->assign('his',$his);
+            //西药处置
+            $xy2=M('xydrugcf_detial');
+            $xyChuzhi=$xy2->where("BR_ID=$blh and XH=$xh")->field('yp_name,yp_spec,yp_total_amount,yp_yc_amount,yp_useage,yp_pl_day')->select();
+            if($xyChuzhi){
+                $this->assign('xyCZ',$xyChuzhi);
+            }
         }
+        //以下不管患者是否登记数据都存在
         /** typeId=
          * 1：既往病史；2：传染病史；3：过敏史；4：忘神；5：忘色；6：体态；
          * 7：体型；8：质量；9：时间；10：食欲；11：口味；12：大便便次；13：便质；
@@ -387,6 +394,10 @@ class IndexController extends Controller {
         $bl=M('jkda_bl');//健康档案病历表
         $bls=$bl->select();
         $this->assign('bls',$bls);
+        //西医病名
+        $xy=M('xy_name');
+        $xyName=$xy->field('name')->select();
+        $this->assign('xyName',$xyName);
 //        $this->assign('jkSave',session('jkdaSave'));
         $this->display();
     }
