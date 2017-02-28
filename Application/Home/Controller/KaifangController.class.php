@@ -4,7 +4,7 @@ use Think\Controller;
 class KaifangController extends Controller {
     public function bingMing(){
         $user = M("tcd_zybm");
-        $where['BM'] = '000';
+        $where['BM'] = '04';
         $data = $user->where($where)->distinct(true)->field('name,code')->select();
         //二次链接数据库
         // $douser = M("dict_usage");//别删
@@ -19,7 +19,7 @@ class KaifangController extends Controller {
         if(preg_match ("/^[a-z]/i", $tjbm)){
             $user = M("tcd_zybm");
             $where['BM_INPUT'] = array('like',"{$tjbm}%");
-            $where['BM'] = '000';
+            $where['BM'] = '04';
             $data = $user->where($where)->distinct(true)->field('name,code')->select();
             // $where['bm_input'] = array('like',"'$tjbm%'");
             // .$user."%' ")->field('name')->sel$data = $user->where("bm_input like '"ect();
@@ -28,7 +28,7 @@ class KaifangController extends Controller {
         }else{
             $user = M("tcd_zybm");
             $where['NAME'] = array('like',"{$tjbm}%");
-            $where['BM'] = '000';
+            $where['BM'] = '04';
             $data = $user->where($where)->distinct(true)->field('name,code')->select();
             // $where['bm_input'] = array('like',"'$tjbm%'");
             // $data = $user->where("bm_input like '".$user."%' ")->field('name')->select();
@@ -354,7 +354,9 @@ class KaifangController extends Controller {
             }
             $cfTree = M('tcd_szjj');
             
-            dump($data);
+            $this->assign(zy_yp,$data);
+            $this->display('Kaifang/zyhome');
+            // dump($data);
         }else{
             //小孟传的
         }

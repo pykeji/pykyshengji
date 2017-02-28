@@ -25,7 +25,13 @@
 	</div>
 	<!-- 当天处方菜单 -->
 	<div id="dtcfcd">
-		today
+	  <ul>
+		<php>
+			for($i = 0;$i<count($zy_yp);$i++){
+				echo '<li class="dtcfli">'.$zy_yp[$i][0][cf_name].'</li>'; 
+			}
+		</php>
+	   </ul>
 	</div>
 
 
@@ -105,8 +111,6 @@
 			</label>
 			</div>
 		</div>
-		<!-- 处方明细div -->
-		<div id="cfmx">
 		<!-- 查询药品框 -->
 		<div id="zykf_cxypk">
 			
@@ -126,8 +130,12 @@
 		<div id="xtshk">
 			<center><h3>审核</h3></center>
 		</div>
+		<!-- 处方明细div -->
+		<div id="cfmx">
+		<php>for($j = 0;$j<count($zy_yp);$j++){</php>
+		<span class="wtf">
 		<php>$numdr = 1;</php>
-		 <foreach name='zy_yp' item='vo'>
+		 <foreach name='zy_yp[$j]' item='vo'>
 
 			<div class="zykf_yp">
 				<div class="yp1">
@@ -152,7 +160,8 @@
 			</div>
 			<php>$numdr++;</php>
 		 </foreach>	
-
+		</span>
+		<php>}</php>
 		</div>
 		
 		<!-- 温热平寒占比 -->
@@ -258,8 +267,22 @@
 </div>
 	</body>
 	<script type="text/javascript">
+
 	$(function(){
-		//计算温热平寒数量
+		$('.wtf:first').show();
+		// 选项卡，当天处方
+		$(document).on('mouseover','.dtcfli',function(){
+			$(this).css('backgroundColor','#57B4CF');
+			$(this).css('color','#fff');
+		}).on('mouseout','.dtcfli',function(){
+			$(this).css('backgroundColor','');
+			$(this).css('color','');
+		}).on('click','.dtcfli',function(){
+			var num = $(this).index();
+			$('.wtf').eq(num).show();
+			$('.wtf').not($('.wtf').eq(num)).hide();
+			$('#dtcfcd').hide();
+		});
 
 		
 	});
@@ -343,6 +366,12 @@
 			$(this).css('backgroundColor','#A8CBF1');
 			$(this).css('color','#FFF');
 			$(this).click(function(){
+				var nua =0;
+		 $('.wtf').each(function(){
+			if($(this).is(":visible")){
+				nua = $(this).index();
+			}
+		});
 				var nam = $(this).html();
 				var sss = '#'+fangid;
 				$.ajax({
@@ -354,15 +383,15 @@
             {
                var code = dd.drug_code;
                var wrp = dd.xw1;
-               $(sss).next('input').val(wrp);
-               $(sss).next('input').next('input').val(code);
+               $(sss).eq(nua).next('input').val(wrp);
+               $(sss).eq(nua).next('input').next('input').val(code);
             },
             error:function()
             {
                 alert('Ajax请求失败');
             }
         });
-				$(sss).val(nam);
+				$('.wtf').eq(nua).find(sss).val(nam);
 			});
 		}).on('mouseout','.zydrugLi',function(){
 			$(this).css('backgroundColor','');
@@ -371,18 +400,25 @@
 
 		//加药
 	$('#jyan').click(function(){
+		var nun =0;
+		 $('.wtf').each(function(){
+			if($(this).is(":visible")){
+				nun = $(this).index();
+			}
+		});
+		
 		if($('.ylypnm:last').val() == ''|| $('.ylypnm:last').val() == ' ' || $('.ylypnm:last').val() == '   '){
 			return false;
 		}else{
 		if($('.zykf_yp').length > 0){
-			var num = $('.zykf_yp:last .b1').html();
-			$('.zykf_yp:last').after('<div class="zykf_yp"><div class="yp1"><b class="b1">'+(num*1+1)+'</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm" id="'+'a'+(num*1+1)+'"><input type="hidden" value="" class="wrphhid"><input type="hidden" class="yincangcode" value=""></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>');
+			var num = $('.wtf').eq(nun).find('.zykf_yp:last .b1').html();
+			$('.wtf').eq(nun).find('.zykf_yp:last').after('<div class="zykf_yp"><div class="yp1"><b class="b1">'+(num*1+1)+'</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm" id="'+'a'+(num*1+1)+'"><input type="hidden" value="" class="wrphhid"><input type="hidden" class="yincangcode" value=""></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>');
 				// $('#gjwys').html($('.zykf_yp').length);
 				$('.ylypnm:last').focus().keydown(function(env){
 					if(env.keyCode==13){
 						// $(this).blur();
 						$('.ypylke').focus().select().keydown(function(env){
-							alert(left);
+							// alert(left);
 							if(env.keyCode==13){
 								if($(this).val() == 0.00){
 									alert('请输入药量');
@@ -397,7 +433,7 @@
 			
 		}else{
 			var str = '<div class="zykf_yp"><div class="yp1"><b class="b1">1</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm" id="'+'a'+(num*1+1)+'"><input type="hidden" value="" class="wrphhid"><input type="hidden" class="yincangcode" value=""></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>'
-			$('#cfmx').append(str);
+			$('.wtf').eq(nun).append(str);
 			// $('#gjwys').html($('.zykf_yp').length);
 				$('.ylypnm:last').focus();
 
