@@ -10,6 +10,9 @@
     <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
     <style>
+    	#fjmtab tr{
+    		cursor:pointer;
+    	}
 		.py{
 			background-color:#FFFFFF;color:red;margin-right:5px;
 		}
@@ -17,8 +20,86 @@
 			width:100%;border:none;outline:none;
 			height:100%;
 		}
+		.rtd{
+			border-left:1px solid #ccc;height:35px;overflow:hidden;
+			white-space:nowrap;
+		}
+		.trsty{
+			border-bottom:1px solid #ccc;height:35px;
+			line-height:35px;
+		}
     </style>
 </head>
+<script>
+$(document).on("input","#impid",function(){
+	$.ajax({
+			type:"post",
+			url:"__CONTROLLER__/aexpe",
+			dataType:"json",
+			data:{"pym":$('#impid').val()},
+			success:function(e){
+				var trd='<tr height="35"><th class="trdebingming">处方名称</th><th class="trdebingming1">主治</th></tr>';
+				for(var i=0;i<e.length;i++){
+					trd+='<tr class="trsty" id='+e[i]['id']+' onclick="rightcon(id)"><td>'+e[i]['name']+'</td><td class="rtd">'+e[i]['attending']+'<td></tr>';
+				}
+				$("#fjmtab").html(trd);
+			}
+		}); 
+});
+$(document).ready(function(){
+	$('.py').click(function(){
+		var ss=this.innerHTML;
+		var kk=$('#impid').val();
+		$('#impid').val(kk+ss);
+		$.ajax({
+			type:"post",
+			url:"__CONTROLLER__/aexpe",
+			dataType:"json",
+			data:{"pym":$('#impid').val()},
+			success:function(e){
+				var trd='<tr height="35"><th class="trdebingming">处方名称</th><th class="trdebingming1">主治</th></tr>';
+				for(var i=0;i<e.length;i++){
+					trd+='<tr class="trsty" id='+e[i]['id']+' onclick="rightcon(id)"><td>'+e[i]['name']+'</td><td class="rtd">'+e[i]['attending']+'<td></tr>';
+				}
+				$("#fjmtab").html(trd);
+			}
+		}); 
+	});
+	$('#fjmtab tr').click(function(){
+		$(this).css("background-color","#FE9");
+		$('#fjmtab tr').not(this).css("background-color","#fff");
+	});
+});
+function rightcon(id){
+	var thid=document.getElementById(id);
+	$(thid).css("background-color","#FE9");
+	$('#fjmtab tr').not(thid).css("background-color","#fff");
+	var sl=$(thid).find('td:first').text();
+	$('#rname').html(sl);
+	$.ajax({
+		type:"post",
+		url:"__CONTROLLER__/aexpe",
+		dataType:"json",
+		data:{"tree":id},
+		success:function(e){
+			var str='';
+			for(var i=0;i<e.length;i++){
+				str+='<div style="width:700px;"><div class="d1"><div class="d2">'+e[i]["serial_no"]+'</div><div class="d3">'+e[i]["yf"]+'</div><div class="d4">'+e[i]["drug_name"]+'</div><div class="d5">'+e[i]["sl"]+e[i]["dw"]+'</div></div></div>';
+			}
+			$('#fjtab').html(str);
+		}
+	});
+	$.ajax({
+		type:"post",
+		url:"__CONTROLLER__/fjcon",
+		dataType:"json",
+		data:{"tree":id},
+		success:function(f){
+			console.log(f);
+		}
+	}); 
+}
+</script>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 	<!-- 上 -->
 	<div class="ka1dadekuang1">
@@ -28,7 +109,7 @@
 			</legend>
 			<div class="kawenzi ">
 				&nbsp;
-				<img src="__PUBLIC__/img/tu1.jpg" style="margin-top: 20px;  width: 40px; "  alt="图片加载中。。。。">
+				<img src="__PUBLIC__/img/tu1.jpg" style="margin-top:20px;width:40px; "  alt="图片加载中。。。。">
 				&nbsp;
 				<div class="kuangneianniu">
 					<button class="py">A</button>
@@ -62,48 +143,46 @@
 		</fieldset>
 	</div>
 	<!-- 下 -->
-	<div style="width: 100%; height:100%;">
+	<div style="width:100%;height:100%;">
 		<!-- 下左 -->
 		<div class="xiaZuo">
 			<div  class="xiaZuosousuo">
 				<div class="input-group ">  
-			       <input type="text" class="form-control"placeholder="请输入病名" / >  
+			       <input type="text" class="form-control"placeholder="请输入病名" id="impid"/>  
 		            <span class="input-group-btn">  
 		                <button class="btn btn-info btn-search">
 		               		<b style="color: #000000;">查找</b>
 		               	</button>  
 				</div>
 			</div>
+			<a href="__CONTROLLER__/aexpe">test</a>
 			<div class="xiaZuoshang">
 				
 				<div class="xiaZuoshang3 ">
 					<button  class="btn  btn-info" data-toggle="modal" data-target="#tianjiachufang">
-						<b style="color:#000000;font-size:12px;">添加处方</b>	
+						<b style="color:#000000;font-size:14px;">添加处方</b>	
 					</button>
 					<button  class="btn btn-info">
 						<b id="shanchuchufang" style="color:#000000;">删除处方</b>	
 					</button>
-					<button  class="btn btn-info "  >
-						<b style="color: #000000;">保存处方</b>	
-					</button>
+					
 				</div>
 				<!-- 添加处方模态框开始 -->
 				<div class="modal fade" id="tianjiachufang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			    <div class="modal-dialog">
 			        <div class="modal-content">
-			            <form action="__CONTROLLER__/jysub" method="post">
+			            <form action="__CONTROLLER__/addsub" method="post">
 				            <div class="modal-header">
 				                <input type="button" value="&times;" class="close" data-dismiss="modal" aria-hidden="true">
-				                <input type="text" name="title" placeholder="此处填写处方名称">
+				                <input type="text" name="name" placeholder="此处填写处方名称">
 				            </div>
-				            <textarea class="modal-body text" name="zztxt" placeholder="此处填写处方主治功能"> 
+				            <textarea class="modal-body text" name="Attending" placeholder="此处填写处方主治功能"> 
 				            </textarea>
-			            </form>   
-			            
-			            <div class="modal-footer">
-			                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-			                <button type="button" class="btn btn-primary">确认添加</button>
-			            </div>
+				            <div class="modal-footer">
+				                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				                <button type="submit" class="btn btn-primary">确认添加</button>
+				            </div>
+			            </form>
 			        </div><!-- /.modal-content -->
 			    </div><!-- /.modal -->
 			</div>
@@ -111,44 +190,35 @@
 			</div>
 				<!-- 方剂列表 -->
 				<div data-spy="scroll" data-target="#navbar-example" data-offset="0"  class="xiaZuochufang">
-					<table class="table table-condensed">
-				 	<tr height="20">
+					<table class="table table-condensed" id="fjmtab">
+				 	<tr height="35">
 				 		<th class="trdebingming">处方名称</th>
 				 		<th class="trdebingming1">主治</th>
 				 	</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-					<tr onclick="dianjiyou(this)">
-						<td>麻杏石甘汤</td>
-						<td>麻杏石甘汤</td>
-					</tr>
-				 </table>
+					<foreach name="mcon" item="cn">
+						<tr id="{$cn.id}" onclick="rightcon(id)">
+							<td>{$cn.name}</td>
+							<td class="rtd">
+								{$cn.attending}
+							</td>
+						</tr>
+					</foreach>
+					</table>
 				</div>
 		</div>
 		<!-- 下右 -->
 		<div class="youchufang">
 					<div class="xiaYou1">
 						<!-- 左 -->
-						<div class="xiaYou2 ">
-							<b>处方名称</b>
+						<div class="xiaYou2" id="rname">
+							处方名称
 						</div>
 						<!-- 右 -->
-						<div style="  margin-top: -45px; margin-left:340px;">
+						<div style="  margin-top: -45px; margin-left:270px;">
 							<!-- 详情按钮 -->
+							<button  class="btn btn-info">
+								<b style="color:#000;">保存处方</b>	
+							</button>
 							<button  class="btn btn-danger" data-toggle="modal" data-target="#myXiangQModal"  >
 								<b style="color: #000000; ">药解</b>
 							</button>
@@ -198,103 +268,10 @@
 					<!-- 中 -->
 					<div class="xiaYouchuFang ">
 						<div data-spy="scroll" data-target="#navbar-example" data-offset="0"  class="xiaYouchuFang1 ">
-							<table>
-								<!-- 拖拽开始 -->
-								<!-- 这不知道干什么用但不能删，删除后拖拽效果就没了（开始） -->
-								<div class="container" style="width:100%;" >
-							        <div data-force="30" class="layer block">
-							            <ul id="foo" class="block__list block__list_words">
-							                
-
-							            </ul>
-							        </div>
-
-							        <div data-force="18" class="layer block" >
-							            <ul id="bar" class="block__list block__list_tags">
-							                
-
-							            </ul>
-							        </div>
-							    </div>
-								<!-- 这不知道干什么用但不能删，删除后拖拽效果就没了（结束） -->
-								<!-- 真正的拖拽 -->
-								<div id="multi">
-						            <div class="layer tile" data-force="30">
-						                <div class="tile__list">
-						                    <!-- 文本框 -->
-											<div class="yongLaiKaZhude" style="width: 700px;">
-												<div class="sty"  style=" float:left; margin:5px; border-radius:5px;  width:150px; height:100px; border: 1px #000000 solid;">
-													<div class="yaopinshidijige" style=" width:10px; position:relative; left: 5px; top: 5px; color: red;">1</div>
-													<div class="tihuandeneirong">
-														<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px; ">
-															<input type="text" value="前前" class="chufangyaopinjianfa" >
-														</div>
-														<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0;  position:relative; left: 10px; top: -5px; font-size:20px; ">
-															<input type="text" value="甘遂" class="chufangyaopinmingcheng">
-														</div>
-														<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-															<input type="text" value="78.00克" class="chufangyaopinshuliang">
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="yongLaiKaZhude" style="width: 700px;">
-												<div class="sty"  style=" float:left; margin:5px; border-radius:5px;  width:150px; height:100px; border: 1px #000000 solid;">
-													<div class="yaopinshidijige" style=" width:10px; position:relative; left: 5px; top: 5px; color: red;">2</div>
-													<div class="tihuandeneirong">
-														<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-															<input type="text" value="生煎" class="chufangyaopinjianfa" >
-														</div>
-														<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0;  position:relative; left: 10px; top: -5px; font-size:20px; ">
-															<input type="text" value="银花" class="chufangyaopinmingcheng">
-														</div>
-														<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-															<input type="text" value="56.00克" class="chufangyaopinshuliang">
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="yongLaiKaZhude" style="width: 700px;">
-												<div class="sty"  style=" float:left; margin:5px; border-radius:5px;  width:150px; height:100px; border: 1px #000000 solid;">
-													<div class="yaopinshidijige" style=" width:10px; position:relative; left: 5px; top: 5px; color: red;">3</div>
-													<div class="tihuandeneirong">
-														<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-															<input type="text" value="后煎" class="chufangyaopinjianfa" >
-														</div>
-														<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0;  position:relative; left: 10px; top: -5px; font-size:20px; ">
-															<input type="text" value="茶" class="chufangyaopinmingcheng">
-														</div>
-														<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-															<input type="text" value="53.00克" class="chufangyaopinshuliang">
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="yongLaiKaZhude" style="width: 700px;">
-												<div class="sty"  style=" float:left; margin:5px; border-radius:5px;  width:150px; height:100px; border: 1px #000000 solid;">
-													<div class="yaopinshidijige" style=" width:10px; position:relative; left: 5px; top: 5px; color: red;">4</div>
-													<div class="tihuandeneirong">
-														<div style="border: 1px #000000 solid; width:40px; border-width:0 0 1px 0;position:relative; left: 100px; top: -10px;">
-															<input type="text" value="前前" class="chufangyaopinjianfa" >
-														</div>
-														<div style="border: 1px #000000 solid; width:80px; border-width:0 0 1px 0;  position:relative; left: 10px; top: -5px; font-size:20px; ">
-															<input type="text" value="麻黄" class="chufangyaopinmingcheng">
-														</div>
-														<div style="border: 1px #000000 solid; width:70px; border-width: 0 0 1px 0; position:relative; left: 50px; top: 0px; text-align: right;">
-															<input type="text" value="78.00克" class="chufangyaopinshuliang">
-														</div>
-													</div>
-												</div>
-											</div>
-
-						                </div>
-						            </div>
-						        </div>
-							</table>
 						</div>
 					</div>
 					<!-- 下 -->
-					<div style=" margin-top: 20px;  width: 100%; color:red; ">
+					<div style=" margin-top:20px;  width: 100%; color:red;">
 						&nbsp; &nbsp;共 &nbsp; &nbsp; n &nbsp; &nbsp;味 药
 							<!-- 按钮 -->
 				   		<!-- <div class="xuandinagcfang" >
@@ -349,7 +326,8 @@
 		$("#chuFangJiayao").on('click',function(){
 
 			var num = $(".yaopinshidijige:last").html();
-			$(".yongLaiKaZhude:last").after('<div class="yongLaiKaZhude" style="width:700px"><div class="sty" style="float:left;margin:5px;border-radius:5px;width:150px;height:100px;border:1px #000 solid"><div class="yaopinshidijige" style="border:1px #FFFBF0 solid;width:10px;position:relative;left:5px;top:5px;color:red">'+(num*1+1)+'</div><div class="tihuandeneirong"><div style="border:1px #000 solid;width:40px;border-width:0 0 1px 0;position:relative;left:100px;top:-10px"><input type="text" value="" class="chufangyaopinjianfa"></div><div style="border:1px #000 solid;width:80px;border-width:0 0 1px 0;position:relative;left:10px;top:-5px;font-size:20px"><input type="text" value="" class="chufangyaopinmingcheng"></div><div style="border:1px #000 solid;width:70px;border-width:0 0 1px 0;position:relative;left:50px;top:0;text-align:right"><input type="text" value="00.00克" class="chufangyaopinshuliang"></div></div></div></div>');
+			//根据yongLaiKaZhude类 获取长度 来确定药品序号！
+			$(".yongLaiKaZhude:last").after('<div class="yongLaiKaZhude" style="width:700px"><div class="sty" style="float:left;margin:5px;border-radius:5px;width:150px;height:100px;border:1px #000 solid"><div class="yaopinshidijige" style="border:1px #FFFBF0 solid;width:10px;position:relative;left:5px;top:5px;color:red"><input type="text" name="drug_no" value="" style="width:1em;height:15px;font-color:red;"></div><div class="tihuandeneirong"><div style="border:1px #000 solid;width:40px;border-width:0 0 1px 0;position:relative;left:100px;top:-10px"><input type="text" name="usage" value="" class="chufangyaopinjianfa"></div><div style="border:1px #000 solid;width:80px;border-width:0 0 1px 0;position:relative;left:10px;top:-5px;font-size:20px"><input type="text" value="" class="chufangyaopinmingcheng"></div><div style="border:1px #000 solid;width:70px;border-width:0 0 1px 0;position:relative;left:50px;top:0;text-align:right"><input type="text" name="amount" value="" class="chufangyaopinshuliang"><input type="text" name="drug_units" value="克" style="width:1.2em;height:20px;"></div></div></div></div>');
 		});
 		// 减药
 		$("#chuFangjianyao").on('click',function(){

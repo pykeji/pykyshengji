@@ -198,7 +198,37 @@ class KaifangController extends Controller {
         $this->ajaxReturn($data);
     } 
     public function jingYan(){
+        $model=M('experience');
+        $cons=$model->order('id asc')->select();
+        $this->assign('mcon',$cons);
         $this->display();
+    }
+    function addsub(){
+        $spell=M('dict_hzpy');
+        $data=I('post.');
+        $split=str_split($data[name],3);
+        foreach ($split as $v){
+            $con[]=$spell->where("BHZ='$v'")->find();
+        }
+        foreach ($con as $v){
+            $pym[]=$v['bsm'];
+        }
+        $pym=implode('',$pym);
+
+        $model=M('experience');
+        $data[Attending]=trim($data[Attending]);
+        $data[input_code]=$pym;
+        $data[operator_code]=session(wh_userId);
+        $data[create_date]=date(Ymd);
+        $info=$model->add($data);
+        if($info){
+            echo "<script>self.location=document.referrer;</script>";
+        }
+    }
+    function aexpe(){
+        $model=M('experience');
+        $cfm=$model->where("input_code like '%".$_POST[pym]."%'")->select();
+        $this->ajaxReturn($cfm);
     }
     public function bianZheng(){
     	$this->display();

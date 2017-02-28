@@ -88,6 +88,9 @@ $(document).ready(function(){
 	});
 });
 function fangjie(id){
+	var thid=document.getElementById(id);
+	$(thid).css("background-color","#FE9");
+	$('#fjmtab tr').not(thid).css("background-color","#fff");
 	$.ajax({
 		type:"post",
 		url:"__CONTROLLER__/fangjie",
@@ -140,7 +143,7 @@ function fangjie(id){
 			$('#fjcon4').html(str5);
 			$('#fjcon5').html(str6);
 		}
-	});  
+	}); 
 }
 </script>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
