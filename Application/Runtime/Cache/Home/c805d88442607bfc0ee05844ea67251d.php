@@ -1,25 +1,25 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>收费综合查询_中医健康管理系统</title>
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/easyui.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/chaxun.css">
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/jedate/jedate.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/easyui.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/chaxun.css">
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/jedate/jedate.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
-	<form action="{:U('Chaxun/sfzonghe')}" method="post">
+	<form action="<?php echo U('Chaxun/sfzonghe');?>" method="post">
 		<div class="tool">
 			<input type="button" id="jstijiaoform" name="query" value="✔ 查询">
 			<input type="button" name="print" value="℗ 打印">
 			<p id="demo"></p>
 		</div>
 		<div class="sfzh_top">
-			<img src="__PUBLIC__/muban/assets/img/chaxun.png" width="30" height="30">
+			<img src="/zysystem/Public/muban/assets/img/chaxun.png" width="30" height="30">
 			<div class="h">查询条件:</div>
 		</div>
 		<div class="cxtj">
@@ -34,14 +34,12 @@
 						<span>操&nbsp;&nbsp;作&nbsp;员:</span>
 						<select name="operator_code">
 							<option value="">全部</option>
-							<volist name="data" id="vo">
-							<option  value="{$vo.username}">{$vo.username}</option>
-							</volist>
+							<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option  value="<?php echo ($vo["username"]); ?>"><?php echo ($vo["username"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 						</select>
 					</td>
 					<td width="25%">
 						<span>发票号:</span>
-						<input type="text" name="invoice_no" value="{$chaxuntiaojian.invoice_no}">
+						<input type="text" name="invoice_no" value="<?php echo ($chaxuntiaojian["invoice_no"]); ?>">
 					</td>
 					<td width="15%"></td>
 				</tr>
@@ -87,20 +85,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<volist name="dodata" id="dovo">
-				<tr>
-					<td>{$dovo.charge_date}</td>
-					<td>{$dovo.invoice_no}</td>
-					<td>{$dovo.clinic_num}</td>
-					<td>{$dovo.br_name}</td>
-					<td>{$dovo.item_code}</td>
-					<td>{$dovo.unit_price}</td>
-					<td>{$dovo.amount}</td>
-					<td>{$dovo.total}</td>
-					<td>{$dovo.operator_code}</td>
-					<td>{$dovo.return_date}</td>
-				</tr>
-				</volist>
+				<?php if(is_array($dodata)): $i = 0; $__LIST__ = $dodata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$dovo): $mod = ($i % 2 );++$i;?><tr>
+					<td><?php echo ($dovo["charge_date"]); ?></td>
+					<td><?php echo ($dovo["invoice_no"]); ?></td>
+					<td><?php echo ($dovo["clinic_num"]); ?></td>
+					<td><?php echo ($dovo["br_name"]); ?></td>
+					<td><?php echo ($dovo["item_code"]); ?></td>
+					<td><?php echo ($dovo["unit_price"]); ?></td>
+					<td><?php echo ($dovo["amount"]); ?></td>
+					<td><?php echo ($dovo["total"]); ?></td>
+					<td><?php echo ($dovo["operator_code"]); ?></td>
+					<td><?php echo ($dovo["return_date"]); ?></td>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>
 	</div>
@@ -113,6 +109,6 @@
 			$("form").submit();
 		});
 	</script>
-	<script src="__PUBLIC__/js/shijian.js"></script>
+	<script src="/zysystem/Public/js/shijian.js"></script>
 </body>
 </html>

@@ -1,18 +1,18 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>划价收费_中医健康管理系统</title>
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/easyui.css">
-	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/huajia.css">
-	<!-- <script src="__PUBLIC__/js/jeDate/jedate.js"></script> -->
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/easyui.css">
+	<link rel="stylesheet" href="/zysystem/Public/muban/assets/css/huajia.css">
+	<!-- <script src="/zysystem/Public/js/jeDate/jedate.js"></script> -->
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/zysystem/Public/muban/assets/js/jquery.easyui.min.js"></script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
-	<form id="shoufei" name="shoufei" method="post" action="{:U('Huajia/huajia',array('flag' => 1))}">
+	<form id="shoufei" name="shoufei" method="post" action="<?php echo U('Huajia/huajia',array('flag' => 1));?>">
 	<div class="tool">
 		<input type="button" name="sf" onClick="sub()" value="¥ 收费">
 		<input type="button" name="tf" data-toggle="modal" data-target="#myModal" value="✍ 退费">
@@ -21,24 +21,24 @@
 	</div>
 	
 	<div class="top">
-		<span>病历号:<input type="text" name="sf_blh" value="{$_SESSION['id']}" readonly></span>
-		<span>姓名:<input type="text" name="sf_brname" value="{$data.0.br_name}" readonly></span>
-		<span>性别:<input type="text" name="sf_brsex" value="{$data.0.xb}" readonly></span>
-		<span>年龄:<input type="text" name="sf_brnl" value="{$data.0.nl}" readonly></span>
-		<span>就诊日期:<input type="text" name="sf_brjzdate" value="{$data.0.jz_date}" readonly></span>
+		<span>病历号:<input type="text" name="sf_blh" value="<?php echo ($_SESSION['id']); ?>" readonly></span>
+		<span>姓名:<input type="text" name="sf_brname" value="<?php echo ($data["0"]["br_name"]); ?>" readonly></span>
+		<span>性别:<input type="text" name="sf_brsex" value="<?php echo ($data["0"]["xb"]); ?>" readonly></span>
+		<span>年龄:<input type="text" name="sf_brnl" value="<?php echo ($data["0"]["nl"]); ?>" readonly></span>
+		<span>就诊日期:<input type="text" name="sf_brjzdate" value="<?php echo ($data["0"]["jz_date"]); ?>" readonly></span>
 	</div>
 	<div class="center">
 		<div class="center_t">
 			<table class="tab1">
 				<tr>
 					<td class="tab1_l">
-						<img src="__PUBLIC__/muban/assets/img/chufang.png" width="23" height="23">
+						<img src="/zysystem/Public/muban/assets/img/chufang.png" width="23" height="23">
 						<font size="+1">收费项目</font>
 					</td>
 					<td class="tab1_r">
 						<h4>
 							<font color="#DDAA00">票据号:</font>
-							<input type="text" name="sf_pjh" value="{$pjh}" readonly>
+							<input type="text" name="sf_pjh" value="<?php echo ($pjh); ?>" readonly>
 						</h4>
 					</td>
 				</tr>
@@ -59,7 +59,7 @@
 							panelWidth: 710,
 							idField: 'name',
 							textField: 'name',
-							url: '__PUBLIC__/muban/assets/css/datagrid_data.json',
+							url: '/zysystem/Public/muban/assets/css/datagrid_data.json',
 							columns: [[
 								{field:'name',title:'名称',width:215,align:'left'},
 								{field:'guige',title:'规格',width:130,align:'center'},
@@ -86,7 +86,7 @@
 			<table class="tab3">
 				<tr>
 					<td width="60%" class="tab3_l">
-						<img src="__PUBLIC__/muban/assets/img/iconpng.png" width="23" height="23">
+						<img src="/zysystem/Public/muban/assets/img/iconpng.png" width="23" height="23">
 						<font size="+1">收费列表</font>
 					</td>
 					<td width="20%" align="right"><font color='red'><b>合计金额：</b></font></td>
@@ -104,27 +104,23 @@
 						<th width="15%">金额</th>
 					</tr>
 					<!--中药处方 -->
-					<volist name="zykf" id="vo">
-						<tr class="sty1" name="tableSty" id="{$vo.presc_no}">
+					<?php if(is_array($zykf)): $i = 0; $__LIST__ = $zykf;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="sty1" name="tableSty" id="<?php echo ($vo["presc_no"]); ?>">
 							<td><input type="hidden" id="xuhao" name="xuhao[<?php echo $key+1;?>]" value="<?php echo $key+1;?>"><?php echo $key+1;?></td>
 							<td class="left"><input type="hidden" id="xmname" name="xmname[<?php echo $key+1;?>]" value="中草药">中草药</td>
-							<td class="left"><input type="hidden" id="danwei" name="danwei[<?php echo $key+1;?>]" value="{$zyyp.drug_units}">{$zyyp.drug_units}</td>
-							<td><input type="hidden" id="danjia" name="danjia[<?php echo $key+1;?>]" value="{$zyyp.price}">{$zyyp.price}</td>
-							<td><input type="hidden" id="number" name="number[<?php echo $key+1;?>]" value="{$zykf.0.dose}"><?php echo number_format($zykf[0][dose],2);?></td>
-							<td><input type="hidden" id="jine" name="jine[<?php echo $key+1;?>]" value="{$zyyp.costs}">{$zyyp.costs}</td>
-						</tr>
-					</volist>
+							<td class="left"><input type="hidden" id="danwei" name="danwei[<?php echo $key+1;?>]" value="<?php echo ($zyyp["drug_units"]); ?>"><?php echo ($zyyp["drug_units"]); ?></td>
+							<td><input type="hidden" id="danjia" name="danjia[<?php echo $key+1;?>]" value="<?php echo ($zyyp["price"]); ?>"><?php echo ($zyyp["price"]); ?></td>
+							<td><input type="hidden" id="number" name="number[<?php echo $key+1;?>]" value="<?php echo ($zykf["0"]["dose"]); ?>"><?php echo number_format($zykf[0][dose],2);?></td>
+							<td><input type="hidden" id="jine" name="jine[<?php echo $key+1;?>]" value="<?php echo ($zyyp["costs"]); ?>"><?php echo ($zyyp["costs"]); ?></td>
+						</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 					<!--西药处方 -->
-					<volist name="xydrug" id="te">
-						<tr class="sty1" name="tableSty" id="{$te.cf_id}">
+					<?php if(is_array($xydrug)): $i = 0; $__LIST__ = $xydrug;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$te): $mod = ($i % 2 );++$i;?><tr class="sty1" name="tableSty" id="<?php echo ($te["cf_id"]); ?>">
 							<td><input type="hidden" id="xuhao" name="xuhao[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>"><?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?></td>
-							<td class="left"><input type="hidden" id="xmname" name="xmname[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.xmname}">{$te.xmname}</td>
+							<td class="left"><input type="hidden" id="xmname" name="xmname[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="<?php echo ($te["xmname"]); ?>"><?php echo ($te["xmname"]); ?></td>
 							<td class="left"><input type="hidden" id="danwei" name="danwei[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="/">/</td>
-							<td><input type="hidden" id="danjia" name="danjia[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.price}">{$te.price}</td>
-							<td><input type="hidden" id="number" name="number[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.amount}">{$te.amount}</td>
-							<td><input type="hidden" id="jine" name="jine[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.costs}">{$te.costs}</td>
-						</tr>
-					</volist>
+							<td><input type="hidden" id="danjia" name="danjia[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="<?php echo ($te["price"]); ?>"><?php echo ($te["price"]); ?></td>
+							<td><input type="hidden" id="number" name="number[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="<?php echo ($te["amount"]); ?>"><?php echo ($te["amount"]); ?></td>
+							<td><input type="hidden" id="jine" name="jine[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="<?php echo ($te["costs"]); ?>"><?php echo ($te["costs"]); ?></td>
+						</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 				</table>
 			</div>
 		</div>
@@ -134,7 +130,7 @@
 	    <div class="modal-dialog">
 	        <div class="modal-content">
 	        	<a class="close" data-dismiss="modal" style="margin-right:30px; margin-top:10px; color:red;">✘</a>
-	        	<iframe src="{:U('Huajia/tuifei')}" width="100%" height="100%" style="border:none;"></iframe>
+	        	<iframe src="<?php echo U('Huajia/tuifei');?>" width="100%" height="100%" style="border:none;"></iframe>
 	        </div>
 	    </div>
 	</div>
@@ -155,13 +151,13 @@
 	</div>
 </body>
 </html>
-<script type="text/javascript" src="__PUBLIC__/muban/assets/js/huajia.js"></script>
+<script type="text/javascript" src="/zysystem/Public/muban/assets/js/huajia.js"></script>
 <script>
 		//收费页面收费列表
 		function ajaxFun(){
 			$.ajax({
 				type:"post",
-				url:"__CONTROLLER__/ajax",
+				url:"/zysystem/index.php/Home/Huajia/ajax",
 				dataType:"json",
 				data:{
 					"name":$("#name").val(),
@@ -203,7 +199,7 @@
 			var len = $(this).attr("id").length;
 			$.ajax({
 				type:"post",
-				url:"__CONTROLLER__/yplist",
+				url:"/zysystem/index.php/Home/Huajia/yplist",
 				dataType:"json",
 				data:{"id":id,
 					"len":len

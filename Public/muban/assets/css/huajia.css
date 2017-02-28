@@ -386,6 +386,7 @@ background: #AFEEEE;
 	background-color:#EEFFBB;
 	font-size:16px;
 	overflow:scroll;
+	font-weight: bold;
 }
 .dbexit{
 	width:100px;
@@ -421,6 +422,56 @@ background: #AFEEEE;
 	height:30px;
 }
 .dbdiv table tr td{
+	border:1px solid #333;
+	height: 28px;
+}
+
+/*退费双击弹框*/
+.dbdiv1{
+	margin-left:15%;
+	background-color:#EEFFBB;
+	font-size:16px;
+	overflow:scroll;
+	display:none;
+	position:absolute;
+	margin-top:-415px;
+	z-index:2;
+	font-weight: bold;
+}
+.dbexit{
+	width:100px;
+	height:40px;
+	font-size:16px;
+	float: right;
+}
+.dbexit input{
+	width:80px;
+	height:30px;
+	background-color:#C63300;
+	border:none;
+	font-weight:bold;
+	font-size:15px;
+	color:#FFF;
+	margin-top:10px;
+}
+.dbdiv1 table{
+	float:left;
+	margin-top:3%;
+	width:90%;
+	margin-left:5%;
+	border-collapse:collapse;
+	text-align:center;
+}
+.dbdiv1 table th{
+	border:1px solid #333;
+	height:30px;
+	text-align:center;
+	background-color:#DDAA00;
+}
+.dbdiv1 table tr{
+	height:30px;
+}
+.dbdiv1 table tr td{
 	border:1px solid #333;
 	height: 28px;
 }

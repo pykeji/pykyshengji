@@ -115,7 +115,11 @@ function sub(){
 	 	/*for(var key in hidArr){
 	 		document.writeln(hidArr[key].value);
 	 	}*/
-	 	
-		$("form").submit();
+		$("#shoufei").submit();
 	}
 }
+
+function chaxun(){
+	$("#chaxun").submit();
+}
+
