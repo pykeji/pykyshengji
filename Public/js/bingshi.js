@@ -92,7 +92,7 @@ function checked1(clas,kuangInp){
 /**
  * 单选按钮双击内容提交
  */
-$(".dblCli").dblclick(function(){
+$(document).on('dblclick','.dblCli',function(){
     $("#"+$(this).children().attr("class")).val($(this).children().val());
     var len=$("#"+$(this).parent().prev().children("input[type='text']").attr('id')).val().length;
     $("#"+$(this).children().attr("class")).css({"width":(len*15)+"px","min-width":"30px","max-width":$("#"+$(this).children().attr("class")).parent().parent().width(),"color":"red"});

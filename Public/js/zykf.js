@@ -96,47 +96,42 @@ $(function(){
 				$(this).html($(this).html()-1);
 			});
 			$(this).parent().parent().detach();
+			$('.wrphhid').each(function(){
+        		aa = $(this).val();
+        		
+        		if(aa == '温'){
+        			wen = wen*1+1;
+        		}else if(aa == '热'){
+        			re = re*1+1;
+        		}else if(aa == '平'){
+        			ping = ping*1+1;
+        		}else if(aa == '寒'){
+        			han = han*1+1;
+        		}else if(aa == '微温'){
+        			weiwen = weiwen*1+1;
+        		}else if(aa == '微寒'){
+        			weihan = weihan*1+1;
+        		}else if(aa == '凉'){
+        			liang = liang*1+1;
+        		}
+        	});
+        	zong = $('.wrphhid').length;
+        	wenbi = Math.round((wen / zong * 10000) / 100.00);
+        	rebi = Math.round((re / zong * 10000) / 100.00);
+        	pingbi = Math.round((ping / zong * 10000) / 100.00);
+        	hanbi = Math.round((han / zong * 10000) / 100.00);
+        	weiwenbi = Math.round((weiwen / zong * 10000) / 100.00);
+        	weihanbi = Math.round((weihan / zong * 10000) / 100.00);
+        	liangbi = Math.round((liang / zong * 10000) / 100.00);
+
+
 			// $('#gjwys').html($('.zykf_yp').length);
 		});
 	}).on("mouseout",".jianyao",function(){
 		$(this).css('backgroundColor','#FFB3A9').css('color','#000');
 	});
 
-	//加药
-	$('#jyan').click(function(){
-		if($('.ylypnm:last').val() == ''|| $('.ylypnm:last').val() == ' ' || $('.ylypnm:last').val() == '   '){
-			return false;
-		}else{
-		if($('.zykf_yp').length > 0){
-			var num = $('.zykf_yp:last .b1').html();
-			$('.zykf_yp:last').after('<div class="zykf_yp"><div class="yp1"><b class="b1">'+(num*1+1)+'</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm" id="'+'a'+(num*1+1)+'"></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>');
-				// $('#gjwys').html($('.zykf_yp').length);
-				$('.ylypnm:last').focus().keydown(function(env){
-					if(env.keyCode==13){
-						// $(this).blur();
-						$('.ypylke').focus().select().keydown(function(env){
-							alert(left);
-							if(env.keyCode==13){
-								if($(this).val() == 0.00){
-									alert('请输入药量');
-								}else{
-									$(this).blur();
-								}
-							}
-						});
-					}
-				});
-			
-		}else{
-			var str = '<div class="zykf_yp"><div class="yp1"><b class="b1">1</b><span class="jianyao">X</span></div><div class="yp2"><select class="jfselect"><option value="1">煎法</option></select></div><div class="yp3"><input type="text" name="ylypm" class="ylypnm" id="'+'a'+(num*1+1)+'"></div><div class="yp4"><input type="checkbox" name="xuanzeyp" class="xzypche"><span class="ypylspan"><input type="text" name="ypyongliang" value="0.00" class="ypylke">克</span></div>'
-			$('#cfmx').append(str);
-			// $('#gjwys').html($('.zykf_yp').length);
-				$('.ylypnm:last').focus()
-			
-		}
-	}
-		
-	});
+	
 	//限制药量只能输入数字
 	//待完成
 	//
