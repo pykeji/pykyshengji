@@ -209,7 +209,8 @@
 .modal-body-left{
 	float:left;
 	width:50%;
-	height:100%;
+	height:398px;
+	overflow:scroll;
 	border-right:2px solid #333;
 }
 .modal-body-left-top{
@@ -271,10 +272,15 @@
 .modal-body-right{
 	float:left;
 	width:50%;
-	height:100%;
+	height:400px;
 }
 .modal-body-right-con{
 	margin-top:-2%;
+	height:400px;
+	overflow:scroll;
+}
+.modal-body-right-con table{
+	height:auto;
 }
 .tit{
 	color:#B8860B;
@@ -365,4 +371,107 @@ background: #AFEEEE;
 	line-height:24px;
 	width:80px;
 	margin:0px 5px;
+}
+/*tr换背景色*/
+.trsty{
+	background-color:none;
+}
+.trsty1{
+	background-color:#99BBFF;
+}
+/*双击弹框*/
+.dbdiv{
+	margin-top:-31%;
+	margin-left:15%;
+	background-color:#EEFFBB;
+	font-size:16px;
+	overflow:scroll;
+	font-weight: bold;
+}
+.dbexit{
+	width:100px;
+	height:40px;
+	font-size:16px;
+	float: right;
+}
+.dbexit input{
+	width:80px;
+	height:30px;
+	background-color:#C63300;
+	border:none;
+	font-weight:bold;
+	font-size:15px;
+	color:#FFF;
+	margin-top:10px;
+}
+.dbdiv table{
+	float:left;
+	margin-top:3%;
+	width:90%;
+	margin-left:5%;
+	border-collapse:collapse;
+	text-align:center;
+}
+.dbdiv table th{
+	border:1px solid #333;
+	height:30px;
+	text-align:center;
+	background-color:#DDAA00;
+}
+.dbdiv table tr{
+	height:30px;
+}
+.dbdiv table tr td{
+	border:1px solid #333;
+	height: 28px;
+}
+
+/*退费双击弹框*/
+.dbdiv1{
+	margin-left:15%;
+	background-color:#EEFFBB;
+	font-size:16px;
+	overflow:scroll;
+	display:none;
+	position:absolute;
+	margin-top:-415px;
+	z-index:2;
+	font-weight: bold;
+}
+.dbexit{
+	width:100px;
+	height:40px;
+	font-size:16px;
+	float: right;
+}
+.dbexit input{
+	width:80px;
+	height:30px;
+	background-color:#C63300;
+	border:none;
+	font-weight:bold;
+	font-size:15px;
+	color:#FFF;
+	margin-top:10px;
+}
+.dbdiv1 table{
+	float:left;
+	margin-top:3%;
+	width:90%;
+	margin-left:5%;
+	border-collapse:collapse;
+	text-align:center;
+}
+.dbdiv1 table th{
+	border:1px solid #333;
+	height:30px;
+	text-align:center;
+	background-color:#DDAA00;
+}
+.dbdiv1 table tr{
+	height:30px;
+}
+.dbdiv1 table tr td{
+	border:1px solid #333;
+	height: 28px;
 }

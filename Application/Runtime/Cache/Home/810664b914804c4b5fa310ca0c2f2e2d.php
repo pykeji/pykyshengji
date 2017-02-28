@@ -3,12 +3,12 @@
 <head>
 	<title></title>
 	<!-- 自己写的css -->
-	<link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang5.css">
+	<link rel="stylesheet" type="text/css" href="/zysystem/Public/yeMiancss/kaiFang5.css">
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+    <script src="/zysystem/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="/zySystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/zysystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/zysystem/Public/bootstrap/js/bootstrap.min.js"></script>
     <style>
     	#fjmtab tr{
     		cursor:pointer;
@@ -109,7 +109,11 @@ function rightcon(id){
 			</legend>
 			<div class="kawenzi ">
 				&nbsp;
+<<<<<<< HEAD
 				<img src="/zySystem/Public/img/tu1.jpg" style="margin-top:20px;width:40px; "  alt="图片加载中。。。。">
+=======
+				<img src="/zysystem/Public/img/tu1.jpg" style="margin-top: 20px;  width: 40px; "  alt="图片加载中。。。。">
+>>>>>>> f845c563406bc435aafdcc24c8618eaa596116b8
 				&nbsp;
 				<div class="kuangneianniu">
 					<button class="py">A</button>
@@ -171,7 +175,11 @@ function rightcon(id){
 				<div class="modal fade" id="tianjiachufang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			    <div class="modal-dialog">
 			        <div class="modal-content">
+<<<<<<< HEAD
 			            <form action="/zySystem/index.php/Home/Kaifang/addsub" method="post">
+=======
+			            <form action="/zysystem/index.php/Home/Kaifang/jysub" method="post">
+>>>>>>> f845c563406bc435aafdcc24c8618eaa596116b8
 				            <div class="modal-header">
 				                <input type="button" value="&times;" class="close" data-dismiss="modal" aria-hidden="true">
 				                <input type="text" name="name" placeholder="此处填写处方名称">
@@ -400,7 +408,7 @@ function rightcon(id){
 		</script>
 		<!-- 拖拽的js -->
 		
-		<script src="/zySystem/Public/tuozhuai/Sortable.js"></script>
-		<script src="/zySystem/Public/tuozhuai/st/app.js"></script>
+		<script src="/zysystem/Public/tuozhuai/Sortable.js"></script>
+		<script src="/zysystem/Public/tuozhuai/st/app.js"></script>
 </body>
 </html>

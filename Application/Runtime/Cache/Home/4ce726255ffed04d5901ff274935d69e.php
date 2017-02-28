@@ -3,12 +3,12 @@
 <head>
 	<title></title>
 	<!-- 自己写的css -->
-	<link rel="stylesheet" type="text/css" href="/zySystem/Public/yeMiancss/kaiFang4.css">
+	<link rel="stylesheet" type="text/css" href="/zysystem/Public/yeMiancss/kaiFang4.css">
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="/zySystem/Public/jq/jquery-3.1.1.min.js"></script>
+    <script src="/zysystem/Public/jq/jquery-3.1.1.min.js"></script>
     <!-- bootstrap的引用 -->
-    <link href="/zySystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/zySystem/Public/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/zysystem/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/zysystem/Public/bootstrap/js/bootstrap.min.js"></script>
     <style>
 		.py{
 			background-color:#FFFFFF;color:red;margin-right:5px;
@@ -50,7 +50,7 @@
 $(document).on("input","#impid",function(){
 	$.ajax({
 			type:"post",
-			url:"/zySystem/index.php/Home/Kaifang/impidajax",
+			url:"/zysystem/index.php/Home/Kaifang/impidajax",
 			dataType:"json",
 			data:{"pym":$('#impid').val()},
 			success:function(e){
@@ -69,7 +69,7 @@ $(document).ready(function(){
 		$('#impid').val(kk+ss);
 		$.ajax({
 			type:"post",
-			url:"/zySystem/index.php/Home/Kaifang/impidajax",
+			url:"/zysystem/index.php/Home/Kaifang/impidajax",
 			dataType:"json",
 			data:{"pym":$('#impid').val()},
 			success:function(e){
@@ -93,7 +93,7 @@ function fangjie(id){
 	$('#fjmtab tr').not(thid).css("background-color","#fff");
 	$.ajax({
 		type:"post",
-		url:"/zySystem/index.php/Home/Kaifang/fangjie",
+		url:"/zysystem/index.php/Home/Kaifang/fangjie",
 		dataType:"json",
 		data:{"tree":id},
 		success:function(e){
@@ -106,7 +106,7 @@ function fangjie(id){
 	});
 	$.ajax({
 		type:"post",
-		url:"/zySystem/index.php/Home/Kaifang/fjcon",
+		url:"/zysystem/index.php/Home/Kaifang/fjcon",
 		dataType:"json",
 		data:{"tree":id},
 		success:function(f){
@@ -155,7 +155,7 @@ function fangjie(id){
 		</legend>
 		<div class="kawenzi ">
 					&nbsp;
-			<img src="/zySystem/Public/img/tu1.jpg" style="margin-top: 20px; width: 40px; " alt="图片加载中。。。。">
+			<img src="/zysystem/Public/img/tu1.jpg" style="margin-top: 20px; width: 40px; " alt="图片加载中。。。。">
 					&nbsp;
 			<div class="kuangneianniu">
 				<button class="py">A</button>
@@ -221,11 +221,11 @@ function fangjie(id){
 		<ul id="myTab" class="nav nav-tabs">
 			<li class="active">
 			<a href="#home" data-toggle="tab">
-			<img src="/zySystem/Public/img/bg.png" alt="别急图片马上出来">药解
+			<img src="/zysystem/Public/img/bg.png" alt="别急图片马上出来">药解
 			</a>
 			</li>
 			<li><a href="#ios" data-toggle="tab">
-			<img src="/zySystem/Public/img/fj.png" alt="别急图片马上出来">方解</a>
+			<img src="/zysystem/Public/img/fj.png" alt="别急图片马上出来">方解</a>
 			</li>
 			<li>
 			<!-- 按钮 -->

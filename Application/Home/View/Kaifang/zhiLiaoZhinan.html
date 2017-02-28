@@ -242,12 +242,12 @@
 					data:{"zhuaxuyhaoid":zhuaxuyhaoid},
 					dataType:'json',
 					success:function(dd){
-						// alert(dd);
+						//alert(dd);
 						// <span style="margin-left:130px;margin-top:-50px;color:#0338D9;" data-toggle="modal" data-target="#myZhilModal" >治疗指南</span>
-						// console.log(dd);
+						  // console.log(dd.msg);
 						var dostr = '#'+cuobingmzi;
 						var str = '';
-						$.each(dd,function(idx,item){
+						$.each(dd.res,function(idx,item){
 							str +='<div style="border-bottom:1px #DDDDDD solid;min-height:5px;  height:auto !important;height:5px;  "><div style="width:100px; margin-left:30px;" class="sty1" name="tableSty">'+item.name+'<input type="hidden" value="'+item.code+'"></div><div style=" broder:1px red solid;height:25px; margin-top:-20px; margin-left:140px;color:#0338D9;font-size:10px;" data-toggle="modal" data-target="#myZhilModal" >治疗指南</div></div>';
 						}); 
 						// alert(cuobingmzi);

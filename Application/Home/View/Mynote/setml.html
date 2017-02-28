@@ -32,10 +32,10 @@ function ees(){
 	}
 }
 </script>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
 <script>
 	document.oncontextmenu=new Function("event.returnValue=false;");
 </script>
-<body>
 	<br><br><br><br>
 	<form action="__CONTROLLER__/mlsubmit" method="post" id="fr">
 		目录名称:<input type="text" name="element" class="ml"><br><br>

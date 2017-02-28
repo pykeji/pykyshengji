@@ -37,9 +37,12 @@ $(".hisInf").click(function(){
 $(".guanbi").click(function(){
     $(this).parent().parent().animate({left:'-280px',opacity:'0'},1000);
 })
-$(".health-file").click(function(){
-    $(".guanbi").parent().parent().animate({left:'-280px',opacity:'0'},1000);
-})
+
+//该功能和双击弹出框冲突
+//$(".health-file").click(function(){
+//    //alert(11);
+//    $(".guanbi").parent().parent().animate({left:'-280px',opacity:'0'},1000);
+//})
 
 //家庭史
 /**
@@ -65,7 +68,8 @@ function douCli(inp,kuang,kuangInp){
  * @param kuang  双击后弹出的div的class
  */
 function sub(inp,kuang,kuangInp){
-    $("#"+inp).val($("#"+kuangInp).val());
+    $("#"+inp).attr("value",$("#"+kuangInp).val());
+    //$("#"+inp).val($("#"+kuangInp).val());//打印功能失效
     var len=$("#"+kuangInp).val().length;
     $("#"+inp).css({"width":(len*15)+"px","min-width":"30px","max-width":$("#"+inp).parent().parent().width(),"color":"red"});
     $("."+kuang).hide();
@@ -85,6 +89,15 @@ function checked1(clas,kuangInp){
     }
     $("#"+kuangInp).val(jtsFarc);
 }
+/**
+ * 单选按钮双击内容提交
+ */
+$(document).on('dblclick','.dblCli',function(){
+    $("#"+$(this).children().attr("class")).val($(this).children().val());
+    var len=$("#"+$(this).parent().prev().children("input[type='text']").attr('id')).val().length;
+    $("#"+$(this).children().attr("class")).css({"width":(len*15)+"px","min-width":"30px","max-width":$("#"+$(this).children().attr("class")).parent().parent().width(),"color":"red"});
+    $(this).parent().parent().hide();
+})
 /**
  * 多选框选中input内容改变事件
  * @param clas  单选框的类名
@@ -113,9 +126,23 @@ $(".right-center").scroll(function(){
     $(".qz1,.qz2,.xj1").hide();
     $(".sz1,.sz2,.sz3,.sz4,.sz5,.mz1").hide();
     $(".jws1,.jws2").hide();
+    $(".zyzd1,.xyzd1").hide();
     //$(".guanbi").parent().parent().animate({left:'-280px',opacity:'0'},1000);
 })
 //点击关闭按钮进行关闭
 $(".clo").click(function(){
     $(this).parent('.div1').parent().hide();
+})
+$(window).ready(function(){
+    if($("#jws11").val()!=''){
+        $("#jws11").attr("size",$("#jws11").val().length*2);
+        $("#crbs").attr("size",$("#crbs").val().length*2);
+        $("#jtsFQ").attr("size",$("#jtsFQ").val().length*2);
+        $("#jtsMQ").attr("size",$("#jtsMQ").val().length*2);
+        $("#jtsXD").attr("size",$("#jtsXD").val().length*2);
+        $("#jtsZN").attr("size",$("#jtsZN").val().length*2);
+        $("#gms").attr("size",$("#gms").val().length*2);
+        $("#zl").attr("size",$("#zl").val().length*2);
+        $("#mz").attr("size",$("#mz").val().length*2);
+    }
 })

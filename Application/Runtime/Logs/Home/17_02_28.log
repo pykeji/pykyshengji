@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [ 2017-02-28T08:07:09+08:00 ] ::1 /zySystem/
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
@@ -12914,4 +12915,47 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
 SQL: SHOW COLUMNS FROM `y_recipemain` [ RunTime:0.0029s ]
 SQL: SELECT * FROM `y_recipemain` WHERE ( tree='2' )  [ RunTime:0.0098s ]
+=======
+[ 2017-02-28T14:05:40+08:00 ] ::1 /zySystem/index.php/Home/Ajax/zysele.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+NOTIC: [8] Use of undefined constant val - assumed 'val' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0036s ]
+SQL: SELECT `drug_name` FROM `drug_dict` WHERE `input_code` LIKE 's%' AND `drug_indicator` = 2 AND ( drug_indicator=2 )  [ RunTime:0.0060s ]
+
+[ 2017-02-28T14:05:41+08:00 ] ::1 /zySystem/index.php/Home/Ajax/jia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0034s ]
+SQL: SELECT `drug_code`,`xw1` FROM `drug_dict` WHERE ( drug_name='水蜈蚣' ) LIMIT 1   [ RunTime:0.0042s ]
+
+[ 2017-02-28T14:05:49+08:00 ] ::1 /zySystem/index.php/Home/Ajax/zysele.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+NOTIC: [8] Use of undefined constant val - assumed 'val' F:\xampp\htdocs\zySystem\Application\Home\Controller\AjaxController.class.php 第 167 行.
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0035s ]
+SQL: SELECT `drug_name` FROM `drug_dict` WHERE `input_code` LIKE 's%' AND `drug_indicator` = 2 AND ( drug_indicator=2 )  [ RunTime:0.0044s ]
+
+[ 2017-02-28T14:05:50+08:00 ] ::1 /zySystem/index.php/Home/Ajax/jia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `drug_dict` [ RunTime:0.0060s ]
+SQL: SELECT `drug_code`,`xw1` FROM `drug_dict` WHERE ( drug_name='水蜈蚣' ) LIMIT 1   [ RunTime:0.0051s ]
+>>>>>>> f845c563406bc435aafdcc24c8618eaa596116b8
 

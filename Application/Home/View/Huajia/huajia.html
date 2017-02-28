@@ -6,45 +6,13 @@
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/easyui.css">
 	<link rel="stylesheet" href="__PUBLIC__/muban/assets/css/huajia.css">
+	<!-- <script src="__PUBLIC__/js/jeDate/jedate.js"></script> -->
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/muban/assets/js/jquery.easyui.min.js"></script>
-	<script>
-		function ajaxFun(){
-			$.ajax({
-				type:"post",
-				url:"__CONTROLLER__/ajax",
-				dataType:"json",
-				data:{
-					"name":$("#name").val(),
-				},
-				success:function(sfxmdata){
-					var guige = "";
-					var danwei = "";
-					var danjia = "";
-					for(var i=0;i<sfxmdata.length;i++){
-						$("#guige").val(sfxmdata[i].item_spec);
-						$("#danwei").val(sfxmdata[i].units_code);
-						$("#danjia").val(sfxmdata[i].price);
-					}
-				}
-			})
-		}
-		$(document).ready(function(){
-			var zje = 0.00;
-			$(".tab4 tr").not(":first").each(function(){
-				obj = $(this).find("td:last").text();
-				zje = (Number(zje) + Number(obj)).toFixed(2);
-			});
-			$(".tab3 tr td:last").text('￥'+zje);
-			$(".tab3 tr td:last").css("color","red");
-			$(".tab3 tr td:last").css("font-weight","bold");
-			$(".tab3 tr td:last").css("font-size","20px");
-		});
-	</script>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
-	<form id="shoufei" method="post" action="__CONTROLLER__/huajia">
+	<form id="shoufei" name="shoufei" method="post" action="{:U('Huajia/huajia',array('flag' => 1))}">
 	<div class="tool">
 		<input type="button" name="sf" onClick="sub()" value="¥ 收费">
 		<input type="button" name="tf" data-toggle="modal" data-target="#myModal" value="✍ 退费">
@@ -70,7 +38,7 @@
 					<td class="tab1_r">
 						<h4>
 							<font color="#DDAA00">票据号:</font>
-							<input type="text" name="sf_pjh" value="{$pjh.0.piaojh}" readonly>
+							<input type="text" name="sf_pjh" value="{$pjh}" readonly>
 						</h4>
 					</td>
 				</tr>
@@ -135,14 +103,28 @@
 						<th width="15%">数量</th>
 						<th width="15%">金额</th>
 					</tr>
-					<tr class="sty1" name="tableSty">
-						<td><input type="hidden" id="xuhao" name="xuhao" value="1">1</td>
-						<td class="left"><input type="hidden" id="xmname" name="xmname" value="中草药">中草药</td>
-						<td class="left"><input type="hidden" id="danwei" name="danwei" value="/">/</td>
-						<td><input type="hidden" id="danjia" name="danjia" value="1.000">1.000</td>
-						<td><input type="hidden" id="number" name="number" value="5.00">5.00</td>
-						<td><input type="hidden" id="jine" name="jine" value="5.00">5.00</td>
-					</tr>
+					<!--中药处方 -->
+					<volist name="zykf" id="vo">
+						<tr class="sty1" name="tableSty" id="{$vo.presc_no}">
+							<td><input type="hidden" id="xuhao" name="xuhao[<?php echo $key+1;?>]" value="<?php echo $key+1;?>"><?php echo $key+1;?></td>
+							<td class="left"><input type="hidden" id="xmname" name="xmname[<?php echo $key+1;?>]" value="中草药">中草药</td>
+							<td class="left"><input type="hidden" id="danwei" name="danwei[<?php echo $key+1;?>]" value="{$zyyp.drug_units}">{$zyyp.drug_units}</td>
+							<td><input type="hidden" id="danjia" name="danjia[<?php echo $key+1;?>]" value="{$zyyp.price}">{$zyyp.price}</td>
+							<td><input type="hidden" id="number" name="number[<?php echo $key+1;?>]" value="{$zykf.0.dose}"><?php echo number_format($zykf[0][dose],2);?></td>
+							<td><input type="hidden" id="jine" name="jine[<?php echo $key+1;?>]" value="{$zyyp.costs}">{$zyyp.costs}</td>
+						</tr>
+					</volist>
+					<!--西药处方 -->
+					<volist name="xydrug" id="te">
+						<tr class="sty1" name="tableSty" id="{$te.cf_id}">
+							<td><input type="hidden" id="xuhao" name="xuhao[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>"><?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?></td>
+							<td class="left"><input type="hidden" id="xmname" name="xmname[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.xmname}">{$te.xmname}</td>
+							<td class="left"><input type="hidden" id="danwei" name="danwei[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="/">/</td>
+							<td><input type="hidden" id="danjia" name="danjia[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.price}">{$te.price}</td>
+							<td><input type="hidden" id="number" name="number[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.amount}">{$te.amount}</td>
+							<td><input type="hidden" id="jine" name="jine[<?php if(count($zykf) == 0){echo $key+1;}else{echo $key+2;}?>]" value="{$te.costs}">{$te.costs}</td>
+						</tr>
+					</volist>
 				</table>
 			</div>
 		</div>
@@ -151,92 +133,18 @@
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
 	        <div class="modal-content">
-	            <div class="modal-header">
-	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-	                	&times;
-	                </button>
-	                <h4 class="modal-title" id="myModalLabel">
-	                	<img src="__PUBLIC__/muban/assets/ico/minus.png" class="modal-img">
-	                	门诊退费
-	                </h4>
-	            </div>
-	            <div class="modal-body">
-					<div class="modal-body-left">
-						<div class="modal-body-left-top">
-							收费日期：<input type="text" name="sfdata" value="2017-02-14">
-							<input type="button" name="query" value="✔ 查询">
-							<br><br>
-						</div>
-						<div class="modal-body-left-con">
-							<h4 class="tit"><img src="__PUBLIC__/muban/assets/img/014.png" class="body-img">
-							发票信息</h4>
-							<table class="tab5">
-								<thead>
-									<tr>
-										<th width="30%">票据号</th>
-										<th width="20%">姓名</th>
-										<th width="20%">收费金额</th>
-										<th width="30%">病历号</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>201702150001</td>
-										<td>张三</td>
-										<td align="right">245.00</td>
-										<td>2017021701</td>
-									</tr>
-									<tr>
-										<td>201702150002</td>
-										<td>张三</td>
-										<td align="right">305.00</td>
-										<td>2017021702</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="modal-body-right">
-						<div class="modal-body-right-con">
-							<h4 class="tit"><img src="__PUBLIC__/muban/assets/img/iconpng.png" class="body-img">
-							收费明细</h4>
-							<table class="tab6">
-								<thead>
-									<tr>
-										<th width="12%">序号</th>
-										<th width="38%">项目名称</th>
-										<th width="12%">单位</th>
-										<th width="12%">单价</th>
-										<th width="12%">数量</th>
-										<th width="12%">金额</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>B超费</td>
-										<td>次</td>
-										<td align="right">20.00</td>
-										<td align="right">1.00</td>
-										<td align="right">20.00</td>
-									</tr>
-									<tr class="hj">
-										<td colspan="3">合计：</td>
-										<td colspan="3">20.00</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-	            </div>
-	            <div class="modal-footer">
-		            <input type="button" name="exit" data-dismiss="modal" value="✘ 退出">
-		            &nbsp;&nbsp;&nbsp;&nbsp;
-		            <input type="button" name="tf" value="✍ 退费">
-	            </div>
+	        	<a class="close" data-dismiss="modal" style="margin-right:30px; margin-top:10px; color:red;">✘</a>
+	        	<iframe src="{:U('Huajia/tuifei')}" width="100%" height="100%" style="border:none;"></iframe>
 	        </div>
 	    </div>
 	</div>
+
+	<!-- 双击弹框 -->
+	<div class="dbdiv" id="dbdiv" style="display:none;">
+		<div class="dbexit"><input type="button" id="close" value="✘ 关闭" onClick="close()"></div>
+		<table id="dbtab"></table>
+	</div>
+
 	<!-- 删除按钮 -->
 	<div id="Dshow" style="display:none;">
 		<div class="box">
@@ -248,3 +156,73 @@
 </body>
 </html>
 <script type="text/javascript" src="__PUBLIC__/muban/assets/js/huajia.js"></script>
+<script>
+		//收费页面收费列表
+		function ajaxFun(){
+			$.ajax({
+				type:"post",
+				url:"__CONTROLLER__/ajax",
+				dataType:"json",
+				data:{
+					"name":$("#name").val(),
+				},
+				success:function(sfxmdata){
+					var guige = "";
+					var danwei = "";
+					var danjia = "";
+					for(var i=0;i<sfxmdata.length;i++){
+						$("#guige").val(sfxmdata[i].item_spec);
+						$("#danwei").val(sfxmdata[i].units_code);
+						$("#danjia").val(sfxmdata[i].price);
+					}
+				}
+			})
+		}
+
+
+		//生成总金额
+		$(document).ready(function(){
+			var zje = 0.00;
+			$(".tab4 tr").not(":first").each(function(){
+				obj = $(this).find("td:last").text();
+				zje = (Number(zje) + Number(obj)).toFixed(2);
+			});
+			$(".tab3 tr td:last").text('￥'+zje);
+			$(".tab3 tr td:last").css("color","red");
+			$(".tab3 tr td:last").css("font-weight","bold");
+			$(".tab3 tr td:last").css("font-size","20px");
+		});
+
+		//中药or西药双击事件
+		$(".sty1").dblclick(function(){
+			$(".dbdiv").css('display','block');
+			$(".dbdiv").css('width',(window.screen.width)/2);
+			$(".dbdiv").css('height',(window.screen.height)/2);  
+        	$(".dbdiv").fadeTo('slow', 0.99); 
+			var id = $(this).attr("id");
+			var len = $(this).attr("id").length;
+			$.ajax({
+				type:"post",
+				url:"__CONTROLLER__/yplist",
+				dataType:"json",
+				data:{"id":id,
+					"len":len
+				},
+				success:function(sfdetail){
+					var str = "<thead><tr><th width='5%'></th><th width='20%'>项目名称</th><th width='15%'>数量</th><th width='15%'>单位</th><th width='15%'>剂数</th><th width='15%'>零售价</th><th width='15%'>金额</th></tr></thead>";
+					var zcosts = 0;
+					for(var i=0;i<sfdetail.length;i++){
+						str += "<tr><td>"+sfdetail[i]['id']+"</td><td align='left'>"+sfdetail[i]['xmname']+"</td><td align='right'>"+sfdetail[i]['amount']+"</td><td>"+sfdetail[i]['units']+"</td><td align='right'>"+sfdetail[i]['dose']+"</td><td align='right'>"+sfdetail[i]['price']+"</td><td align='right'>"+sfdetail[i]['costs']+"</td></tr>";
+						var count = i;
+						zcosts += parseFloat(sfdetail[i]['costs']);
+					}
+					str += "<tr><td colspan='4' align='left'>共<font color='red'><b>"+i+"</b></font>味药</td><td colspan='3' align='right'><font color='red'><b>合计金额："+zcosts.toFixed(2)+"</b></font></td></tr>";
+					$("#dbtab").html(str);
+				}
+			})
+		})
+
+		$("#close").click(function(){
+			$(".dbdiv").css('display','none');
+		})
+	</script>
